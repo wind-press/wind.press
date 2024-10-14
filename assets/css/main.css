@@ -1,0 +1,36 @@
+pre.shiki {
+    code {
+        width: 100%;
+
+        .line {
+            span:last-child {
+                padding-right: 16px;
+            }
+    
+            width: 100%;
+            text-wrap: nowrap;
+
+            &.highlight,
+            &.highlighted {
+                background-color: color-mix(in srgb, var(--tw-prose-pre-bg) 80%, #888888);
+                border: 1px solid rgba(136, 136, 136, 0.5);
+            }
+
+            &.diff.remove {
+                background-color: color-mix(in srgb, var(--tw-prose-pre-bg) 80%, #F43F5E);
+                border: 1px solid rgba(244, 63, 94, 0.5);
+            }
+
+            &.diff.add {
+                background-color: color-mix(in srgb, var(--tw-prose-pre-bg) 80%, #10B981);
+                border: 1px solid rgba(16, 185, 129, 0.5);
+            }
+
+            &.highlight,
+            &.highlighted,
+            &.diff {
+                border-radius: 0.2rem;
+            }
+        }
+    }
+}
