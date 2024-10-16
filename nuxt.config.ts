@@ -8,7 +8,20 @@ export default defineNuxtConfig({
 
   extends: ['@nuxt/ui-pro'],
 
-  modules: ['@nuxt/content', '@nuxt/eslint', '@nuxt/fonts', '@nuxt/image', '@nuxt/ui', '@nuxthq/studio', '@vueuse/nuxt', 'nuxt-og-image', 'nuxt-umami', '@nuxtjs/tailwindcss', 'nuxt-shiki', '@nuxt/icon'],
+  modules: [
+    '@nuxt/eslint',
+    '@nuxt/fonts',
+    '@nuxt/image',
+    '@nuxt/ui',
+    '@nuxthq/studio',
+    '@vueuse/nuxt',
+    'nuxt-og-image',
+    'nuxt-umami',
+    '@nuxtjs/tailwindcss',
+    'nuxt-shiki',
+    '@nuxt/icon',
+    '@nuxt/content',
+  ],
 
   hooks: {
     // Define `@nuxt/ui` components as global to use them in `.md` (feel free to add those you need)
@@ -31,15 +44,15 @@ export default defineNuxtConfig({
     prerender: {
       routes: [
         '/',
-        '/sitemap.xml',
         '/docs',
+        '/sitemap.xml',
         ...globSync('./content/**/*.md*')
           .map(path => path
             .slice(7, -3)
             .replace(/\d+\./g, '')
             .replace(/\\/g, '/')
-            .replace(/index/g, '')
-          )
+            .replace(/index/g, '/')
+          ),
       ],
       crawlLinks: true
     },
@@ -50,7 +63,7 @@ export default defineNuxtConfig({
 
   routeRules: {
     '/api/search.json': { prerender: true },
-    '/docs': { redirect: '/docs/getting-started', prerender: false }
+    '/docs': { redirect: '/docs/getting-started', prerender: false },
   },
 
   devtools: {

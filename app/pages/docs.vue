@@ -8,7 +8,7 @@ const links = computed(() => navigation.value.find(item => item._path === '/docs
 
 <template>
   <UContainer>
-    <UPage>
+    <UPage class="nuxt-content">
       <template #left>
         <UAside>
           <template #top>

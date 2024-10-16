@@ -1,5 +1,8 @@
 <script setup lang="ts">
 import { withoutTrailingSlash } from 'ufo'
+import lightGallery from 'lightgallery';
+import lgThumbnail from 'lightgallery/plugins/thumbnail';
+import lgZoom from 'lightgallery/plugins/zoom';
 
 const route = useRoute()
 
@@ -28,6 +31,17 @@ defineOgImage({
 })
 
 const headline = computed(() => findPageHeadline(page.value!))
+
+onMounted(() => {
+  lightGallery(document.querySelector('.nuxt-content'), {
+    plugins: [lgZoom, lgThumbnail],
+    selector: 'img',
+    exThumbImage: 'src',
+    supportLegacyBrowser: false,
+    showZoomInOutIcons: true,
+    licenseKey: 'your_license_key',
+  });
+});
 </script>
 
 <template>
@@ -35,7 +49,7 @@ const headline = computed(() => findPageHeadline(page.value!))
     <UPageHeader :title="page.title" :description="page.description" :links="page.links" :headline="headline" />
 
     <UPageBody prose>
-      <ContentRenderer v-if="page.body" :value="page" class="nuxt-content" />
+      <ContentRenderer v-if="page.body" :value="page" class="nuxt-content__body" />
 
       <hr v-if="surround?.length">
 
