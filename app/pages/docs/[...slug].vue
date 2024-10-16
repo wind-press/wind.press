@@ -12,7 +12,7 @@ const { data: surround } = await useAsyncData(`${route.path}-surround`, () => qu
   .where({ _extension: 'md', navigation: { $ne: false } })
   .only(['title', 'description', '_path'])
   .findSurround(withoutTrailingSlash(route.path))
-, { default: () => [] })
+  , { default: () => [] })
 
 useSeoMeta({
   title: page.value.title,
@@ -32,29 +32,30 @@ const headline = computed(() => findPageHeadline(page.value!))
 
 <template>
   <UPage v-if="page">
-    <UPageHeader
-      :title="page.title"
-      :description="page.description"
-      :links="page.links"
-      :headline="headline"
-    />
+    <UPageHeader :title="page.title" :description="page.description" :links="page.links" :headline="headline" />
 
     <UPageBody prose>
-      <ContentRenderer
-        v-if="page.body"
-        :value="page"
-      />
+      <ContentRenderer v-if="page.body" :value="page" class="nuxt-content" />
 
       <hr v-if="surround?.length">
 
       <UContentSurround :surround="surround" />
     </UPageBody>
 
-    <template
-      v-if="page.toc !== false"
-      #right
-    >
+    <template v-if="page.toc !== false" #right>
       <UContentToc :links="page.body?.toc?.links" />
     </template>
   </UPage>
 </template>
+
+<style>
+.nuxt-content {
+  .iconify {
+    display: inline-block;
+    height: 1em;
+    /* width: 1em; */
+    overflow: visible;
+    vertical-align: -.125em;
+  }
+}
+</style>

@@ -1,10 +1,4 @@
 import { globSync } from 'glob'; // using glob here but any package you are comfortable with works
-// import wasm from '@rollup/plugin-wasm';
-// import {
-//   transformerNotationDiff,
-//   transformerMetaWordHighlight,
-//   // ...
-// } from '@shikijs/transformers';
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
@@ -14,19 +8,7 @@ export default defineNuxtConfig({
 
   extends: ['@nuxt/ui-pro'],
 
-  modules: [
-    '@nuxt/content',
-    '@nuxt/eslint',
-    '@nuxt/fonts',
-    '@nuxt/image',
-    '@nuxt/ui',
-    '@nuxthq/studio',
-    '@vueuse/nuxt',
-    'nuxt-og-image',
-    'nuxt-umami',
-    '@nuxtjs/tailwindcss',
-    'nuxt-shiki',
-  ],
+  modules: ['@nuxt/content', '@nuxt/eslint', '@nuxt/fonts', '@nuxt/image', '@nuxt/ui', '@nuxthq/studio', '@vueuse/nuxt', 'nuxt-og-image', 'nuxt-umami', '@nuxtjs/tailwindcss', 'nuxt-shiki', '@nuxt/icon'],
 
   hooks: {
     // Define `@nuxt/ui` components as global to use them in `.md` (feel free to add those you need)
@@ -94,12 +76,7 @@ export default defineNuxtConfig({
 
   app: {
     head: {
-      script: [
-        {
-          src: 'https://kit.fontawesome.com/ee89d90c81.js',
-          crossorigin: 'anonymous'
-        },
-      ]
+      script: []
     }
   },
 
@@ -126,9 +103,11 @@ export default defineNuxtConfig({
     safelistColors: ['sky', 'mint', 'rose', 'amber', 'violet', 'emerald', 'fuchsia', 'indigo', 'lime', 'orange', 'pink', 'purple', 'red', 'teal', 'yellow', 'green', 'blue', 'cyan', 'gray', 'white', 'black'],
   },
 
-  // vite: {
-  //   plugins: [wasm()],
-  // },
+  icon: {},
+
+  vite: {
+    plugins: []
+  },
 
   compatibilityDate: '2024-07-11'
 })
