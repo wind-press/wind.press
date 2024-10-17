@@ -18,9 +18,11 @@ useHead({
 })
 
 useSeoMeta({
-  titleTemplate: '%s - Nuxt UI Pro - SaaS template',
-  ogImage: 'https://saas-template.nuxt.dev/social-card.png',
-  twitterImage: 'https://saas-template.nuxt.dev/social-card.png',
+  titleTemplate: '%s - WindPress Docs',
+  // ogImage: 'https://saas-template.nuxt.dev/social-card.png',
+  // twitterImage: 'https://saas-template.nuxt.dev/social-card.png',
+  ogImage: 'https://ps.w.org/windpress/assets/banner-1544x500.png',
+  twitterImage: 'https://ps.w.org/windpress/assets/banner-1544x500.png',
   twitterCard: 'summary_large_image'
 })
 </script>

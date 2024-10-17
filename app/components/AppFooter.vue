@@ -55,58 +55,34 @@ function onSubmit() {
 
 <template>
   <UFooter>
-    <template #top>
+    <!-- <template #top>
       <UFooterColumns :links="links">
         <template #right>
           <form @submit.prevent="onSubmit">
-            <UFormGroup
-              label="Subscribe to our newsletter"
-              :ui="{ container: 'mt-3' }"
-            >
-              <UInput
-                v-model="email"
-                type="email"
-                placeholder="Enter your email"
-                :ui="{ icon: { trailing: { pointer: '' } } }"
-                required
-                size="xl"
-                autocomplete="off"
-                class="max-w-sm"
-                input-class="rounded-full"
-              >
+            <UFormGroup label="Subscribe to our newsletter" :ui="{ container: 'mt-3' }">
+              <UInput v-model="email" type="email" placeholder="Enter your email" :ui="{ icon: { trailing: { pointer: '' } } }" required size="xl" autocomplete="off" class="max-w-sm" disabled>
                 <template #trailing>
-                  <UButton
-                    type="submit"
-                    size="xs"
-                    color="primary"
-                    :label="loading ? 'Subscribing' : 'Subscribe'"
-                    :loading="loading"
-                  />
+                  <UButton type="submit" size="xs" color="primary" :label="loading ? 'Subscribing' : 'Subscribe'" :loading="loading" disabled />
                 </template>
               </UInput>
             </UFormGroup>
           </form>
         </template>
       </UFooterColumns>
-    </template>
+    </template> -->
 
     <template #left>
       <p class="text-gray-500 dark:text-gray-400 text-sm">
-        Copyright © {{ new Date().getFullYear() }}. All rights reserved.
+        Copyright © {{ new Date().getFullYear() }}. WindPress
       </p>
     </template>
 
     <template #right>
       <UColorModeButton size="sm" />
-
-      <UButton
-        to="https://github.com/nuxt-ui-pro/saas"
-        target="_blank"
-        icon="i-simple-icons-github"
-        aria-label="GitHub"
-        color="gray"
-        variant="ghost"
-      />
+      <!-- <UButton aria-label="WindPress on X" to="/go/x" target="_blank" icon="i-simple-icons-x" v-bind="($ui.button.secondary as any)" /> -->
+      <UButton aria-label="WindPress on Facebook" to="/go/facebook" target="_blank" icon="i-simple-icons-facebook" v-bind="($ui.button.secondary as any)" />
+      <UButton aria-label="WindPress on Discord" to="/go/discord" target="_blank" icon="i-simple-icons-discord" v-bind="($ui.button.secondary as any)" />
+      <UButton aria-label="WindPress on GitHub" to="/go/github" target="_blank" icon="i-simple-icons-github" v-bind="($ui.button.secondary as any)" />
     </template>
   </UFooter>
 </template>

@@ -27,7 +27,7 @@ importers:
         specifier: ^1.4.4
         version: 1.4.4(magicast@0.3.5)(rollup@4.24.0)(vite@5.4.9(@types/node@22.7.6)(terser@5.36.0))(vue@3.5.12(typescript@5.6.3))
       '@nuxtjs/tailwindcss':
-        specifier: 6.12.2-20241014-164133-9d42549
+        specifier: nightly
         version: 6.12.2-20241014-164133-9d42549(magicast@0.3.5)(rollup@4.24.0)
       '@shikijs/transformers':
         specifier: ^1.22.0

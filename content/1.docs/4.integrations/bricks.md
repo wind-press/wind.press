@@ -1,7 +1,6 @@
 ---
 title: 'Bricks'
 description: 'Learn how to use Tailwind CSS with Bricks Builder in WordPress.'
-draft: true
 ---
 
 ## What is Bricks?

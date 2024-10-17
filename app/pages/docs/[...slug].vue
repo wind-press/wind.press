@@ -40,8 +40,25 @@ onMounted(() => {
     supportLegacyBrowser: false,
     showZoomInOutIcons: true,
     licenseKey: 'your_license_key',
-  });
-});
+  })
+})
+
+const communityLinks = computed(() => [{
+  icon: 'i-ph-pen',
+  label: 'Edit this page',
+  to: `https://github.com/wind-press/wind.press/edit/main/content/${page?.value?._file?.split('/').slice(1).join('/')}`,
+  target: '_blank'
+}, {
+  icon: 'i-ph-chat-centered-text',
+  label: 'Chat on Discord',
+  to: '/go/discord',
+  target: '_blank'
+}, {
+  icon: 'i-ph-hand-heart',
+  label: 'Become a Sponsor',
+  to: '/go/sponsor',
+  target: '_blank'
+}])
 </script>
 
 <template>
@@ -57,7 +74,23 @@ onMounted(() => {
     </UPageBody>
 
     <template v-if="page.toc !== false" #right>
-      <UContentToc :links="page.body?.toc?.links" />
+      <!-- <UContentToc :links="page.body?.toc?.links" /> -->
+
+
+      <UContentToc :links="page.body?.toc?.links" :ui="{ wrapper: '' }">
+        <template #bottom>
+          <div class="hidden lg:block space-y-6" :class="{ '!mt-6': page.body?.toc?.links?.length }">
+            <UDivider v-if="page.body?.toc?.links?.length" type="dashed" />
+
+            <UPageLinks title="Community" :links="communityLinks" />
+
+            <Ads />
+          </div>
+        </template>
+      </UContentToc>
+
+
+
     </template>
   </UPage>
 </template>
@@ -65,10 +98,10 @@ onMounted(() => {
 <style>
 .nuxt-content {
   .iconify {
-    display: inline-block;
-    height: 1em;
+    /* display: inline-block; */
+    /* height: 1em; */
     /* width: 1em; */
-    overflow: visible;
+    /* overflow: visible; */
     vertical-align: -.125em;
   }
 
