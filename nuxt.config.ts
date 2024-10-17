@@ -2,125 +2,134 @@ import { globSync } from 'glob'; // using glob here but any package you are comf
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  site: {
-    url: 'https://wind.press',
-  },
-
-  extends: ['@nuxt/ui-pro'],
-
-  modules: [
-    '@nuxt/eslint',
-    '@nuxt/fonts',
-    '@nuxt/image',
-    '@nuxt/ui',
-    '@nuxthq/studio',
-    '@vueuse/nuxt',
-    'nuxt-og-image',
-    'nuxt-umami',
-    '@nuxtjs/tailwindcss',
-    'nuxt-shiki',
-    '@nuxt/icon',
-    '@nuxt/content',
-  ],
-
-  hooks: {
-    // Define `@nuxt/ui` components as global to use them in `.md` (feel free to add those you need)
-    'components:extend': (components) => {
-      const globals = components
-      // .filter(c => [
-      //   'UButton',
-      //   'Card',
-      // ].includes(c.pascalName))
-
-      globals.forEach(c => c.global = true)
+    site: {
+        url: 'https://wind.press',
     },
-  },
 
-  colorMode: {
-    disableTransition: true
-  },
+    extends: ['@nuxt/ui-pro'],
 
-  nitro: {
-    prerender: {
-      routes: [
-        '/',
-        '/docs',
-        '/sitemap.xml',
-        ...globSync('./content/**/*.md*')
-          .map(path => path
-            .slice(7, -3)
-            .replace(/\d+\./g, '')
-            .replace(/\\/g, '/')
-            .replace(/index/g, '/')
-          ),
-      ],
-      crawlLinks: true
+    modules: [
+        '@nuxt/content',
+        '@nuxt/ui',
+        '@nuxt/image',
+        'nuxt-umami',
+        '@nuxt/fonts',
+        '@nuxt/eslint',
+        '@nuxthq/studio',
+        '@nuxtjs/tailwindcss',
+        'nuxt-shiki',
+        '@nuxt/icon',
+        '@vueuse/nuxt',
+        'nuxt-og-image',
+    ],
+
+    hooks: {
+        // Define `@nuxt/ui` components as global to use them in `.md` (feel free to add those you need)
+        'components:extend': (components) => {
+            const globals = components
+            // .filter(c => [
+            //   'UButton',
+            //   'Card',
+            // ].includes(c.pascalName))
+
+            globals.forEach(c => c.global = true)
+        },
     },
-    experimental: {
-      wasm: true,
+
+    nitro: {
+        prerender: {
+            routes: [
+                '/',
+                '/docs',
+                '/sitemap.xml',
+                ...globSync('./content/**/*.md*')
+                    .map(path => path
+                        .slice(7, -3)
+                        .replace(/\d+\./g, '')
+                        .replace(/\\/g, '/')
+                        .replace(/index/g, '/')
+                    ),
+            ],
+            crawlLinks: true
+        },
+        experimental: {
+            wasm: true,
+        },
     },
-  },
 
-  routeRules: {
-    '/api/search.json': { prerender: true },
-    '/docs': { redirect: '/docs/getting-started', prerender: false },
-  },
+    routeRules: {
+        '/api/search.json': { prerender: true },
+        '/docs': { redirect: '/docs/getting-started', prerender: false },
+    },
 
-  devtools: {
-    enabled: true
-  },
+    content: {
+        defaultLocale: 'en',
+        locales: ['en', 'es', 'id'],
+        // navigation: {
+        //     fields: ['author', 'publishedAt']
+        // }
+    },
 
-  typescript: {
-    strict: false
-  },
+    devtools: {
+        enabled: true
+    },
 
-  future: {
-    compatibilityVersion: 4
-  },
+    future: {
+        compatibilityVersion: 4
+    },
 
-  eslint: {
-    config: {
-      stylistic: {
-        commaDangle: 'never',
-        braceStyle: '1tbs'
-      }
-    }
-  },
+    typescript: {
+        strict: false
+    },
 
-  app: {
-    head: {
-      script: []
-    }
-  },
+    eslint: {
+        config: {
+            stylistic: {
+                commaDangle: 'never',
+                braceStyle: '1tbs'
+            }
+        }
+    },
 
-  umami: {
-    id: 'de57ce9c-c391-4dbb-bb1a-ba6ba26b36a4',
-    host: 'https://umami.rosua.org',
-    autoTrack: true,
-    ignoreLocalhost: true,
-    useDirective: true,
-    // proxy: 'direct',
-  },
+    app: {
+        head: {
+            script: []
+        }
+    },
 
-  tailwindcss: {
-    cssPath: ['./assets/css/tailwind.css', { injectPosition: 'last' }],
-    viewer: false,
-    exposeConfig: true
-  },
+    umami: {
+        id: 'de57ce9c-c391-4dbb-bb1a-ba6ba26b36a4',
+        host: 'https://umami.rosua.org',
+        autoTrack: true,
+        ignoreLocalhost: true,
+        useDirective: true,
+        // proxy: 'direct',
+    },
 
-  css: [
-    './assets/css/main.css',
-  ],
+    tailwindcss: {
+        cssPath: ['./assets/css/tailwind.css', { injectPosition: 'last' }],
+        viewer: false,
+        exposeConfig: true
+    },
 
-  ui: {
-    safelistColors: ['sky', 'mint', 'rose', 'amber', 'violet', 'emerald', 'fuchsia', 'indigo', 'lime', 'orange', 'pink', 'purple', 'red', 'teal', 'yellow', 'green', 'blue', 'cyan', 'gray', 'white', 'black'],
-  },
+    colorMode: {
+        preference: 'system', // default value of $colorMode.preference
+        fallback: 'dark', // fallback value if not system preference found
+    },
 
-  icon: {},
+    css: [
+        './assets/css/main.css',
+    ],
 
-  vite: {
-    plugins: []
-  },
+    ui: {
+        safelistColors: ['sky', 'mint', 'rose', 'amber', 'violet', 'emerald', 'fuchsia', 'indigo', 'lime', 'orange', 'pink', 'purple', 'red', 'teal', 'yellow', 'green', 'blue', 'cyan', 'gray', 'white', 'black'],
+    },
 
-  compatibilityDate: '2024-07-11'
+    icon: {},
+
+    vite: {
+        plugins: []
+    },
+
+    compatibilityDate: '2024-07-11'
 })

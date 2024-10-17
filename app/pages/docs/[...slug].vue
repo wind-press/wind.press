@@ -71,5 +71,9 @@ onMounted(() => {
     overflow: visible;
     vertical-align: -.125em;
   }
+
+  img {
+    cursor: pointer;
+  }
 }
 </style>
