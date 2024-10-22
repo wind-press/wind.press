@@ -6,11 +6,12 @@ export default defineNuxtConfig({
         url: 'https://wind.press',
         name: 'WindPress',
         description: 'Tailwind CSS integration for WordPress',
+        locale: 'en',
     },
 
     extends: ['@nuxt/ui-pro'],
 
-    modules: ['@nuxt/content', '@nuxt/ui', '@nuxt/image', 'nuxt-umami', '@nuxt/fonts', '@nuxt/eslint', '@nuxthq/studio', '@nuxtjs/tailwindcss', 'nuxt-shiki', '@nuxt/icon', '@vueuse/nuxt', 'nuxt-og-image'],
+    modules: ['@nuxt/content', '@nuxt/ui', '@nuxt/image', 'nuxt-umami', '@nuxt/fonts', '@nuxt/eslint', '@nuxthq/studio', '@nuxtjs/tailwindcss', 'nuxt-shiki', '@nuxt/icon', '@vueuse/nuxt', 'nuxt-og-image', '@nuxtjs/seo'],
 
     hooks: {
         // Define `@nuxt/ui` components as global to use them in `.md` (feel free to add those you need)
@@ -21,10 +22,12 @@ export default defineNuxtConfig({
 
     nitro: {
         prerender: {
+            autoSubfolderIndex: false, // Temp while waiting for hosting on Nuxt Hub, https://nuxt.com/deploy/cloudflare#route-matching
+            crawlLinks: true,
             routes: [
                 '/',
                 '/docs',
-                '/sitemap.xml',
+                // '/sitemap.xml', // Temp while waiting for hosting on Nuxt Hub
                 ...globSync('./content/**/*.md*')
                     .map(path => path
                         .slice(7, -3)
@@ -35,8 +38,7 @@ export default defineNuxtConfig({
                         .replace(/\/$/, '')
                     ),
                 '/go',
-            ],
-            crawlLinks: true
+            ]
         },
         experimental: {
             wasm: true,
@@ -47,6 +49,9 @@ export default defineNuxtConfig({
         '/api/search.json': { prerender: true },
         '/docs': { redirect: '/docs/getting-started', prerender: false },
         '/go': { redirect: '/', prerender: false },
+
+        // Temporary redirects
+        '/': { redirect: '/docs/getting-started', prerender: false },
 
         // Redirects 
         '/go/github': { redirect: 'https://github.com/wind-press/windpress', prerender: false },
@@ -123,7 +128,17 @@ export default defineNuxtConfig({
         safelistColors: ['sky', 'mint', 'rose', 'amber', 'violet', 'emerald', 'fuchsia', 'indigo', 'lime', 'orange', 'pink', 'purple', 'red', 'teal', 'yellow', 'green', 'blue', 'cyan', 'gray', 'white', 'black'],
     },
 
-    icon: {},
+    icon: {
+        provider: 'iconify', // SSG
+        serverBundle: false, // SSG
+        // serverBundle: {
+        //     remote: 'jsdelivr', // 'unpkg' or 'github-raw', or a custom function
+        // },
+        clientBundle: {
+            // scan all components in the project and include icons 
+            scan: true,
+        },
+    },
 
     vite: {
         plugins: []

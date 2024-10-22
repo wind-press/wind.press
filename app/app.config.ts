@@ -97,8 +97,8 @@ export default defineAppConfig({
       }
     },
     icons: {
-      dark: 'i-ph-moon',
-      light: 'i-ph-sun',
+      // dark: 'i-ph-moon',
+      // light: 'i-ph-sun',
       search: 'i-ph-magnifying-glass',
       external: 'i-ph-arrow-up-right',
       chevron: 'i-ph-caret-down',
