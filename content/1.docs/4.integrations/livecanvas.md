@@ -12,7 +12,7 @@ LiveCanvas offers a low-code environment with an intuitive interface, enabling u
 Unique among page builders, LiveCanvas works directly with plain HTML, ensuring there is no vendor lock-in and that your site's code remains fully accessible and manageable. This approach not only provides unparalleled flexibility but also makes LiveCanvas an excellent choice for publishing static sites, enhancing both performance and security. By empowering developers and designers to maintain complete control over their codebase, LiveCanvas stands out as the premier page builder for creating high-quality, optimized WordPress websites without compromising on customization or scalability.
 
 ::callout{icon="i-ph:bookmark-simple" to="https://livecanvas.com/?ref=4008" target="_blank"}
-Learn more about Builderius on the official website.
+Learn more about LiveCanvas on the official website.
 ::
 
 ## Using Tailwind CSS with LiveCanvas
