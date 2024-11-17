@@ -48,7 +48,6 @@ As you type in the Plain Classes input field, WindPress will provide intelligent
 The suggestion list automatically updates as you type, providing you with the most relevant class names.
 ::
 
-
 ![Autocomplete class names](/img/content/integrations/bricks/screenshot-3.png){width="1440px" height="866px"}
 
 ### Class Sorting
@@ -59,10 +58,38 @@ WindPress provides a class sorting feature that arranges the Tailwind CSS classe
 
 ### Hover Preview
 
-![Hover Preview](/img/content/integrations/bricks/screenshot-5.png){width="1440px" height="866px"}
+Hover over the Tailwind CSS class in the Plain Classes input field to see a preview of the generated CSS for the class names. This feature provides a quick way to see how the class will affect the element in the Bricks editor.
+
+![Hover Preview the generated css for the class](/img/content/integrations/bricks/screenshot-5.png){width="1440px" height="866px"}
 
 ### Variable Picker
 
+::callout{icon="i-heroicons-light-bulb"}
+The variables in Tailwind CSS are available starting from version `4.x` and later.
+::
+
+Want to compose a custom class with the Tailwind CSS design system? WindPress provides a Variable Picker that allows you to select the Tailwind CSS variables and compose a custom class on the Bricks editor. The Variable Picker provides a visual way to select the variables and see the generated CSS in real-time.
+
+::callout{icon="i-heroicons-light-bulb"}
+To access the Variable Picker panel, `shift + left-click` on the style input field in the Element settings panel.
+::
+
+![Variable Picker](/img/content/integrations/bricks/screenshot-6.png){width="3424px" height="1944px"}
+
+Additionally, WindPress registers Tailwind CSS variables within the Bricks variable system and color palette, syncing them with the Tailwind CSS design system. This feature creates a seamless experience for using Tailwind CSS variables in the Bricks editor.
+
 ### HTML to Bricks elements
 
+Save time by converting HTML elements into compatible Bricks elements using the WindPress copy-paste feature. Instead of recreating your favorite Tailwind CSS components or templates from scratch, you can simply copy and paste the HTML code into the Bricks editor.
+
+::callout{icon="i-heroicons-light-bulb"}
+To paste the HTML code into the Bricks editor, `cmd + shift + v` or `ctrl + shift + v` on the Bricks editor canvas, or select the `Paste HTML` option from the Bricks structure panel's context menu.
+::
+
+![Paste HTML code into the Bricks editor](/img/content/integrations/bricks/screenshot-7.png){width="3424px" height="1944px"}
+
 ### Ubiquitous Panel
+
+The Ubiquitous Panel feature allows you to access the WindPress settings directly from the Bricks editor. This panel provides quick access to the WindPress settings, enabling you to make adjustments to the configuration without having to leave the Bricks editor.
+
+![Ubiquitous Panel](/img/content/integrations/bricks/screenshot-8.png){width="3424px" height="1944px"}
