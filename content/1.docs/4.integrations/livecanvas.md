@@ -19,12 +19,18 @@ Learn more about LiveCanvas on the official website.
 
 WindPress provides a simple way to use Tailwind CSS with LiveCanvas. It's first-class integration with LiveCanvas allows you to use Tailwind CSS in your LiveCanvas plugin without any additional configuration, providing a seamless experience.
 
-::callout{icon="fluent:premium-12-filled" to="/#pricing" color="amber"}
-LiveCanvas integration is available in the WindPress pro edition.
-::
-
 WindPress will automatically load the necessary modules to provide the full Tailwind CSS experience, including the compiler and scanner.
 
 ## Features
 
 WindPress provides a range of exclusive features to enhance your LiveCanvas experience with Tailwind CSS.
+
+### Autocomplete class names
+
+As you type the class names in the LiveCanvas editor, WindPress will provide intelligent suggestions for Tailwind CSS class names that match the configuration of your Tailwind CSS project. No more guessing or memorizing class names, WindPress will help you find the right class names in real time.
+
+::callout{icon="i-heroicons-light-bulb"}
+The suggestion list automatically updates as you type, providing you with the most relevant class names.
+::
+
+![Autocomplete class names](/img/content/integrations/livecanvas/screenshot-1.png){width="1708px" height="1308px"}
