@@ -1,0 +1,80 @@
+---
+title: 'Oxygen'
+description: 'Learn how to use Tailwind CSS with Oxygen Builder in WordPress.'
+---
+
+## What is Oxygen?
+
+[Oxygen](https://oxygenbuilder.com/) is a comprehensive visual site builder for WordPress, designed to offer extensive control over website design and functionality. Unlike traditional page builders, Oxygen enables users to construct entire websites, including headers, footers, and dynamic content areas, through a visual interface. It provides a range of features such as drag-and-drop editing, WooCommerce integration for e-commerce sites, a header builder for custom headers, and global color settings for consistent branding. Additionally, Oxygen is developer-friendly, allowing the incorporation of custom code like PHP, CSS, and JavaScript directly within the builder.
+
+Oxygen emphasizes performance and clean code output, resulting in faster load times and improved SEO. It includes a design library with pre-built components and templates to expedite the design process. The builder also integrates with Gutenberg, WordPress's native block editor, facilitating a seamless content editing experience for clients. Oxygen offers lifetime updates and support with a one-time purchase, making it a cost-effective solution for both individual developers and agencies
+
+::callout{icon="i-ph:bookmark-simple" to="https://oxygenbuilder.com/" target="_blank"}
+Learn more about Oxygen on the official website.
+::
+
+## Using Tailwind CSS with Oxygen
+
+WindPress provides a simple way to use Tailwind CSS with Oxygen. It's first-class integration with Oxygen allows you to use Tailwind CSS in your Oxygen plugin without any additional configuration, providing a seamless experience.
+
+::callout{icon="fluent:premium-12-filled" to="/#pricing" color="amber"}
+Oxygen integration is available in the WindPress pro edition.
+::
+
+WindPress will automatically load the necessary modules to provide the full Tailwind CSS experience, including the compiler and scanner.
+
+## Features
+
+WindPress provides a range of exclusive features to enhance your Oxygen experience with Tailwind CSS.
+
+### Plain Classes input field
+
+WindPress provides a simple input field in the Element settings panel of the Oxygen editor. This feature allows you to directly add Tailwind CSS classes to the elements in the Oxygen editor as plain text, and you can see the changes in real-time. The input field supports the complete range of Tailwind CSS classes and does not clutter the Oxygen class system.
+
+::callout{icon="i-heroicons-light-bulb"}
+To access the Plain Classes input field, simply select an element in the Oxygen editor and the input field will appear in the Element settings panel.
+::
+
+![Plain Classes input field](/img/content/integrations/oxygen/screenshot-1.png){width="3424px" height="1944px"}
+
+### Autocomplete class names
+
+As you type in the Plain Classes input field, WindPress will provide intelligent suggestions for Tailwind CSS class names that match the configuration of your Tailwind CSS project. It's like having the Tailwind CSS cheatseet at your fingertips, making it easier to find the right class names.
+
+::callout{icon="i-heroicons-light-bulb"}
+The suggestion list automatically updates as you type, providing you with the most relevant class names.
+::
+
+![Autocomplete class names](/img/content/integrations/oxygen/screenshot-2.png){width="3424px" height="1944px"}
+
+### Class Sorting
+
+WindPress provides a class sorting feature that arranges the Tailwind CSS classes in the Plain Classes input field based on the Tailwind CSS [official recommendation](https://tailwindcss.com/blog/automatic-class-sorting-with-prettier). This feature helps you follow the best practices and recommended class order.
+
+![Class Sorting](/img/content/integrations/oxygen/screenshot-3.png){width="1440px" height="866px"}
+
+### Hover Preview
+
+Hover over the Tailwind CSS class in the Plain Classes input field to see a preview of the generated CSS for the class names. This feature provides a quick way to see how the class will affect the element in the Oxygen editor.
+
+![Hover Preview the generated css for the class](/img/content/integrations/oxygen/screenshot-4.png){width="3424px" height="1944px"}
+
+### Variable Picker
+
+::callout{icon="i-heroicons-light-bulb"}
+The variables in Tailwind CSS are available starting from version `4.x` and later.
+::
+
+Want to compose a custom class with the Tailwind CSS design system? WindPress provides a Variable Picker that allows you to select the Tailwind CSS variables and compose a custom class on the Oxygen editor. The Variable Picker provides a visual way to select the variables and see the generated CSS in real-time.
+
+::callout{icon="i-heroicons-light-bulb"}
+To access the Variable Picker panel, `shift + left-click` on the style input field in the Element settings panel.
+::
+
+![Variable Picker](/img/content/integrations/oxygen/screenshot-5.png){width="3424px" height="1944px"}
+
+### Ubiquitous Panel
+
+The Ubiquitous Panel feature allows you to access the WindPress settings directly from the Oxygen editor. This panel provides quick access to the WindPress settings, enabling you to make adjustments to the configuration without having to leave the Oxygen editor.
+
+![Ubiquitous Panel](/img/content/integrations/oxygen/screenshot-6.png){width="3424px" height="1944px"}
