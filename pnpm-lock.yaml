@@ -30,7 +30,7 @@ importers:
         specifier: 2.0.0-rc.23
         version: 2.0.0-rc.23(h3@1.13.0)(magicast@0.3.5)(rollup@4.27.2)(vite@5.4.11(@types/node@22.9.0)(terser@5.36.0))(vue@3.5.13(typescript@5.6.3))
       '@nuxtjs/tailwindcss':
-        specifier: 6.13.0-20241028-183114-4a05009
+        specifier: nightly
         version: 6.13.0-20241028-183114-4a05009(magicast@0.3.5)(rollup@4.27.2)
       '@shikijs/transformers':
         specifier: ^1.23.0
