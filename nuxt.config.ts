@@ -51,7 +51,7 @@ export default defineNuxtConfig({
         '/go': { redirect: '/', prerender: false },
 
         // Temporary redirects
-        '/': { redirect: '/docs/getting-started', prerender: false },
+        // '/': { redirect: '/docs/getting-started', prerender: false },
 
         // Redirects 
         '/go/github': { redirect: 'https://github.com/wind-press/windpress', prerender: false },

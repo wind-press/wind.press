@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import type { NavItem } from '@nuxt/content'
+import Logo from './Logo.vue';
 
 const navigation = inject<Ref<NavItem[]>>('navigation', ref([]))
 
@@ -31,6 +32,7 @@ const links = [
 <template>
   <UHeader :links="links">
     <template #logo>
+      <Logo class="w-auto h-6 fill-black dark:fill-white self-center" />
       WindPress
       <UBadge label="Draft" variant="subtle" class="mb-0.5" />
       <!-- <UBadge label="SaaS" variant="subtle" class="mb-0.5" /> -->

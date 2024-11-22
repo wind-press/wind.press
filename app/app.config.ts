@@ -198,5 +198,11 @@ export default defineAppConfig({
         wrapper: 'border-t border-gray-200 dark:border-gray-800'
       }
     },
+    landing: {
+      hero: {
+        title: 'text-2xl sm:text-5xl',
+      }
+
+    },
   }
 })
