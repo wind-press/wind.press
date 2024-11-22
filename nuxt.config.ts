@@ -70,7 +70,15 @@ export default defineNuxtConfig({
         locales: ['en', 'es', 'id'],
         // navigation: {
         //     fields: ['author', 'publishedAt']
-        // }
+        // },
+        highlight: {
+            langs: [
+                'html',
+                'css',
+                'js',
+                'php',
+            ]
+        }
     },
 
     devtools: {
