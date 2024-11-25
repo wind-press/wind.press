@@ -3,61 +3,81 @@ description: Choose the plan that's right for you.
 navigation.icon: i-heroicons-credit-card
 hero:
   title: A plan for every need
-  description: Our plans are designed to meet the requirements of both beginners and players. Get the right plan that suits you.
+  description: Your time and coffee are precious, so we created some generous pricing plans for you to choose from.
   align: center
 plans:
-  - title: Basic
-    description: A basic plan for individuals.
+  - title: Starter
+    description: Get started with the free version and enjoy the full features.
     price:
-      month: $9.9
-      year: $99.9
+      onetime: 
+      year:
     align: top
     button:
-      label: Get Started
+      label: Download
       color: white
+      target: _blank
+      to: https://wordpress.org/plugins/windpress/
     features:
-      - 1 GB Storage
-      - 1 Email Account
-      - 1 Domain
-      - 1 Website
-      - 1 Database
-      - 1 SSL Certificate
-      - 1 Support Ticket
-  - title: Standard
-    description: A standard plan for small teams.
+      - icon_name: fa6-solid:check
+        label_text: All features
+      - icon_name: fa6-solid:asterisk
+        icon_class: text-rose-600 w-5 h-5 flex-shrink-0
+        label_text: Limited integrations
+      - icon_name: iconoir:www
+        label_text: Unlimited personal sites
+      - icon_name: iconoir:www
+        label_text: Unlimited client sites
+      - icon_name: fa6-solid:arrows-rotate
+        label_text: Free updates
+      - icon_name: fa6-solid:comments
+        label_text: Community support
+  - title: Personal
+    description: Best for blogger, individual & solopreneur.
     price:
-      month: $19.9
-      year: $199.9
-    highlight: true
+      onetime: $129
+      year: $29
     align: top
     button:
       label: Get Started
       color: black
     features:
-      - 10 GB Storage
-      - 10 Email Accounts
-      - 10 Domains
-      - 10 Websites
-      - 10 Databases
-      - 10 SSL Certificates
-      - 10 Support Tickets
-  - title: Premium
-    description: A premium plan for large teams.
+      - icon_name: fa6-solid:check
+        label_text: All features
+      - icon_name: fa6-solid:asterisk
+        label_text: Limited integrations
+      - icon_name: iconoir:www
+        label_text: Unlimited personal sites
+      - icon_name: fa6-solid:x
+        icon_class: text-rose-600 w-5 h-5 flex-shrink-0
+        label_text: Unlimited client sites
+        label_class: line-through
+      - icon_name: fa6-solid:arrows-rotate
+        label_text: Free updates
+      - icon_name: fa6-solid:headset
+        label_text: Standard support
+  - title: Agency
+    description: Perfect For Agency Owners with high volume.
     price:
-      month: $29.9
-      year: $299.9
+      onetime: $179
+      year: $59
+    highlight: true
     align: top
     button:
       label: Get Started
       color: white
     features:
-      - 100 GB Storage
-      - 100 Email Accounts
-      - 100 Domains
-      - 100 Websites
-      - 100 Databases
-      - 100 SSL Certificates
-      - 100 Support Tickets
+      - icon_name: fa6-solid:check
+        label_text: All features
+      - icon_name: fa6-solid:asterisk
+        label_text: Limited integrations
+      - icon_name: iconoir:www
+        label_text: Unlimited personal sites
+      - icon_name: iconoir:www
+        label_text: Unlimited client sites
+      - icon_name: fa6-solid:arrows-rotate
+        label_text: Free updates
+      - icon_name: fa6-solid:headset
+        label_text: Standard support
 logos:
   title: Trusted by the world's best
   icons:

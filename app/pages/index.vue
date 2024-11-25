@@ -1,10 +1,12 @@
 <script setup lang="ts">
+import Pricing from './pricing.vue';
+
 const { data: page } = await useAsyncData('index', () => queryContent('/').findOne())
 if (!page.value) {
   throw createError({ statusCode: 404, statusMessage: 'Page not found', fatal: true })
 }
 
-const wp_v12 = inject<Ref<{ version: string; active_installs: number; donate_link: string; download_link: string }>>('wp_v12', ref({ version: '', active_installs: 0, donate_link: '', download_link: '' }));
+const wp_v12 = inject<Ref<{ version: string; active_installs: number; donate_link: string; download_link: string }>>('wp_v12', ref({ version: '', active_installs: 0, donate_link: '', download_link: 'https://downloads.wordpress.org/plugin/windpress.zip' }));
 const edd = inject<Ref<{ happyCustomers: number; activeSites: number; totalDownloads: number }>>('edd', ref({ happyCustomers: 0, activeSites: 0, totalDownloads: 0 }));
 
 useSeoMeta({
@@ -265,14 +267,14 @@ page.value.hero.links.forEach(link => {
           </div>
           <div class="bento__slot relative col-span-3 row-span-3 bg-orange-200/50 p-5 rounded-lg overflow-hidden hover:shadow-md">
             <div class="bento__slot-title flex text-orange-900 items-center gap-4">
-              <div class="text-lg font-semibold">Autocomplete engine</div>
+              <div class="text-lg font-semibold">Simple File System</div>
             </div>
             <div class="bento__slot-description mt-4 leading-relaxed">
               <div>
-                As you type, class names will be suggested automatically. The Tailwind CSS cheat sheet is right in your visual builder editor.
+                A virtual file system that helps organize your custom CSS and JavaScript files, functioning like a file manager for your Tailwind CSS project.
               </div>
             </div>
-            <img class="absolute sm:right-[-30px] sm:bottom-[-80px] rounded-lg sm:pt-0 pt-5" src="/img/pages/landing/feature-bento-autocomplete.jpg" alt="feature: autocomplete" />
+            <img class="absolute sm:right-[-80px] sm:bottom-[-20px] scale-150 rounded-lg sm:pt-0 pt-5" src="/img/pages/landing/feature-bento-simple-file-system.png" alt="feature: autocomplete" />
           </div>
           <div class="bento__slot relative col-span-6 row-span-3 bg-[rgba(242,198,222,0.5)] p-5 rounded-lg overflow-hidden hover:shadow-md">
             <div class="bento__slot-title flex text-orange-900 items-center gap-4">
@@ -295,9 +297,9 @@ page.value.hero.links.forEach(link => {
 
     </ULandingSection>
 
-    <ULandingSection v-for="(section, index) in page.sections" :key="index" :title="section.title" :description="section.description" :align="section.align" :features="section.features">
+    <!-- <ULandingSection v-for="(section, index) in page.sections" :key="index" :title="section.title" :description="section.description" :align="section.align" :features="section.features">
       <ImagePlaceholder />
-    </ULandingSection>
+    </ULandingSection> -->
 
     <ULandingSection :title="page.features.title" :description="page.features.description">
       <UPageGrid>
@@ -320,12 +322,13 @@ page.value.hero.links.forEach(link => {
           Tell us what you think about WindPress
         </a>
       </div>
-
     </ULandingSection>
 
-    <ULandingSection>
+    <!-- <ULandingSection>
       <ULandingCTA v-bind="page.cta" class="bg-gray-100/50 dark:bg-gray-800/50" />
-    </ULandingSection>
+    </ULandingSection> -->
+
+    <Pricing />
   </div>
 </template>
 

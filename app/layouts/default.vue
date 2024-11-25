@@ -17,7 +17,7 @@ const wp_v12 = ref({
     version: '3.0.x',
     active_installs: 0,
     donate_link: 'https://ko-fi.com/Q5Q75XSF7',
-    download_link: '/#pricing',
+    download_link: 'https://downloads.wordpress.org/plugin/windpress.zip',
 });
 
 onBeforeMount(() => {

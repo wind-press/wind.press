@@ -72,35 +72,38 @@ sections:
         size: md
         class: ml-8
 features:
-  title: Why choose our service?
-  description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+  title: Exclusive features
+  description: Some specific integrations provide a range of valuable features that enhance functionality
   items:
-    - title: Easy to use
-      description: Id laborum laboris duis nostrud excepteur ut velit nulla magna Lorem proident non.
-      icon: i-heroicons-cog
-    - title: Reliable
-      description: Magna Lorem ex cillum fugiat ad enim aute irure sit duis minim.
-      icon: i-heroicons-check
-    - title: Secure
-      description: Proident nostrud excepteur sint ut culpa consectetur aute adipisicing non anim ullamco.
-      icon: i-heroicons-lock-closed
-    - title: Fast
-      description: Qui reprehenderit nostrud dolore nisi ad fugiat labore eiusmod sint aliquip nisi voluptate.
-      icon: i-heroicons-rocket-launch
-    - title: Affordable
-      description: Reprehenderit fugiat elit in do ipsum ut pariatur.
-      icon: i-heroicons-currency-dollar
-    - title: Scalable
-      description: Lorem deserunt et eiusmod. Ea in consectetur minim officia ullamco enim deserunt est.
-      icon: i-heroicons-chart-bar
-cta:
-  title: Get started today
-  description: Nisi mollit id aliquip sunt est laborum sit sit.
-  links:
-    - label: Buy now
-      size: xl
-      color: black
-      to: /pricing
+    - title: Autocompletion
+      description: As you type, Tailwind CSS class names will be suggested automatically
+      icon: fa6-solid:list
+    - title: Variable Picker
+      description: Easily select colors, fonts, and other variables of the Tailwind CSS configuration from a panel
+      icon: fa6-solid:paint-roller
+    - title: HTML to native elements
+      description: Convert Tailwind CSS HTML to native elements in the editor
+      icon: fa6-brands:html5
+    - title: Ubiquitous Panel
+      description: A floating panel that allows you to quickly access the WindPress settings from anywhere on the page
+      icon: fa6-solid:street-view
+    - title: Sort the classes
+      description: Sort the Tailwind CSS classes on the input field based on the Tailwind CSS official recommendation
+      icon: fa6-solid:arrow-down-a-z
+    - title: Hover Preview the classes
+      description: Hover over the classes to see the complete outputted CSS and the preview of the design canvas
+      icon: fa6-solid:arrow-pointer
+# cta:
+#   title: 
+#   description:
+#   links:
+#     - label: Upgrade to Pro
+#       size: xl
+#       color: black
+#       to: /pricing
+# pricing:
+#   title: Pricing
+#   description: Your time and coffee are precious, so we created some generous pricing plans for you to choose from.
 visual_buildes:
   - name: Elementor
     url: '#'
