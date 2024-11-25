@@ -27,6 +27,7 @@
     "nuxt-content-assets": "^1.4.4",
     "nuxt-og-image": "^3.0.8",
     "nuxt-shiki": "^0.3.0",
+    "nuxt-svgo": "^4.0.9",
     "nuxt-umami": "^3.0.2",
     "sitemap": "^8.0.0"
   },

@@ -9,17 +9,23 @@ hero:
   #   to: https://ui.nuxt.com/pro
   #   icon: i-heroicons-arrow-top-right-on-square-20-solid
   links:
-    - label: Get started
-      to: '/signup'
-      size: xl
-      color: black
-      icon: i-heroicons-arrow-right-20-solid
-      trailing: true
-    - label: Use this template
-      icon: i-simple-icons-github
+    # - label: Get started
+    #   to: '/signup'
+    #   size: xl
+    #   color: black
+    #   icon: i-heroicons-arrow-right-20-solid
+    #   trailing: true
+    # - label: Use this template
+    #   icon: i-simple-icons-github
+    #   size: xl
+    #   color: gray
+    #   to: https://github.com/nuxt-ui-pro/saas
+    #   target: _blank
+    - label: Download now
+      icon: line-md:downloading
       size: xl
       color: gray
-      to: https://github.com/nuxt-ui-pro/saas
+      to: https://downloads.wordpress.org/plugin/windpress.zip
       target: _blank
 sections:
   - title: The power of our service
@@ -87,53 +93,6 @@ features:
     - title: Scalable
       description: Lorem deserunt et eiusmod. Ea in consectetur minim officia ullamco enim deserunt est.
       icon: i-heroicons-chart-bar
-testimonials:
-  headline: Testimonials
-  title: What our customers are saying.
-  description: Proident sunt exercitation minim laborum enim laboris labore esse.
-  items:
-    - quote: Nostrud tempor sunt fugiat. Dolor in sint dolore labore non occaecat adipisicing Lorem labore ullamco enim excepteur. In fugiat Lorem sit velit id veniam esse eiusmod non ea voluptate cupidatat reprehenderit ullamco dolore. Mollit laborum occaecat aliquip.
-      author:
-        name: Rose Roberson
-        description: CEO at Company
-        avatar:
-          src: https://i.pravatar.cc/120?img=1
-          loading: lazy
-    - quote: Eiusmod dolor aute ut nulla pariatur officia consequat aute amet exercitation.
-      author:
-        name: Chace Rodgers
-        description: CEO at Company
-        avatar:
-          src: https://i.pravatar.cc/120?img=7
-          loading: lazy
-    - quote: Id duis velit enim officia ad nisi incididunt magna ex dolor minim deserunt dolor. Esse incididunt cillum nostrud esse do quis amet labore amet nulla eiusmod amet nulla Lorem. Incididunt ex voluptate irure officia laboris ea proident est qui.
-      author:
-        name: Cornelius Sheppard
-        description: CEO at Company
-        avatar:
-          src: https://i.pravatar.cc/120?img=3
-          loading: lazy
-    - quote: Velit consectetur in adipisicing culpa eiusmod commodo eu ex dolore. Officia irure nisi dolor dolore velit fugiat. Aliqua sint aliqua aute elit eu sunt.
-      author:
-        name: Destinee Woods
-        description: CEO at Company
-        avatar:
-          src: https://i.pravatar.cc/120?img=5
-          loading: lazy
-    - quote: Proident quis deserunt qui ex exercitation veniam id Lorem est cupidatat ipsum irure aliquip ad.
-      author:
-        name: Kaleb Mccormick
-        description: CEO at Company
-        avatar:
-          src: https://i.pravatar.cc/120?img=8
-          loading: lazy
-    - quote: Magna officia quis ea ea in officia non voluptate ipsum culpa do labore sunt. Aute est dolore commodo sint officia ad laboris dolor magna aliquip exercitation tempor commodo.
-      author:
-        name: Jazmin Mccall
-        description: CEO at Company
-        avatar:
-          src: https://i.pravatar.cc/120?img=9
-          loading: lazy
 cta:
   title: Get started today
   description: Nisi mollit id aliquip sunt est laborum sit sit.
@@ -142,3 +101,223 @@ cta:
       size: xl
       color: black
       to: /pricing
+visual_buildes:
+  - name: Elementor
+    url: '#'
+    icon: builder-elementor.svg
+  - name: GeneratePress
+    url: '#'
+    icon: builder-generatepress.svg
+  - name: GreenShift
+    url: '#'
+    icon: img/pages/landing/builder-greenshift.png
+  - name: Gutenberg
+    url: '#'
+    icon: builder-gutenberg.svg
+  - name: Kadence WP
+    url: '#'
+    icon: builder-kadencewp.svg
+  - name: LiveCanvas
+    url: '#'
+    icon: img/pages/landing/builder-livecanvas.png
+  - name: Timber
+    url: '#'
+    icon: builder-timber.svg
+  - name: Plugins & Themes Dev
+    url: '#'
+    icon: builder-wordpress.svg
+  - name: Breakdance
+    url: '#'
+    icon: builder-breakdance.svg
+    pro: true
+  - name: Bricks
+    url: '#'
+    icon: builder-bricks.svg
+    pro: true
+  - name: Builderius
+    url: '#'
+    icon: builder-builderius.svg
+    pro: true
+  - name: Oxygen
+    url: '#'
+    icon: builder-oxygen.svg
+    pro: true
+testimonials:
+  headline: Testimonials
+  title: Wall of Loves
+  description: We created a product that not only works but also brings you joy. What do our happiest users have to say about WindPress?
+  items:
+    - quote_title: Easy Tailwind integration for your favorite builder
+      quote: Highly recommend to test this Plugin out, if you are working with Tailwind or looking for an easy integration with wordpress and your favorite builder.
+      author:
+        name: Sascha Hauser
+        avatar:
+          src: https://s.gravatar.com/avatar/1d100878daaa060f17844f3d1f7a0d38?s=100
+          loading: lazy
+        to: https://wordpress.org/support/topic/easy-tailwind-integration-for-your-favorite-builder/
+        target: _blank
+    - quote_title: Best Tailwind plugin on the market!
+      quote: So impressed with this plugin. I can vouch for the Bricks Builder version working perfectly when it comes to auto-complete and front-end rendering. But, that is not why I give this a 5/5. Josh, the author has been amazing with taking feedback and implementing changes. The support along with the plugin is amazing! I couldn't ask for a better tool to implement Tailwind into WordPress.
+      author:
+        name: Chris Seifert
+        description: Founder at Portseif.io
+        avatar:
+          src: https://s.gravatar.com/avatar/96edae3ebd1659914dffab9dfe29d81a?s=100
+          loading: lazy
+        to: https://wordpress.org/support/topic/best-tailwind-plugin-on-the-market/
+        target: _blank
+    - quote_title: Lightweight plugin easy to use
+      quote: The arrival of Windpress has simplified my work with Tailwind CSS in WordPress. Lightweight plugin, with extensive customization, easy to use and with features that I love such as compilation in the browser.
+      author:
+        name: Martin Ardanaz
+        avatar:
+          src: https://s.gravatar.com/avatar/5971592298d939bec0e9498bb998db50?s=100
+          loading: lazy
+        to: https://wordpress.org/support/topic/lightweight-plugin-easy-to-use/
+        target: _blank
+    - quote_title: Tailwind for wordpress!
+      quote: WindPress has pleasantly surprised me. Being able to tweak Tailwind CSS and compile in the same browser has streamlined my workflow in ways I didn't think possible. I don't know how I ever worked without this before!
+      author:
+        name: Daniel Maurel
+        avatar:
+          src: https://s.gravatar.com/avatar/d6832b181ad8c7e14a775ab149fa2a1d?s=100
+          loading: lazy
+        to: https://wordpress.org/support/topic/tailwind-for-wordpress/
+        target: _blank
+    - quote_title: A W E S O M E
+      quote: A great (and reliable!) way to use Tailwind inside various builders. I personally love the Bricks integration it's paid but totally worth it.
+      author:
+        name: Laurent Gaulhiac
+        description: Designer Web & Print at LauGau.com
+        avatar:
+          src: https://s.gravatar.com/avatar/90bac89bc1ef6badc596f90a02df25a7?s=100
+          loading: lazy
+        to: https://wordpress.org/support/topic/a-w-e-s-o-m-e-14/
+        target: _blank
+    - quote_title: Excelente integración de Tailwind con WordPress
+      quote: Estoy muy contento de que Joshua haya creado WindPress. Tal como menciona, es la primera integración de Tailwind 4 con WordPress, y debo decir que funciona de maravilla. Estoy comenzando a usarlo y, hasta ahora, la experiencia ha sido excelente. Además, el soporte que brindan es de primera clase.  Lo mejor de todo es que, con esta versión gratuita, espero que más personas se animen a adoptar Tailwind en sus proyectos de WordPress. ¡Totalmente recomendado!
+      author:
+        name: Angel Julian Mena
+        description: Owner at Solucionesabiertas.es
+        avatar:
+          src: https://s.gravatar.com/avatar/862747ad39a43ba17370e55e9532986b?s=100
+          loading: lazy
+        to: https://wordpress.org/support/topic/excelente-integracion-de-tailwind-con-wordpress/
+        target: _blank
+    - quote_title: Perfecto
+      quote: Va muy bien la versión Yabe Siul. Supongo que esta nueva versión irá aún mejor.
+      author:
+        name: Luis Muñoz
+        description: Director at Empacke.com
+        avatar:
+          src: https://s.gravatar.com/avatar/069181941142b29542d1e4532b139b05?s=100
+          loading: lazy
+        to: https://wordpress.org/support/topic/perfecto-433/
+        target: _blank
+    - quote_title: Best Tailwind WP plugin
+      quote: I'm really happy to find this plugin because my development is so much easier with that. I highly recommend!
+      author:
+        name: gyurci
+        avatar:
+          src: https://s.gravatar.com/avatar/9c325f8217af225e60a423f03f6e7f71?s=100
+          loading: lazy
+        to: https://wordpress.org/support/topic/best-tailwind-wp-plugin/
+        target: _blank
+    - quote_title: WordPress themes with Tailwind
+      quote: You can create custom WordPress sites using Tailwind's utility classes. Even though it's powerful, it got a learning curve for those who aren't familiar with it. I hope the documentation arrives soon.
+      author:
+        name: Berhan Turk
+        avatar:
+          src: https://s.gravatar.com/avatar/c52fe0fbfdb812f66d89f49973a63a0f?s=100
+          loading: lazy
+        to: https://wordpress.org/support/topic/wordpress-themes-with-tailwind/
+        target: _blank
+    - quote_title: Awesome Plugin For Tailwind in WordPress
+      quote: Just install it & you will never regret it. Happy Making
+      author:
+        name: Rishi Mehra
+        avatar:
+          src: https://s.gravatar.com/avatar/1ddfb158b46e7fdd9c71230265024b54?s=100
+          loading: lazy
+        to: https://wordpress.org/support/topic/awesome-plugin-for-tailwind-in-wordpress/
+        target: _blank
+    - quote: WindPress, crafted by Joshua, has simplified my Tailwind CSS work with its browser-based compilation, blending ease with flexibility. Joshua's responsive support enriches this seamless experience, making development feel personal and efficient.
+      author:
+        name: Daniel Snell
+        description: Founder at broke.dev
+        avatar:
+          src: https://s.gravatar.com/avatar/c62179cf3cb331ccd7504e321ed8b0e0?s=100
+          loading: lazy
+    - quote_title: Easy and quick setup of Tailwind CSS
+      quote: Just installed it and seeing it is available for a lot of builders, constantly upgraded with new features. Looks very good!
+      author:
+        name: kingsizebeatz
+        avatar:
+          src: https://s.gravatar.com/avatar/136cb690b23a90244a4f62fbfdac637b?s=100
+          loading: lazy
+        to: https://wordpress.org/support/topic/easy-and-quick-setup-of-tailwind-css/
+        target: _blank
+    - quote_title: the best out there!
+      quote: It help you add tailwind to wordpress without hussle, easy and simple! I recommend to everyone!
+      author:
+        name: yammy
+        avatar:
+          src: https://s.gravatar.com/avatar/45a2bfc89efde7b3c4505b69e097492f?s=100
+          loading: lazy
+        to: https://wordpress.org/support/topic/the-best-out-there-50/
+        target: _blank
+    - quote_title: Great plugin
+      quote: If you're looking to integrate Tailwind CSS with WordPress, Windpress is the solution you need.
+      author:
+        name: jade7700
+        avatar:
+          src: https://s.gravatar.com/avatar/054277acf9d9af7e4a8a4ee25e8f41b7?s=100
+          loading: lazy
+        to: https://wordpress.org/support/topic/great-plugin-39591/
+        target: _blank
+    - quote_title: Greet plugins
+      quote: good plugin for tailwind. thanks for joshua for this awesome plugins
+      author:
+        name: zoanphuong
+        avatar:
+          src: https://s.gravatar.com/avatar/de2110ed5f7c15ce1604c139f01ba671?s=100
+          loading: lazy
+        to: https://wordpress.org/support/topic/greet-plugins/
+        target: _blank
+    - quote_title: A Tailwind Plugin That Shines with Bricks Builder
+      quote: WindPress has been a fantastic tool in my design process with Bricks Builder. The plugin integrates smoothly, making it effortless to apply Tailwind CSS within Bricks, allowing for rapid customization without sacrificing design quality or responsiveness. Even though I primarily use Bricks, it's worth mentioning that WindPress works equally well with many other site builders. Its flexibility across platforms makes it a solid choice for anyone looking to streamline their Tailwind workflow. If you're using Bricks or any other builder and want a reliable way to implement Tailwind, WindPress is definitely worth it!
+      author:
+        name: Jornes
+        avatar:
+          src: https://s.gravatar.com/avatar/c50019fc8f94c5bbe0d1c70a55c19e8e?s=100
+          loading: lazy
+        to: https://wordpress.org/support/topic/windpress-review-a-tailwind-plugin-that-shines-with-bricks-builder/
+        target: _blank
+    - quote_title: Great works
+      quote: Easy to use Integrate with many page builders
+      author:
+        name: imjlk
+        avatar:
+          src: https://s.gravatar.com/avatar/a90024cfba5d2cc4b13e252379350164?s=100
+          loading: lazy
+        to: https://wordpress.org/support/topic/great-works-26/
+        target: _blank
+    - quote_title: Melhor plugin para Tailwind no WP
+      quote: Torna fácil a integração do Tailwind no WP e isso já o torna sensacional
+      author:
+        name: liiverodrigues
+        avatar:
+          src: https://s.gravatar.com/avatar/3a683a50a402ea16b2a6d875e4b94d23?s=100
+          loading: lazy
+        to: https://wordpress.org/support/topic/melhor-plugin-para-tailwind-no-wp/
+        target: _blank
+    # - quote_title: 
+    #   quote: 
+    #   author:
+    #     name: 
+    #     description: 
+    #     avatar:
+    #       src: 
+    #       loading: lazy
+    #     to: 
+    #     target: _blank

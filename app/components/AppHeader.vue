@@ -2,7 +2,9 @@
 import type { NavItem } from '@nuxt/content'
 import Logo from './Logo.vue';
 
-const navigation = inject<Ref<NavItem[]>>('navigation', ref([]))
+const navigation = inject<Ref<NavItem[]>>('navigation', ref([]));
+
+const wp_v12 = inject<Ref<{ version: string; active_installs: number; donate_link: string; download_link: string }>>('wp_v12', ref({ version: '', active_installs: 0, donate_link: '', download_link: '' }));
 
 const links = [
   {
@@ -34,8 +36,7 @@ const links = [
     <template #logo>
       <Logo class="w-auto h-6 fill-black dark:fill-white self-center" />
       WindPress
-      <UBadge label="Draft" variant="subtle" class="mb-0.5" />
-      <!-- <UBadge label="SaaS" variant="subtle" class="mb-0.5" /> -->
+      <UBadge :label="`v${wp_v12.version}`" variant="subtle" class="mb-0.5" />
     </template>
 
     <template #right>

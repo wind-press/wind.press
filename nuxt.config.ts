@@ -11,7 +11,7 @@ export default defineNuxtConfig({
 
     extends: ['@nuxt/ui-pro'],
 
-    modules: ['@nuxt/content', '@nuxt/ui', '@nuxt/image', 'nuxt-umami', '@nuxt/fonts', '@nuxt/eslint', '@nuxthq/studio', '@nuxtjs/tailwindcss', 'nuxt-shiki', '@nuxt/icon', '@vueuse/nuxt', 'nuxt-og-image', '@nuxtjs/seo'],
+    modules: ['@nuxt/content', '@nuxt/ui', '@nuxt/image', 'nuxt-umami', '@nuxt/fonts', '@nuxt/eslint', '@nuxthq/studio', '@nuxtjs/tailwindcss', 'nuxt-shiki', '@nuxt/icon', '@vueuse/nuxt', 'nuxt-og-image', '@nuxtjs/seo', 'nuxt-svgo'],
 
     hooks: {
         // Define `@nuxt/ui` components as global to use them in `.md` (feel free to add those you need)
