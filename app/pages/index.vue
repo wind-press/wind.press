@@ -16,6 +16,9 @@ useSeoMeta({
   description: page.value.description,
   ogDescription: page.value.description
 });
+definePageMeta({
+  heroBackground: 'z-10'
+});
 
 page.value.hero.links.forEach(link => {
   if (link.to === 'https://downloads.wordpress.org/plugin/windpress.zip') {

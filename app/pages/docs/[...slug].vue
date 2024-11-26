@@ -50,8 +50,8 @@ const communityLinks = computed(() => [{
   target: '_blank'
 }, {
   icon: 'i-ph-chat-centered-text',
-  label: 'Chat on Discord',
-  to: '/go/discord',
+  label: 'Discussions',
+  to: 'https://github.com/wind-press/windpress/discussions',
   target: '_blank'
 }, {
   icon: 'i-ph-hand-heart',
@@ -80,6 +80,9 @@ const communityLinks = computed(() => [{
             <UDivider v-if="page.body?.toc?.links?.length" type="dashed" />
 
             <UPageLinks title="Community" :links="communityLinks" />
+
+            <UDivider type="dashed" />
+            <SocialLinks />
 
             <Ads />
           </div>

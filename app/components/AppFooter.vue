@@ -64,21 +64,23 @@ function onSubmit() {
                 <template #trailing>
                   <UButton type="submit" size="xs" color="primary" :label="loading ? 'Subscribing' : 'Subscribe'" :loading="loading" disabled />
                 </template>
-</UInput>
-</UFormGroup>
-</form>
-</template>
-</UFooterColumns>
-</template> -->
+              </UInput>
+            </UFormGroup>
+          </form>
+        </template>
+      </UFooterColumns>
+    </template> -->
 
     <template #left>
       <p class="text-gray-500 dark:text-gray-400 text-base flex flex-row gap-1 items-center" title="Made with hundred cups of coffee in Indonesia">
-        Made with hundred <UIcon name="fa6-solid:mug-hot" /> of <UIcon name="ph:coffee-bean-fill" /> in <span class="font-bold">Indonesia</span>
+        Made with hundred
+        <UIcon name="fa6-solid:mug-hot" class="mx-0.5" /> of
+        <UIcon name="ph:coffee-bean-fill" /> in <span class="font-bold">Indonesia</span>
       </p>
     </template>
 
     <template #right>
-      <UColorModeButton size="sm" />
+      <!-- <UColorModeButton size="sm" /> -->
       <!-- <UButton aria-label="WindPress on X" to="/go/x" target="_blank" icon="i-simple-icons-x" v-bind="($ui.button.secondary as any)" /> -->
       <UButton aria-label="WindPress on Facebook" to="/go/facebook" target="_blank" icon="i-simple-icons-facebook" v-bind="($ui.button.secondary as any)" />
       <UButton aria-label="WindPress on Discord" to="/go/discord" target="_blank" icon="i-simple-icons-discord" v-bind="($ui.button.secondary as any)" />

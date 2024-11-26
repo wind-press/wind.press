@@ -21,6 +21,7 @@
     "@nuxtjs/tailwindcss": "6.13.0-20241028-183114-4a05009",
     "@shikijs/transformers": "^1.23.1",
     "@vueuse/nuxt": "^11.3.0",
+    "feed": "^4.2.2",
     "glob": "^11.0.0",
     "lightgallery": "^2.8.1",
     "nuxt": "^3.14.1592",

@@ -28,6 +28,7 @@ export default defineNuxtConfig({
                 '/',
                 '/docs',
                 // '/sitemap.xml', // Temp while waiting for hosting on Nuxt Hub
+                // '/blog/rss.xml', // Temp while waiting for hosting on Nuxt Hub
                 ...globSync('./content/**/*.md*')
                     .map(path => path
                         .slice(7, -3)
@@ -47,6 +48,8 @@ export default defineNuxtConfig({
 
     routeRules: {
         '/api/search.json': { prerender: true },
+        // '/blog/rss.xml': { prerender: true },
+        // '/sitemap.xml': { prerender: true },
         '/docs': { redirect: '/docs/getting-started', prerender: false },
         '/go': { redirect: '/', prerender: false },
 

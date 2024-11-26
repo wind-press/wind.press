@@ -17,6 +17,9 @@ useSeoMeta({
   description: page.value.description,
   ogDescription: page.value.description
 })
+definePageMeta({
+  heroBackground: 'opacity-70 -z-10'
+})
 
 defineOgImage({
   component: 'Saas',
@@ -43,7 +46,7 @@ defineOgImage({
           :image="post.image"
           :date="new Date(post.date).toLocaleDateString('en', { year: 'numeric', month: 'short', day: 'numeric' })"
           :authors="post.authors"
-          :badge="post.badge"
+          :badge="{ label: post.category ?? 'Uncategorized' }"
           :orientation="index === 0 ? 'horizontal' : 'vertical'"
           :class="[index === 0 && 'col-span-full']"
           :ui="{

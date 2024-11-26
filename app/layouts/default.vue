@@ -20,6 +20,13 @@ const wp_v12 = ref({
     download_link: 'https://downloads.wordpress.org/plugin/windpress.zip',
 });
 
+
+const route = useRoute()
+const heroBackgroundClass = computed(() => route.meta?.heroBackground || '')
+const { isLoading } = useLoadingIndicator()
+const appear = ref(false)
+const appeared = ref(false)
+
 onBeforeMount(() => {
     fetch('https://rosua.org/wp-json/rosua-edd/v1/stats/total_users')
         .then(res => res.json())
@@ -37,7 +44,7 @@ onBeforeMount(() => {
             const downloadWindPress = res.find(item => item.download_id === 2250);
             edd.value.activeSites += downloadWindPress.count_sites;
             edd.value.totalDownloads += downloadWindPress.count_sites;
-            
+
             // search array of object with download_id = 3591 (Yabe Siul)
             const downloadYabeSiul = res.find(item => item.download_id === 3591);
             edd.value.activeSites += downloadYabeSiul.count_sites;
@@ -61,6 +68,15 @@ onBeforeMount(() => {
         });
 });
 
+onMounted(() => {
+    setTimeout(() => {
+        appear.value = true
+        setTimeout(() => {
+            appeared.value = true
+        }, 1000)
+    }, 0)
+})
+
 provide('navigation', navigation);
 provide('wp_v10', wp_v10);
 provide('wp_v12', wp_v12);
@@ -68,17 +84,22 @@ provide('edd', edd);
 </script>
 
 <template>
-  <div>
-    <AppHeader />
+    <div>
+        <AppHeader />
 
-    <UMain>
-      <slot />
-    </UMain>
+        <UMain class="relative">
+            <HeroBackground class="absolute w-full top-[1px] transition-all text-primary flex-shrink-0" :class="[
+                isLoading ? 'animate-pulse' : (appear ? 'opacity-100' : 'opacity-0'),
+                appeared ? 'duration-[400ms]' : 'duration-1000',
+                heroBackgroundClass
+            ]" />
+            <slot />
+        </UMain>
 
-    <AppFooter />
+        <AppFooter />
 
-    <ClientOnly>
-      <LazyUContentSearch :files="files" :navigation="navigation" />
-    </ClientOnly>
-  </div>
+        <ClientOnly>
+            <LazyUContentSearch :files="files" :navigation="navigation" />
+        </ClientOnly>
+    </div>
 </template>

@@ -6,6 +6,8 @@ const navigation = inject<Ref<NavItem[]>>('navigation', ref([]));
 
 const wp_v12 = inject<Ref<{ version: string; active_installs: number; donate_link: string; download_link: string }>>('wp_v12', ref({ version: '', active_installs: 0, donate_link: '', download_link: '' }));
 
+const { metaSymbol } = useShortcuts();
+
 const links = [
   {
     label: 'Home',
@@ -40,6 +42,15 @@ const links = [
     </template>
 
     <template #right>
+
+      <UTooltip text="Search" :shortcuts="[metaSymbol, 'K']">
+        <UContentSearchButton :label="null" />
+      </UTooltip>
+
+      <UTooltip :text="$colorMode.preference === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'">
+        <UColorModeButton />
+      </UTooltip>
+
       <UButton label="Get WindPress" color="gray" to="https://wordpress.org/plugins/windpress/" target="_blank" />
       <!-- <UButton label="Sign in" color="gray" to="/login" /> -->
       <!-- <UButton label="Sign up" icon="i-heroicons-arrow-right-20-solid" trailing color="black" to="/signup" class="hidden lg:flex" /> -->
