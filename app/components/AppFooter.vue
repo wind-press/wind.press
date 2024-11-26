@@ -64,16 +64,16 @@ function onSubmit() {
                 <template #trailing>
                   <UButton type="submit" size="xs" color="primary" :label="loading ? 'Subscribing' : 'Subscribe'" :loading="loading" disabled />
                 </template>
-              </UInput>
-            </UFormGroup>
-          </form>
-        </template>
-      </UFooterColumns>
-    </template> -->
+</UInput>
+</UFormGroup>
+</form>
+</template>
+</UFooterColumns>
+</template> -->
 
     <template #left>
-      <p class="text-gray-500 dark:text-gray-400 text-sm">
-        Copyright © {{ new Date().getFullYear() }}. WindPress
+      <p class="text-gray-500 dark:text-gray-400 text-base flex flex-row gap-1 items-center" title="Made with hundred cups of coffee in Indonesia">
+        Made with hundred <UIcon name="fa6-solid:mug-hot" /> of <UIcon name="ph:coffee-bean-fill" /> in <span class="font-bold">Indonesia</span>
       </p>
     </template>
 

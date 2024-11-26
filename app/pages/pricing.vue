@@ -61,10 +61,26 @@ const config = computed(() => {
 
 const { ui, attrs } = useUI('pricing.card', ref({}), config, ref(''), true)
 const isOnetime = ref(false)
+
+page.value.plans.forEach((plan) => {
+  if (typeof plan.button?.to === 'object') {
+    plan.button._to = plan.button.to;
+    plan.button.to = plan.button._to[isOnetime.value ? 'onetime' : 'year'];
+  }
+})
+
+watch(isOnetime, (value) => {
+  page.value.plans.forEach((plan) => {
+    if (plan.button?._to) {
+      plan.button.to = plan.button._to[isOnetime.value ? 'onetime' : 'year'];
+    }
+  })
+}, { immediate: true })
+
 </script>
 
 <template>
-  <div v-if="page">
+  <div v-if="page" id="pricing">
     <UPageHero v-bind="page.hero">
       <template #links>
         <UPricingToggle v-model="isOnetime" left="Yearly" right="One-time" class="w-48" />
@@ -79,7 +95,9 @@ const isOnetime = ref(false)
               <li v-for="(offer, index) of plan.features" :key="index" :class="ui.features.item.base">
                 <template v-if="typeof offer === 'object'">
                   <UIcon :name="offer.icon_name" :class="offer.icon_class ?? ui.features.item.icon.base" />
-                  <span :class="offer.label_class ?? ui.features.item.label">{{ offer.label_text }}</span>
+                  <span :class="offer.label_class ?? ui.features.item.label">
+                    {{ typeof offer.label_text === 'object' ? offer.label_text[isOnetime ? 'onetime' : 'year'] : offer.label_text }}
+                  </span>
                 </template>
                 <template v-else>
                   <UIcon :name="ui.features.item.icon.name" :class="ui.features.item.icon.base" />
@@ -88,20 +106,6 @@ const isOnetime = ref(false)
               </li>
             </ul>
           </template>
-          <!-- <template #features>
-            <ul v-if="plan.features?.length" :class="ui.features.horizontal">
-              <li v-for="(offer, index) of features" :key="index" :class="ui.features.item.base">
-                <template v-if="typeof offer === 'object'">
-                  <UIcon :name="offer.icon" :class="ui.features.item.icon.base" />
-                  <span :class="ui.features.item.label">{{ offer.label }}</span>
-                </template>
-                <template v-else>
-                  <UIcon :name="ui.features.item.icon.name" :class="ui.features.item.icon.base" />
-                  <span :class="ui.features.item.label">{{ offer }}</span>
-                </template>
-              </li>
-            </ul>
-          </template> -->
         </UPricingCard>
 
       </UPricingGrid>
@@ -120,18 +124,8 @@ const isOnetime = ref(false)
     </ULandingSection> 
     -->
 
-    
-    <ULandingSection
-      :title="page.faq.title"
-      :description="page.faq.description"
-    >
-      <ULandingFAQ
-        :items="page.faq.items"
-        multiple
-        default-open
-        class="max-w-4xl mx-auto"
-      />
+    <ULandingSection :title="page.faq.title" :description="page.faq.description">
+      <ULandingFAQ :items="page.faq.items" multiple default-open class="max-w-4xl mx-auto" />
     </ULandingSection>
-   
   </div>
 </template>

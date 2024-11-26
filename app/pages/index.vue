@@ -323,13 +323,9 @@ page.value.hero.links.forEach(link => {
         </a>
       </div>
     </ULandingSection>
-
-    <!-- <ULandingSection>
-      <ULandingCTA v-bind="page.cta" class="bg-gray-100/50 dark:bg-gray-800/50" />
-    </ULandingSection> -->
-
-    <Pricing />
   </div>
+
+  <Pricing />
 </template>
 
 <style scoped>

@@ -38,8 +38,11 @@ plans:
       year: $29
     align: top
     button:
-      label: Get Started
-      color: black
+      label: Buy now
+      color: white
+      to:
+        onetime: https://rosua.org/checkout/?edd_action=add_to_cart&download_id=2250&edd_options[price_id]=3
+        year: https://rosua.org/checkout/?edd_action=add_to_cart&download_id=2250&edd_options[price_id]=1
     features:
       - icon_name: fa6-solid:check
         label_text: All features
@@ -54,7 +57,9 @@ plans:
       - icon_name: fa6-solid:arrows-rotate
         label_text: Free updates
       - icon_name: fa6-solid:headset
-        label_text: Standard support
+        label_text:
+          onetime: Standard support (first year)
+          year: Standard support
   - title: Agency
     description: Perfect For Agency Owners with high volume.
     price:
@@ -63,8 +68,11 @@ plans:
     highlight: true
     align: top
     button:
-      label: Get Started
-      color: white
+      label: Buy now
+      color: primary
+      to:
+        onetime: https://rosua.org/checkout/?edd_action=add_to_cart&download_id=2250&edd_options[price_id]=4
+        year: https://rosua.org/checkout/?edd_action=add_to_cart&download_id=2250&edd_options[price_id]=2
     features:
       - icon_name: fa6-solid:check
         label_text: All features
@@ -77,7 +85,9 @@ plans:
       - icon_name: fa6-solid:arrows-rotate
         label_text: Free updates
       - icon_name: fa6-solid:headset
-        label_text: Standard support
+        label_text:
+          onetime: Standard support (first year)
+          year: Standard support
 logos:
   title: Trusted by the world's best
   icons:
