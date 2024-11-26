@@ -1,5 +1,5 @@
-title: Nuxt UI Pro - SaaS template
-description: Nuxt UI Pro is a collection of premium Vue components built on top of Nuxt UI to create beautiful & responsive Nuxt applications in minutes.
+title: Tailwind CSS integration for WordPress - WindPress
+description: Integrate Tailwind CSS into WordPress seamlessly, in seconds. Works well with the block editor, page builders, plugins, themes, and custom code.
 navigation: false
 hero:
   title: The Tailwind CSS integration for WordPress
@@ -106,43 +106,43 @@ features:
 #   description: Your time and coffee are precious, so we created some generous pricing plans for you to choose from.
 visual_buildes:
   - name: Elementor
-    url: '#'
+    # url: '#'
     icon: builder-elementor.svg
   - name: GeneratePress
-    url: '#'
+    # url: '#'
     icon: builder-generatepress.svg
   - name: GreenShift
-    url: '#'
+    # url: '#'
     icon: img/pages/landing/builder-greenshift.png
   - name: Gutenberg
-    url: '#'
+    url: '/docs/integrations/gutenberg'
     icon: builder-gutenberg.svg
   - name: Kadence WP
-    url: '#'
+    # url: '#'
     icon: builder-kadencewp.svg
   - name: LiveCanvas
-    url: '#'
+    url: '/docs/integrations/livecanvas'
     icon: img/pages/landing/builder-livecanvas.png
   - name: Timber
-    url: '#'
+    # url: '#'
     icon: builder-timber.svg
   - name: Plugins & Themes Dev
-    url: '#'
+    url: '/docs/integrations/custom-theme'
     icon: builder-wordpress.svg
   - name: Breakdance
-    url: '#'
+    url: '/docs/integrations/breakdance'
     icon: builder-breakdance.svg
     pro: true
   - name: Bricks
-    url: '#'
+    url: '/docs/integrations/bricks'
     icon: builder-bricks.svg
     pro: true
   - name: Builderius
-    url: '#'
+    url: '/docs/integrations/builderius'
     icon: builder-builderius.svg
     pro: true
   - name: Oxygen
-    url: '#'
+    url: '/docs/integrations/oxygen'
     icon: builder-oxygen.svg
     pro: true
 testimonials:

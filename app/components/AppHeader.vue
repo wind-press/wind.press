@@ -16,18 +16,18 @@ const links = [
     to: '/docs'
   },
   {
-    label: 'Account',
-    to: 'https://rosua.org/checkout/order-history',
-    target: '_blank'
+    label: 'Blog',
+    to: '/blog'
   },
   // {
   //   label: 'Pricing',
   //   to: '/pricing'
   // },
-  // {
-  //   label: 'Blog',
-  //   to: '/blog'
-  // }
+  {
+    label: 'Account',
+    to: 'https://rosua.org/checkout/order-history',
+    target: '_blank'
+  },
 ]
 </script>
 

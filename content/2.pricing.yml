@@ -98,18 +98,24 @@ logos:
     - i-simple-icons-cloudflare
 faq:
   title: Frequently asked questions
-  description: Culpa consectetur dolor pariatur commodo aliqua amet tempor nisi enim deserunt elit cillum.
+  description: Here are some of our most frequently asked questions. If you have a question that isn't answered here, please reach out to us.
   items:
-    - label: Is this a secure service?
-      content: Qui sunt nostrud aliquip reprehenderit enim proident veniam magna aliquip velit occaecat eiusmod nisi deserunt sunt.
+    - label: Which version of Tailwind CSS is supported by WindPress?
+      content: WindPress supports both Tailwind CSS versions 3 and 4 and will receive regular updates to support the latest version.
       defaultOpen: true
-    - label: How can I cancel my subscription?
-      content: Consectetur irure Lorem nostrud adipisicing aliqua mollit Lorem sit officia magna eiusmod cupidatat.
-    - label: How does the free trial work?
-      content: Quis officia commodo magna eu qui aliquip duis.
-    - label: Can I switch plans later?
-      content: Dolore irure ullamco dolore eu occaecat magna eiusmod dolor aliqua culpa labore.
+    - label: Is WindPress support the Tailwind CSS plugins?
+      content: Yes, WindPress supports Tailwind CSS plugins. You can add the plugins in the tailwind.config.js file editor. The Tailwind CSS plugins will be loaded from the esm.sh CDN.
+    - label: Do I need an internet connection to use WindPress?
+      content: No, by default, you do not need an internet connection to use WindPress. However, an internet connection is required to load the Tailwind CSS plugins from the CDN.
+    - label: What themes is WindPress compatible with?
+      content: WindPress is compatible with any WordPress theme. A small adjustment may be needed for the compiler scanner to detect the used classes in the theme. We have a guide on how to make the adjustment, check the documentation.
+    - label: Do you offer a discount for students?
+      content: Yes, we offer a 50% discount for students. Please contact us with your student ID to get the discount.
+    - label: Can I upgrade my plan later?
+      content: Yes, you can upgrade your plan at any time by paying the difference between the two plans. Please contact us if you need help with upgrading your plan.
+    - label: Can I use WindPress for my client's website?
+      content: Yes, you can use WindPress for your client's website with the Starter and Agency plans. The Personal plan is for personal use only.
+    - label: Can I cancel my subscription?
+      content: Yes, you can cancel your subscription at any time. Your subscription will remain active until the end of the billing cycle.
     - label: Do you offer refunds?
-      content: Duis mollit nostrud voluptate mollit Lorem dolore commodo veniam incididunt eiusmod.
-    - label: Do you offer support?
-      content: Aliqua sit nisi consequat pariatur Lorem minim irure qui.
+      content: Yes, we offer a 14-day money-back guarantee. If you are not satisfied with WindPress, please contact us within 14 days of purchase for a full refund. We may ask for feedback to improve our product. Renewals are not eligible for refunds, you can cancel your subscription before the renewal date to avoid being charged.

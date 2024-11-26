@@ -136,7 +136,8 @@ page.value.hero.links.forEach(link => {
             <Icon name="fa6-brands:wordpress" />
           </div>
           <div class="text-xs text-left">
-            <strong>{{ edd.totalDownloads }}+ Download</strong> & Counting
+            <strong>{{ edd.totalDownloads }}+ Download</strong>
+            <br> & Counting
           </div>
         </div>
       </div>
@@ -163,10 +164,10 @@ page.value.hero.links.forEach(link => {
           </p>
         </div>
 
-        <div class="bento flex flex-col sm:grid sm:grid-cols-12 sm:grid-rows-12 gap-4 w-full my-16 dark:*:bg-gray-800/50 dark:[&_.bento\_\_slot-title]:text-white">
+        <div class="bento flex flex-col sm:grid sm:grid-cols-12 sm:grid-rows-12 gap-4 w-full mt-16 dark:*:bg-gray-800/50 dark:[&_.bento\_\_slot-title]:text-white">
           <div class="bento__slot relative col-span-12 row-span-3 bg-gray-200/50 p-5 rounded-lg overflow-hidden hover:shadow-md">
             <div class="bento__slot-title flex text-gray-900 items-center gap-4">
-              <a href="#/guides/configuration/wizard/">
+              <a>
                 <div class="text-lg font-semibold">
                   The Wizard <span class="font-light">(In development)</span>
                 </div>
@@ -181,9 +182,11 @@ page.value.hero.links.forEach(link => {
           </div>
           <div class="bento__slot relative col-span-3 row-span-3 bg-lime-700/10 p-5 rounded-lg overflow-hidden hover:shadow-md">
             <div class="bento__slot-title flex text-lime-900 items-center gap-4">
-              <div class="text-lg font-semibold">
-                Tailwind CSS version 3.x and 4.x ready
-              </div>
+              <a href="/docs/configuration/tailwind-version">
+                <div class="text-lg font-semibold">
+                  Tailwind CSS version 3.x and 4.x ready
+                </div>
+              </a>
             </div>
             <div class="bento__slot-description mt-4 leading-relaxed">
               <div>
@@ -221,7 +224,7 @@ page.value.hero.links.forEach(link => {
           </div>
           <div class="bento__slot relative col-span-3 row-span-3 bg-indigo-200/50 p-5 rounded-lg overflow-hidden hover:shadow-md">
             <div class="bento__slot-title flex text-indigo-900 items-center gap-4">
-              <a href="#/guides/configuration/preset-js/">
+              <a href="/docs/configuration/file-main-css">
                 <div class="text-lg font-semibold">
                   Zero configuration yet fully customizable
                 </div>
@@ -237,7 +240,7 @@ page.value.hero.links.forEach(link => {
 
           <div class="bento__slot relative col-span-3 row-span-6 bg-yellow-700/10 p-5 rounded-lg overflow-hidden hover:shadow-md">
             <div class="bento__slot-title flex text-yellow-900 items-center gap-4">
-              <a href="#/guides/common/production/">
+              <a href="/docs/advanced/cache#production">
                 <div class="text-lg font-semibold">
                   Compile in the browser; No server is required
                 </div>
@@ -267,18 +270,20 @@ page.value.hero.links.forEach(link => {
           </div>
           <div class="bento__slot relative col-span-3 row-span-3 bg-orange-200/50 p-5 rounded-lg overflow-hidden hover:shadow-md">
             <div class="bento__slot-title flex text-orange-900 items-center gap-4">
-              <div class="text-lg font-semibold">Simple File System</div>
+              <a href="/docs/advanced/simple-file-system">
+                <div class="text-lg font-semibold">Simple File System</div>
+              </a>
             </div>
             <div class="bento__slot-description mt-4 leading-relaxed">
               <div>
                 A virtual file system that helps organize your custom CSS and JavaScript files, functioning like a file manager for your Tailwind CSS project.
               </div>
             </div>
-            <img class="absolute sm:right-[-80px] sm:bottom-[-20px] scale-150 rounded-lg sm:pt-0 pt-5" src="/img/pages/landing/feature-bento-simple-file-system.png" alt="feature: autocomplete" />
+            <img class="absolute hidden sm:block sm:right-[-80px] sm:bottom-[-20px] scale-150 rounded-lg sm:pt-0 pt-5" src="/img/pages/landing/feature-bento-simple-file-system.png" alt="feature: autocomplete" />
           </div>
           <div class="bento__slot relative col-span-6 row-span-3 bg-[rgba(242,198,222,0.5)] p-5 rounded-lg overflow-hidden hover:shadow-md">
             <div class="bento__slot-title flex text-orange-900 items-center gap-4">
-              <a href="#/guides/configuration/preset-js/#javascript-package">
+              <a href="/docs/configuration/file-tailwind-config-js/#javascript-package">
                 <div class="text-lg font-semibold">JavaScript package support</div>
               </a>
             </div>

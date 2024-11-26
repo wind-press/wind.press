@@ -6,6 +6,10 @@ if (!page.value) {
   throw createError({ statusCode: 404, statusMessage: 'Page not found', fatal: true })
 }
 
+const wp_v12 = inject<Ref<{ version: string; active_installs: number; donate_link: string; download_link: string }>>('wp_v12', ref({ version: '', active_installs: 0, donate_link: '', download_link: 'https://downloads.wordpress.org/plugin/windpress.zip' }));
+const edd = inject<Ref<{ happyCustomers: number; activeSites: number; totalDownloads: number }>>('edd', ref({ happyCustomers: 0, activeSites: 0, totalDownloads: 0 }));
+
+
 const appConfig = useAppConfig()
 
 const config = computed(() => {
@@ -111,6 +115,51 @@ watch(isOnetime, (value) => {
       </UPricingGrid>
     </UContainer>
 
+    <ULandingSection class="py-8 sm:py-16 lg:py-24">
+      <div class="badges__list grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 *:ring-1 *:ring-gray-200 dark:*:ring-gray-800 *:bg-gray-100/50 dark:*:bg-gray-800/50">
+        <div class="badges__item text-center">
+          <div class="text-2xl flex items-center">
+            <Icon name="ri:exchange-dollar-fill" class="text-[#29b077]" />
+          </div>
+          <div class="text-xs text-left">
+            <strong>14-day Money</strong>
+            <br> Back Guarantee
+          </div>
+        </div>
+
+        <div class="badges__item">
+          <div class="text-2xl flex items-center">
+            <Icon name="fa6-solid:headset" />
+          </div>
+          <div class="text-xs text-left">
+            <div class="flex text-[#feb82c] mb-1">
+              <Icon v-for="i in 5" name="fa6-solid:star" />
+            </div>
+            <strong>Support</strong> Quality
+          </div>
+        </div>
+
+        <div class="badges__item">
+          <div class="text-2xl flex items-center text-rose-600">
+            <Icon name="fa6-solid:face-smile" />
+          </div>
+          <div class="text-xs text-left">
+            <strong>{{ edd.happyCustomers + wp_v12.active_installs }}+ Happy</strong>
+            Users
+          </div>
+        </div>
+
+        <div class="badges__item">
+          <div class="text-2xl flex items-center text-[#4e6fc3]">
+            <Icon name="fa6-brands:wordpress" />
+          </div>
+          <div class="text-xs text-left">
+            <strong>{{ edd.activeSites }}+ Active</strong> Sites
+          </div>
+        </div>
+      </div>
+    </ULandingSection>
+
     <!-- 
     <ULandingSection>
       <ULandingLogos>
@@ -125,7 +174,29 @@ watch(isOnetime, (value) => {
     -->
 
     <ULandingSection :title="page.faq.title" :description="page.faq.description">
-      <ULandingFAQ :items="page.faq.items" multiple default-open class="max-w-4xl mx-auto" />
+      <ULandingFAQ :items="page.faq.items" multiple class="max-w-4xl mx-auto" />
     </ULandingSection>
   </div>
 </template>
+
+<style scoped>
+.badges__list {
+  margin-left: auto;
+  margin-right: auto;
+  gap: 10px;
+}
+
+.badges__item {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  /* border: 1px solid rgba(0, 0, 0, 0.2); */
+  max-width: 180px;
+  border-radius: 1e9em;
+  width: 100%;
+}
+</style>
