@@ -26,7 +26,6 @@ export default defineNuxtConfig({
       'nuxt-og-image',
       '@nuxtjs/seo',
       'nuxt-svgo',
-      '@nuxthub/core'
     ],
 
     hooks: {

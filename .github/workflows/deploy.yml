@@ -1,8 +1,24 @@
-name: Deploy with NuxtHub CLI
-on: push
+name: Deploy to GitHub Pages
+
+on:
+  # Trigger the workflow every time you push to the `main` branch
+  # Using a different branch name? Replace `main` with your branch’s name
+  push:
+    branches: [ main ]
+  # Allows you to run this workflow manually from the Actions tab on GitHub.
+  workflow_dispatch:
+
+# Automatically cancel in-progress actions on the same branch
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event_name == 'pull_request_target' && github.head_ref || github.ref }}
+  cancel-in-progress: true
+
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      deployments: write
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -29,9 +45,29 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
-      - name:  Deploy with nuxthub
-        run: npx nuxthub deploy
+      - name: generate static site
+        run: pnpm run generate
         env:
-          NUXT_HUB_PROJECT_KEY: ${{ secrets.NUXT_HUB_PROJECT_KEY}}
-          NUXT_HUB_USER_TOKEN: ${{ secrets.NUXT_HUB_USER_TOKEN }}
           NUXT_UI_PRO_LICENSE: ${{ secrets.NUXT_UI_PRO_LICENSE }}
+
+      - name: Set branch name
+        id: cloudflare_branch
+        run: |
+          if [ "${{ github.ref }}" = "refs/heads/main" ]; then
+            echo "CLOUFLARE_BRANCH=main" >> $GITHUB_ENV
+          elif [ "${{ github.actor }}" = "suabahasa" ]; then
+            if [[ "${{ github.event.head_commit.message }}" =~ \[build:.*\] ]]; then
+              echo "CLOUFLARE_BRANCH=${BASH_REMATCH[1]}" >> $GITHUB_ENV
+            else
+              echo "CLOUFLARE_BRANCH=${{ github.ref }}" >> $GITHUB_ENV
+            fi
+          else
+            echo "CLOUFLARE_BRANCH=${{ github.ref }}" >> $GITHUB_ENV
+          fi
+
+      - name: Publish to Cloudflare Pages
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: pages deploy .output/public --project-name=windpress --branch=${{ env.CLOUFLARE_BRANCH }}
