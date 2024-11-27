@@ -17,6 +17,7 @@
     "@nuxt/icon": "^1.8.2",
     "@nuxt/image": "^1.8.1",
     "@nuxt/ui-pro": "^1.5.0",
+    "@nuxthub/core": "^0.8.7",
     "@nuxtjs/seo": "2.0.0-rc.23",
     "@nuxtjs/tailwindcss": "6.13.0-20241028-183114-4a05009",
     "@shikijs/transformers": "^1.23.1",
@@ -44,7 +45,8 @@
     "@nuxthq/studio": "^2.2.1",
     "@rollup/plugin-wasm": "^6.2.2",
     "eslint": "^9.15.0",
-    "vue-tsc": "^2.1.10"
+    "vue-tsc": "^2.1.10",
+    "wrangler": "^3.91.0"
   },
   "resolutions": {
     "@nuxtjs/tailwindcss": "nightly"

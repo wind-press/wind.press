@@ -11,7 +11,23 @@ export default defineNuxtConfig({
 
     extends: ['@nuxt/ui-pro'],
 
-    modules: ['@nuxt/content', '@nuxt/ui', '@nuxt/image', 'nuxt-umami', '@nuxt/fonts', '@nuxt/eslint', '@nuxthq/studio', '@nuxtjs/tailwindcss', 'nuxt-shiki', '@nuxt/icon', '@vueuse/nuxt', 'nuxt-og-image', '@nuxtjs/seo', 'nuxt-svgo'],
+    modules: [
+      '@nuxt/content',
+      '@nuxt/ui',
+      '@nuxt/image',
+      'nuxt-umami',
+      '@nuxt/fonts',
+      '@nuxt/eslint',
+      '@nuxthq/studio',
+      '@nuxtjs/tailwindcss',
+      'nuxt-shiki',
+      '@nuxt/icon',
+      '@vueuse/nuxt',
+      'nuxt-og-image',
+      '@nuxtjs/seo',
+      'nuxt-svgo',
+      '@nuxthub/core'
+    ],
 
     hooks: {
         // Define `@nuxt/ui` components as global to use them in `.md` (feel free to add those you need)
@@ -114,7 +130,7 @@ export default defineNuxtConfig({
 
     umami: {
         id: 'de57ce9c-c391-4dbb-bb1a-ba6ba26b36a4',
-        host: 'https://umami.rosua.org',
+        host: 'https://umami.siagian.dev',
         autoTrack: true,
         ignoreLocalhost: true,
         useDirective: true,
