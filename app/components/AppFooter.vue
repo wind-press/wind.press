@@ -72,10 +72,8 @@ function onSubmit() {
     </template> -->
 
     <template #left>
-      <p class="text-gray-500 dark:text-gray-400 text-base flex flex-row gap-1 items-center" title="Made with hundred cups of coffee in Indonesia">
-        Made with hundred
-        <UIcon name="fa6-solid:mug-hot" class="mx-0.5" /> of
-        <UIcon name="ph:coffee-bean-fill" /> in <span class="font-bold">Indonesia</span>
+      <p class="text-gray-500 dark:text-gray-400 text-base items-center text-center" title="Made with hundred cups of coffee in Indonesia">
+        Made with hundred <UIcon name="fa6-solid:mug-hot" class="mx-0.5" /> of <UIcon name="ph:coffee-bean-fill" /> in <span class="font-bold">Indonesia</span>
       </p>
     </template>
 

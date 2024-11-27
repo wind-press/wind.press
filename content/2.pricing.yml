@@ -46,8 +46,8 @@ plans:
     features:
       - icon_name: fa6-solid:check
         label_text: All features
-      - icon_name: fa6-solid:asterisk
-        label_text: Limited integrations
+      - icon_name: fa6-solid:check
+        label_text: All integrations
       - icon_name: iconoir:www
         label_text: Unlimited personal sites
       - icon_name: fa6-solid:x
@@ -76,8 +76,8 @@ plans:
     features:
       - icon_name: fa6-solid:check
         label_text: All features
-      - icon_name: fa6-solid:asterisk
-        label_text: Limited integrations
+      - icon_name: fa6-solid:check
+        label_text: All integrations
       - icon_name: iconoir:www
         label_text: Unlimited personal sites
       - icon_name: iconoir:www

@@ -38,12 +38,12 @@ const links = [
     <template #logo>
       <Logo class="w-auto h-6 fill-black dark:fill-white self-center" />
       WindPress
-      <UBadge :label="`v${wp_v12.version}`" variant="subtle" class="mb-0.5" />
+      <UBadge :label="`v${wp_v12.version}`" variant="subtle" class="mb-0.5 hidden sm:flex" />
     </template>
 
     <template #right>
 
-      <UTooltip text="Search" :shortcuts="[metaSymbol, 'K']">
+      <UTooltip text="Search" :shortcuts="[metaSymbol, 'K']" class="">
         <UContentSearchButton :label="null" />
       </UTooltip>
 
@@ -51,7 +51,7 @@ const links = [
         <UColorModeButton />
       </UTooltip>
 
-      <UButton label="Get WindPress" color="gray" to="https://wordpress.org/plugins/windpress/" target="_blank" />
+      <UButton label="Get WindPress" color="gray" to="https://wordpress.org/plugins/windpress/" target="_blank" class="hidden sm:flex" />
       <!-- <UButton label="Sign in" color="gray" to="/login" /> -->
       <!-- <UButton label="Sign up" icon="i-heroicons-arrow-right-20-solid" trailing color="black" to="/signup" class="hidden lg:flex" /> -->
     </template>

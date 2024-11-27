@@ -1,8 +1,8 @@
-title: Tailwind CSS integration for WordPress - WindPress
+title: Tailwind CSS integration plugin for WordPress - WindPress
 description: Integrate Tailwind CSS into WordPress seamlessly, in seconds. Works well with the block editor, page builders, plugins, themes, and custom code.
 navigation: false
 hero:
-  title: The Tailwind CSS integration for WordPress
+  title: The Tailwind CSS integration plugin for WordPress
   description: Use Tailwind CSS within the block editor, page builders, plugins, and themes — no build step is required.
   # headline:
   #   label: Made with Nuxt UI Pro
