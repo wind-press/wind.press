@@ -46,7 +46,7 @@ onMounted(() => {
 const communityLinks = computed(() => [{
   icon: 'i-ph-pen',
   label: 'Edit this page',
-  to: `https://github.com/wind-press/wind.press/edit/main/content/${page?.value?._file?.split('/').slice(1).join('/')}`,
+  to: `https://github.com/wind-press/wind.press/edit/main/content/${page.value._file}`,
   target: '_blank'
 }, {
   icon: 'i-ph-chat-centered-text',
