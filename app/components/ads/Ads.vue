@@ -10,7 +10,7 @@
 <template>
     <div class="space-y-5">
         <AdsCallForSponsor  />
-        <AdsDaisyUI />
+        <!-- <AdsDaisyUI /> -->
         <!-- <AdsNuxtUI /> -->
         <!-- <AdsUIPro v-if="uiPro" />
         <AdsFallback v-else-if="$ads.adBlocked.value" />

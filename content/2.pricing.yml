@@ -110,7 +110,7 @@ faq:
     - label: What themes is WindPress compatible with?
       content: WindPress is compatible with any WordPress theme. A small adjustment may be needed for the compiler scanner to detect the used classes in the theme. We have a guide on how to make the adjustment, check the documentation.
     - label: Do you offer a discount for students?
-      content: Yes, we offer a 50% discount for students. Please contact us with your student ID to get the discount.
+      content: Yes, we offer a discount for students. Please send an email to id@rosua.org with subject "Student Discount" from your student email, and attach a photo of your student ID card or certificate.
     - label: Can I upgrade my plan later?
       content: Yes, you can upgrade your plan at any time by paying the difference between the two plans. Please contact us if you need help with upgrading your plan.
     - label: Can I use WindPress for my client's website?

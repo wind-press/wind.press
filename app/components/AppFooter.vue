@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const links = [{
+const columnLinks = [{
   label: 'Resources',
   children: [{
     label: 'Help center'
@@ -34,6 +34,14 @@ const links = [{
   }]
 }]
 
+const links = [
+  {
+    label: 'Contact',
+    to: 'https://rosua.org/support-portal',
+    target: '_blank'
+  }
+];
+
 const toast = useToast()
 
 const email = ref('')
@@ -54,9 +62,9 @@ function onSubmit() {
 </script>
 
 <template>
-  <UFooter>
+  <UFooter :links="links">
     <!-- <template #top>
-      <UFooterColumns :links="links">
+      <UFooterColumns :links="columnLinks">
         <template #right>
           <form @submit.prevent="onSubmit">
             <UFormGroup label="Subscribe to our newsletter" :ui="{ container: 'mt-3' }">
@@ -64,16 +72,18 @@ function onSubmit() {
                 <template #trailing>
                   <UButton type="submit" size="xs" color="primary" :label="loading ? 'Subscribing' : 'Subscribe'" :loading="loading" disabled />
                 </template>
-              </UInput>
-            </UFormGroup>
-          </form>
-        </template>
-      </UFooterColumns>
-    </template> -->
+</UInput>
+</UFormGroup>
+</form>
+</template>
+</UFooterColumns>
+</template> -->
 
     <template #left>
       <p class="text-gray-500 dark:text-gray-400 text-base items-center text-center" title="Made with hundred cups of coffee in Indonesia">
-        Made with hundred <UIcon name="fa6-solid:mug-hot" class="mx-0.5" /> of <UIcon name="ph:coffee-bean-fill" /> in <span class="font-bold">Indonesia</span>
+        Made with hundred
+        <UIcon name="fa6-solid:mug-hot" class="mx-0.5" /> of
+        <UIcon name="ph:coffee-bean-fill" /> in <span class="font-bold">Indonesia</span>
       </p>
     </template>
 
