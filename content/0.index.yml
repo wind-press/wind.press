@@ -267,7 +267,7 @@ testimonials:
     - quote_title: the best out there!
       quote: It help you add tailwind to wordpress without hussle, easy and simple! I recommend to everyone!
       author:
-        name: yammy
+        name: Luciana Hanan
         avatar:
           src: https://s.gravatar.com/avatar/45a2bfc89efde7b3c4505b69e097492f?s=100
           loading: lazy
@@ -276,7 +276,8 @@ testimonials:
     - quote_title: Great plugin
       quote: If you're looking to integrate Tailwind CSS with WordPress, Windpress is the solution you need.
       author:
-        name: jade7700
+        name: John Diaz
+        description: Founder at Fancy Bricks & Fancy Animations
         avatar:
           src: https://s.gravatar.com/avatar/054277acf9d9af7e4a8a4ee25e8f41b7?s=100
           loading: lazy
@@ -317,6 +318,24 @@ testimonials:
           src: https://s.gravatar.com/avatar/3a683a50a402ea16b2a6d875e4b94d23?s=100
           loading: lazy
         to: https://wordpress.org/support/topic/melhor-plugin-para-tailwind-no-wp/
+        target: _blank
+    - quote_title: Good plugin for tailwindcss with wordpress
+      quote: Bro, you are a genius, for making tailwind available for wordpress
+      author:
+        name: luxingchao
+        avatar:
+          src: https://s.gravatar.com/avatar/a9f443f20450283ca5b7fe96698d0fd82863d6d5f317e96cbbd29391e005e47f?s=100
+          loading: lazy
+        to: https://wordpress.org/support/topic/good-plugin-for-tailwindcss-with-wordpress/
+        target: _blank
+    - quote_title: Tailwind + Bricks Builder is the dream!
+      quote: I use ReactJS and InertiaJS 2.0 to build plugins and Tailwind is the standard simply because you have to be a certified psycho nut case crazy person to use vanilla CSS. Bricks Builder and WindPress work very well together.
+      author:
+        name: forestcall
+        avatar:
+          src: https://s.gravatar.com/avatar/c346a54f734e093acd6bf888e3e1d589e58d80ea1d397fdcd3c58abf3869aaee?s=100
+          loading: lazy
+        to: https://wordpress.org/support/topic/tailwind-bricks-builder-is-the-dream/
         target: _blank
     # - quote_title: 
     #   quote: 
