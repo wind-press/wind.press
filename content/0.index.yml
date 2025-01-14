@@ -129,6 +129,10 @@ visual_buildes:
   - name: Plugins & Themes Dev
     url: '/docs/integrations/custom-theme'
     icon: builder-wordpress.svg
+  - name: Blockstudio
+    # url: '/docs/integrations/blockstudio'
+    icon: builder-blockstudio.svg
+    pro: true
   - name: Breakdance
     url: '/docs/integrations/breakdance'
     icon: builder-breakdance.svg
