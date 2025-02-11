@@ -12,6 +12,7 @@ export default defineNuxtConfig({
     extends: ['@nuxt/ui-pro'],
 
     modules: [
+        // '@nuxthub/core',
         '@nuxt/content',
         '@nuxt/ui',
         '@nuxt/image',
@@ -59,6 +60,11 @@ export default defineNuxtConfig({
         },
     },
 
+    // hub: {
+    //     database: true,
+    //     blob: true
+    // },
+
     routeRules: {
         '/api/search.json': { prerender: true },
         // '/blog/rss.xml': { prerender: true },
@@ -66,11 +72,9 @@ export default defineNuxtConfig({
         '/docs': { redirect: '/docs/getting-started', prerender: false },
         '/go': { redirect: '/', prerender: false },
 
-        // Temporary redirects
-        // '/': { redirect: '/docs/getting-started', prerender: false },
-        '/pricing': { redirect: '/#pricing', prerender: false },
 
         // Redirects 
+        '/pricing': { redirect: '/#pricing', prerender: false },
         '/go/github': { redirect: 'https://github.com/wind-press/windpress', prerender: false },
         '/go/discord': { redirect: 'https://discord.gg/fjsB83XdFw', prerender: false },
         '/go/facebook': { redirect: 'https://www.facebook.com/groups/1142662969627943', prerender: false },
@@ -92,6 +96,7 @@ export default defineNuxtConfig({
             langs: [
                 'html',
                 'css',
+                'postcss',
                 'js',
                 'php',
             ]

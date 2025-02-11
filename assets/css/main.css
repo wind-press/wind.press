@@ -3,15 +3,16 @@
 @import 'lightgallery/css/lg-zoom.css';
 
 pre.shiki {
+    display: flex;
+
     code {
-        width: 100%;
+        flex: 1;
 
         .line {
             span:last-child {
                 padding-right: 16px;
             }
     
-            width: 100%;
             text-wrap: nowrap;
 
             &.highlight,
