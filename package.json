@@ -24,7 +24,7 @@
     "glob": "^11.0.1",
     "lightgallery": "^2.8.2",
     "nuxt": "^3.15.4",
-    "nuxt-auth-utils": "^0.5.14",
+    "nuxt-auth-utils": "^0.5.15",
     "nuxt-content-assets": "^1.4.4",
     "nuxt-og-image": "^4.1.2",
     "nuxt-shiki": "^0.3.0",
@@ -43,13 +43,16 @@
     "@nuxt/eslint": "^1.0.1",
     "@nuxthq/studio": "^2.2.1",
     "@rollup/plugin-wasm": "^6.2.2",
-    "eslint": "^9.20.0",
+    "eslint": "^9.20.1",
     "vue-tsc": "^2.2.0"
   },
   "packageManager": "pnpm@10.3.0+sha512.ee592eda8815a8a293c206bb0917c4bb0ff274c50def7cbc17be05ec641fc2d1b02490ce660061356bd0d126a4d7eb2ec8830e6959fb8a447571c631d5a2442d",
   "pnpm": {
     "onlyBuiltDependencies": [
+      "@parcel/watcher",
+      "better-sqlite3",
       "esbuild",
+      "sharp",
       "vue-demi"
     ]
   }
