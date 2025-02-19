@@ -193,10 +193,10 @@ page.value.hero.links.forEach(link => {
             </div>
             <div class="bento__slot-description mt-4 leading-relaxed">
               <div>
-                Start using the future version of Tailwind CSS today. WindPress is ready for the upcoming Tailwind CSS v4.0
+                WindPress supports both Tailwind CSS v3.x and v4.x. The flexibility to choose the Tailwind CSS version that meet your WordPress project requirements.
               </div>
             </div>
-            <img class="absolute hidden sm:block sm:bottom-[-30px] sm:right-[-30px]" src="https://tailwindcss.com/_next/static/media/tailwindcss-mark.3c5441fc7a190fb1800d4a5c7f07ba4b1345a9c8.svg" alt="Tailwind CSS version 4.x ready" />
+            <img class="absolute hidden sm:block sm:bottom-[-30px] sm:right-[-30px]" src="/img/pages/landing/tailwindcss-mark.svg" alt="Tailwind CSS version 3.x and 4.x ready" />
           </div>
 
           <div class="bento__slot relative col-span-6 row-span-6 bg-blue-200/50 p-5 rounded-lg overflow-hidden hover:shadow-md">

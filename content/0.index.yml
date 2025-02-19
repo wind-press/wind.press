@@ -337,6 +337,24 @@ testimonials:
           loading: lazy
         to: https://wordpress.org/support/topic/tailwind-bricks-builder-is-the-dream/
         target: _blank
+    - quote_title: Easy to integrate
+      quote: super easy to integrate with tailwind
+      author:
+        name: pradeep.ghildiyal
+        avatar:
+          src: https://s.gravatar.com/avatar/04ecfca4eab8946bccd068109bcfd2ff4d8a8e3745ead2d4b97b0d2699978f5e?s=100
+          loading: lazy
+        to: https://wordpress.org/support/topic/easy-to-integrate-31/
+        target: _blank
+    - quote_title: The best Tailwind plugin for WordPress
+      quote: If you're looking for a way to integrate the Tailwind CSS framework into WordPress, WindPress is the perfect solution. It's easy to set up and works seamlessly with the Block Editor. Trust me, no other WordPress plugin does it quite like WindPress. If possible, I recommend upgrading to WindPress Pro.
+      author:
+        name: Cuong Thach
+        avatar:
+          src: https://s.gravatar.com/avatar/c955bc6850c8d00b12fa6082f74039416a49d60d074f8962d789fde77b2c0c95?s=100
+          loading: lazy
+        to: https://wordpress.org/support/topic/the-best-tailwind-plugin-for-wordpress/
+        target: _blank
     # - quote_title: 
     #   quote: 
     #   author:

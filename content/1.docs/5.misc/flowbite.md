@@ -44,7 +44,17 @@ Add the following line of code to the `main.css` file:
 
 Flowbite comes with a set of interactive elements like modals, dropdowns, and more. To use these elements, you need to add the Flowbite JavaScript file to your WordPress website.
 
-Add the following code to your theme's functions.php file or a [Snippet plugin](https://wordpress.org/plugins/search/Snippet/).
+Add the following line of code to the `main.css` file:
+
+```postcss [main.css]
+/* ... */
+
+@source "https://esm.sh/flowbite/dist/flowbite.min.js?raw";
+
+/* ... */
+```
+
+And add the following code to your theme's functions.php file or a [Snippet plugin](https://wordpress.org/plugins/search/Snippet/).
 
 ```php [functions.php]
 <?php
@@ -52,31 +62,6 @@ Add the following code to your theme's functions.php file or a [Snippet plugin](
 add_action('wp_enqueue_scripts', function () {
     wp_enqueue_script('flowbite', 'https://esm.sh/flowbite/dist/flowbite.min.js?raw');
 });
-
-function register_flowbite_provider(array $providers): array {
-    $providers[] = [
-        'id' => 'flowbite',
-        'name' => 'Flowbite Scanner',
-        'description' => 'Scans the flowbite interactive elements',
-        'callback' => 'scanner_cb_flowbite_provider',
-        'enabled' => \WindPress\WindPress\Utils\Config::get(sprintf(
-            'integration.%s.enabled',
-            'flowbite'
-        ), true),
-    ];
-
-    return $providers;
-}
-add_filter('f!windpress/core/cache:compile.providers', 'register_flowbite_provider');
-
-function scanner_cb_flowbite_provider(): array {
-    return [
-        [
-            'name' => 'flowbite.min.js',
-            'content' => file_get_contents('https://esm.sh/flowbite/dist/flowbite.min.js?raw'),
-        ],
-    ]
-}
 ```
 
 Now your WordPress website is ready to use Flowbite components and interactive elements.
