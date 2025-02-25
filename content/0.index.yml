@@ -149,6 +149,10 @@ visual_buildes:
     url: '/docs/integrations/oxygen'
     icon: builder-oxygen.svg
     pro: true
+  - name: WPCodeBox
+    # url: '#'
+    icon: builder-wpcodebox.svg
+    pro: true
 testimonials:
   headline: Testimonials
   title: Wall of Loves

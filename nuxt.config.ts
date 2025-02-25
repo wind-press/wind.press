@@ -139,12 +139,6 @@ export default defineNuxtConfig({
         // proxy: 'direct',
     },
 
-    tailwindcss: {
-        cssPath: ['./assets/css/tailwind.css', { injectPosition: 'last' }],
-        viewer: false,
-        exposeConfig: true,
-    },
-
     colorMode: {
         preference: 'system', // default value of $colorMode.preference
         fallback: 'light', // fallback value if not system preference found

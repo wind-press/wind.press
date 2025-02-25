@@ -54,7 +54,7 @@ Add the following line of code to the `main.css` file:
 /* ... */
 ```
 
-And add the following code to your theme's functions.php file or a [Snippet plugin](https://wordpress.org/plugins/search/Snippet/).
+And add the following code to your theme's `functions.php` file or a [Snippet plugin](https://wordpress.org/plugins/search/Snippet/).
 
 ```php [functions.php]
 <?php
