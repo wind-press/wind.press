@@ -10,13 +10,7 @@ useHead({
   <div class="h-screen flex items-center justify-center overlay">
     <div class="gradient" />
 
-    <UButton
-      icon="i-heroicons-home"
-      label="Home"
-      to="/"
-      color="black"
-      class="absolute top-4"
-    />
+    <UButton icon="i-heroicons-home" label="Home" to="/" color="black" class="absolute top-4" />
 
     <slot />
   </div>
@@ -42,6 +36,7 @@ useHead({
     linear-gradient(to right, rgb(var(--color-gray-200)) 0.5px, transparent 0.5px),
     linear-gradient(to bottom, rgb(var(--color-gray-200)) 0.5px, transparent 0.5px);
 }
+
 .dark {
   .overlay {
     background-image:

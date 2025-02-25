@@ -39,7 +39,12 @@ const links = [
     label: 'Contact',
     to: 'https://rosua.org/support-portal',
     target: '_blank'
-  }
+  },
+  {
+    label: 'My Orders',
+    to: 'https://rosua.org/checkout/order-history',
+    target: '_blank'
+  },
 ];
 
 const toast = useToast()

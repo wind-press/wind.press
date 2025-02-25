@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { NavItem } from '@nuxt/content'
+import type { NavItem } from '@nuxt/content';
 import Logo from './Logo.vue';
 
 const navigation = inject<Ref<NavItem[]>>('navigation', ref([]));
@@ -25,10 +25,14 @@ const links = [
   //   label: 'Pricing',
   //   to: '/pricing'
   // },
+  // {
+  //   label: 'Account',
+  //   to: 'https://rosua.org/checkout/order-history',
+  //   target: '_blank'
+  // },
   {
     label: 'Account',
-    to: 'https://rosua.org/checkout/order-history',
-    target: '_blank'
+    to: '/login',
   },
 ]
 </script>
