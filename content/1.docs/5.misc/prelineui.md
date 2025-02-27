@@ -60,7 +60,7 @@ export default {
 }
 ```
 
-### Step 3: Use the Preline UI interactive elements≈
+### Step 3: Use the Preline UI interactive elements
 
 Preline UI comes with a set of interactive elements like modals, dropdowns, and more. To use these elements, you need to add the Preline UI JavaScript file to your WordPress website.
 
