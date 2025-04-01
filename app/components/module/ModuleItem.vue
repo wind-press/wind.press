@@ -71,7 +71,7 @@ function copyInstallCommand(moduleName: string) {
             </NuxtLink>
           </UTooltip>
 
-          <UTooltip text="GitHub Stars">
+          <!-- <UTooltip text="GitHub Stars">
             <NuxtLink
               class="flex items-center gap-1 hover:text-(--ui-text-highlighted)"
               :to="`https://github.com/${module.repo}`"
@@ -80,7 +80,7 @@ function copyInstallCommand(moduleName: string) {
               <UIcon name="i-lucide-star" class="size-4 shrink-0" />
               <span class="text-sm font-medium">{{ formatNumber(module.stats.stars || 0) }}</span>
             </NuxtLink>
-          </UTooltip>
+          </UTooltip> -->
         </div>
 
         <UTooltip text="Copy install command">

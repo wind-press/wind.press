@@ -76,7 +76,7 @@ onMounted(() => {
   <UApp>
     <NuxtLoadingIndicator color="var(--ui-primary)" />
 
-    <UBanner
+    <!-- <UBanner
       id="mastering-nuxt-2025-early-bird"
       title="Mastering Nuxt: Full Stack Unleashed - Launch Specials Available"
       icon="i-lucide-school"
@@ -91,7 +91,7 @@ onMounted(() => {
           to: 'https://masteringnuxt.com/2025?utm_source=nuxt-website&utm_medium=banner'
         }
       ]"
-    />
+    /> -->
 
     <AppHeader />
 

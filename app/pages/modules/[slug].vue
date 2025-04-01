@@ -128,7 +128,7 @@ defineOgImageComponent('Docs', {
         <UTooltip text="Monthly NPM Downloads">
           <NuxtLink class="flex items-center gap-1.5" :to="`https://npm.chart.dev/${module.npm}`" target="_blank">
             <UIcon name="i-lucide-circle-arrow-down" class="size-5 shrink-0" />
-            <span class="text-sm font-medium">{{ formatNumber(module.stats.downloads) }} downloads</span>
+            <!-- <span class="text-sm font-medium">{{ formatNumber(module.stats.downloads) }} downloads</span> -->
           </NuxtLink>
         </UTooltip>
 
@@ -137,7 +137,7 @@ defineOgImageComponent('Docs', {
         <UTooltip text="GitHub Stars">
           <NuxtLink class="flex items-center gap-1.5" :to="`https://github.com/${module.repo}`" target="_blank">
             <UIcon name="i-lucide-star" class="size-5 shrink-0" />
-            <span class="text-sm font-medium">{{ formatNumber(module.stats.stars || 0) }} stars</span>
+            <!-- <span class="text-sm font-medium">{{ formatNumber(module.stats.stars || 0) }} stars</span> -->
           </NuxtLink>
         </UTooltip>
 
@@ -146,7 +146,7 @@ defineOgImageComponent('Docs', {
         <UTooltip text="Latest Version">
           <NuxtLink class="flex items-center gap-1.5" :to="`${module.github}/releases`" target="_blank">
             <UIcon name="i-lucide-tag" class="size-5 shrink-0" />
-            <span class="text-sm font-medium">v{{ module.stats.version }}</span>
+            <!-- <span class="text-sm font-medium">v{{ module.stats.version }}</span> -->
           </NuxtLink>
         </UTooltip>
 

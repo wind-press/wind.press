@@ -129,16 +129,16 @@ export default defineNuxtConfig({
     strict: false
   },
   hooks: {
-    'content:file:afterParse': async ({ file, content }) => {
-      if (file.id === 'index/index.yml') {
-        // @ts-expect-error -- TODO: fix this
-        for (const tab of content.hero.tabs) {
-          tab.content = await parseMdc(tab.content)
-        }
-        // @ts-expect-error -- TODO: fix this
-        delete content.meta.body
-      }
-    }
+    // 'content:file:afterParse': async ({ file, content }) => {
+    //   if (file.id === 'index/index.yml') {
+    //     // @ts-expect-error -- TODO: fix this
+    //     for (const tab of content.hero.tabs) {
+    //       tab.content = await parseMdc(tab.content)
+    //     }
+    //     // @ts-expect-error -- TODO: fix this
+    //     delete content.meta.body
+    //   }
+    // }
   },
   eslint: {
     config: {
@@ -160,25 +160,25 @@ export default defineNuxtConfig({
   },
   image: {
     format: ['webp', 'jpeg', 'jpg', 'png', 'svg'],
-    provider: 'cloudflare',
-    cloudflare: {
-      baseURL: 'https://nuxt.com'
-    },
-    ipx: {
-      baseURL: 'https://ipx.nuxt.com'
-    }
+    // provider: 'cloudflare',
+    // cloudflare: {
+    //   baseURL: 'https://wind.press'
+    // },
+    // ipx: {
+    //   baseURL: 'https://ipx.nuxt.com'
+    // }
   },
   llms: {
-    domain: 'https://nuxt.com',
-    title: 'Nuxt Docs',
-    description: 'Nuxt is an open source framework that makes web development intuitive and powerful. Create performant and production-grade full-stack web apps and websites with confidence.',
+    domain: 'https://wind.press',
+    title: 'WindPress Docs',
+    description: 'WindPress is a plugin that integrates Tailwind CSS with WordPress. It can be used with page builders, themes, and plugins in any WordPress environment, including shared hosting.',
     full: {
-      title: 'Nuxt Docs',
-      description: 'The complete Nuxt documentation and blog posts written in Markdown (MDC syntax).'
+      title: 'WindPress Docs',
+      description: 'The complete WindPress documentation and blog posts written in Markdown (MDC syntax).'
     }
   },
   turnstile: {
-    siteKey: '0x4AAAAAAAP2vNBsTBT3ucZi'
+    // siteKey: '0x4AAAAAAAP2vNBsTBT3ucZi'
   },
   twoslash: {
     floatingVueOptions: {

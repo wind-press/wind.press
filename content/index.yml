@@ -1,242 +1,379 @@
 hero:
-  title: 'The Progressive Web Framework'
-  description: Create high-quality web applications with Nuxt, the open source framework that makes full-stack development with Vue.js intuitive.
+  title: 'The Tailwind CSS integration plugin for WordPress'
+  description: Use Tailwind CSS within the block editor, page builders, plugins, and themes — no build step is required.
   cta:
-    label: Nuxt UI v3 is out
-    to: /blog/nuxt-ui-v3
+    label: WindPress v3 is out
+    to: /blog/windpress-v3
     icon: i-lucide-arrow-right
-  tabs:
-    - title: Minimal
-      icon: i-lucide-leaf
-      content: |
-        ::code-tree{defaultValue="app.vue" class="lg:rounded-r-none lg:border-r-0 dark:[--ui-border-muted:var(--color-gray-800)]"}
-        ```vue [app.vue]
-        <script setup lang="ts">
-        const version = 3
-        </script>
+  links:
+    - label: Get started
+      size: xl
+      to: /docs/getting-started/installation
+      icon: line-md:arrow-right
+      trailing: true
+    - label: Download now
+      icon: line-md:downloading
+      size: xl
+      to: https://downloads.wordpress.org/plugin/windpress.zip
+      target: _blank
+      color: neutral
+      variant: subtle
 
-        <template>
-          <h1>
-            Hello Nuxt {{ version }}!
-          </h1>
-        </template>
+visual_builders:
+  - name: Elementor
+    # url: '#'
+    icon: i-custom-builder-elementor
+  - name: GeneratePress
+    # url: '#'
+    icon: i-custom-builder-generatepress
+  - name: GreenShift
+    # url: '#'
+    icon: assets/landing/builder-greenshift.png
+  - name: Gutenberg
+    url: '/docs/integrations/gutenberg'
+    icon: i-custom-builder-gutenberg
+  - name: Kadence WP
+    # url: '#'
+    icon: i-custom-builder-kadencewp
+  - name: LiveCanvas
+    url: '/docs/integrations/livecanvas'
+    icon: assets/landing/builder-livecanvas.png
+  - name: Timber
+    # url: '#'
+    icon: i-custom-builder-timber
+  - name: Plugins & Themes Dev
+    url: '/docs/integrations/custom-theme'
+    icon: i-custom-builder-wordpress
+  - name: Blockstudio
+    # url: '/docs/integrations/blockstudio'
+    icon: i-custom-builder-blockstudio
+    pro: true
+  - name: Breakdance
+    url: '/docs/integrations/breakdance'
+    icon: i-custom-builder-breakdance
+    pro: true
+  - name: Bricks
+    url: '/docs/integrations/bricks'
+    icon: i-custom-builder-bricks
+    pro: true
+  - name: Builderius
+    url: '/docs/integrations/builderius'
+    icon: i-custom-builder-builderius
+    pro: true
+  - name: Meta Box Views
+    # url: '#'
+    icon: i-custom-builder-meta-box-views
+    pro: true
+  - name: Oxygen
+    url: '/docs/integrations/oxygen'
+    icon: i-custom-builder-oxygen
+    pro: true
+  - name: WPCodeBox
+    # url: '#'
+    icon: i-custom-builder-wpcodebox
+    pro: true
 
-        <style scoped>
-        h1 {
-          font-size: 3rem;
-        }
-        </style>
-        ```
 
-        ```json [package.json]
-        {
-          "name": "hello-nuxt",
-          "private": true,
-          "type": "module",
-          "scripts": {
-            "dev": "nuxt dev",
-            "build": "nuxt build",
-            "generate": "nuxt generate",
-            "preview": "nuxt preview"
-          },
-          "dependencies": {
-            "nuxt": "latest"
-          }
-        }
-        ```
-        ::
-    - title: Routing
-      icon: i-lucide-milestone
-      content: |
-        ::code-tree{defaultValue="pages/index.vue" class="lg:rounded-r-none lg:border-r-0 dark:[--ui-border-muted:var(--color-gray-800)]"}
-        ```vue [app.vue]
-        <template>
-          <NuxtPage />
-        </template>
-        ```
 
-        ```json [package.json]
-        {
-          "name": "nuxt-routing",
-          "private": true,
-          "type": "module",
-          "scripts": {
-            "dev": "nuxt dev",
-            "build": "nuxt build",
-            "generate": "nuxt generate",
-            "preview": "nuxt preview"
-          },
-          "dependencies": {
-            "nuxt": "latest"
-          }
-        }
-        ```
+features:
+  title: Exclusive features
+  description: Some specific integrations provide a range of valuable features that enhance functionality
+  items:
+    - title: Autocompletion
+      description: As you type, Tailwind CSS class names will be suggested automatically
+      icon: fa6-solid:list
+    - title: Variable Picker
+      description: Easily select colors, fonts, and other variables of the Tailwind CSS configuration from a panel
+      icon: fa6-solid:paint-roller
+    - title: HTML to native elements
+      description: Convert Tailwind CSS HTML to native elements in the editor
+      icon: fa6-brands:html5
+    - title: Ubiquitous Panel
+      description: A floating panel that allows you to quickly access the WindPress settings from anywhere on the page
+      icon: fa6-solid:street-view
+    - title: Sort the classes
+      description: Sort the Tailwind CSS classes on the input field based on the Tailwind CSS official recommendation
+      icon: fa6-solid:arrow-down-a-z
+    - title: Hover Preview the classes
+      description: Hover over the classes to see the complete outputted CSS and the preview of the design canvas
+      icon: fa6-solid:arrow-pointer
 
-        ```vue [pages/index.vue]
-        <template>
-          <h1>Index page</h1>
-          <NuxtLink to="/blog/hello-world">
-            Go to blog post
-          </NuxtLink>
-        </template>
-        ```
-        ```vue [pages/blog/[slug\\].vue]
-        <template>
-          <h1>Blog post {{ $route.params.slug }}</h1>
-        </template>
-        ```
-        ::
-    - title: Data Fetching
-      icon: i-lucide-unplug
-      content: |
-        ::code-tree{defaultValue="pages/index.vue" class="lg:rounded-r-none lg:border-r-0 dark:[--ui-border-muted:var(--color-gray-800)]"}
-        ```vue [app.vue]
-        <template>
-          <NuxtPage />
-        </template>
-        ```
 
-        ```json [package.json]
-        {
-          "name": "nuxt-data-fetching",
-          "private": true,
-          "type": "module",
-          "scripts": {
-            "dev": "nuxt dev",
-            "build": "nuxt build",
-            "generate": "nuxt generate",
-            "preview": "nuxt preview"
-          },
-          "dependencies": {
-            "nuxt": "latest"
-          }
-        }
-        ```
 
-        ```vue [pages/index.vue]
-        <script setup lang="ts">
-        const { data } = await useFetch('/api/cms/home')
-        </script>
 
-        <template>
-          <h1>{{ page.title }}</h1>
-          <NuxtLink to="/blog/hello-world">
-            Go to blog post
-          </NuxtLink>
-        </template>
-        ```
-        ```vue [pages/blog/[slug\\].vue]
-        <script setup lang="ts">
-          const { slug } = useRoute().params
-          const { data: post } = await useFetch(`/api/cms/blog/${slug}`)
-        </script>
 
-        <template>
-          <h1>{{ post.title }}</h1>
-          <NuxtLink to="/">
-            Go to home
-          </NuxtLink>
-        </template>
-        ```
-        ::
-    - title: Auto-Imports
-      icon: i-lucide-wand-sparkles
-      content: |
-        ::code-tree{defaultValue="app.vue" class="lg:rounded-r-none lg:border-r-0 dark:[--ui-border-muted:var(--color-gray-800)]"}
-        ```vue [app.vue]
-        <script setup>
-        const message = ref('Nuxt')
-        const hello = () => sayHello(message.value)
-        </script>
+testimonials:
+  headline: Testimonials
+  title: Wall of Loves
+  description: Hear from our happiest users about how WindPress has enhanced their experience and brought them joy.
+  items:
+    - quote_title: Easy Tailwind integration for your favorite builder
+      quote: Highly recommend to test this Plugin out, if you are working with Tailwind or looking for an easy integration with wordpress and your favorite builder.
+      author:
+        name: Sascha Hauser
+        avatar:
+          src: https://s.gravatar.com/avatar/1d100878daaa060f17844f3d1f7a0d38?s=100
+        to: https://wordpress.org/support/topic/easy-tailwind-integration-for-your-favorite-builder/
+        target: _blank
+    - quote_title: Best Tailwind plugin on the market!
+      quote: So impressed with this plugin. I can vouch for the Bricks Builder version working perfectly when it comes to auto-complete and front-end rendering. But, that is not why I give this a 5/5. Josh, the author has been amazing with taking feedback and implementing changes. The support along with the plugin is amazing! I couldn't ask for a better tool to implement Tailwind into WordPress.
+      author:
+        name: Chris Seifert
+        description: Founder at Portseif.io
+        avatar:
+          src: https://s.gravatar.com/avatar/96edae3ebd1659914dffab9dfe29d81a?s=100
+        to: https://wordpress.org/support/topic/best-tailwind-plugin-on-the-market/
+        target: _blank
+      achievements:
+        - label: Integrations
+          color: important
+    - quote_title: Lightweight plugin easy to use
+      quote: The arrival of Windpress has simplified my work with Tailwind CSS in WordPress. Lightweight plugin, with extensive customization, easy to use and with features that I love such as compilation in the browser.
+      author:
+        name: Martin Ardanaz
+        avatar:
+          src: https://s.gravatar.com/avatar/5971592298d939bec0e9498bb998db50?s=100
+        to: https://wordpress.org/support/topic/lightweight-plugin-easy-to-use/
+        target: _blank
+      achievements:
+        - label: Performance
+          color: success
+    - quote_title: Tailwind for wordpress!
+      quote: WindPress has pleasantly surprised me. Being able to tweak Tailwind CSS and compile in the same browser has streamlined my workflow in ways I didn't think possible. I don't know how I ever worked without this before!
+      author:
+        name: Daniel Maurel
+        avatar:
+          src: https://s.gravatar.com/avatar/d6832b181ad8c7e14a775ab149fa2a1d?s=100
+        to: https://wordpress.org/support/topic/tailwind-for-wordpress/
+        target: _blank
+      achievements:
+        - label: Workflow
+          color: info
+    - quote_title: A W E S O M E
+      quote: A great (and reliable!) way to use Tailwind inside various builders. I personally love the Bricks integration it's paid but totally worth it.
+      author:
+        name: Laurent Gaulhiac
+        description: Designer Web & Print at LauGau.com
+        avatar:
+          src: https://s.gravatar.com/avatar/90bac89bc1ef6badc596f90a02df25a7?s=100
+        to: https://wordpress.org/support/topic/a-w-e-s-o-m-e-14/
+        target: _blank
+      achievements:
+        - label: Integrations
+          color: important
+    - quote_title: Excelente integración de Tailwind con WordPress
+      quote: Estoy muy contento de que Joshua haya creado WindPress. Tal como menciona, es la primera integración de Tailwind 4 con WordPress, y debo decir que funciona de maravilla. Estoy comenzando a usarlo y, hasta ahora, la experiencia ha sido excelente. Además, el soporte que brindan es de primera clase.  Lo mejor de todo es que, con esta versión gratuita, espero que más personas se animen a adoptar Tailwind en sus proyectos de WordPress. ¡Totalmente recomendado!
+      author:
+        name: Angel Julian Mena
+        description: Owner at Solucionesabiertas.es
+        avatar:
+          src: https://s.gravatar.com/avatar/862747ad39a43ba17370e55e9532986b?s=100
+        to: https://wordpress.org/support/topic/excelente-integracion-de-tailwind-con-wordpress/
+        target: _blank
+    - quote_title: Perfecto
+      quote: Va muy bien la versión Yabe Siul. Supongo que esta nueva versión irá aún mejor.
+      author:
+        name: Luis Muñoz
+        description: Director at Empacke.com
+        avatar:
+          src: https://s.gravatar.com/avatar/069181941142b29542d1e4532b139b05?s=100
+        to: https://wordpress.org/support/topic/perfecto-433/
+        target: _blank
+    - quote_title: Best Tailwind WP plugin
+      quote: I'm really happy to find this plugin because my development is so much easier with that. I highly recommend!
+      author:
+        name: gyurci
+        avatar:
+          src: https://s.gravatar.com/avatar/9c325f8217af225e60a423f03f6e7f71?s=100
+        to: https://wordpress.org/support/topic/best-tailwind-wp-plugin/
+        target: _blank
+      achievements:
+        - label: Workflow
+          color: info
+    - quote_title: WordPress themes with Tailwind
+      quote: You can create custom WordPress sites using Tailwind's utility classes. Even though it's powerful, it got a learning curve for those who aren't familiar with it. I hope the documentation arrives soon.
+      author:
+        name: Berhan Turk
+        avatar:
+          src: https://s.gravatar.com/avatar/c52fe0fbfdb812f66d89f49973a63a0f?s=100
+        to: https://wordpress.org/support/topic/wordpress-themes-with-tailwind/
+        target: _blank
+    - quote_title: Awesome Plugin For Tailwind in WordPress
+      quote: Just install it & you will never regret it. Happy Making
+      author:
+        name: Rishi Mehra
+        avatar:
+          src: https://s.gravatar.com/avatar/1ddfb158b46e7fdd9c71230265024b54?s=100
+        to: https://wordpress.org/support/topic/awesome-plugin-for-tailwind-in-wordpress/
+        target: _blank
+    - quote_title: ''
+      quote: WindPress, crafted by Joshua, has simplified my Tailwind CSS work with its browser-based compilation, blending ease with flexibility. Joshua's responsive support enriches this seamless experience, making development feel personal and efficient.
+      author:
+        name: Daniel Snell
+        description: Founder at broke.dev
+        avatar:
+          src: https://s.gravatar.com/avatar/c62179cf3cb331ccd7504e321ed8b0e0?s=100
+      achievements:
+        - label: Workflow
+          color: info
+        - label: Experience
+          color: warning
+    - quote_title: Easy and quick setup of Tailwind CSS
+      quote: Just installed it and seeing it is available for a lot of builders, constantly upgraded with new features. Looks very good!
+      author:
+        name: kingsizebeatz
+        avatar:
+          src: https://s.gravatar.com/avatar/136cb690b23a90244a4f62fbfdac637b?s=100
+        to: https://wordpress.org/support/topic/easy-and-quick-setup-of-tailwind-css/
+        target: _blank
+      achievements:
+        - label: Integrations
+          color: important
+    - quote_title: the best out there!
+      quote: It help you add tailwind to wordpress without hussle, easy and simple! I recommend to everyone!
+      author:
+        name: Luciana Hanan
+        avatar:
+          src: https://s.gravatar.com/avatar/45a2bfc89efde7b3c4505b69e097492f?s=100
+        to: https://wordpress.org/support/topic/the-best-out-there-50/
+        target: _blank
+      achievements:
+        - label: Experience
+          color: warning
+    - quote_title: Great plugin
+      quote: If you're looking to integrate Tailwind CSS with WordPress, Windpress is the solution you need.
+      author:
+        name: John Diaz
+        description: Founder at Fancy Bricks & Fancy Animations
+        avatar:
+          src: https://s.gravatar.com/avatar/054277acf9d9af7e4a8a4ee25e8f41b7?s=100
+        to: https://wordpress.org/support/topic/great-plugin-39591/
+        target: _blank
+    - quote_title: Greet plugins
+      quote: good plugin for tailwind. thanks for joshua for this awesome plugins
+      author:
+        name: zoanphuong
+        avatar:
+          src: https://s.gravatar.com/avatar/de2110ed5f7c15ce1604c139f01ba671?s=100
+        to: https://wordpress.org/support/topic/greet-plugins/
+        target: _blank
+    - quote_title: A Tailwind Plugin That Shines with Bricks Builder
+      quote: WindPress has been a fantastic tool in my design process with Bricks Builder. The plugin integrates smoothly, making it effortless to apply Tailwind CSS within Bricks, allowing for rapid customization without sacrificing design quality or responsiveness. Even though I primarily use Bricks, it's worth mentioning that WindPress works equally well with many other site builders. Its flexibility across platforms makes it a solid choice for anyone looking to streamline their Tailwind workflow. If you're using Bricks or any other builder and want a reliable way to implement Tailwind, WindPress is definitely worth it!
+      author:
+        name: Jornes
+        avatar:
+          src: https://s.gravatar.com/avatar/c50019fc8f94c5bbe0d1c70a55c19e8e?s=100
+        to: https://wordpress.org/support/topic/windpress-review-a-tailwind-plugin-that-shines-with-bricks-builder/
+        target: _blank
+      achievements:
+        - label: Integrations
+          color: important
+        - label: Workflow
+          color: info
+    - quote_title: Great works
+      quote: Easy to use Integrate with many page builders
+      author:
+        name: imjlk
+        avatar:
+          src: https://s.gravatar.com/avatar/a90024cfba5d2cc4b13e252379350164?s=100
+        to: https://wordpress.org/support/topic/great-works-26/
+        target: _blank
+    - quote_title: Melhor plugin para Tailwind no WP
+      quote: Torna fácil a integração do Tailwind no WP e isso já o torna sensacional
+      author:
+        name: liiverodrigues
+        avatar:
+          src: https://s.gravatar.com/avatar/3a683a50a402ea16b2a6d875e4b94d23?s=100
+        to: https://wordpress.org/support/topic/melhor-plugin-para-tailwind-no-wp/
+        target: _blank
+    - quote_title: Good plugin for tailwindcss with wordpress
+      quote: Bro, you are a genius, for making tailwind available for wordpress
+      author:
+        name: luxingchao
+        avatar:
+          src: https://s.gravatar.com/avatar/a9f443f20450283ca5b7fe96698d0fd82863d6d5f317e96cbbd29391e005e47f?s=100
+        to: https://wordpress.org/support/topic/good-plugin-for-tailwindcss-with-wordpress/
+        target: _blank
+    - quote_title: Tailwind + Bricks Builder is the dream!
+      quote: I use ReactJS and InertiaJS 2.0 to build plugins and Tailwind is the standard simply because you have to be a certified psycho nut case crazy person to use vanilla CSS. Bricks Builder and WindPress work very well together.
+      author:
+        name: forestcall
+        avatar:
+          src: https://s.gravatar.com/avatar/c346a54f734e093acd6bf888e3e1d589e58d80ea1d397fdcd3c58abf3869aaee?s=100
+        to: https://wordpress.org/support/topic/tailwind-bricks-builder-is-the-dream/
+        target: _blank
+    - quote_title: Easy to integrate
+      quote: super easy to integrate with tailwind
+      author:
+        name: pradeep.ghildiyal
+        avatar:
+          src: https://s.gravatar.com/avatar/04ecfca4eab8946bccd068109bcfd2ff4d8a8e3745ead2d4b97b0d2699978f5e?s=100
+        to: https://wordpress.org/support/topic/easy-to-integrate-31/
+        target: _blank
+    - quote_title: The best Tailwind plugin for WordPress
+      quote: If you're looking for a way to integrate the Tailwind CSS framework into WordPress, WindPress is the perfect solution. It's easy to set up and works seamlessly with the Block Editor. Trust me, no other WordPress plugin does it quite like WindPress. If possible, I recommend upgrading to WindPress Pro.
+      author:
+        name: Cuong Thach
+        avatar:
+          src: https://s.gravatar.com/avatar/c955bc6850c8d00b12fa6082f74039416a49d60d074f8962d789fde77b2c0c95?s=100
+        to: https://wordpress.org/support/topic/the-best-tailwind-plugin-for-wordpress/
+        target: _blank
+    # - quote_title: 
+    #   quote: 
+    #   author:
+    #     name: 
+    #     description: 
+    #     avatar:
+    #       src: 
+    #     to: 
+    #     target: _blank
 
-        <template>
-          <main>
-            <h1>Demo with auto imports</h1>
-            <form @submit.prevent="hello">
-              <MyInput v-model="message" />
-              <button type="submit">Say Hello</button>
-            </form>
-          </main>
-        </template>
-        ```
 
-        ```vue [components/MyInput.vue]
-        <script setup>
-        const modelValue = defineModel<string>()
-        </script>
+# features:
+#   title: Enable features as you grow
+#   description: Nuxt grows and adapts with your needs while providing an exceptional developer experience. Build anything from simple landing pages to complex web applications that scale for teams of hundreds of developers. We've designed Nuxt to be approachable for developers of all skill levels.
+#   features:
+#     - icon: i-lucide-sparkles
+#       title: Zero Configuration
+#       description: Start coding with Vue or Typescript immediately — Nuxt handles all the setup for you.
+#     - icon: i-lucide-file-code-2
+#       title: Rendering Modes
+#       description: Server-side rendering, client-side rendering, static-site generation, you decide, up to the page level.
+#     - icon: i-lucide-milestone
+#       title: Routing & Layouts
+#       description: Use our file-based routing system to build complex url-based views while reusing components for performance.
+#     - icon: i-lucide-unplug
+#       title: Data Fetching
+#       description: Make your Vue component async and await your data. Nuxt provides powerful composables for universal data fetching.
+#     - icon: i-lucide-bug
+#       title: Error Handling
+#       description: Catch errors in your application with our built-in handlers and custom error pages.
+#     - icon: i-lucide-flip-horizontal
+#       title: Transitions
+#       description: Implement smooth transitions between layouts, pages, and components.
+#     - icon: i-lucide-image
+#       title: Assets & Style
+#       description: Benefit from automatic image, font, and script optimizations with built-in support.
+#     - icon: i-lucide-file-search
+#       title: SEO & Meta Tags
+#       description: Create production-ready applications that are fully indexable by search engines.
+#     - icon: i-lucide-puzzle
+#       title: Modular
+#       description: Extend Nuxt features with 200+ modules to ship your application faster.
+#     - icon: i-lucide-shield-check
+#       title: Middleware
+#       description: Protect or add custom logic (localization, A/B testing) before rendering pages.
+#     - icon: i-simple-icons-typescript
+#       title: Type-safe with TypeScript
+#       description: Write type-safe code with automatically generated types and tsconfig.json.
+#   cta:
+#     title: 'Deep dive into Nuxt now'
+#     label: Start reading docs
+#     to: /docs
+#     icon: i-lucide-arrow-right
 
-        <template>
-          <input v-model="modelValue" />
-        </template>
-        ```
-        ```ts [composables/say-hello.ts]
-        export function sayHello(message = 'World') {
-          alert(`Hello ${upperCase(message)}!`)
-        }
-        ```
 
-        ```json [package.json]
-        {
-          "name": "hello-nuxt",
-          "private": true,
-          "type": "module",
-          "scripts": {
-            "dev": "nuxt dev",
-            "build": "nuxt build",
-            "generate": "nuxt generate",
-            "preview": "nuxt preview"
-          },
-          "dependencies": {
-            "nuxt": "latest"
-          }
-        }
-        ```
-        ::
-    - title: API Routes
-      icon: i-lucide-pc-case
-      content: |
-        ::code-tree{defaultValue="server/api/hello.ts" class="lg:rounded-r-none lg:border-r-0 dark:[--ui-border-muted:var(--color-gray-800)]"}
-        ```vue [app.vue]
-        <template>
-          <NuxtPage />
-        </template>
-        ```
 
-        ```json [package.json]
-        {
-          "name": "nuxt-data-fetching",
-          "private": true,
-          "type": "module",
-          "scripts": {
-            "dev": "nuxt dev",
-            "build": "nuxt build",
-            "generate": "nuxt generate",
-            "preview": "nuxt preview"
-          },
-          "dependencies": {
-            "nuxt": "latest"
-          }
-        }
-        ```
-
-        ```vue [pages/index.vue]
-        <script setup lang="ts">
-        const { data } = await useFetch('/api/hello')
-        </script>
-
-        <template>
-          <h1>{{ data.message }}</h1>
-        </template>
-        ```
-
-        ```ts [server/api/hello.ts]
-        export default defineEventHandler((event) => {
-          return {
-            message: 'Hello World'
-          }
-        })
-        ```
-        ::
 logos:
   title: Chosen by leading companies worldwide
   companies:
@@ -280,48 +417,6 @@ logos:
       alt: To Good to Go
       height: 40
       width: 51
-features:
-  title: Enable features as you grow
-  description: Nuxt grows and adapts with your needs while providing an exceptional developer experience. Build anything from simple landing pages to complex web applications that scale for teams of hundreds of developers. We've designed Nuxt to be approachable for developers of all skill levels.
-  features:
-    - icon: i-lucide-sparkles
-      title: Zero Configuration
-      description: Start coding with Vue or Typescript immediately — Nuxt handles all the setup for you.
-    - icon: i-lucide-file-code-2
-      title: Rendering Modes
-      description: Server-side rendering, client-side rendering, static-site generation, you decide, up to the page level.
-    - icon: i-lucide-milestone
-      title: Routing & Layouts
-      description: Use our file-based routing system to build complex url-based views while reusing components for performance.
-    - icon: i-lucide-unplug
-      title: Data Fetching
-      description: Make your Vue component async and await your data. Nuxt provides powerful composables for universal data fetching.
-    - icon: i-lucide-bug
-      title: Error Handling
-      description: Catch errors in your application with our built-in handlers and custom error pages.
-    - icon: i-lucide-flip-horizontal
-      title: Transitions
-      description: Implement smooth transitions between layouts, pages, and components.
-    - icon: i-lucide-image
-      title: Assets & Style
-      description: Benefit from automatic image, font, and script optimizations with built-in support.
-    - icon: i-lucide-file-search
-      title: SEO & Meta Tags
-      description: Create production-ready applications that are fully indexable by search engines.
-    - icon: i-lucide-puzzle
-      title: Modular
-      description: Extend Nuxt features with 200+ modules to ship your application faster.
-    - icon: i-lucide-shield-check
-      title: Middleware
-      description: Protect or add custom logic (localization, A/B testing) before rendering pages.
-    - icon: i-simple-icons-typescript
-      title: Type-safe with TypeScript
-      description: Write type-safe code with automatically generated types and tsconfig.json.
-  cta:
-    title: 'Deep dive into Nuxt now'
-    label: Start reading docs
-    to: /docs
-    icon: i-lucide-arrow-right
 foundation:
   title: Built on a solid foundation
   description: Nuxt is built on top of bulletproof open source technologies, with versatility to choose between different build tools.
@@ -380,16 +475,6 @@ modules:
       icon: i-lucide-arrow-right
       color: neutral
       trailing: true
-testimonial:
-  quote: "Nuxt offers a compelling solution and a great ecosystem to help you ship fullstack Vue apps that are performant and SEO friendly. The flexibility to choose between SSR and SSG is icing on the cake."
-  author:
-    name: 'Evan You'
-    description: 'Creator of Vue.js and Vite'
-    to: 'https://x.com/evanyou'
-    avatar:
-      src: 'https://ipx.nuxt.com/f_auto,s_40x40/gh_avatar/yyx990803'
-      srcset: 'https://ipx.nuxt.com/f_auto,s_80x80/gh_avatar/yyx990803 2x'
-      provider: 'ipx'
 deploy:
   title: Deploy your app anywhere
   description: One-command deployments and zero-configuration options make it easy to get your Nuxt app live. Choose your platform, and let Nuxt handle the rest, allowing you to focus on building great applications rather than managing complex deployments.
@@ -491,3 +576,5 @@ sponsors:
       to: /enterprise/sponsors
       color: neutral
       variant: outline
+
+

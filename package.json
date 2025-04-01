@@ -65,7 +65,8 @@
     "onlyBuiltDependencies": [
       "better-sqlite3",
       "esbuild",
-      "sharp"
+      "sharp",
+      "workerd"
     ],
     "ignoredBuiltDependencies": [
       "@parcel/watcher",

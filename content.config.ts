@@ -151,7 +151,32 @@ export default defineContentConfig({
           }))
         }),
         modules: PageSection,
-        testimonial: Testimonial,
+        testimonials: BaseSection.extend({
+          headline: z.object({
+            label: z.string(),
+            to: z.string(),
+            icon: z.string().optional().editor({ input: 'icon' })
+          }).optional(),
+          items: z.array(
+            z.object({
+              quote_title: z.string(),
+              quote: z.string(),
+              author: z.object({
+                name: z.string(),
+                description: z.string(),
+                avatar: Image.optional(),
+                to: z.string().optional(),
+                target: z.enum(['_blank', '_self']).optional()
+              }),
+              achievements: z.array(
+                z.object({
+                  label: z.string(),
+                  color: z.enum(['success', 'warning', 'error', 'info', 'neutral', 'important'])
+                }).optional()
+              ),
+            })
+          )
+        }),
         deploy: PageSection,
         contributors: PageSection,
         stats: PageSection.extend({
@@ -165,7 +190,13 @@ export default defineContentConfig({
         }),
         sponsors: PageSection.extend({
           cta: Button
-        })
+        }),
+        visual_builders: z.object({
+          name: z.string(),
+          url: z.string().url().optional(),
+          icon: z.string().optional(),
+          pro: z.boolean().optional(),
+        }),
       })
     }),
     docs: defineCollection({

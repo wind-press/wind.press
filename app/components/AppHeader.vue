@@ -8,11 +8,6 @@ const stats = useStats()
 const { copy } = useClipboard()
 const { headerLinks } = useHeaderLinks()
 
-const version = computed(() => {
-  const versionMatch = stats.value?.version?.match(/\d+\.\d+/)
-  return versionMatch ? versionMatch[0] : undefined
-})
-
 const mobileNavigation = computed<ContentNavigationItem[]>(() => {
   // Show Migration and Bridge on mobile only when user is reading them
   const docsLink = navigation.value.find(link => link.path === '/docs')
@@ -32,11 +27,11 @@ const mobileNavigation = computed<ContentNavigationItem[]>(() => {
         path: child.to
       }))
     } as ContentNavigationItem)),
-    {
-      title: 'Design Kit',
-      icon: 'i-lucide-palette',
-      path: '/design-kit'
-    }
+    // {
+    //   title: 'Design Kit',
+    //   icon: 'i-lucide-palette',
+    //   path: '/design-kit'
+    // }
   ].filter((item): item is ContentNavigationItem => Boolean(item))
 })
 
@@ -50,11 +45,11 @@ const defaultOpen = computed(() => {
 const logoContextMenuItems = [
   [{
     label: 'Copy logo as SVG',
-    icon: 'i-simple-icons-nuxtdotjs',
+    icon: 'lucide:copy',
     onSelect() {
       if (logo.value) {
         copy(logo.value.$el.outerHTML, {
-          title: 'Nuxt logo copied as SVG',
+          title: 'WindPress logo copied as SVG',
           description: 'You can now paste it into your project',
           icon: 'i-lucide-circle-check',
           color: 'success'
@@ -62,11 +57,11 @@ const logoContextMenuItems = [
       }
     }
   }],
-  [{
-    label: 'Browse design kit',
-    icon: 'i-lucide-shapes',
-    to: '/design-kit'
-  }]
+  // [{
+  //   label: 'Browse design kit',
+  //   icon: 'i-lucide-shapes',
+  //   to: '/design-kit'
+  // }]
 ]
 </script>
 
@@ -76,10 +71,11 @@ const logoContextMenuItems = [
       <UContextMenu :items="logoContextMenuItems" size="xs">
         <NuxtLink to="/" class="flex gap-2 items-end" aria-label="Back to home">
           <NuxtLogo ref="logo" class="block w-auto h-6" />
+          <span class="text-2xl leading-5 font-bold">WindPress</span>
 
-          <UTooltip v-if="version" :text="`Latest release: v${stats?.version || 3}`">
+          <UTooltip v-if="stats?.wp_version" :text="`Latest release: v${stats?.wp_version || 3}`">
             <UBadge variant="subtle" size="sm" class="-mb-[2px] rounded font-semibold text-[12px]/3">
-              v{{ version }}
+              v{{ stats.wp_version }}
             </UBadge>
           </UTooltip>
         </NuxtLink>
@@ -96,7 +92,7 @@ const logoContextMenuItems = [
       <UColorModeButton />
 
       <UTooltip text="GitHub Stars">
-        <UButton
+        <!-- <UButton
           icon="i-simple-icons-github"
           to="https://go.nuxt.com/github"
           target="_blank"
@@ -108,6 +104,22 @@ const logoContextMenuItems = [
           }"
         >
           <span class="sr-only">Nuxt on GitHub</span>
+        </UButton> -->
+      </UTooltip>
+
+      <UTooltip text="WindPress @ wordpress.org" class="hidden sm:flex" >
+        <UButton
+          icon="i-simple-icons-wordpress"
+          to="https://wordpress.org/plugins/windpress/"
+          target="_blank"
+          variant="subtle"
+          color="neutral"
+          :label="stats ? formatNumber(stats.stars) : '...'"
+          :ui="{
+            label: 'hidden sm:inline-flex'
+          }"
+        >
+          <span>Get WindPress</span>
         </UButton>
       </UTooltip>
     </template>
