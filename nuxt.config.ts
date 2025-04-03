@@ -11,21 +11,7 @@ export default defineNuxtConfig({
 
     extends: ['@nuxt/ui-pro'],
 
-    modules: [
-        // '@nuxthub/core',
-        '@nuxt/content',
-        '@nuxt/ui',
-        '@nuxt/image',
-        '@nuxt/fonts',
-        '@nuxt/eslint',
-        '@vueuse/nuxt',
-        '@nuxthq/studio',
-        'nuxt-shiki',
-        'nuxt-og-image',
-        '@nuxtjs/seo',
-        'nuxt-svgo',
-        'nuxt-umami',
-    ],
+    modules: ['@nuxt/content', '@nuxt/ui', '@nuxt/image', '@nuxt/fonts', '@nuxt/eslint', '@vueuse/nuxt', '@nuxthq/studio', 'nuxt-shiki', 'nuxt-og-image', '@nuxtjs/seo', 'nuxt-svgo', 'nuxt-umami', '@nuxthub/core', 'nuxt-auth-utils'],
 
     hooks: {
         // Define `@nuxt/ui` components as global to use them in `.md` (feel free to add those you need)
@@ -60,10 +46,10 @@ export default defineNuxtConfig({
         },
     },
 
-    // hub: {
-    //     database: true,
-    //     blob: true
-    // },
+    hub: {
+        database: true,
+        blob: true
+    },
 
     routeRules: {
         '/api/search.json': { prerender: true },
