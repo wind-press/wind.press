@@ -1,5 +1,6 @@
 import { createResolver } from 'nuxt/kit'
 import { parseMdc } from './helpers/mdc-parser.mjs'
+import yaml from '@rollup/plugin-yaml'
 
 const { resolve } = createResolver(import.meta.url)
 
@@ -188,5 +189,10 @@ export default defineNuxtConfig({
     enableInDev: false,
     // Do not throw when twoslash fails, the typecheck should be down in github.com/nuxt/nuxt's CI
     throws: false
+  },
+  vite: {
+    plugins: [
+      yaml()
+    ],
   }
 })

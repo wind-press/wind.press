@@ -40,7 +40,8 @@ if (import.meta.server) {
       { name: 'viewport', content: 'width=device-width, initial-scale=1' }
     ],
     link: [
-      { rel: 'icon', type: 'image/png', href: '/icon.png' }
+      // { rel: 'icon', type: 'image/png', href: '/icon.png' }
+      { rel: 'icon', type: 'image/svg+xml', href: '/icon.svg' },
     ],
     htmlAttrs: {
       lang: 'en'

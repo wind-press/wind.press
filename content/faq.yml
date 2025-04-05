@@ -1,0 +1,23 @@
+faq:
+  title: Frequently asked questions
+  description: Here are some of our most frequently asked questions. If you have a question that isn't answered here, please reach out to us.
+  items:
+    - label: Which version of Tailwind CSS is supported by WindPress?
+      content: WindPress supports both Tailwind CSS versions 3 and 4 and will receive regular updates to support the latest version.
+      defaultOpen: true
+    - label: Is WindPress support the Tailwind CSS plugins?
+      content: Yes, WindPress supports Tailwind CSS plugins. You can add the plugins in the `tailwind.config.js` file editor. The Tailwind CSS plugins will be loaded from the [esm.sh](https://esm.sh) CDN.
+    - label: Do I need an internet connection to use WindPress?
+      content: No, by default, you do not need an internet connection to use WindPress. However, an internet connection is required to load the Tailwind CSS plugins from the CDN.
+    - label: What themes is WindPress compatible with?
+      content: WindPress is compatible with any WordPress theme. A small adjustment may be needed for the compiler scanner to detect the used classes in the theme. We have a guide on how to make the adjustment, check the documentation.
+    - label: Do you offer a discount for students?
+      content: Yes, we offer a discount for students. Please send an email to id@rosua.org with subject "Student Discount" from your student email, and attach a photo of your student ID card or certificate.
+    - label: Can I upgrade my plan later?
+      content: Yes, you can upgrade your plan at any time by paying the difference between the two plans. Please [contact us](https://rosua.org/support-portal) if you need help with upgrading your plan.
+    - label: Can I use WindPress for my client's website?
+      content: Yes, you can use WindPress for your client's website with the Starter and Agency plans. The Personal plan is for personal use only.
+    - label: Can I cancel my subscription?
+      content: Yes, you can cancel your [subscription](https://rosua.org/checkout/subscriptions) at any time. Your subscription will remain active until the end of the billing cycle.
+    - label: Do you offer refunds?
+      content: Yes, we offer a 14-day money-back guarantee. If you are not satisfied with WindPress, please [contact us](https://rosua.org/support-portal) within 14 days of purchase for a full refund. We may ask for feedback to improve our product. Renewals are not eligible for refunds, you can cancel your subscription before the renewal date to avoid being charged.
