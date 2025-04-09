@@ -40,8 +40,6 @@ export default defineEventHandler(async (event) => {
         }
     });
 
-    console.log('windenLicense', windenLicense);
-
     if (windenLicense) {
         return {
             data: {
@@ -64,10 +62,6 @@ export default defineEventHandler(async (event) => {
             )
         )
         .limit(1); // Get only the first result
-
-    console.log(discount);
-
-    console.log('discount', discount);
 
     if (!discount || discount.length === 0) {
         return {
