@@ -124,7 +124,8 @@ export default defineNuxtConfig({
     }
   },
   hub: {
-    cache: true
+    cache: true,
+    database: true,
   },
   typescript: {
     strict: false

@@ -46,6 +46,7 @@ onMounted(() => {
   <div v-if="page">
     <UPageHero :title="page.hero.title" :description="page.hero.description" :links="page.hero.links" :ui="{ title: 'text-4xl sm:text-5xl', root: 'mx-auto max-w-7xl', description: 'sm:text-lg' }">
       <div class="absolute inset-0 landing-grid z-[-1] [mask-image:radial-gradient(100%_100%_at_top_right,white,transparent)]"></div>
+      <SkyBg />
 
       <template #headline>
         <UBadge v-if="page.hero.cta" variant="subtle" size="lg" class="relative rounded-full font-semibold">
