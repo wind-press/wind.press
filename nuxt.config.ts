@@ -49,9 +49,18 @@ export default defineNuxtConfig({
             default: 'material-theme-lighter',
             dark: 'material-theme-palenight'
           },
-          langs: ['sql', 'diff', 'ini']
+          langs: [
+            'sql',
+            'diff',
+            'ini',
+            'html',
+            'css',
+            'postcss',
+            'js',
+            'php',
+          ],
         }
-      }
+      },
     },
     preview: {
       api: 'https://api.nuxt.studio'
@@ -60,7 +69,7 @@ export default defineNuxtConfig({
   mdc: {
     highlight: {
       noApiRoute: false
-    }
+    },
   },
   ui: {
     theme: {

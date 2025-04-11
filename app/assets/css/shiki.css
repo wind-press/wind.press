@@ -1,0 +1,59 @@
+pre.shiki {
+    display: flex;
+
+    code {
+        flex: 1;
+
+        .line {
+            span:last-child {
+                padding-right: 16px;
+            }
+
+            text-wrap: nowrap;
+
+            &.highlight,
+            &.highlighted {
+                /* background-color: color-mix(in srgb, var(--ui-bg-muted) 80%, #888888);
+                border: 1px solid rgba(136, 136, 136, 0.5); */
+                background-color: color-mix(in oklab, var(--ui-color-neutral-500) 15%, transparent);
+            }
+
+            &.diff.remove {
+                /* background-color: color-mix(in srgb, var(--ui-bg-muted) 80%, #F43F5E);
+                border: 1px solid rgba(244, 63, 94, 0.5); */
+                background-color: color-mix(in oklab, var(--ui-error) 15%, transparent);
+            }
+
+            &.diff.add {
+                /* background-color: color-mix(in srgb, var(--ui-bg-muted) 80%, #10B981);
+                border: 1px solid rgba(16, 185, 129, 0.5); */
+                background-color: color-mix(in oklab, var(--ui-success) 15%, transparent);
+            }
+
+            &.highlight,
+            &.highlighted,
+            &.diff {
+                /* border-radius: 0.2rem; */
+                margin: 0 -16px;
+                padding: 0 16px;
+            }
+        }
+    }
+
+    &.has-focused {
+        code {
+            .line:not(.focused) {
+                filter: blur(.095rem);
+                opacity: 0.7;
+                transition: filter .35s, opacity .35s;
+            }
+
+            &:hover {
+                .line:not(.focused) {
+                    filter: blur(0);
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}

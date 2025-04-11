@@ -139,6 +139,10 @@ if (import.meta.server) {
           <template #headline>
             <UBreadcrumb :items="breadcrumb" />
           </template>
+
+          <template #description>
+            <MDC :value="page.description" unwrap="div p" />
+          </template>
         </UPageHeader>
 
         <UPageBody>
