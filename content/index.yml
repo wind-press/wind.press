@@ -1,10 +1,10 @@
 hero:
   title: 'The Tailwind CSS integration plugin for WordPress'
   description: Use Tailwind CSS within the block editor, page builders, plugins, and themes — no build step is required.
-  cta:
-    label: WindPress v3 is out
-    to: /blog/windpress-v3
-    icon: i-lucide-arrow-right
+  # cta:
+  #   label: WindPress v3 is out
+  #   to: /blog/windpress-v3
+  #   icon: i-lucide-arrow-right
   links:
     - label: Get started
       size: xl

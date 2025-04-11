@@ -25,22 +25,28 @@ const state = reactive({
 })
 
 async function onSubmit(event: FormSubmitEvent<Schema>) {
-  loading.value = true
+  // loading.value = true
 
-  await $fetch('https://api.nuxt.com/newsletter/subscribe', {
-    method: 'POST',
-    body: {
-      email: event.data.email
-    }
-  }).then(() => {
-    toast.add({ title: 'Subscription pending', description: 'Please check your emails to confirm your subscription.', color: 'success' })
-    state.email = ''
-  }).catch((err) => {
-    const error = JSON.parse(err.data?.message)
-    const description = error[0].message || 'Something went wrong. Please try again later.'
-    toast.add({ title: 'Subscription failed', description, color: 'error' })
+  // await $fetch('https://api.nuxt.com/newsletter/subscribe', {
+  //   method: 'POST',
+  //   body: {
+  //     email: event.data.email
+  //   }
+  // }).then(() => {
+  //   toast.add({ title: 'Subscription pending', description: 'Please check your emails to confirm your subscription.', color: 'success' })
+  //   state.email = ''
+  // }).catch((err) => {
+  //   const error = JSON.parse(err.data?.message)
+  //   const description = error[0].message || 'Something went wrong. Please try again later.'
+  //   toast.add({ title: 'Subscription failed', description, color: 'error' })
+  // })
+  // loading.value = false
+
+  toast.add({
+    title: 'Subscription failed',
+    description: 'The newsletter service is not available at the moment.',
+    color: 'error'
   })
-  loading.value = false
 }
 </script>
 

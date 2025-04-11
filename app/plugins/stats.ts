@@ -44,7 +44,7 @@ async function fetchStats() {
   await fetch('https://api.wordpress.org/plugins/info/1.2/?action=plugin_information&slug=windpress')
     .then(response => response.json())
     .then(data => {
-      stats.edd_activeSites = data.active_installs;
+      stats.edd_activeSites += data.active_installs;
       stats.wp_version = data.version;
       stats.wp_donate_link = data.donate_link;
       stats.wp_download_link = data.download_link;

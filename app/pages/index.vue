@@ -44,7 +44,7 @@ onMounted(() => {
 
 <template>
   <div v-if="page">
-    <UPageHero :title="page.hero.title" :description="page.hero.description" :links="page.hero.links" :ui="{ title: 'text-4xl sm:text-5xl', root: 'mx-auto max-w-7xl', description: 'sm:text-lg' }">
+    <UPageHero :title="page.hero.title" :description="page.hero.description" :links="page.hero.links" :ui="{ title: 'text-4xl sm:text-5xl', root: 'mx-auto max-w-7xl', description: 'sm:text-lg', container: 'py-24 sm:py-32 lg:py-40' }">
       <div class="absolute inset-0 landing-grid z-[-1] [mask-image:radial-gradient(100%_100%_at_top_right,white,transparent)]"></div>
       <SkyBg />
 
@@ -197,7 +197,7 @@ onMounted(() => {
                 A simple and intuitive visual interface to customize your Tailwind CSS configuration without coding.
               </div>
             </div>
-            <img class="absolute sm:top-[-50px] sm:right-[-220px] rounded-lg scale-75 sm:pt-0 pt-5" src="/assets/landing/feature-bento-wizard-color.png" alt="feature: wizard colors" />
+            <img class="absolute sm:top-[-50px] sm:right-[-220px] rounded-lg scale-75 sm:pt-0 pt-5" src="/assets/landing/feature-bento-wizard-color.webp" alt="feature: wizard colors" />
           </div>
           <div class="bento__slot relative col-span-3 row-span-3 p-5 rounded-lg overflow-hidden hover:shadow-md bg-gradient-to-br from-lime-700/20 from-5% via-lime-500/10 via-50% to-lime-100/10">
             <div class="bento__slot-title flex text-lime-900 items-center gap-4">
@@ -253,7 +253,7 @@ onMounted(() => {
                 Start using it instantly without any configuration, and customize it as needed.
               </div>
             </div>
-            <img class="absolute sm:right-[-70px] sm:bottom-[-60px] rounded-lg sm:pt-0 pt-5" src="/assets/landing/feature-bento-customizable.png" alt="feature: customizable" />
+            <img class="absolute sm:right-[-70px] sm:bottom-[-25px] rounded-lg sm:pt-0 pt-5 scale-[1.3]" src="/assets/landing/feature-bento-customizable.webp" alt="feature: customizable" />
           </div>
 
           <div class="bento__slot relative col-span-3 row-span-6 p-5 rounded-lg overflow-hidden hover:shadow-md bg-gradient-to-br from-teal-700/20 from-5% via-teal-500/10 via-50% to-teal-100/10">
@@ -269,11 +269,11 @@ onMounted(() => {
                 Build a single static final CSS without a server. Use Tailwind CSS on any WordPress server, even shared hosting. All processing is done on your browser, and no data transfer occurs.
               </div>
             </div>
-            <img class="absolute hidden sm:block sm:top-[50%] sm:left-[60%] rounded-lg sm:pt-0 pt-5 scale-[2]" src="/assets/landing/feature-bento-compile.png" alt="feature: compile" />
-            <img class="absolute hidden sm:block z-[-1] w-36 h-36 sm:top-[-40px] sm:right-[-40px] opacity-50" src="https://upload.wikimedia.org/wikipedia/commons/5/52/Safari_browser_logo.svg" alt="Apple Safari logo" />
-            <img class="absolute hidden sm:block z-[-1] w-36 h-36 sm:top-[-40px] sm:left-[-40px] opacity-50" src="https://upload.wikimedia.org/wikipedia/commons/9/98/Microsoft_Edge_logo_%282019%29.svg" alt="Microsoft Edge logo" />
-            <img class="absolute hidden sm:block z-[-1] w-36 h-36 sm:bottom-[-40px] sm:right-[-40px] opacity-50" src="https://upload.wikimedia.org/wikipedia/commons/a/a0/Firefox_logo%2C_2019.svg" alt="Mozilla Firefox logo" />
-            <img class="absolute hidden sm:block z-[-1] w-36 h-36 sm:bottom-[-40px] sm:left-[-40px] opacity-50" src="https://upload.wikimedia.org/wikipedia/commons/e/e1/Google_Chrome_icon_%28February_2022%29.svg" alt="Google Chrome logo" />
+            <img class="absolute hidden sm:block sm:top-[50%] sm:left-[20%] rounded-lg sm:pt-0 pt-5 scale-[1.25]" src="/assets/landing/feature-bento-compile.webp" alt="feature: compile" />
+            <img class="absolute hidden sm:block z-[-1] w-36 h-36 sm:top-[-40px] sm:right-[-40px] opacity-30 dark:opacity-60" src="https://upload.wikimedia.org/wikipedia/commons/5/52/Safari_browser_logo.svg" alt="Apple Safari logo" />
+            <img class="absolute hidden sm:block z-[-1] w-36 h-36 sm:top-[-40px] sm:left-[-40px] opacity-30 dark:opacity-60" src="https://upload.wikimedia.org/wikipedia/commons/9/98/Microsoft_Edge_logo_%282019%29.svg" alt="Microsoft Edge logo" />
+            <img class="absolute hidden sm:block z-[-1] w-36 h-36 sm:bottom-[-40px] sm:right-[-40px] opacity-30 dark:opacity-60" src="https://upload.wikimedia.org/wikipedia/commons/a/a0/Firefox_logo%2C_2019.svg" alt="Mozilla Firefox logo" />
+            <img class="absolute hidden sm:block z-[-1] w-36 h-36 sm:bottom-[-40px] sm:left-[-40px] opacity-30 dark:opacity-60" src="https://upload.wikimedia.org/wikipedia/commons/e/e1/Google_Chrome_icon_%28February_2022%29.svg" alt="Google Chrome logo" />
           </div>
           <div class="bento__slot relative col-span-3 row-span-3 p-5 rounded-lg overflow-hidden hover:shadow-md bg-gradient-to-br from-purple-700/20 from-5% via-purple-500/10 via-50% to-purple-100/10">
             <div class="bento__slot-title flex text-purple-900 items-center gap-4">
@@ -284,23 +284,11 @@ onMounted(() => {
                 Built with WordPress REST API and a modern JavaScript framework for a responsive user experience. It has a small footprint and won't slow down your site.
               </div>
             </div>
-            <img class="absolute sm:right-[-70px] sm:bottom-[-65px] scale-75 sm:pt-0 pt-5" src="/assets/landing/feature-bento-wp-rest-api.png" alt="feature: lightweight and blazingly fast" />
+            <img class="absolute sm:right-[-70px] sm:bottom-[-65px] scale-75 sm:pt-0 pt-5" src="/assets/landing/feature-bento-wp-rest-api.webp" alt="feature: lightweight and blazingly fast" />
           </div>
+
           <div class="bento__slot relative col-span-3 row-span-3 p-5 rounded-lg overflow-hidden hover:shadow-md bg-gradient-to-br from-yellow-700/20 from-5% via-yellow-500/10 via-50% to-yellow-100/10">
             <div class="bento__slot-title flex text-yellow-900 items-center gap-4">
-              <a href="/docs/advanced/simple-file-system">
-                <div class="text-lg font-semibold">Simple File System</div>
-              </a>
-            </div>
-            <div class="bento__slot-description mt-4 leading-relaxed">
-              <div>
-                A virtual file system that helps organize your custom CSS and JavaScript files, functioning like a file manager for your Tailwind CSS project.
-              </div>
-            </div>
-            <img class="absolute hidden sm:block sm:right-[-80px] sm:bottom-[-20px] scale-150 rounded-lg sm:pt-0 pt-5" src="/assets/landing/feature-bento-simple-file-system.png" alt="feature: autocomplete" />
-          </div>
-          <div class="bento__slot relative col-span-6 row-span-3 p-5 rounded-lg overflow-hidden hover:shadow-md bg-gradient-to-br from-rose-700/20 from-5% via-rose-500/10 via-50% to-rose-100/10">
-            <div class="bento__slot-title flex text-orange-900 items-center gap-4">
               <a href="/docs/configuration/file-tailwind-config-js/#javascript-package">
                 <div class="text-lg font-semibold">JavaScript package support</div>
               </a>
@@ -310,7 +298,21 @@ onMounted(() => {
                 Add extra functionality to your Tailwind CSS configuration with JavaScript packages through npm. Enrich Tailwind CSS with external plugins.
               </div>
             </div>
-            <img class="absolute sm:right-[-40px] sm:bottom-[-20px] rounded-lg sm:pt-0 pt-5 scale-75" src="/assets/landing/feature-bento-javascript-package.png" alt="feature: javascript package" />
+            <img class="absolute sm:right-[0px] sm:bottom-[0px] rounded-lg sm:pt-0 pt-5 scale-[.9]" src="/assets/landing/feature-bento-javascript-package.webp" alt="feature: javascript package" />
+          </div>
+
+          <div class="bento__slot relative col-span-6 row-span-3 p-5 rounded-lg overflow-hidden hover:shadow-md bg-gradient-to-br from-rose-700/20 from-5% via-rose-500/10 via-50% to-rose-100/10">
+            <div class="bento__slot-title flex text-rose-900 items-center gap-4">
+              <a href="/docs/advanced/simple-file-system">
+                <div class="text-lg font-semibold">Simple File System</div>
+              </a>
+            </div>
+            <div class="bento__slot-description mt-4 leading-relaxed">
+              <div>
+                A virtual file system that helps organize your custom CSS and JavaScript files, functioning like a file manager for your Tailwind CSS project.
+              </div>
+            </div>
+            <img class="absolute hidden sm:block sm:left-[30px] sm:bottom-[-90px] scale-[.95] rounded-lg sm:pt-0 pt-5" src="/assets/landing/feature-bento-simple-file-system.webp" alt="feature: autocomplete" />
           </div>
         </div>
       </div>
@@ -381,6 +383,67 @@ onMounted(() => {
           </UPricingPlan>
         </UPricingPlans>
       </div>
+
+
+
+
+      <div class="badges__list grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 *:ring-1 *:ring-gray-200 dark:*:ring-gray-800 *:bg-gray-100/50 dark:*:bg-gray-800/50">
+        
+        <!-- <div class="badges__item text-center">
+          <div class="text-2xl flex items-center">
+            <Icon name="fa6-solid:hand-holding-dollar" class="text-[#29b077]" />
+          </div>
+          <div class="text-xs text-left">
+            <strong>Free</strong>
+            Forever
+          </div>
+        </div> -->
+
+        <div class="badges__item text-center">
+          <div class="text-2xl flex items-center">
+            <Icon name="ri:exchange-dollar-fill" class="text-[#29b077]" />
+          </div>
+          <div class="text-xs text-left">
+            <strong>14-day Money</strong>
+            <br> Back Guarantee
+          </div>
+        </div>
+
+        <div class="badges__item">
+          <div class="text-2xl flex items-center">
+            <Icon name="fa6-solid:headset" />
+          </div>
+          <div class="text-xs text-left">
+            <div class="flex text-[#feb82c] mb-1">
+              <Icon v-for="i in 5" name="fa6-solid:star" />
+            </div>
+            <strong>Support</strong> Quality
+          </div>
+        </div>
+
+        <div class="badges__item">
+          <div class="text-2xl flex items-center text-rose-600">
+            <Icon name="fa6-solid:face-smile" />
+          </div>
+          <div class="text-xs text-left">
+            <strong>{{ stats.edd_happyCustomers + stats.wp_active_installs }}+ Happy</strong>
+            Users
+          </div>
+        </div>
+
+        <div class="badges__item">
+          <div class="text-2xl flex items-center text-[#4e6fc3]">
+            <Icon name="fa6-brands:wordpress" />
+          </div>
+          <div class="text-xs text-left">
+            <strong>{{ stats.edd_activeSites }}+ Active</strong> Sites
+          </div>
+        </div>
+      </div>
+
+
+
+
     </UPageSection>
 
     <UPageSection id="faq" v-bind="faq.faq" class="scroll-mt-(--ui-header-height)" :ui="{ container: 'relative' }">

@@ -7,17 +7,17 @@ import { queryCollection } from '#imports'
 type queryCollectionWithEvent = <T extends keyof Collections>(event: H3Event, collection: T) => CollectionQueryBuilder<Collections[T]>
 
 export default defineEventHandler(async (event) => {
-  const baseUrl = 'https://nuxt.com'
+  const baseUrl = 'https://wind.press'
   const siteUrl = joinURL(baseUrl, 'blog')
   const feed = new Feed({
-    title: 'The Nuxt Blog',
-    description: 'News and updates about Nuxt.',
+    title: 'The WindPress Blog',
+    description: 'News and updates about WindPress.',
     id: siteUrl,
     link: siteUrl,
     language: 'en',
     image: joinURL(baseUrl, 'icon.png'),
     favicon: joinURL(baseUrl, 'favicon.png'),
-    copyright: `Copyright © 2016-${new Date().getFullYear()} Nuxt All Rights Reserved`,
+    copyright: `Copyright © 2024-${new Date().getFullYear()} WindPress All Rights Reserved`,
     feedLinks: {
       rss: `${siteUrl}/rss.xml`
     }

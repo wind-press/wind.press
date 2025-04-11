@@ -10,7 +10,7 @@ export default defineEventHandler(async (event: H3Event) => {
   const docs = await (queryCollection as queryCollectionWithEvent)(event, 'docs').all()
 
   const sitemap = new SitemapStream({
-    hostname: 'https://nuxt.com'
+    hostname: 'https://wind.press'
   })
   for (const doc of docs) {
     sitemap.write({

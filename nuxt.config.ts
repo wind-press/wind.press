@@ -98,7 +98,21 @@ export default defineNuxtConfig({
     '/docs/guide/recipes': { redirect: '/docs/guide/recipes/custom-routing', prerender: false },
     '/docs/guide/going-further/custom-routing': { redirect: '/docs/guide/recipes/custom-routing', prerender: false },
     // '/docs/guide/directory-structure/nuxt.config': { redirect: '/docs/guide/directory-structure/nuxt-config', prerender: false },
-    '/enterprise': { redirect: '/enterprise/support', prerender: false }
+    '/enterprise': { redirect: '/enterprise/support', prerender: false },
+
+
+    // Redirects 
+    '/go': { redirect: '/', prerender: false },
+    '/pricing': { redirect: '/#pricing', prerender: false },
+    '/go/github': { redirect: 'https://github.com/wind-press/windpress', prerender: false },
+    '/go/discord': { redirect: 'https://discord.gg/fjsB83XdFw', prerender: false },
+    '/go/facebook': { redirect: 'https://www.facebook.com/groups/1142662969627943', prerender: false },
+    '/go/bricks': { redirect: 'https://bricksbuilder.io/', prerender: false },
+    '/go/breakdance': { redirect: 'https://breakdance.com/ref/165/', prerender: false },
+    '/go/builderius': { redirect: 'https://builderius.io/?referral=afdfca82c8', prerender: false },
+    '/go/livecanvas': { redirect: 'https://livecanvas.com/?ref=4008', prerender: false },
+    '/go/ads': { redirect: 'https://ko-fi.com/post/WindPress-Bronze-Sponsor-U7U8143WIP', prerender: false },
+    '/go/sponsor': { redirect: 'https://ko-fi.com/Q5Q75XSF7?utm_source=windpress_website', prerender: false },
   },
   sourcemap: true,
   future: {
