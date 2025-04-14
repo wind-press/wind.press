@@ -88,15 +88,15 @@ features:
     - title: HTML to native elements
       description: Convert Tailwind CSS HTML to native elements in the editor
       icon: fa6-brands:html5
-    - title: Ubiquitous Panel
-      description: A floating panel that allows you to quickly access the WindPress settings from anywhere on the page
-      icon: fa6-solid:street-view
     - title: Sort the classes
       description: Sort the Tailwind CSS classes on the input field based on the Tailwind CSS official recommendation
       icon: fa6-solid:arrow-down-a-z
     - title: Hover Preview the classes
       description: Hover over the classes to see the complete outputted CSS and the preview of the design canvas
       icon: fa6-solid:arrow-pointer
+    - title: Ubiquitous Panel
+      description: A floating panel that allows you to quickly access the WindPress settings from anywhere on the page
+      icon: fa6-solid:street-view
 
 
 

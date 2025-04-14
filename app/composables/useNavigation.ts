@@ -9,37 +9,43 @@ function _useHeaderLinks() {
       to: '/docs',
       search: false,
       active: route.path.startsWith('/docs'),
-      children: [{
-        label: 'Get Started',
-        description: 'Learn how to get started with Nuxt to build your first app.',
-        icon: 'i-lucide-rocket',
-        to: '/docs/getting-started',
-        active: route.path.startsWith('/docs/getting-started')
-      }, {
-        label: 'Guide',
-        description: 'Get the key concepts, directory structure and best practices.',
-        icon: 'i-lucide-book-open',
-        to: '/docs/guide',
-        active: route.path.startsWith('/docs/guide')
-      }, {
-        label: 'API',
-        description: 'Explore the Nuxt components, composables, utilities and more.',
-        icon: 'i-lucide-code-xml',
-        to: '/docs/api',
-        active: route.path.startsWith('/docs/api')
-      }, {
-        label: 'Examples',
-        description: 'Discover and explore official and community examples.',
-        icon: 'i-lucide-app-window-mac',
-        to: '/docs/examples',
-        active: route.path.startsWith('/docs/examples')
-      }, {
-        label: 'Community',
-        description: 'Find answers and support from the community.',
-        icon: 'i-lucide-messages-square',
-        to: '/docs/community',
-        active: route.path.startsWith('/docs/community')
-      }]
+      children: [
+        {
+          label: 'Get Started',
+          description: 'Learn how to get started with Nuxt to build your first app.',
+          icon: 'i-lucide-rocket',
+          to: '/docs/getting-started',
+          active: route.path.startsWith('/docs/getting-started')
+        },
+        {
+          label: 'Guide',
+          description: 'Get the key concepts, directory structure and best practices.',
+          icon: 'i-lucide-book-open',
+          to: '/docs/guide',
+          active: route.path.startsWith('/docs/guide')
+        },
+        {
+          label: 'API',
+          description: 'Explore the Nuxt components, composables, utilities and more.',
+          icon: 'i-lucide-code-xml',
+          to: '/docs/api',
+          active: route.path.startsWith('/docs/api')
+        },
+        {
+          label: 'Examples',
+          description: 'Discover and explore official and community examples.',
+          icon: 'i-lucide-app-window-mac',
+          to: '/docs/examples',
+          active: route.path.startsWith('/docs/examples')
+        },
+        // {
+        //   label: 'Community',
+        //   description: 'Find answers and support from the community.',
+        //   icon: 'i-lucide-messages-square',
+        //   to: '/docs/community',
+        //   active: route.path.startsWith('/docs/community')
+        // },
+      ]
     }, {
       label: 'Integrations',
       to: '/modules',
@@ -315,11 +321,11 @@ const _useNavigation = () => {
           icon: hosting.logoIcon,
           avatar: hosting.logoSrc
             ? {
-                src: hosting.logoSrc,
-                ui: {
-                  root: 'rounded-none bg-transparent'
-                }
+              src: hosting.logoSrc,
+              ui: {
+                root: 'rounded-none bg-transparent'
               }
+            }
             : undefined,
           to: hosting.path
         }))
