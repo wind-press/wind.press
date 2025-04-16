@@ -1,6 +1,6 @@
 ---
 title: 'WindPress API'
-titleTemplate: '%s'
+# titleTemplate: '%s'
 description: 'Learn how to extend WindPress with the available Functions and Hooks.'
 navigation: false
 surround: false

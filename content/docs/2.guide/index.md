@@ -1,6 +1,6 @@
 ---
 title: 'WindPress Guide'
-titleTemplate: '%s'
+# titleTemplate: '%s'
 description: 'Learn how to use WindPress and its features.'
 navigation: false
 surround: false
