@@ -25,11 +25,11 @@ const title = article.value.seo?.title || article.value.title
 const description = article.value.seo?.description || article.value.description
 
 useSeoMeta({
-  titleTemplate: '%s · Nuxt Blog',
+  titleTemplate: '%s · WindPress Blog',
   title,
   description,
   ogDescription: description,
-  ogTitle: `${title} · Nuxt Blog`
+  ogTitle: `${title} · WindPress Blog`
 })
 
 if (article.value.image) {
@@ -46,35 +46,38 @@ const authorTwitter = article.value.authors?.[0]?.twitter
 
 const socialLinks = computed(() => !article.value
   ? []
-  : [{
-      label: 'LinkedIn',
-      icon: 'i-simple-icons-linkedin',
-      to: `https://www.linkedin.com/sharing/share-offsite/?url=https://nuxt.com${article.value.path}`
-    }, {
+  : [
+    // {
+    //   label: 'LinkedIn',
+    //   icon: 'i-simple-icons-linkedin',
+    //   to: `https://www.linkedin.com/sharing/share-offsite/?url=https://nuxt.com${article.value.path}`
+    // },
+    {
       label: 'X',
       icon: 'i-simple-icons-x',
-      to: `https://x.com/intent/tweet?text=${encodeURIComponent(`${article.value.title}${authorTwitter ? ` by @${article.value.authors[0]!.twitter}` : ''}\n\n`)}https://nuxt.com${article.value.path}`
-    }])
+      to: `https://x.com/intent/tweet?text=${encodeURIComponent(`${article.value.title}${authorTwitter ? ` by @${article.value.authors[0]!.twitter}` : ''}\n\n`)}https://wind.press${article.value.path}`
+    }
+  ])
 
 function copyLink() {
-  copy(`https://nuxt.com${article.value?.path || '/'}`, { title: 'Link copied to clipboard', icon: 'i-lucide-copy-check' })
+  copy(`https://wind.press${article.value?.path || '/'}`, { title: 'Link copied to clipboard', icon: 'i-lucide-copy-check' })
 }
 
 const links = [
   {
-    icon: 'i-lucide-pen',
+    icon: 'i-ph-pencil-simple',
     label: 'Edit this article',
-    to: `https://github.com/nuxt/nuxt.com/edit/main/content/${article.value.stem}`,
+    to: `https://github.com/wind-press/wind.press/edit/main/content/${article.value.stem}`,
     target: '_blank'
   }, {
-    icon: 'i-lucide-star',
+    icon: 'i-ph-star',
     label: 'Star on GitHub',
-    to: 'https://go.nuxt.com/github',
+    to: '/go/github',
     target: '_blank'
   }, {
-    icon: 'i-lucide-hand-heart',
+    icon: 'i-ph-hand-heart',
     label: 'Become a Sponsor',
-    to: 'https://go.nuxt.com/sponsor',
+    to: '/go/sponsor',
     target: '_blank'
   }
 ]
@@ -112,14 +115,7 @@ const links = [
                 <span class="sr-only">Copy URL</span>
                 Copy URL
               </UButton>
-              <UButton
-                v-for="(link, index) in socialLinks"
-                :key="index"
-                v-bind="link"
-                variant="ghost"
-                color="neutral"
-                target="_blank"
-              >
+              <UButton v-for="(link, index) in socialLinks" :key="index" v-bind="link" variant="ghost" color="neutral" target="_blank">
                 <span class="sr-only">Nuxt on {{ link.label }}</span>
               </UButton>
             </div>

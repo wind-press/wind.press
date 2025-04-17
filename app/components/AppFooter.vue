@@ -28,20 +28,17 @@ const { footerLinks } = useFooterLinks()
     </template>
 
     <template #right>
-      <UButton color="neutral" variant="ghost" to="https://go.nuxt.com/x" target="_blank" icon="i-simple-icons-x">
-        <span class="sr-only">Nuxt on X</span>
+      <!-- <UButton color="neutral" variant="ghost" to="https://go.nuxt.com/x" target="_blank" icon="i-simple-icons-x">
+        <span class="sr-only">WindPress on X</span>
+      </UButton> -->
+      <UButton color="neutral" variant="ghost" to="/go/facebook" target="_blank" icon="i-simple-icons-facebook">
+        <span class="sr-only">WindPress on Facebook</span>
       </UButton>
-      <UButton color="neutral" variant="ghost" to="https://go.nuxt.com/bluesky" target="_blank" icon="i-simple-icons-bluesky">
-        <span class="sr-only">Nuxt on BlueSky</span>
+      <UButton color="neutral" variant="ghost" to="/go/discord" target="_blank" icon="i-simple-icons-discord">
+        <span class="sr-only">WindPress on Discord</span>
       </UButton>
-      <UButton color="neutral" variant="ghost" to="https://go.nuxt.com/linkedin" target="_blank" icon="i-simple-icons-linkedin">
-        <span class="sr-only">Nuxt on LinkedIn</span>
-      </UButton>
-      <UButton color="neutral" variant="ghost" to="https://go.nuxt.com/discord" target="_blank" icon="i-simple-icons-discord">
-        <span class="sr-only">Nuxt on Discord</span>
-      </UButton>
-      <UButton color="neutral" variant="ghost" to="https://go.nuxt.com/github" target="_blank" icon="i-simple-icons-github">
-        <span class="sr-only">Nuxt on GitHub</span>
+      <UButton color="neutral" variant="ghost" to="/go/github" target="_blank" icon="i-simple-icons-github">
+        <span class="sr-only">WindPress on GitHub</span>
       </UButton>
     </template>
   </UFooter>

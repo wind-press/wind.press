@@ -76,24 +76,22 @@ const breadcrumb = computed(() => {
 
 const titleTemplate = computed(() => findTitleTemplate(page, navigation))
 
-const editLink = computed(() => `https://github.com/nuxt/nuxt/edit/main/docs/${page?.value?.stem?.split('/').slice(1).join('/')}.${page?.value?.extension}`)
+const editLink = computed(() => `https://github.com/wind-press/wind.press/edit/main/content/docs/${page?.value?.stem?.split('/').slice(1).join('/')}.${page?.value?.extension}`)
 
-const communityLinks = [{
-  icon: 'i-lucide-heart',
-  label: 'Become a Sponsor',
-  to: 'https://go.nuxt.com/sponsor',
-  target: '_blank'
-}, {
-  icon: 'i-lucide-chef-hat',
-  label: 'Master Nuxt',
-  to: 'https://masteringnuxt.com/nuxt3',
-  target: '_blank'
-}, {
-  icon: 'i-lucide-award',
-  label: 'Nuxt Certification',
-  to: 'https://certification.nuxt.com',
-  target: '_blank'
-}]
+const communityLinks = [
+  {
+    icon: 'i-ph-hand-heart',
+    label: 'Become a Sponsor',
+    to: '/go/sponsor',
+    target: '_blank'
+  },
+  {
+    icon: 'i-ph-chat-centered-text',
+    label: 'Discussions',
+    to: 'https://github.com/wind-press/windpress/discussions',
+    target: '_blank'
+  },
+]
 
 const title = page.value.seo?.title || page.value.title
 
@@ -125,13 +123,7 @@ if (import.meta.server) {
         <UPageAside>
           <UPageAnchors :links="links" />
           <USeparator type="dashed" class="my-6" />
-          <UContentNavigation
-            :navigation="asideNavigation"
-            default-open
-            trailing-icon="i-lucide-chevron-right"
-            :ui="{ linkTrailingIcon: 'group-data-[state=open]:rotate-90' }"
-            highlight
-          />
+          <UContentNavigation :navigation="asideNavigation" default-open trailing-icon="i-lucide-chevron-right" :ui="{ linkTrailingIcon: 'group-data-[state=open]:rotate-90' }" highlight />
         </UPageAside>
       </template>
       <UPage>
@@ -150,7 +142,7 @@ if (import.meta.server) {
           <div>
             <USeparator class="my-10">
               <div class="flex items-center gap-2 text-sm dark:text-gray-400">
-                <UButton size="sm" variant="link" color="neutral" to="https://github.com/nuxt/nuxt/issues/new/choose" target="_blank">
+                <UButton size="sm" variant="link" color="neutral" to="https://github.com/wind-press/wind.press/issues/new/choose" target="_blank">
                   Report an issue
                 </UButton>
                 or

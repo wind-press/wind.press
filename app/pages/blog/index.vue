@@ -13,8 +13,8 @@ useHead({
     {
       rel: 'alternate',
       type: 'application/atom+xml',
-      title: 'Nuxt Blog RSS',
-      href: 'https://nuxt.com/blog/rss.xml'
+      title: 'WindPress Blog RSS',
+      href: 'https://wind.press/blog/rss.xml'
     }
   ]
 })

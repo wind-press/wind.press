@@ -1,5 +1,0 @@
-name: 'HackerNews'
-slug: 'hackernews'
-description: 'HackerNews clone built with Nuxt.'
-repo: 'nuxt/hackernews'
-demo: 'https://hn.nuxt.space/news/1' 
