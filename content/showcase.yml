@@ -1,0 +1,12 @@
+title: Showcase
+head.title: WindPress Showcase
+description: The awesome websites built with WindPress.
+navigation.icon: i-lucide-projector
+links:
+  - label: 'List a website'
+    to: 'https://github.com/wind-press/wind.press/tree/main/content/showcase'
+    icon: 'i-lucide-circle-plus'
+    target: '_blank'
+    variant: subtle
+    color: neutral
+    size: md

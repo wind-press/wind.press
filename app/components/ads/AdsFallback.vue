@@ -1,9 +1,9 @@
 <template>
   <UPageCard
     icon="i-lucide-heart"
-    title="Nuxt needs you!"
-    description="By allowing nuxt.com on your Ad-Blocker, you support our work and help us financially."
-    to="https://nuxt.com/enterprise/support"
+    title="WindPress needs you!"
+    description="Support WindPress to sustain its development through donations or by contributing to the codebase."
+    to="https://github.com/wind-press/windpress#sponsors"
     target="_blank"
     :ui="{
       leadingIcon: 'text-pink-500 dark:text-pink-400',

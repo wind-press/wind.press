@@ -1,0 +1,14 @@
+head.title: Tailwind CSS Templates and Components
+title: Tailwind CSS Templates and Components
+navigation.title: Templates
+description: 'Explore ready-to-use Tailwind CSS templates and components to get up and running in a few seconds.'
+navigation.icon: i-lucide-app-window
+align: center
+links:
+  - label: 'List a template or component'
+    to: 'https://github.com/wind-press/wind.press/tree/main/content/templates'
+    icon: 'i-lucide-circle-plus'
+    target: '_blank'
+    variant: subtle
+    color: neutral
+    size: md

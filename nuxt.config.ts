@@ -122,6 +122,7 @@ export default defineNuxtConfig({
     '/go/livecanvas': { redirect: 'https://livecanvas.com/?ref=4008', prerender: false },
     '/go/ads': { redirect: 'https://ko-fi.com/post/WindPress-Bronze-Sponsor-U7U8143WIP', prerender: false },
     '/go/sponsor': { redirect: 'https://ko-fi.com/Q5Q75XSF7?utm_source=windpress_website', prerender: false },
+    '/go/ticket': { redirect: 'https://rosua.org/support-portal', prerender: false },
   },
   sourcemap: true,
   future: {

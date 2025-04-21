@@ -17,6 +17,11 @@ export default defineNuxtModule((options, nuxt) => {
     // Handle individual template files
     if (file.id?.includes('/templates/')) {
       const template = file
+
+      if (template.screenshotUrl) {
+        return // Already has a screenshot URL
+      }
+
       const url = template.screenshotUrl || template.demo
       if (!url) {
         console.error(`Template ${template.slug} has no "demo" or "screenshotUrl" to take a screenshot from`)
@@ -51,6 +56,33 @@ export default defineNuxtModule((options, nuxt) => {
         launchOptions: { headless: true },
         width: 1920,
         height: 960
+      })
+    }
+
+    // Handle individual showcase files
+    if (file.id?.includes('/showcase/')) {
+      const showcase = file
+      if (showcase.screenshotUrl) {
+        return
+      }
+      const url = showcase.url
+      if (!url) {
+        console.error(`Showcase ${showcase.slug} has no "screenshotUrl" to take a screenshot from`)
+        return
+      }
+      const filename = join(process.cwd(), 'public/assets/showcase', `${showcase.slug}.webp`)
+      if (existsSync(filename)) {
+        return
+      }
+      console.log(`Generating screenshot for Showcase ${showcase.slug} hitting ${url}...`)
+      await captureWebsite.file(url, filename, {
+        ...(showcase.screenshotOptions || {}),
+        launchOptions: { headless: true },
+        width: 1920,
+        height: 960,
+        delay: 5,
+        type: 'webp',
+        darkMode: true,
       })
     }
   })

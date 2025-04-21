@@ -37,7 +37,7 @@ visual_builders:
     icon: i-custom-builder-kadencewp
   - name: LiveCanvas
     url: '/docs/integrations/livecanvas'
-    icon: assets/landing/builder-livecanvas.png
+    icon: i-custom-builder-livecanvas
   - name: Timber
     # url: '#'
     icon: i-custom-builder-timber

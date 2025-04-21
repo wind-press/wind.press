@@ -1,0 +1,10 @@
+name: 'Tailwind Plus'
+slug: 'tailwind-plus'
+screenshotUrl: 'https://tailwindcss.com/plus-assets/img/og/default.png'
+description: 'Official Tailwind UI Components & Templates'
+badge: 'Premium'
+# repo: 'username/repo'
+demo: 'https://tailwindcss.com/plus/ui-blocks/preview'
+purchase: 'https://tailwindcss.com/plus#pricing'
+site: 'https://tailwindcss.com/plus'
+featured: true

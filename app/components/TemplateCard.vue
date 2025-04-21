@@ -22,7 +22,7 @@ defineProps<{
   >
     <template #header>
       <NuxtImg
-        :src="`/assets/templates/${template.slug}.png`"
+        :src="template.screenshotUrl.startsWith('https') ? template.screenshotUrl : `/assets/templates/${template.screenshotUrl}.png`"
         class="object-contain object-top w-full h-full xl:hidden"
         :alt="template.name"
         width="600"
@@ -32,7 +32,7 @@ defineProps<{
         :loading="index > 3 ? 'lazy' : undefined"
       />
       <NuxtImg
-        :src="`/assets/templates/${template.slug}.png`"
+        :src="template.screenshotUrl.startsWith('https') ? template.screenshotUrl : `/assets/templates/${template.screenshotUrl}.png`"
         class="object-cover object-top size-full hidden xl:block"
         :alt="template.name"
         width="320"
@@ -68,8 +68,9 @@ defineProps<{
       </div>
     </template>
     <template #footer>
-      <UButtonGroup class="w-full">
+      <UButtonGroup class="w-full grid grid-cols-[repeat(auto-fit,minmax(50px,1fr))] </UButtonGroup>gap-2">
         <UButton
+          v-if="template.demo"
           label="Demo"
           icon="i-lucide-laptop"
           :to="template.demo"
@@ -77,7 +78,7 @@ defineProps<{
           size="sm"
           color="neutral"
           variant="subtle"
-          class="w-1/2 justify-center"
+          class="justify-center"
         />
         <UButton
           v-if="template.repo"
@@ -88,10 +89,10 @@ defineProps<{
           size="sm"
           color="neutral"
           variant="subtle"
-          class="w-1/2 justify-center"
+          class="justify-center"
         />
         <UButton
-          v-else-if="template.purchase"
+          v-if="template.purchase"
           target="_blank"
           :to="template.purchase"
           color="neutral"
@@ -99,7 +100,18 @@ defineProps<{
           variant="subtle"
           icon="i-lucide-credit-card"
           size="sm"
-          class="w-1/2 justify-center"
+          class="justify-center"
+        />
+        <UButton
+          v-if="template.site"
+          target="_blank"
+          :to="template.site"
+          color="neutral"
+          label="Website"
+          variant="subtle"
+          icon="i-lucide-globe"
+          size="sm"
+          class="justify-center"
         />
       </UButtonGroup>
     </template>

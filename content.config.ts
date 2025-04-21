@@ -1,4 +1,5 @@
 import { defineContentConfig, defineCollection, z } from '@nuxt/content'
+import { slug } from 'valibot'
 
 const Image = z.object({
   src: z.string(),
@@ -91,9 +92,11 @@ const PageHero = BaseSection.extend({
 const Template = z.object({
   name: z.string(),
   slug: z.string(),
+  // img: z.string(),
   description: z.string(),
   repo: z.string().optional(),
   demo: z.string().url(),
+  site: z.string().url(),
   purchase: z.string().url().optional(),
   featured: z.boolean().optional(),
   badge: z.enum(['Premium', 'Freemium', 'Free']).optional(),
@@ -101,6 +104,13 @@ const Template = z.object({
   screenshotOptions: z.object({
     delay: z.number()
   }).optional()
+})
+
+const Showcase = z.object({
+  url: z.string().url(),
+  slug: z.string(),
+  screenshotUrl: z.string().url().optional(),
+  name: z.string().optional(),
 })
 
 export default defineContentConfig({
@@ -346,6 +356,11 @@ export default defineContentConfig({
       type: 'data',
       source: 'templates/*',
       schema: Template
+    }),
+    showcase: defineCollection({
+      type: 'data',
+      source: 'showcase/*',
+      schema: Showcase
     }),
     videoCourses: defineCollection({
       type: 'data',

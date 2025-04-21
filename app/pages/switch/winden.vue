@@ -66,7 +66,7 @@ onMounted(() => {
 
 <template>
     <UMain>
-        <UPageHero headline="Move your project from Winden" title="Switch to WindPress" description="We're the creators of the Winden plugin and are excited to launch its next generation, WindPress. Claim your discount code and switch today!" :ui="{ container: 'relative overflow-hidden', wrapper: 'lg:px-12', description: 'text-pretty' }">
+        <UPageHero headline="Move your project from Winden" title="Switch to WindPress" description="We're the creators of the Winden plugin and are excited to introduce its next generation, WindPress. Claim your discount code and switch today!" :ui="{ container: 'relative overflow-hidden', wrapper: 'lg:px-12', description: 'text-pretty' }">
             <SkyBg />
 
             <div aria-hidden="true" class="hidden lg:block absolute z-[-1] border-x border-(--ui-border) inset-0 mx-4 sm:mx-6 lg:mx-8" />

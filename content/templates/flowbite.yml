@@ -1,0 +1,7 @@
+name: 'Flowbite'
+slug: 'flowbite'
+screenshotUrl: 'https://flowbite.com/images/og-image.png'
+description: 'Open-source library of over 600+ UI components, sections, and pages'
+badge: 'Freemium'
+# repo: 'username/repo'
+site: 'https://flowbite.com/'

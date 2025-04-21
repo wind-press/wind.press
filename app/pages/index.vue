@@ -214,7 +214,7 @@ onMounted(() => {
             </div>
             <img class="absolute hidden sm:block sm:bottom-[-30px] sm:right-[-30px]" src="/assets/landing/tailwindcss-mark.svg" alt="Tailwind CSS version 3.x and 4.x ready" />
           </div>
-          <div class="bento__slot relative col-span-6 row-span-6 p-5 rounded-lg overflow-hidden hover:shadow-md bg-gradient-to-br from-sky-700/20 from-5% via-sky-500/10 via-50% to-sky-100/10">
+          <div id="integrations" class="bento__slot relative col-span-6 row-span-6 p-5 rounded-lg overflow-hidden hover:shadow-md bg-gradient-to-br from-sky-700/20 from-5% via-sky-500/10 via-50% to-sky-100/10">
             <div class="bento__slot-title flex text-sky-900 items-center gap-4">
               <div class="text-lg font-semibold">Visual builder integrations</div>
             </div>
