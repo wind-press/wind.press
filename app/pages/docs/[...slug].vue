@@ -2,6 +2,9 @@
 import { kebabCase } from 'scule'
 import type { ContentNavigationItem } from '@nuxt/content'
 import { findPageBreadcrumb, mapContentNavigation } from '#ui-pro/utils'
+import lightGallery from 'lightgallery';
+import lgThumbnail from 'lightgallery/plugins/thumbnail';
+import lgZoom from 'lightgallery/plugins/zoom';
 
 definePageMeta({
   layout: 'docs',
@@ -114,6 +117,18 @@ if (import.meta.server) {
     description
   })
 }
+
+onMounted(() => {
+  lightGallery(document.querySelector('.nuxt-content__body'), {
+    plugins: [lgZoom, lgThumbnail],
+    selector: 'img',
+    exThumbImage: 'src',
+    supportLegacyBrowser: false,
+    showZoomInOutIcons: true,
+    licenseKey: 'your_license_key',
+  })
+})
+
 </script>
 
 <template>
@@ -138,7 +153,7 @@ if (import.meta.server) {
         </UPageHeader>
 
         <UPageBody>
-          <ContentRenderer v-if="page.body" :value="page" />
+          <ContentRenderer v-if="page.body" :value="page" class="nuxt-content__body"/>
           <div>
             <USeparator class="my-10">
               <div class="flex items-center gap-2 text-sm dark:text-gray-400">

@@ -84,12 +84,13 @@ export default defineNuxtConfig({
     // Redirects
     '/docs': { redirect: '/docs/getting-started/introduction', prerender: false },
     '/docs/getting-started': { redirect: '/docs/getting-started/introduction', prerender: false },
-    '/docs/guide/concepts': { redirect: '/docs/guide/concepts/auto-imports', prerender: false },
-    '/docs/guide/directory-structure': { redirect: '/docs/guide/directory-structure/app', prerender: false },
-    '/docs/guide/going-further': { redirect: '/docs/guide/going-further/experimental-features', prerender: false },
-    '/docs/guide/going-further/edge-release-channel': { redirect: '/docs/guide/going-further/nightly-release-channel', prerender: false },
-    '/docs/bridge': { redirect: '/docs/bridge/overview', prerender: false },
-    '/docs/migration': { redirect: '/docs/migration/overview', prerender: false },
+    '/docs/guide/concepts': { redirect: '/docs/guide/concepts/simple-file-system', prerender: false },
+    '/docs/guide/configuration': { redirect: '/docs/guide/configuration/tailwind-version', prerender: false },
+    // '/docs/guide/directory-structure': { redirect: '/docs/guide/directory-structure/app', prerender: false },
+    // '/docs/guide/going-further': { redirect: '/docs/guide/going-further/experimental-features', prerender: false },
+    // '/docs/guide/going-further/edge-release-channel': { redirect: '/docs/guide/going-further/nightly-release-channel', prerender: false },
+    // '/docs/bridge': { redirect: '/docs/bridge/overview', prerender: false },
+    // '/docs/migration': { redirect: '/docs/migration/overview', prerender: false },
     // '/docs/api/components': { redirect: '/docs/api/components/client-only', prerender: false },
     // '/docs/api/composables': { redirect: '/docs/api/composables/use-app-config', prerender: false },
     // '/docs/api/utils': { redirect: '/docs/api/utils/dollarfetch', prerender: false },
@@ -104,10 +105,10 @@ export default defineNuxtConfig({
     // '/docs/examples/experimental': { redirect: '/docs/examples/experimental/wasm', prerender: false },
     // '/docs/community': { redirect: '/docs/community/getting-help', prerender: false },
     // '/docs/community/nuxt-community': { redirect: '/docs/community/getting-help', prerender: false },
-    '/docs/guide/recipes': { redirect: '/docs/guide/recipes/custom-routing', prerender: false },
-    '/docs/guide/going-further/custom-routing': { redirect: '/docs/guide/recipes/custom-routing', prerender: false },
+    // '/docs/guide/recipes': { redirect: '/docs/guide/recipes/custom-routing', prerender: false },
+    // '/docs/guide/going-further/custom-routing': { redirect: '/docs/guide/recipes/custom-routing', prerender: false },
     // '/docs/guide/directory-structure/nuxt.config': { redirect: '/docs/guide/directory-structure/nuxt-config', prerender: false },
-    '/enterprise': { redirect: '/enterprise/support', prerender: false },
+    // '/enterprise': { redirect: '/enterprise/support', prerender: false },
 
 
     // Redirects 
