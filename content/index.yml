@@ -30,34 +30,34 @@ visual_builders:
     # url: '#'
     icon: assets/landing/builder-greenshift.png
   - name: Gutenberg
-    url: '/docs/integrations/gutenberg'
+    url: '/docs/guide/integrations/gutenberg'
     icon: i-custom-builder-gutenberg
   - name: Kadence WP
     # url: '#'
     icon: i-custom-builder-kadencewp
   - name: LiveCanvas
-    url: '/docs/integrations/livecanvas'
+    url: '/docs/guide/integrations/livecanvas'
     icon: i-custom-builder-livecanvas
   - name: Timber
     # url: '#'
     icon: i-custom-builder-timber
   - name: Plugins & Themes Dev
-    url: '/docs/integrations/custom-theme'
+    url: '/docs/guide/integrations/custom-theme'
     icon: i-custom-builder-wordpress
   - name: Blockstudio
-    # url: '/docs/integrations/blockstudio'
+    # url: '/docs/guide/integrations/blockstudio'
     icon: i-custom-builder-blockstudio
     pro: true
   - name: Breakdance
-    url: '/docs/integrations/breakdance'
+    url: '/docs/guide/integrations/breakdance'
     icon: i-custom-builder-breakdance
     pro: true
   - name: Bricks
-    url: '/docs/integrations/bricks'
+    url: '/docs/guide/integrations/bricks'
     icon: i-custom-builder-bricks
     pro: true
   - name: Builderius
-    url: '/docs/integrations/builderius'
+    url: '/docs/guide/integrations/builderius'
     icon: i-custom-builder-builderius
     pro: true
   - name: Meta Box Views
@@ -65,7 +65,7 @@ visual_builders:
     icon: i-custom-builder-meta-box-views
     pro: true
   - name: Oxygen
-    url: '/docs/integrations/oxygen'
+    url: '/docs/guide/integrations/oxygen'
     icon: i-custom-builder-oxygen
     pro: true
   - name: WPCodeBox
