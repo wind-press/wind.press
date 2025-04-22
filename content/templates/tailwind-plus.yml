@@ -6,5 +6,6 @@ badge: 'Premium'
 # repo: 'username/repo'
 demo: 'https://tailwindcss.com/plus/ui-blocks/preview'
 purchase: 'https://tailwindcss.com/plus#pricing'
-site: 'https://tailwindcss.com/plus'
+# site: 'https://tailwindcss.com/plus'
 featured: true
+priority: 1

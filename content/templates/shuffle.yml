@@ -1,0 +1,10 @@
+name: 'Shuffle'
+slug: 'shuffle'
+screenshotUrl: 'https://shuffle.dev/static/img/shuffle-components-open-graph.png'
+description: 'Official Tailwind UI Components & Templates'
+badge: 'Premium'
+# repo: 'username/repo'
+demo: 'https://shuffle.dev/components/tailwind'
+purchase: 'https://shuffle.dev/pricing'
+# site: 'https://shuffle.dev/'
+featured: true

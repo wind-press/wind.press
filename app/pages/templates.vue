@@ -36,6 +36,15 @@ const sortedTemplates = computed(() => {
   sorted.sort((a, b) => {
     if (a.featured && !b.featured) return -1
     if (!a.featured && b.featured) return 1
+    
+    // compare priority. lesser number is higher priority. default is 100
+    if (a.priority && !b.priority) return -1
+    if (!a.priority && b.priority) return 1
+    if (a.priority && b.priority) {
+      if (a.priority < b.priority) return -1
+      if (a.priority > b.priority) return 1
+    }
+    
     return a.name.localeCompare(b.name)
   })
   return sorted

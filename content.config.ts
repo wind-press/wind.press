@@ -99,6 +99,7 @@ const Template = z.object({
   site: z.string().url(),
   purchase: z.string().url().optional(),
   featured: z.boolean().optional(),
+  priority: z.number().optional().default(100),
   badge: z.enum(['Premium', 'Freemium', 'Free']).optional(),
   screenshotUrl: z.string().url().optional(),
   screenshotOptions: z.object({

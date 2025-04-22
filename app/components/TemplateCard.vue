@@ -33,10 +33,10 @@ defineProps<{
       />
       <NuxtImg
         :src="template.screenshotUrl.startsWith('https') ? template.screenshotUrl : `/assets/templates/${template.screenshotUrl}.png`"
-        class="object-cover object-top size-full hidden xl:block"
+        class="object-cover object-top hidden xl:block"
         :alt="template.name"
-        width="320"
-        height="180"
+        width="600"
+        height="338"
         format="webp"
         :modifiers="{ pos: 'top' }"
         :loading="index > 3 ? 'lazy' : undefined"
