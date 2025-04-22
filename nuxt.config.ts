@@ -22,14 +22,19 @@ export default defineNuxtConfig({
     '@nuxthub/core'
   ],
   $development: {
-    runtimeConfig: {
-      public: {
-        website: {
-          url: 'http://localhost:3000'
-        }
-      }
+    site: {
+      url: 'http://localhost:3000'
     }
   },
+  // $development: {
+  //   runtimeConfig: {
+  //     public: {
+  //       website: {
+  //         url: 'http://localhost:3000'
+  //       }
+  //     }
+  //   }
+  // },
   devtools: {
     enabled: true
   },
@@ -84,8 +89,13 @@ export default defineNuxtConfig({
     // Redirects
     '/docs': { redirect: '/docs/getting-started/introduction', prerender: false },
     '/docs/getting-started': { redirect: '/docs/getting-started/introduction', prerender: false },
+    '/docs/getting-started/migration': { redirect: '/docs/getting-started/migration/yabe-siul', prerender: false },
     '/docs/guide/concepts': { redirect: '/docs/guide/concepts/simple-file-system', prerender: false },
     '/docs/guide/configuration': { redirect: '/docs/guide/configuration/tailwind-version', prerender: false },
+    '/docs/guide/configuration/tw-3': { redirect: '/docs/guide/configuration/tw-3/file-main-css', prerender: false },
+    '/docs/guide/configuration/tw-4': { redirect: '/docs/guide/configuration/tw-4/file-main-css', prerender: false },
+    '/docs/examples/templates-blocks': { redirect: '/docs/examples/templates-blocks/tailwindplus', prerender: false },
+    '/docs/examples/custom-integrations': { redirect: '/docs/examples/custom-integrations/custom-theme', prerender: false },
     '/pricing': { redirect: '/#pricing', prerender: false },
 
     // Redirects 
@@ -101,7 +111,7 @@ export default defineNuxtConfig({
     '/go/sponsor': { redirect: 'https://ko-fi.com/Q5Q75XSF7?utm_source=windpress_website', prerender: false },
     '/go/ticket': { redirect: 'https://rosua.org/support-portal', prerender: false },
   },
-  sourcemap: true,
+  // sourcemap: true,
   future: {
     compatibilityVersion: 4
   },
@@ -110,7 +120,13 @@ export default defineNuxtConfig({
     prerender: {
       crawlLinks: true,
       ignore: [
-        route => route.startsWith('/modules')
+        route => route.startsWith('/modules'),
+        route => route.startsWith('/enterprise'),
+        route => route.startsWith('/deploy'),
+        route => route.startsWith('/video-courses'),
+        route => route.startsWith('/design-kit'),
+        route => route.startsWith('/team'),
+        // route => route.startsWith('/docs'),
       ],
       autoSubfolderIndex: false
     },
@@ -118,7 +134,7 @@ export default defineNuxtConfig({
       pages: {
         routes: {
           exclude: [
-            '/docs/*'
+            // '/docs/*'
           ]
         }
       }

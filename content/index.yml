@@ -42,7 +42,7 @@ visual_builders:
     # url: '#'
     icon: i-custom-builder-timber
   - name: Plugins & Themes Dev
-    url: '/docs/guide/integrations/custom-theme'
+    url: '/docs/examples/custom-integrations/custom-theme'
     icon: i-custom-builder-wordpress
   - name: Blockstudio
     # url: '/docs/guide/integrations/blockstudio'

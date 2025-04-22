@@ -24,7 +24,7 @@ Installing daisyUI on WordPress is easy with WindPress. It's as simple as adding
 
 Navigate to the `WindPress` menu and switch to `main.css` file editor.
 
-![The `main.css` file editor](/img/content/docs/configuration/file-main-css/screenshot-1.png){width="1440px" height="866px"}
+![The `main.css` file editor](/img/content/docs/guide/configuration/tw-4/file-main-css/screenshot-1.png){width="1440px" height="866px"}
 
 ### Step 2: Add the daisyUI plugin
 

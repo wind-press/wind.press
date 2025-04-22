@@ -201,7 +201,7 @@ onMounted(() => {
           </div>
           <div class="bento__slot relative col-span-3 row-span-3 p-5 rounded-lg overflow-hidden hover:shadow-md bg-gradient-to-br from-lime-700/20 from-5% via-lime-500/10 via-50% to-lime-100/10">
             <div class="bento__slot-title flex text-lime-900 items-center gap-4">
-              <a href="/docs/configuration/tailwind-version">
+              <a href="/docs/guide/configuration/tailwind-version">
                 <div class="text-lg font-semibold">
                   Tailwind CSS version 3.x and 4.x ready
                 </div>
@@ -242,7 +242,7 @@ onMounted(() => {
           </div>
           <div class="bento__slot relative col-span-3 row-span-3 p-5 rounded-lg overflow-hidden hover:shadow-md bg-gradient-to-br from-indigo-700/20 from-5% via-indigo-500/10 via-50% to-indigo-100/10">
             <div class="bento__slot-title flex text-indigo-900 items-center gap-4">
-              <a href="/docs/configuration/file-main-css">
+              <a href="/docs/guide/configuration/tw-4/file-main-css">
                 <div class="text-lg font-semibold">
                   Zero configuration yet fully customizable
                 </div>
@@ -258,7 +258,7 @@ onMounted(() => {
 
           <div class="bento__slot relative col-span-3 row-span-6 p-5 rounded-lg overflow-hidden hover:shadow-md bg-gradient-to-br from-teal-700/20 from-5% via-teal-500/10 via-50% to-teal-100/10">
             <div class="bento__slot-title flex text-teal-900 items-center gap-4">
-              <a href="/docs/advanced/cache#production">
+              <a href="/docs/guide/concepts/cache#production">
                 <div class="text-lg font-semibold">
                   Compile in the browser; No server is required
                 </div>
@@ -289,7 +289,7 @@ onMounted(() => {
 
           <div class="bento__slot relative col-span-3 row-span-3 p-5 rounded-lg overflow-hidden hover:shadow-md bg-gradient-to-br from-yellow-700/20 from-5% via-yellow-500/10 via-50% to-yellow-100/10">
             <div class="bento__slot-title flex text-yellow-900 items-center gap-4">
-              <a href="/docs/configuration/file-tailwind-config-js/#javascript-package">
+              <a href="/docs/guide/configuration/tw-3/file-tailwind-config-js#javascript-package">
                 <div class="text-lg font-semibold">JavaScript package support</div>
               </a>
             </div>
@@ -303,7 +303,7 @@ onMounted(() => {
 
           <div class="bento__slot relative col-span-6 row-span-3 p-5 rounded-lg overflow-hidden hover:shadow-md bg-gradient-to-br from-rose-700/20 from-5% via-rose-500/10 via-50% to-rose-100/10">
             <div class="bento__slot-title flex text-rose-900 items-center gap-4">
-              <a href="/docs/advanced/simple-file-system">
+              <a href="/docs/guide/concepts/simple-file-system">
                 <div class="text-lg font-semibold">Simple File System</div>
               </a>
             </div>
