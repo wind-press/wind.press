@@ -6,7 +6,7 @@ navigation.icon: i-lucide-app-window
 align: center
 links:
   - label: 'List a template or component'
-    to: 'https://github.com/wind-press/wind.press/tree/main/content/templates'
+    to: 'https://github.com/wind-press/wind.press/tree/main?tab=readme-ov-file#add-a-tailwind-css-template'
     icon: 'i-lucide-circle-plus'
     target: '_blank'
     variant: subtle

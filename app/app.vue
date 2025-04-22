@@ -28,7 +28,7 @@ const [{ data: navigation }, { data: files }] = await Promise.all([
 onNuxtReady(() => fetchList())
 
 useHead({
-  titleTemplate: title => title ? `${title} · Nuxt` : 'Nuxt: The Intuitive Web Framework',
+  titleTemplate: title => title ? `${title} · WindPress` : 'WindPress: The Tailwind CSS integration plugin for WordPress',
   meta: [
     { key: 'theme-color', name: 'theme-color', content: color }
   ]
@@ -48,10 +48,10 @@ if (import.meta.server) {
     }
   })
   useSeoMeta({
-    ogSiteName: 'Nuxt',
+    ogSiteName: 'WindPress',
     ogType: 'website',
     twitterCard: 'summary_large_image',
-    twitterSite: 'nuxt_js'
+    twitterSite: 'windpress'
   })
 }
 

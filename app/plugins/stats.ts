@@ -16,7 +16,16 @@ export default defineNuxtPlugin(async () => {
 })
 
 async function fetchStats() {
-  const stats: Stats = {}
+  const stats: Stats = {
+    wp_downloaded: 0,
+    wp_version: '',
+    wp_active_installs: 0,
+    wp_donate_link: '',
+    wp_download_link: '',
+    edd_happyCustomers: 0,
+    edd_activeSites: 0,
+    edd_totalDownloads: 0,
+  }
 
   await fetch('https://rosua.org/wp-json/rosua-edd/v1/stats/total_users')
     .then(res => res.json())
