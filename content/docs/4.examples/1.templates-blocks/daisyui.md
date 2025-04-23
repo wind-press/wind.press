@@ -7,7 +7,7 @@ This guide will show you how to use daisyUI 5 on WordPress websites using WindPr
 
 ## What is daisyUI?
 
-[daisyUI](https://daisyui.com/) is a plugin for Tailwind CSS that simplifies UI development by providing pre-designed components with semantic class names. Instead of writing long utility class lists, you can use intuitive classes like `btn`, `card`, or `alert` to quickly style your elements.
+[daisyUI](https://daisyui.com/){target="_blank"} is a plugin for Tailwind CSS that simplifies UI development by providing pre-designed components with semantic class names. Instead of writing long utility class lists, you can use intuitive classes like `btn`, `card`, or `alert` to quickly style your elements.
 
 ## Why use daisyUI?
 
@@ -24,8 +24,6 @@ Installing daisyUI on WordPress is easy with WindPress. It's as simple as adding
 
 Navigate to the `WindPress` menu and switch to `main.css` file editor.
 
-![The `main.css` file editor](/img/content/docs/guide/configuration/tw-4/file-main-css/screenshot-1.png){width="1440px" height="866px"}
-
 ### Step 2: Add the daisyUI plugin
 
 Add the following line of code to the `main.css` file:
@@ -39,3 +37,19 @@ Add the following line of code to the `main.css` file:
 ```
 
 Now you can use daisyUI class names!
+
+## daisyUI themes
+
+daisyUI comes with 35 built-in themes that instantly transform your website's entire look and feel. You can also create your own custom themes or customize built-in themes.
+
+::callout{icon="i-heroicons-light-bulb"}
+Learn more about daisyUI themes in the [daisyUI documentation](https://daisyui.com/docs/themes/){target="_blank"} and see the full list of available themes.
+::
+
+It's so easy to switch between themes by adding the `data-theme` attribute to your HTML element.
+
+```html
+<html data-theme="cupcake">
+    <!-- ... -->
+</html>
+```

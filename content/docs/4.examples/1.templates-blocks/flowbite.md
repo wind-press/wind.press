@@ -24,8 +24,6 @@ Installing Flowbite on WordPress is easy with WindPress.
 
 Navigate to the `WindPress` menu and switch to `main.css` file editor.
 
-![The `main.css` file editor](/img/content/docs/guide/configuration/tw-4/file-main-css/screenshot-1.png){width="1440px" height="866px"}
-
 ### Step 2: Add the Flowbite plugin and theme
 
 Add the following line of code to the `main.css` file:

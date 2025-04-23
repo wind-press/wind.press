@@ -42,8 +42,6 @@ Installing Preline UI on WordPress is easy with WindPress.
 
 Navigate to the `WindPress` menu and switch to `tailwind.config.js` file editor.
 
-![The `tailwind.config.js` file editor](/img/content/docs/guide/configuration/tw-3/file-tailwind-config-js/screenshot-1.png){width="1440px" height="866px"}
-
 ### Step 2: Add the Preline UI plugin
 
 Add the following line of code to the `tailwind.config.js` file:
