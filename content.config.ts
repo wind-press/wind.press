@@ -1,5 +1,5 @@
 import { defineContentConfig, defineCollection, z } from '@nuxt/content'
-import { slug } from 'valibot'
+import { asSitemapCollection } from '@nuxtjs/sitemap/content'
 
 const Image = z.object({
   src: z.string(),
@@ -197,26 +197,32 @@ export default defineContentConfig({
         }),
       })
     }),
-    docs: defineCollection({
-      type: 'page',
-      source: 'docs/**',
-      schema: z.object({
-        titleTemplate: z.string().optional(),
-        links: z.array(Button)
+    docs: defineCollection(
+      // adds the robots frontmatter key to the collection
+      asSitemapCollection({
+        type: 'page',
+        source: 'docs/**',
+        schema: z.object({
+          titleTemplate: z.string().optional(),
+          links: z.array(Button)
+        })
       })
-    }),
-    blog: defineCollection({
-      type: 'page',
-      source: 'blog/*',
-      schema: z.object({
-        image: z.string().editor({ input: 'media' }),
-        authors: z.array(Author),
-        date: z.string().date(),
-        draft: z.boolean().optional(),
-        category: z.enum(['Release', 'Tutorial', 'Announcement', 'Article']),
-        tags: z.array(z.string())
+    ),
+    blog: defineCollection(
+      // adds the robots frontmatter key to the collection
+      asSitemapCollection({
+        type: 'page',
+        source: 'blog/*',
+        schema: z.object({
+          image: z.string().editor({ input: 'media' }),
+          authors: z.array(Author),
+          date: z.string().date(),
+          draft: z.boolean().optional(),
+          category: z.enum(['Release', 'Tutorial', 'Announcement', 'Article']),
+          tags: z.array(z.string())
+        })
       })
-    }),
+    ),
     landing: defineCollection({
       type: 'page',
       source: [
@@ -234,125 +240,125 @@ export default defineContentConfig({
       ],
       schema: PageHero
     }),
-    deploy: defineCollection({
-      type: 'page',
-      source: 'deploy/*',
-      schema: z.object({
-        title: z.string(),
-        description: z.string(),
-        componentImg: z.string(),
-        logoSrc: z.string(),
-        featured: z.boolean(),
-        logoIcon: z.string(),
-        category: z.string(),
-        nitroPreset: z.string(),
-        website: z.string().url()
-      })
-    }),
-    support: defineCollection({
-      type: 'data',
-      source: 'enterprise/support.yml',
-      schema: z.object({
-        title: z.string(),
-        description: z.string(),
-        hero: z.object({
-          links: z.array(Button)
-        }),
-        logos: z.array(
-          DualModeImage.extend({
-            alt: z.string()
-          }).omit({ width: true, height: true }).extend({
-            width: z.string(),
-            height: z.string()
-          })
-        ),
-        service: BaseSection.extend({
-          services: z.array(
-            BaseSection.extend({
-              icon: z.string()
-            })
-          )
-        }),
-        expertise: BaseSection.extend({
-          logos: z.array(
-            Image.extend({
-              color: z.string()
-            })
-          )
-        }),
-        testimonials: BaseSection.extend({
-          items: z.array(
-            z.object({
-              quote: z.string(),
-              author: z.string(),
-              job: z.string(),
-              logo: DualModeImage,
-              achievements: z.array(
-                z.object({
-                  label: z.string(),
-                  color: z.enum(['success', 'warning', 'error', 'info', 'neutral', 'important'])
-                })
-              ),
-              width: z.number(),
-              height: z.number()
-            })
-          )
-        }),
-        project: BaseSection.extend({
-          steps: z.array(
-            BaseSection.extend({
-              number: z.number()
-            })
-          )
-        }),
-        form: BaseSection.extend({
-          name: z.object({
-            label: z.string(),
-            placeholder: z.string()
-          }),
-          email: z.object({
-            label: z.string(),
-            placeholder: z.string()
-          }),
-          company: z.object({
-            label: z.string(),
-            placeholder: z.string()
-          }),
-          link: z.object({
-            label: z.string(),
-            placeholder: z.string()
-          }),
-          body: z.object({
-            label: z.string(),
-            placeholder: z.string()
-          }),
-          info: z.string(),
-          button: Button
-        })
-      })
-    }),
-    agencies: defineCollection({
-      type: 'page',
-      source: 'enterprise/agencies/*.md',
-      schema: z.object({
-        title: z.string(),
-        description: z.string(),
-        logo: DualModeImage,
-        logoFull: z.string().optional(),
-        link: z.string().url(),
-        services: z.array(z.string()),
-        resources: z.array(Link).optional(),
-        emailAddress: z.string().email().optional(),
-        phoneNumber: z.string().nullable().optional(),
-        x: z.string().optional(),
-        github: z.string().optional(),
-        linkedin: z.string().optional(),
-        instagram: z.string().optional(),
-        color: z.array(z.string()).optional(),
-        regions: z.array(z.string()),
-        location: z.string()
-      })
-    }),
+    // deploy: defineCollection({
+    //   type: 'page',
+    //   source: 'deploy/*',
+    //   schema: z.object({
+    //     title: z.string(),
+    //     description: z.string(),
+    //     componentImg: z.string(),
+    //     logoSrc: z.string(),
+    //     featured: z.boolean(),
+    //     logoIcon: z.string(),
+    //     category: z.string(),
+    //     nitroPreset: z.string(),
+    //     website: z.string().url()
+    //   })
+    // }),
+    // support: defineCollection({
+    //   type: 'data',
+    //   source: 'enterprise/support.yml',
+    //   schema: z.object({
+    //     title: z.string(),
+    //     description: z.string(),
+    //     hero: z.object({
+    //       links: z.array(Button)
+    //     }),
+    //     logos: z.array(
+    //       DualModeImage.extend({
+    //         alt: z.string()
+    //       }).omit({ width: true, height: true }).extend({
+    //         width: z.string(),
+    //         height: z.string()
+    //       })
+    //     ),
+    //     service: BaseSection.extend({
+    //       services: z.array(
+    //         BaseSection.extend({
+    //           icon: z.string()
+    //         })
+    //       )
+    //     }),
+    //     expertise: BaseSection.extend({
+    //       logos: z.array(
+    //         Image.extend({
+    //           color: z.string()
+    //         })
+    //       )
+    //     }),
+    //     testimonials: BaseSection.extend({
+    //       items: z.array(
+    //         z.object({
+    //           quote: z.string(),
+    //           author: z.string(),
+    //           job: z.string(),
+    //           logo: DualModeImage,
+    //           achievements: z.array(
+    //             z.object({
+    //               label: z.string(),
+    //               color: z.enum(['success', 'warning', 'error', 'info', 'neutral', 'important'])
+    //             })
+    //           ),
+    //           width: z.number(),
+    //           height: z.number()
+    //         })
+    //       )
+    //     }),
+    //     project: BaseSection.extend({
+    //       steps: z.array(
+    //         BaseSection.extend({
+    //           number: z.number()
+    //         })
+    //       )
+    //     }),
+    //     form: BaseSection.extend({
+    //       name: z.object({
+    //         label: z.string(),
+    //         placeholder: z.string()
+    //       }),
+    //       email: z.object({
+    //         label: z.string(),
+    //         placeholder: z.string()
+    //       }),
+    //       company: z.object({
+    //         label: z.string(),
+    //         placeholder: z.string()
+    //       }),
+    //       link: z.object({
+    //         label: z.string(),
+    //         placeholder: z.string()
+    //       }),
+    //       body: z.object({
+    //         label: z.string(),
+    //         placeholder: z.string()
+    //       }),
+    //       info: z.string(),
+    //       button: Button
+    //     })
+    //   })
+    // }),
+    // agencies: defineCollection({
+    //   type: 'page',
+    //   source: 'enterprise/agencies/*.md',
+    //   schema: z.object({
+    //     title: z.string(),
+    //     description: z.string(),
+    //     logo: DualModeImage,
+    //     logoFull: z.string().optional(),
+    //     link: z.string().url(),
+    //     services: z.array(z.string()),
+    //     resources: z.array(Link).optional(),
+    //     emailAddress: z.string().email().optional(),
+    //     phoneNumber: z.string().nullable().optional(),
+    //     x: z.string().optional(),
+    //     github: z.string().optional(),
+    //     linkedin: z.string().optional(),
+    //     instagram: z.string().optional(),
+    //     color: z.array(z.string()).optional(),
+    //     regions: z.array(z.string()),
+    //     location: z.string()
+    //   })
+    // }),
     templates: defineCollection({
       type: 'data',
       source: 'templates/*',
@@ -363,39 +369,39 @@ export default defineContentConfig({
       source: 'showcase/*',
       schema: Showcase
     }),
-    videoCourses: defineCollection({
-      type: 'data',
-      source: 'video-courses/*',
-      schema: z.object({
-        name: z.string(),
-        slug: z.string(),
-        description: z.string(),
-        url: z.string().url(),
-        badge: z.enum(['Premium', 'Free']).optional(),
-        screenshotOptions: z.object({
-          delay: z.number(),
-          removeElements: z.array(z.string()).optional()
-        }).optional(),
-        sponsor: z.boolean().optional()
-      })
-    }),
-    designKit: defineCollection({
-      type: 'page',
-      source: 'design-kit.md',
-      schema: PageHero
-    }),
-    team: defineCollection({
-      type: 'page',
-      source: 'team.yml',
-      schema: PageHero.extend({
-        users: z.array(z.object({
-          name: z.string(),
-          location: z.string(),
-          sponsor: z.string().url(),
-          avatar: Image,
-          links: z.array(Link)
-        }))
-      })
-    })
+    // videoCourses: defineCollection({
+    //   type: 'data',
+    //   source: 'video-courses/*',
+    //   schema: z.object({
+    //     name: z.string(),
+    //     slug: z.string(),
+    //     description: z.string(),
+    //     url: z.string().url(),
+    //     badge: z.enum(['Premium', 'Free']).optional(),
+    //     screenshotOptions: z.object({
+    //       delay: z.number(),
+    //       removeElements: z.array(z.string()).optional()
+    //     }).optional(),
+    //     sponsor: z.boolean().optional()
+    //   })
+    // }),
+    // designKit: defineCollection({
+    //   type: 'page',
+    //   source: 'design-kit.md',
+    //   schema: PageHero
+    // }),
+    // team: defineCollection({
+    //   type: 'page',
+    //   source: 'team.yml',
+    //   schema: PageHero.extend({
+    //     users: z.array(z.object({
+    //       name: z.string(),
+    //       location: z.string(),
+    //       sponsor: z.string().url(),
+    //       avatar: Image,
+    //       links: z.array(Link)
+    //     }))
+    //   })
+    // })
   }
 })

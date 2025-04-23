@@ -9,18 +9,17 @@ export default defineNuxtConfig({
   modules: [
     '@nuxt/ui-pro',
     'nuxt-content-twoslash',
+    '@nuxtjs/sitemap',
     '@nuxt/content',
     '@nuxt/image',
-    '@nuxtjs/plausible',
     '@nuxt/eslint',
     '@nuxt/scripts',
-    '@nuxtjs/turnstile',
     '@vueuse/nuxt',
     'nuxt-og-image',
     'motion-v/nuxt',
     'nuxt-llms',
     '@nuxthub/core',
-    'nuxt-umami'
+    'nuxt-umami',
   ],
   $development: {
     site: {
@@ -198,9 +197,25 @@ export default defineNuxtConfig({
       description: 'The complete WindPress documentation and blog posts written in Markdown (MDC syntax).'
     }
   },
-  turnstile: {
-    // siteKey: '0x4AAAAAAAP2vNBsTBT3ucZi'
+  sitemap: {
+    exclude: [
+      '/modules',
+      '/enterprise',
+      '/enterprise/*',
+      '/deploy',
+      '/video-courses',
+      '/design-kit',
+      '/team',
+    ],
+    defaults: {
+      lastmod: new Date().toISOString(),
+      priority: 0.5,
+      changefreq: 'weekly'
+    }
   },
+  // turnstile: {
+  //   siteKey: '0x4AAAAAAAP2vNBsTBT3ucZi'
+  // },
   twoslash: {
     floatingVueOptions: {
       classMarkdown: 'prose prose-primary dark:prose-invert'
