@@ -31,8 +31,8 @@ if (import.meta.server) {
     ogTitle: title,
     description: description,
     ogDescription: description,
-    ogImage: joinURL(site.url, '/new-social.jpg'),
-    twitterImage: joinURL(site.url, '/new-social.jpg')
+    ogImage: joinURL(site.url, '/new-social.png'),
+    twitterImage: joinURL(site.url, '/new-social.png')
   })
 }
 
@@ -197,7 +197,7 @@ onMounted(() => {
                 A simple and intuitive visual interface to customize your Tailwind CSS configuration without coding.
               </div>
             </div>
-            <img class="absolute sm:top-[-50px] sm:right-[-220px] rounded-lg scale-75 sm:pt-0 pt-5" src="/assets/landing/feature-bento-wizard-color.webp" alt="feature: wizard colors" />
+            <img class="absolute hidden sm:block sm:top-[-50px] sm:right-[-220px] rounded-lg scale-75 sm:pt-0 pt-5" src="/assets/landing/feature-bento-wizard-color.webp" alt="feature: wizard colors" />
           </div>
           <div class="bento__slot relative col-span-3 row-span-3 p-5 rounded-lg overflow-hidden hover:shadow-md bg-gradient-to-br from-lime-700/20 from-5% via-lime-500/10 via-50% to-lime-100/10">
             <div class="bento__slot-title flex text-lime-900 items-center gap-4">
@@ -253,7 +253,7 @@ onMounted(() => {
                 Start using it instantly without any configuration, and customize it as needed.
               </div>
             </div>
-            <img class="absolute sm:right-[-70px] sm:bottom-[-25px] rounded-lg sm:pt-0 pt-5 scale-[1.3]" src="/assets/landing/feature-bento-customizable.webp" alt="feature: customizable" />
+            <img class="absolute hidden sm:block sm:right-[-70px] sm:bottom-[-25px] rounded-lg sm:pt-0 pt-5 scale-[1.3]" src="/assets/landing/feature-bento-customizable.webp" alt="feature: customizable" />
           </div>
 
           <div class="bento__slot relative col-span-3 row-span-6 p-5 rounded-lg overflow-hidden hover:shadow-md bg-gradient-to-br from-teal-700/20 from-5% via-teal-500/10 via-50% to-teal-100/10">

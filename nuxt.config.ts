@@ -19,7 +19,8 @@ export default defineNuxtConfig({
     'nuxt-og-image',
     'motion-v/nuxt',
     'nuxt-llms',
-    '@nuxthub/core'
+    '@nuxthub/core',
+    'nuxt-umami'
   ],
   $development: {
     site: {
@@ -44,7 +45,8 @@ export default defineNuxtConfig({
   },
   css: ['~/assets/css/main.css'],
   colorMode: {
-    preference: 'dark'
+    preference: 'system', // default value of $colorMode.preference
+    fallback: 'light', // fallback value if not system preference found
   },
   content: {
     build: {
@@ -207,6 +209,14 @@ export default defineNuxtConfig({
     enableInDev: false,
     // Do not throw when twoslash fails, the typecheck should be down in github.com/nuxt/nuxt's CI
     throws: false
+  },
+  umami: {
+      id: 'de57ce9c-c391-4dbb-bb1a-ba6ba26b36a4',
+      host: 'https://umami.siagian.dev',
+      autoTrack: true,
+      ignoreLocalhost: true,
+      useDirective: true,
+      // proxy: 'direct',
   },
   vite: {
     plugins: [
