@@ -129,7 +129,23 @@ export default defineNuxtConfig({
         route => route.startsWith('/team'),
         // route => route.startsWith('/docs'),
       ],
-      autoSubfolderIndex: false
+      autoSubfolderIndex: false,
+      routes: [
+        '/',
+        '/docs',
+        // '/sitemap.xml', // Temp while waiting for hosting on Nuxt Hub
+        // '/blog/rss.xml', // Temp while waiting for hosting on Nuxt Hub
+        // ...globSync('./content/**/*.md*')
+        //   .map(path => path
+        //     .slice(7, -3)
+        //     .replace(/\d+\./g, '')
+        //     .replace(/index/g, '/')
+        //     .replace(/\\/g, '/')
+        //     .replace(/\/+/g, '/')
+        //     .replace(/\/$/, '')
+        //   ),
+        // '/go',
+      ]
     },
     cloudflare: {
       pages: {
@@ -226,12 +242,12 @@ export default defineNuxtConfig({
     throws: false
   },
   umami: {
-      id: 'de57ce9c-c391-4dbb-bb1a-ba6ba26b36a4',
-      host: 'https://umami.siagian.dev',
-      autoTrack: true,
-      ignoreLocalhost: true,
-      useDirective: true,
-      // proxy: 'direct',
+    id: 'de57ce9c-c391-4dbb-bb1a-ba6ba26b36a4',
+    host: 'https://umami.siagian.dev',
+    autoTrack: true,
+    ignoreLocalhost: true,
+    useDirective: true,
+    // proxy: 'direct',
   },
   vite: {
     plugins: [

@@ -35,5 +35,5 @@ export function findTitleTemplate(page: Ref<DocsCollectionItem>, navigation: Ref
     items.unshift(node)
   }
 
-  return items.find(item => typeof item.titleTemplate === 'string')?.titleTemplate || '%s · Nuxt'
+  return items.find(item => typeof item.titleTemplate === 'string')?.titleTemplate || '%s · WindPress'
 }

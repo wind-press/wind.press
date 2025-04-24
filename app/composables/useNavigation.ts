@@ -233,12 +233,12 @@ const _useNavigation = () => {
   const { footerLinks } = useFooterLinks()
 
   const searchLinks = computed(() => [
-    {
-      label: 'Ask AI',
-      icon: 'i-lucide-wand',
-      to: 'javascript:void(0);',
-      onSelect: () => nuxtApp.$kapa?.openModal()
-    },
+    // {
+    //   label: 'Ask AI',
+    //   icon: 'i-lucide-wand',
+    //   to: 'javascript:void(0);',
+    //   onSelect: () => nuxtApp.$kapa?.openModal()
+    // },
     ...headerLinks.value.map((link) => {
       // Remove `/docs` and `/enterprise` links from command palette
       if (link.search === false) {
