@@ -4,7 +4,7 @@ description: The awesome websites built with WindPress.
 navigation.icon: i-lucide-projector
 links:
   - label: 'List a website'
-    to: 'https://github.com/wind-press/wind.press/tree/main?tab=readme-ov-file#add-a-showcase'
+    to: 'https://github.com/wind-press/wind.press/discussions/new?category=show-and-tell'
     icon: 'i-lucide-circle-plus'
     target: '_blank'
     variant: subtle

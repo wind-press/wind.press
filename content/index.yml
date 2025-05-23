@@ -60,6 +60,10 @@ visual_builders:
     url: '/docs/guide/integrations/builderius'
     icon: i-custom-builder-builderius
     pro: true
+  - name: Etch
+    # url: '#'
+    icon: i-custom-builder-etch
+    pro: true
   - name: Meta Box Views
     # url: '#'
     icon: i-custom-builder-meta-box-views
