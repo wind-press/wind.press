@@ -5,6 +5,20 @@ description: 'Learn how to use Flowbite on WordPress websites.'
 
 This guide will show you how to use Flowbite on WordPress websites using WindPress.
 
+::u-alert
+---
+class: not-prose ring-1 ring-amber-500 dark:ring-amber-400
+color: amber
+icon: line-md:construction
+variant: subtle
+title: Tailwind CSS version
+---
+#description
+<div class="leading-6">
+This guide's instructions are based on the Tailwind CSS 4 version.
+</div>
+::
+
 ## What is Flowbite?
 
 [Flowbite](https://flowbite.com/) is an open-source library of interactive UI components built on the utility-first Tailwind CSS framework. It offers a comprehensive collection of elements, including buttons, dropdowns, navigation bars, modals, and advanced components like datepickers. All components are crafted using Tailwind CSS utility classes and vanilla JavaScript, with TypeScript support.

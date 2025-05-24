@@ -5,6 +5,20 @@ description: 'Learn how to use daisyUI on WordPress websites.'
 
 This guide will show you how to use daisyUI 5 on WordPress websites using WindPress.
 
+::u-alert
+---
+class: not-prose ring-1 ring-amber-500 dark:ring-amber-400
+color: amber
+icon: line-md:construction
+variant: subtle
+title: Tailwind CSS version
+---
+#description
+<div class="leading-6">
+This guide's instructions are based on the Tailwind CSS 4 version.
+</div>
+::
+
 ## What is daisyUI?
 
 [daisyUI](https://daisyui.com/){target="_blank"} is a plugin for Tailwind CSS that simplifies UI development by providing pre-designed components with semantic class names. Instead of writing long utility class lists, you can use intuitive classes like `btn`, `card`, or `alert` to quickly style your elements.
