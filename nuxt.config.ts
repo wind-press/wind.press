@@ -252,7 +252,7 @@ export default defineNuxtConfig({
   },
   vite: {
     experimental: {
-      enableNativePlugin: true
+      // enableNativePlugin: true
     },
     plugins: [
       yaml()
