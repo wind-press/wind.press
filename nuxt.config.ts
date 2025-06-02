@@ -251,6 +251,9 @@ export default defineNuxtConfig({
     // proxy: 'direct',
   },
   vite: {
+    experimental: {
+      enableNativePlugin: true
+    },
     plugins: [
       yaml()
     ],
