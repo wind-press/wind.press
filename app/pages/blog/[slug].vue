@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import { kebabCase } from 'scule'
 
+const colorMode = useColorMode()
+
 definePageMeta({
   heroBackground: 'opacity-30 -z-10'
 })
@@ -124,6 +126,9 @@ const links = [
           <USeparator v-if="surround?.length" />
 
           <UContentSurround :surround="surround" />
+
+          <Utterances repo="wind-press/wind.press" issue-term="pathname" :theme="`github-${colorMode.value}`" />
+
         </UPageBody>
 
         <template #right>
