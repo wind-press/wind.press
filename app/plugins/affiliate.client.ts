@@ -25,7 +25,11 @@ export default defineNuxtPlugin(() => {
                         const url = new URL(link.href);
                         if (url.hostname === hostname && !url.searchParams.has('ref')) {
                             url.searchParams.set('ref', affiliateId!);
-                            link.href = url.href;
+                            // link.href = url.href;
+                            link.addEventListener('click', (event) => {
+                                event.preventDefault();
+                                window.location.href = url.href;
+                            });
                         }
                     } catch {
                         // Ignore invalid URLs

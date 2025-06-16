@@ -1,19 +1,19 @@
 <script setup lang="ts">
-const carbonads = useTemplateRef('carbonads')
+// const carbonads = useTemplateRef('carbonads')
 
-onMounted(() => {
-  if (carbonads.value) {
-    const script = document.createElement('script')
-    script.setAttribute('type', 'text/javascript')
-    script.setAttribute('src', 'https://cdn.carbonads.com/carbon.js?serve=CWYD553E&placement=nuxtcom')
-    script.setAttribute('id', '_carbonads_js')
-    carbonads.value.appendChild(script)
-  }
-})
+// onMounted(() => {
+//   if (carbonads.value) {
+//     const script = document.createElement('script')
+//     script.setAttribute('type', 'text/javascript')
+//     script.setAttribute('src', 'https://cdn.carbonads.com/carbon.js?serve=CWYD553E&placement=nuxtcom')
+//     script.setAttribute('id', '_carbonads_js')
+//     carbonads.value.appendChild(script)
+//   }
+// })
 </script>
 
 <template>
-  <div ref="carbonads" class="carbon" />
+  <!-- <div ref="carbonads" class="carbon" /> -->
 </template>
 
 <style scoped>

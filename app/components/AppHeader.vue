@@ -89,7 +89,8 @@ const logoContextMenuItems = [
         <UContentSearchButton />
       </UTooltip>
 
-      <UColorModeButton />
+      <!-- <UColorModeButton /> -->
+      <ColorModeButton />
 
       <UTooltip text="GitHub Stars">
         <!-- <UButton

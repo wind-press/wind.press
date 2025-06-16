@@ -376,7 +376,7 @@ onMounted(() => {
                 <MDC :value="typeof feature === 'string' ? feature : feature.title" unwrap="p" :class="[
                   'text-sm truncate text-(--ui-text-toned)',
                   typeof feature === 'string' ? '' : feature.title_class
-                ]" :cache-key="`pricing-plan-${index}-feature-${featIdx}`" />
+                ]" />
               </li>
             </template>
 
@@ -388,7 +388,6 @@ onMounted(() => {
 
 
       <div class="badges__list grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 *:ring-1 *:ring-gray-200 dark:*:ring-gray-800 *:bg-gray-100/50 dark:*:bg-gray-800/50">
-        
         <!-- <div class="badges__item text-center">
           <div class="text-2xl flex items-center">
             <Icon name="fa6-solid:hand-holding-dollar" class="text-[#29b077]" />
@@ -440,26 +439,29 @@ onMounted(() => {
           </div>
         </div>
       </div>
-
-
-
-
     </UPageSection>
 
     <UPageSection id="faq" v-bind="faq.faq" class="scroll-mt-(--ui-header-height)" :ui="{ container: 'relative' }">
       <div aria-hidden="true" class="hidden lg:block absolute z-[-1] border-x border-(--ui-border) inset-0 mx-4 sm:mx-6 lg:mx-8" />
-      <UPageAccordion multiple :items="(faq.faq.items as any[])" class="max-w-4xl mx-auto">
-
+      <!-- <UPageAccordion multiple :items="(faq.faq.items as any[])" class="max-w-4xl mx-auto">
         <template #body="{ item, index }">
           <MDC :value="item.content" unwrap="p" :cache-key="`pro-pricing-faq-${index}-content`" />
         </template>
+      </UPageAccordion> -->
+
+      <UPageAccordion trailing-icon="lucide:plus" :items="(faq.faq.items as any[])" :ui="{
+        item: 'border-none',
+        trigger: 'mb-2 border-0 group px-4 transform-gpu rounded-lg bg-elevated/60 will-change-transform hover:bg-muted/50',
+        trailingIcon: 'group-data-[state=closed]:rotate-0 group-data-[state=open]:rotate-135'
+      }" class="max-w-4xl mx-auto">
+        <template #body="{ item: _item }">
+          <MDC :value="_item.content" unwrap="p" class="px-4" />
+        </template>
       </UPageAccordion>
+
     </UPageSection>
   </div>
 </template>
-
-
-
 
 <style scoped>
 .landing-grid {
