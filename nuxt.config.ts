@@ -26,6 +26,11 @@ export default defineNuxtConfig({
       url: 'http://localhost:3000'
     }
   },
+  $production: {
+    site: {
+      url: 'https://wind.press'
+    }
+  },
   // $development: {
   //   runtimeConfig: {
   //     public: {

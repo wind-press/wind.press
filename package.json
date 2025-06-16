@@ -83,11 +83,7 @@
       "puppeteer",
       "vue-demi"
     ],
-    "patchedDependencies": {
-      "@nuxt/content": "patches/@nuxt__content.patch"
-    },
     "overrides": {
-      "vite": "npm:rolldown-vite@latest",
       "@nuxt/content": "https://pkg.pr.new/@nuxt/content@3403"
     }
   }
