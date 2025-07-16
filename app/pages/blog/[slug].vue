@@ -69,7 +69,7 @@ const links = [
   {
     icon: 'i-ph-pencil-simple',
     label: 'Edit this article',
-    to: `https://github.com/wind-press/wind.press/edit/main/content/${article.value.stem}`,
+    to: `https://github.com/wind-press/wind.press/edit/main/content/${article.value.stem}.${article.value.extension}`,
     target: '_blank'
   }, {
     icon: 'i-ph-star',
