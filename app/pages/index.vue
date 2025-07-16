@@ -188,7 +188,7 @@ onMounted(() => {
             <div class="bento__slot-title flex text-gray-900 items-center gap-4">
               <a>
                 <div class="text-lg font-semibold">
-                  The Wizard <span class="font-light">(In development)</span>
+                  The Wizard
                 </div>
               </a>
             </div>

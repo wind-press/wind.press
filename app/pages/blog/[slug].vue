@@ -127,7 +127,14 @@ const links = [
 
           <UContentSurround :surround="surround" />
 
-          <Utterances repo="wind-press/wind.press" issue-term="pathname" :theme="`github-${colorMode.value}`" />
+          <Giscus 
+            repo="wind-press/wind.press" 
+            repo-id="R_kgDONAM7Qg" 
+            category="Website" 
+            category-id="DIC_kwDONAM7Qs4CtCLS" 
+            strict="1"
+            :theme="colorMode.value === 'dark' ? 'dark' : 'light'"
+          />
 
         </UPageBody>
 
