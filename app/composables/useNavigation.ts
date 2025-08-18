@@ -80,7 +80,7 @@ function _useHeaderLinks() {
           {
             label: 'Templates',
             icon: 'i-lucide-app-window',
-            description: 'Start your next project with a Nuxt template.',
+            description: 'Explore and use ready-to-use templates.',
             to: '/templates'
           },
           // {
@@ -91,7 +91,7 @@ function _useHeaderLinks() {
           // },
           {
             label: 'Showcase',
-            description: 'Discover and explore projects built with Nuxt.',
+            description: 'Explore the showcase of WindPress websites.',
             icon: 'i-lucide-presentation',
             to: '/showcase'
           },
@@ -102,6 +102,18 @@ function _useHeaderLinks() {
           //   to: 'https://certification.nuxt.com',
           //   target: '_blank'
           // }
+          {
+            label: 'Changelog',
+            description: 'Stay up-to-date with the latest changes.',
+            icon: 'i-lucide-list-check',
+            to: '/changelog'
+          },
+          {
+            label: 'Blog',
+            description: 'Read articles about WindPress.',
+            icon: 'i-lucide-newspaper',
+            to: '/blog'
+          }
         ]
       },
       // {
@@ -158,11 +170,11 @@ function _useHeaderLinks() {
           }
         ]
       },
-      {
-        label: 'Blog',
-        icon: 'i-lucide-newspaper',
-        to: '/blog'
-      }
+      // {
+      //   label: 'Blog',
+      //   icon: 'i-lucide-newspaper',
+      //   to: '/blog'
+      // }
     ]
   })
   return { headerLinks }
