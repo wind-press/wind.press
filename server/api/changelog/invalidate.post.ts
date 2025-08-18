@@ -4,7 +4,7 @@ function escapeKey(key: string | string[]) {
 
 export default defineEventHandler(async () => {
   try {
-    const cacheKey = `nitro:handlers:changelog:${escapeKey('/api/changelog')}.json`
+    const cacheKey = `nitro:handlers:changelog:${escapeKey('changelog')}.json`
     
     const cache = await useStorage('cache').getItem(cacheKey)
     if (!cache) {

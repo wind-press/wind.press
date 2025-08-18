@@ -35,7 +35,7 @@ function nodeToHTML(nodes: any[]): string {
   }).join('')
 }
 
-export default defineCachedEventHandler(async (event) => {
+export default cachedEventHandler(async (event) => {
   try {
     const response = await fetch('https://raw.githubusercontent.com/wind-press/windpress/main/CHANGELOG.md')
 
@@ -186,6 +186,7 @@ export default defineCachedEventHandler(async (event) => {
   }
 }, {
   maxAge: 60 * 60 * 24,
-  name: 'changelog',
-  getKey: () => '/api/changelog'
+  name: 'changelog', 
+  getKey: (event) => 'changelog',
+  swr: true
 })

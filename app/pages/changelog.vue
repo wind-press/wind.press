@@ -1,14 +1,31 @@
 <script setup lang="ts">
-const { data: changelog, pending, error, refresh } = await useFetch('/api/changelog')
+const changelog = ref()
+const pending = ref(true)
+const error = ref(null)
+
+// Client-side fetch
+onMounted(async () => {
+  try {
+    changelog.value = await $fetch('/api/changelog')
+  } catch (err) {
+    error.value = err
+  } finally {
+    pending.value = false
+  }
+})
 
 // Cache invalidation function
 const invalidateAndRefresh = async () => {
   try {
+    pending.value = true
+    error.value = null
     await $fetch('/api/changelog/invalidate', { method: 'POST' })
-    reloadNuxtApp()
-  } catch (error) {
-    console.error('Error invalidating cache:', error)
-    reloadNuxtApp()
+    changelog.value = await $fetch('/api/changelog')
+  } catch (err) {
+    console.error('Error invalidating cache:', err)
+    error.value = err
+  } finally {
+    pending.value = false
   }
 }
 
