@@ -3,7 +3,7 @@ definePageMeta({
   heroBackground: 'opacity-70 -z-10'
 })
 
-const { fetchList, providers } = useHostingProviders()
+// const { fetchList, providers } = useHostingProviders()
 
 const { data: page } = await useAsyncData('deploy-landing', () => queryCollection('landing').path('/deploy').first())
 if (!page.value) {
@@ -26,10 +26,10 @@ defineOgImageComponent('Docs', {
   description
 })
 
-await fetchList()
+// await fetchList()
 
-const featuredProviders = computed(() => providers.value.filter(provider => provider.featured === true))
-const otherProviders = computed(() => providers.value.filter(provider => provider.featured !== true))
+// const featuredProviders = computed(() => providers.value.filter(provider => provider.featured === true))
+// const otherProviders = computed(() => providers.value.filter(provider => provider.featured !== true))
 </script>
 
 <template>

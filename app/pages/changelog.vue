@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const { data: changelog, pending, error, refresh } = await useLazyFetch('/api/changelog')
+const { data: changelog, pending, error, refresh } = await useFetch('/api/changelog')
 
 // Cache invalidation function
 const invalidateAndRefresh = async () => {

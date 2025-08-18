@@ -30,8 +30,8 @@ const [{ data: navigation }, { data: files }] = await Promise.all([
   })
 ])
 
-const { fetchList } = useModules()
-onNuxtReady(() => fetchList())
+// const { fetchList } = useModules()
+// onNuxtReady(() => fetchList())
 
 provide('navigation', navigation)
 </script>

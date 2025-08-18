@@ -1,7 +1,7 @@
 <script setup lang="ts">
 const colorMode = useColorMode()
 const { searchGroups, searchLinks, searchTerm } = useNavigation()
-const { fetchList } = useModules()
+// const { fetchList } = useModules()
 
 const color = computed(() => colorMode.value === 'dark' ? '#020420' : 'white')
 
@@ -25,7 +25,7 @@ const [{ data: navigation }, { data: files }] = await Promise.all([
   })
 ])
 
-onNuxtReady(() => fetchList())
+// onNuxtReady(() => fetchList())
 
 useHead({
   titleTemplate: title => title ? `${title} · WindPress` : 'WindPress: The Tailwind CSS integration plugin for WordPress',

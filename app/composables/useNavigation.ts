@@ -385,8 +385,8 @@ const _useNavigation = () => {
 
     onMounted(() => {
       Promise.all([
-        loadModules(),
-        loadHosting()
+        // loadModules(),
+        // loadHosting()
       ]).catch(error => console.error('Error loading search results:', error))
     })
 
