@@ -36,7 +36,7 @@ definePageMeta({
   heroBackground: 'opacity-70 -z-10'
 })
 
-defineOgImageComponent('Changelog', {
+defineOgImageComponent('Docs', {
   title: 'Changelog - WindPress',
   description: 'Latest updates and changes to WindPress'
 })
