@@ -26,7 +26,7 @@ const formatDate = (dateString: string) => {
 // SEO meta
 useSeoMeta({
   title: 'Changelog - WindPress',
-  description: 'Track all updates and improvements to WindPress. Stay up to date with new features, bug fixes, and enhancements.',
+  description: 'Latest updates and changes to WindPress',
   ogTitle: 'WindPress Changelog',
   ogDescription: 'Latest updates and changes to WindPress',
   ogType: 'website'
@@ -35,11 +35,16 @@ useSeoMeta({
 definePageMeta({
   heroBackground: 'opacity-70 -z-10'
 })
+
+defineOgImageComponent('Changelog', {
+  title: 'Changelog - WindPress',
+  description: 'Latest updates and changes to WindPress'
+})
 </script>
 
 <template>
   <UContainer>
-    <UPageHero title="Changelog" description="Track all updates and improvements to WindPress. Stay up to date with new features, bug fixes, and enhancements." :ui="{ container: '!pb-16', links: 'gap-1.5 max-w-2xl mx-auto' }">
+    <UPageHero title="Changelog" description="Stay updated with the latest changes and improvements to WindPress." :ui="{ container: '!pb-16', links: 'gap-1.5 max-w-2xl mx-auto' }">
       <template #links>
         <UButton to="https://github.com/wind-press/windpress/blob/main/CHANGELOG.md" color="neutral" external icon="i-lucide-github" variant="subtle" size="sm" target="_blank">
           View on GitHub
