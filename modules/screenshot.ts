@@ -12,7 +12,11 @@ interface ContentFile {
   screenshotOptions?: Record<string, any>
 }
 
-export default defineNuxtModule((options, nuxt) => {
+// Detect CI environment and add necessary args
+const isCI = process.env.CI === 'true' || process.env.GITHUB_ACTIONS === 'true'
+const puppeteerArgs = isCI ? ['--no-sandbox', '--disable-setuid-sandbox'] : []
+
+export default defineNuxtModule((_options, nuxt) => {
   nuxt.hook('content:file:afterParse', async ({ content: file }: { content: ContentFile }) => {
     // Handle individual template files
     if (file.id?.includes('/templates/')) {
@@ -34,7 +38,7 @@ export default defineNuxtModule((options, nuxt) => {
       console.log(`Generating screenshot for Template ${template.slug} hitting ${url}...`)
       await captureWebsite.file(url, filename, {
         ...(template.screenshotOptions || {}),
-        launchOptions: { headless: true }
+        launchOptions: { headless: true, args: puppeteerArgs }
       })
     }
 
@@ -53,7 +57,7 @@ export default defineNuxtModule((options, nuxt) => {
       console.log(`Generating screenshot for Video Course ${course.slug} hitting ${url}...`)
       await captureWebsite.file(url, filename, {
         ...(course.screenshotOptions || {}),
-        launchOptions: { headless: true },
+        launchOptions: { headless: true, args: puppeteerArgs },
         width: 1920,
         height: 960
       })
@@ -77,7 +81,7 @@ export default defineNuxtModule((options, nuxt) => {
       console.log(`Generating screenshot for Showcase ${showcase.slug} hitting ${url}...`)
       await captureWebsite.file(url, filename, {
         ...(showcase.screenshotOptions || {}),
-        launchOptions: { headless: true },
+        launchOptions: { headless: true, args: puppeteerArgs },
         width: 1920,
         height: 960,
         delay: 5,
