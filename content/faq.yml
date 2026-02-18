@@ -15,8 +15,8 @@ faq:
       content: Yes, we offer a discount for students. Please send an email to id@rosua.org with subject "Student Discount" from your student email, and attach a photo of your student ID card or certificate.
     - label: Can I upgrade my plan later?
       content: Yes, you can upgrade your plan at any time by paying the difference between the two plans. Please [contact us](/go/ticket) if you need help with upgrading your plan.
-    - label: Can I use WindPress for my client's website?
-      content: Yes, you can use WindPress for your client's website with the Starter and Agency plans. The Personal plan is for personal use only.
+    - label: Can I use WindPress for my website projects?
+      content: Yes, you can use WindPress for your website projects on any plan, including Free and Pro.
     - label: Can I cancel my subscription?
       content: Yes, you can cancel your [subscription](https://rosua.org/checkout/subscriptions) at any time. Your subscription will remain active until the end of the billing cycle.
     - label: Do you offer refunds?

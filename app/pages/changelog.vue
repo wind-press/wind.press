@@ -3,8 +3,7 @@ const changelog = ref()
 const pending = ref(true)
 const error = ref(null)
 
-// Client-side fetch
-onMounted(async () => {
+const fetchChangelog = async () => {
   try {
     changelog.value = await $fetch('/api/changelog')
   } catch (err) {
@@ -12,15 +11,17 @@ onMounted(async () => {
   } finally {
     pending.value = false
   }
-})
+}
+
+// Client-side fetch
+onMounted(fetchChangelog)
 
 // Cache invalidation function
 const invalidateAndRefresh = async () => {
   try {
     pending.value = true
     error.value = null
-    await $fetch('/api/changelog/invalidate', { method: 'POST' })
-    changelog.value = await $fetch('/api/changelog')
+    await fetchChangelog()
   } catch (err) {
     console.error('Error invalidating cache:', err)
     error.value = err

@@ -4,79 +4,31 @@ hero:
   title: A plan for every need
   description: Your time and coffee are precious, so we created some generous pricing plans for you to choose from.
   align: center
-freePlan:
-  title: Free
-  description: Get started with the free version and enjoy the full features.
-  orientation: horizontal
-  button:
-    label: Download from WordPress.org
-    variant: 'subtle'
-    color: 'neutral'
-    target: _blank
-    to: https://wordpress.org/plugins/windpress/
-  features:
-      - icon: fa6-solid:check
-        title: All features
-      - icon: fa6-solid:asterisk
-        icon_class: text-amber-600
-        title: Limited integrations
-        title_class: text-amber-600
-      - icon: iconoir:www
-        title: Unlimited personal sites
-      - icon: iconoir:www
-        title: Unlimited client sites
-      - icon: fa6-solid:arrows-rotate
-        title: Free updates
-      - icon: fa6-solid:comments
-        title: Community support
 plans:
-  - title: Starter
-    description: For a solo user ready for an exciting journey with Tailwind CSS!
-    price: $7
-    billing_cycle: /year
+  - title: Free
+    description: Get started with the free version and enjoy the full features.
+    orientation: horizontal
     button:
-      label: Buy now
+      label: Download from WordPress.org
+      variant: 'subtle'
+      color: 'neutral'
       target: _blank
-      to: https://rosua.org/checkout/?edd_action=add_to_cart&download_id=2250&edd_options[price_id]=5
+      to: https://wordpress.org/plugins/windpress/
     features:
-      - icon: fa6-solid:check
-        title: All features
-      - icon: fa6-solid:check
-        title: All integrations
-      - icon: iconoir:www
-        icon_class: text-amber-600
-        title: 1 personal/client site
-        title_class: text-amber-600
-      - icon: fa6-solid:arrows-rotate
-        title: Free updates
-      - icon: fa6-solid:headset
-        title: Standard support
-  - title: Personal
-    description: Best suited for blogger, individual & solopreneur.
-    price: $29
-    billing_cycle: /year
-    highlight: true
-    button:
-      label: Buy now
-      target: _blank
-      to: https://rosua.org/checkout/?edd_action=add_to_cart&download_id=2250&edd_options[price_id]=1
-    features:
-      - icon: fa6-solid:check
-        title: All features
-      - icon: fa6-solid:check
-        title: All integrations
-      - icon: iconoir:www
-        title: Unlimited personal sites
-      - icon: iconoir:www
-        icon_class: text-rose-600
-        title: Unlimited client sites
-        title_class: text-rose-600 line-through
-      - icon: fa6-solid:arrows-rotate
-        title: Free updates
-      - icon: fa6-solid:headset
-        title: Standard support
-  - title: Agency
-    description: Ideal for agency owners with high volume.
+        - icon: fa6-solid:check
+          title: All features
+        - icon: fa6-solid:asterisk
+          icon_class: text-amber-600
+          title: Limited integrations
+          title_class: text-amber-600
+        - icon: iconoir:www
+          title: Unlimited sites
+        - icon: fa6-solid:arrows-rotate
+          title: Free updates
+        - icon: fa6-solid:comments
+          title: Community support
+  - title: Pro
+    description: Everything you need to build faster, launch confidently, and keep every site running smoothly.
     price: $59
     billing_cycle: /year
     badge: Most popular
@@ -90,9 +42,7 @@ plans:
       - icon: fa6-solid:check
         title: All integrations
       - icon: iconoir:www
-        title: Unlimited personal sites
-      - icon: iconoir:www
-        title: Unlimited client sites
+        title: Unlimited sites
       - icon: fa6-solid:arrows-rotate
         title: Free updates
       - icon: fa6-solid:headset

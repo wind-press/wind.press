@@ -18,7 +18,6 @@ export default defineNuxtConfig({
     'nuxt-og-image',
     'motion-v/nuxt',
     'nuxt-llms',
-    '@nuxthub/core',
     'nuxt-umami',
   ],
   $development: {
@@ -124,6 +123,7 @@ export default defineNuxtConfig({
   },
   compatibilityDate: '2024-07-18',
   nitro: {
+    preset: 'static',
     prerender: {
       crawlLinks: true,
       ignore: [
@@ -139,8 +139,8 @@ export default defineNuxtConfig({
       routes: [
         '/',
         '/docs',
-        // '/sitemap.xml', // Temp while waiting for hosting on Nuxt Hub
-        // '/blog/rss.xml', // Temp while waiting for hosting on Nuxt Hub
+        '/api/changelog',
+        '/api/teams',
         // ...globSync('./content/**/*.md*')
         //   .map(path => path
         //     .slice(7, -3)
@@ -152,20 +152,7 @@ export default defineNuxtConfig({
         //   ),
         // '/go',
       ]
-    },
-    cloudflare: {
-      pages: {
-        routes: {
-          exclude: [
-            // '/docs/*'
-          ]
-        }
-      }
     }
-  },
-  hub: {
-    cache: true,
-    database: true,
   },
   typescript: {
     strict: false

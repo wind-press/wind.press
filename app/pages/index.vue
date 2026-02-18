@@ -351,20 +351,6 @@ onMounted(() => {
       root: 'border-y border-(--ui-border)',
     }">
       <div class="flex flex-col bg-(--ui-bg) gap-8 lg:gap-0">
-        <UPricingPlan v-bind="pricing.freePlan" variant="naked" class="lg:rounded-none border-x border-(--ui-border) border-t border-b lg:border-b-0">
-          <template #features>
-            <li v-for="(feature, index) in pricing.freePlan.features" :key="index" class="flex items-center gap-2 min-w-0">
-              <UIcon :name="typeof feature === 'string' ? 'i-lucide-circle-check' : feature.icon" :class="[
-                'size-5 text-(--ui-primary) shrink-0',
-                typeof feature === 'string' ? '' : feature.icon_class
-              ]" />
-              <MDC :value="typeof feature === 'string' ? feature : feature.title" unwrap="p" :class="[
-                'text-sm truncate text-(--ui-text-toned)',
-                typeof feature === 'string' ? '' : feature.title_class
-              ]" :cache-key="`pricing-free-feature-${index}`" />
-            </li>
-          </template>
-        </UPricingPlan>
         <UPricingPlans compact>
           <UPricingPlan v-for="(plan, index) in pricing.plans" :key="index" :title="plan.title" :description="plan.description" :price="plan.price" :discount="plan.discount" :billing-period="plan.billing_period" :billing-cycle="plan.billing_cycle" :variant="plan.highlight ? 'soft' : 'outline'" :class="['lg:rounded-none', { 'border-2 lg:border lg:border-x-0 border-(--ui-primary) lg:border-(--ui-border)': plan.highlight }]" :features="plan.features" :button="plan.button" :badge="plan.badge">
             <template #features>
