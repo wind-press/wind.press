@@ -207,6 +207,7 @@ export default defineNuxtConfig({
     }
   },
   sitemap: {
+    zeroRuntime: true,
     exclude: [
       '/modules',
       '/enterprise',

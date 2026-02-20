@@ -116,34 +116,6 @@ function _useHeaderLinks() {
           }
         ]
       },
-      // {
-      //   label: 'Products',
-      //   icon: 'i-lucide-sparkle',
-      //   search: false,
-      //   children: [
-      //     {
-      //       label: 'Nuxt UI Pro',
-      //       to: 'https://ui.nuxt.com/pro?utm_source=nuxt-website&utm_medium=header',
-      //       description: 'Build faster with premium components for Vue or Nuxt.',
-      //       icon: 'i-lucide-panels-top-left',
-      //       target: '_blank'
-      //     },
-      //     {
-      //       label: 'Nuxt Studio',
-      //       to: 'https://content.nuxt.com/studio/?utm_source=nuxt-website&utm_medium=header',
-      //       description: 'Edit your Nuxt Content website with a visual editor.',
-      //       icon: 'i-lucide-pen',
-      //       target: '_blank'
-      //     },
-      //     {
-      //       label: 'NuxtHub',
-      //       to: 'https://hub.nuxt.com/?utm_source=nuxt-website&utm_medium=header',
-      //       description: 'Deploy & manage full-stack Nuxt apps that scale.',
-      //       icon: 'i-lucide-rocket',
-      //       target: '_blank'
-      //     }
-      //   ]
-      // },
       {
         label: 'Enterprise',
         icon: 'i-lucide-building-2',
