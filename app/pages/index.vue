@@ -331,14 +331,44 @@ onMounted(() => {
       description: 'text-left',
       links: 'justify-start'
     }">
-      <UCarousel v-slot="{ item }" :items="page.testimonials.items" dots wheel-gestures arrows loop autoplay class="min-w-0" :ui="{
-        container: 'ms-0 items-stretch',
-        item: 'min-w-0 shrink-0 sm:basis-1/2 p-2',
-        arrows: 'hidden 2xl:block',
-        root: 'flex flex-col gap-12 sm:gap-0'
-      }">
-        <LandingTestimonialCard v-bind="item" />
-      </UCarousel>
+      <div class="mx-auto mt-8 flow-root max-w-2xl sm:mt-12 lg:mx-0 lg:max-w-none">
+        <div class="-mt-8 sm:-mx-4 sm:columns-2 sm:text-[0] lg:columns-3">
+          <div v-for="(item, index) in page.testimonials.items" :key="`${item.author?.name || 'review'}-${index}`" class="pt-8 sm:inline-block sm:w-full sm:px-4">
+            <figure class="group rounded-2xl bg-gray-50 p-8 text-sm/6 ring-1 ring-inset ring-gray-200/70 transition-all duration-200 hover:bg-white hover:shadow-lg hover:shadow-gray-900/5 hover:ring-indigo-200 dark:bg-white/5 dark:ring-white/10 dark:hover:bg-white/10 dark:hover:ring-indigo-400/40">
+              <blockquote class="text-gray-900 dark:text-gray-100">
+                <div v-if="item.quote_title" class="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-gray-600 transition-colors group-hover:text-indigo-600 dark:text-gray-300 dark:group-hover:text-indigo-300">
+                  {{ item.quote_title }}
+                </div>
+                <p>"{{ item.quote }}"</p>
+              </blockquote>
+
+              <a v-if="item.author?.to" :href="item.author.to" :target="item.author.target || '_blank'" rel="noopener noreferrer" class="mt-6 flex items-center gap-x-4">
+                <img :src="item.author.avatar.src" :alt="item.author.name" class="size-10 rounded-full bg-gray-50 dark:bg-gray-800" />
+                <div>
+                  <div class="font-semibold text-gray-900 transition-colors group-hover:text-indigo-700 dark:text-white dark:group-hover:text-indigo-300">
+                    {{ item.author.name }}
+                  </div>
+                  <div class="text-gray-600 dark:text-gray-400">
+                    {{ item.author.description || 'WordPress reviewer' }}
+                  </div>
+                </div>
+              </a>
+
+              <div v-else class="mt-6 flex items-center gap-x-4">
+                <img :src="item.author.avatar.src" :alt="item.author.name" class="size-10 rounded-full bg-gray-50 dark:bg-gray-800" />
+                <div>
+                  <div class="font-semibold text-gray-900 transition-colors group-hover:text-indigo-700 dark:text-white dark:group-hover:text-indigo-300">
+                    {{ item.author.name }}
+                  </div>
+                  <div class="text-gray-600 dark:text-gray-400">
+                    {{ item.author.description || 'WordPress reviewer' }}
+                  </div>
+                </div>
+              </div>
+            </figure>
+          </div>
+        </div>
+      </div>
 
       <div class="text-center mt-6 sm:mt-0">
         <a href="https://wordpress.org/support/plugin/windpress/reviews/?filter=5/#new-post" target="_blank" class="underline text-(--ui-text-muted)">

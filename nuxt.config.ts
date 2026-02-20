@@ -188,7 +188,7 @@ export default defineNuxtConfig({
     provider: 'iconify'
   },
   image: {
-    format: ['webp', 'jpeg', 'jpg', 'png', 'svg'],
+    format: ['webp', 'png', 'jpeg', 'jpg', 'svg'],
     // provider: 'cloudflare',
     // cloudflare: {
     //   baseURL: 'https://wind.press'

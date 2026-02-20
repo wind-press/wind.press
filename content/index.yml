@@ -322,6 +322,103 @@ testimonials:
           src: https://s.gravatar.com/avatar/c955bc6850c8d00b12fa6082f74039416a49d60d074f8962d789fde77b2c0c95?s=100
         to: https://wordpress.org/support/topic/the-best-tailwind-plugin-for-wordpress/
         target: _blank
+    - quote_title: Amazing Plugin!
+      quote: It was everything I needed to create my own themes using Tailwind CSS.
+      author:
+        name: Giovanni de Luca
+        avatar:
+          src: https://secure.gravatar.com/avatar/f791c3ffec0132d3147535d474bf29b123b5b98881484a185610622ff614bcc4?s=100
+        to: https://wordpress.org/support/topic/amazing-plugin-2709/
+        target: _blank
+    - quote_title: Easy and Fast
+      quote: A plugin that meets expectations. Easy to use. Designer and developer friendly. Maybe you could add other cool features.
+      author:
+        name: Perdana Hary
+        avatar:
+          src: https://secure.gravatar.com/avatar/c179bdcb83344e2c3d795c04d7607382dde1fd88a530f229aca1fb4b96c0cfc9?s=100
+        to: https://wordpress.org/support/topic/easy-and-fast-167/
+        target: _blank
+    - quote_title: Excellent !
+      quote: An excellent tool for WordPress developers and designers! Windpress is extremely useful when you want to quickly prototype responsive layouts directly within the editor. Perfect for testing mobile and tablet versions without constantly switching to the front end. Lightweight, practical, and well-designed. Kudos to the developers!
+      author:
+        name: lafabrique
+        avatar:
+          src: https://secure.gravatar.com/avatar/3d23a0ad79f3db673da145e8a37a6320dddc978e9a040b6073fb1eb9bc6a9139?s=100
+        to: https://wordpress.org/support/topic/excellent-13955/
+        target: _blank
+    - quote_title: "Exceptional Tailwind CSS Integration for WordPress: Fully Deserving of 5 Stars"
+      quote: A plugin that integrates Tailwind CSS in WordPress with continuous updates, Tailwind v4 support, and incredible technical support truly deserves all 5 stars. It's clear the team behind this tool is doing an exceptional job.
+      author:
+        name: marcobrambilla
+        avatar:
+          src: https://secure.gravatar.com/avatar/8055c388b3c5367efe71a068c99a48aae96b511e40302578a7f2a3548a9d73b3?s=100
+        to: https://wordpress.org/support/topic/exceptional-tailwind-css-integration-for-wordpress-fully-deserving-of-5-stars/
+        target: _blank
+    - quote_title: Good!
+      quote: Very good plugin, updated regularly, hope it continues like this!
+      author:
+        name: toufic
+        avatar:
+          src: https://secure.gravatar.com/avatar/551acefddfc9debd1c37b445bff4f5defad24f41ccda7029ed97af9435c886b6?s=100
+        to: https://wordpress.org/support/topic/good-8900/
+        target: _blank
+    - quote_title: good but greenshift plugin is not compatible with it
+      quote: easy to use, just need to fix the issue with the greenshift plugin
+      author:
+        name: huuphong91
+        avatar:
+          src: https://secure.gravatar.com/avatar/ea2649cd44ebf273775fefd99c1973a341bca10a59ff5d0b2dd3e97547eeed9b?s=100
+        to: https://wordpress.org/support/topic/good-but-greenshift-plugin-is-not-compatible-with-it/
+        target: _blank
+    - quote_title: Great
+      quote: great work
+      author:
+        name: mohammadsobhy83
+        avatar:
+          src: https://secure.gravatar.com/avatar/cecc3fb6f4f1e79bc8bd2e5503f1fc8e8018c2c94829e58c8c0a0900598fe40d?s=100
+        to: https://wordpress.org/support/topic/great-16662/
+        target: _blank
+    - quote_title: Great plugin to start with tailwind in wp
+      quote: Actively developed and easy to use
+      author:
+        name: piggom
+        avatar:
+          src: https://secure.gravatar.com/avatar/97871c8794ec867dc1646688d50c7bf5793376383b8bde7976daff2bd7997a81?s=100
+        to: https://wordpress.org/support/topic/great-plugin-to-start-with-tailwind-in-wp/
+        target: _blank
+    - quote_title: Greate tool!
+      quote: >-
+        As a developer, this tool has helped me a lot by eliminating the need to manually integrate Tailwind CSS into every theme or plugin I build. I just install the plugin and start using utility classes as usual - it's super convenient. However, there are two main issues: IDE autocompletion doesn't always recognize Tailwind classes provided by the plugin, which slows down workflow. CSS load timing - the WindPress-generated styles are injected late, causing a brief flash before styles apply (a few milliseconds delay). Overall, it's a great tool that improves development speed, and I appreciate the effort behind it. Anyway, thanks to the developer for making this tool available on the WordPress marketplace - it really fills a useful gap.
+      author:
+        name: Ahmad Kouider
+        avatar:
+          src: https://secure.gravatar.com/avatar/489c4ff808162a4669006273a5eaef2a8b7523a5cbcc05676c27cbdb4b732c2c?s=100
+        to: https://wordpress.org/support/topic/greate-tool-4/
+        target: _blank
+    - quote_title: Perfect
+      quote: Development is so much faster and the support is fantastic.
+      author:
+        name: renewrmk
+        avatar:
+          src: https://secure.gravatar.com/avatar/2876c6545dc83f1ef36ba677482760ad90b8569d4dcf4f1aec40c70c880bea1c?s=100
+        to: https://wordpress.org/support/topic/perfect-10807/
+        target: _blank
+    - quote_title: Tailwind Developer tool no brainer!
+      quote: Great UI update with Version 3.2.1! Well made plugin and does exactly what it needs to for tailwind integration. Frequent updates and great support a great addition to the WordPress ecosystem.
+      author:
+        name: adjk
+        avatar:
+          src: https://secure.gravatar.com/avatar/cc46e5598a19be7ade58aa674d1285e0724286613d5e6638011e63f4bafecc02?s=100
+        to: https://wordpress.org/support/topic/tailwind-developer-tool-no-brainer/
+        target: _blank
+    - quote_title: Weldone
+      quote: Good job out there
+      author:
+        name: resocole
+        avatar:
+          src: https://secure.gravatar.com/avatar/d879e1f8c7c973e0d7355ec09642686301b7982345de8889796a258c32c76a0c?s=100
+        to: https://wordpress.org/support/topic/weldone-2/
+        target: _blank
     # - quote_title: 
     #   quote: 
     #   author:
@@ -580,5 +677,3 @@ sponsors:
       to: /enterprise/sponsors
       color: neutral
       variant: outline
-
-
