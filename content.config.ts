@@ -112,6 +112,7 @@ const Showcase = z.object({
   slug: z.string(),
   screenshotUrl: z.string().url().optional(),
   name: z.string().optional(),
+  author: z.string().optional()
 })
 
 export default defineContentConfig({

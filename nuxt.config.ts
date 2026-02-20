@@ -139,7 +139,6 @@ export default defineNuxtConfig({
       routes: [
         '/',
         '/docs',
-        '/api/changelog',
         '/api/teams',
         // ...globSync('./content/**/*.md*')
         //   .map(path => path

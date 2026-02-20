@@ -74,6 +74,8 @@ Set these GitHub settings before enabling the workflow:
   - `CLOUDFLARE_PAGES_PROJECT_NAME` (optional, defaults to repository name)
   - `NUXT_PUBLIC_SITE_URL` (optional but recommended)
 
+`CLOUDFLARE_PAGES_PROJECT_NAME` must match an existing Pages project in the Cloudflare account referenced by `CLOUDFLARE_ACCOUNT_ID`.
+
 ### Cloudflare Pages Git Integration (no GitHub Action)
 
 You can also connect the repository directly in Cloudflare Pages:

@@ -1,11 +1,204 @@
 <script setup lang="ts">
-const changelog = ref()
+type MarkdownNode = {
+  type?: string
+  value?: string
+  tag?: string
+  props?: Record<string, unknown>
+  children?: MarkdownNode[]
+}
+
+type ChangelogVersion = {
+  title: string
+  date: string
+  link: string
+  changes: Record<string, string[]>
+}
+
+type ChangelogData = {
+  versions: ChangelogVersion[]
+  lastUpdated: string
+  source: 'github'
+}
+
+const CHANGELOG_SOURCE_URL = 'https://raw.githubusercontent.com/wind-press/windpress/main/CHANGELOG.md'
+
+const changelog = ref<ChangelogData | null>(null)
 const pending = ref(true)
-const error = ref(null)
+const error = ref<unknown>(null)
+
+const nodeToHTML = (nodes: MarkdownNode[] = []) => {
+  return nodes.map((node) => {
+    if (node.type === 'text') {
+      return node.value ?? ''
+    }
+
+    if (node.type !== 'element' || !node.tag) {
+      return ''
+    }
+
+    const props = node.props ?? {}
+    const attrs = Object.entries(props)
+      .filter(([key, value]) => key !== 'id' && value !== undefined && value !== null)
+      .map(([key, value]) => {
+        if (Array.isArray(value)) {
+          return `${key}="${value.join(' ')}"`
+        }
+
+        return `${key}="${String(value)}"`
+      })
+      .join(' ')
+    const attrsString = attrs ? ` ${attrs}` : ''
+    const childrenHTML = nodeToHTML(node.children)
+
+    if (['br', 'hr', 'img'].includes(node.tag)) {
+      return `<${node.tag}${attrsString} />`
+    }
+
+    return `<${node.tag}${attrsString}>${childrenHTML}</${node.tag}>`
+  }).join('')
+}
+
+const parseChangelog = async (rawMarkdown: string): Promise<ChangelogData> => {
+  const { parseMarkdown } = await import('@nuxtjs/mdc/runtime')
+  const parsedMarkdown = await parseMarkdown(rawMarkdown)
+
+  const linkReferences: Record<string, string> = {}
+  for (const line of rawMarkdown.split('\n')) {
+    if (!line.startsWith('[')) {
+      continue
+    }
+
+    const keyEnd = line.indexOf(']:')
+    if (keyEnd <= 1) {
+      continue
+    }
+
+    const key = line.slice(1, keyEnd).trim()
+    const link = line.slice(keyEnd + 2).trim()
+
+    if (key && link) {
+      linkReferences[key] = link
+    }
+  }
+
+  const versions: ChangelogVersion[] = []
+  const children = (parsedMarkdown.body?.children ?? []) as MarkdownNode[]
+  let currentVersion: ChangelogVersion | null = null
+  let currentChangeType = ''
+
+  for (const node of children) {
+    if (node.type === 'element' && node.tag === 'h2') {
+      if (currentVersion) {
+        versions.push(currentVersion)
+      }
+
+      const h2Children = node.children ?? []
+      let title = ''
+      let fullText = ''
+      let linkHref = ''
+
+      for (const child of h2Children) {
+        if (child.type === 'text') {
+          fullText += child.value ?? ''
+        } else if (child.type === 'element' && child.tag === 'span' && child.children) {
+          for (const spanChild of child.children) {
+            if (spanChild.type === 'text') {
+              title = spanChild.value ?? ''
+            }
+          }
+        } else if (child.type === 'element' && child.tag === 'a' && child.props?.href) {
+          linkHref = String(child.props.href)
+
+          if (!title && child.children) {
+            for (const anchorChild of child.children) {
+              if (anchorChild.type === 'text') {
+                title = anchorChild.value ?? ''
+              }
+            }
+          }
+        }
+      }
+
+      const titleDateSeparator = fullText.indexOf(' - ')
+
+      if (titleDateSeparator === -1) {
+        const versionTitle = title || fullText.trim()
+        const linkKey = versionTitle.toLowerCase()
+
+        currentVersion = {
+          title: versionTitle,
+          date: '',
+          link: linkHref || linkReferences[linkKey] || linkReferences[versionTitle] || 'https://github.com/wind-press/windpress/compare/HEAD',
+          changes: {}
+        }
+      } else {
+        const parsedTitle = fullText.slice(0, titleDateSeparator).trim()
+        const parsedDate = fullText.slice(titleDateSeparator + 3).trim()
+        const versionTitle = title || parsedTitle
+
+        currentVersion = {
+          title: versionTitle,
+          date: parsedDate,
+          link: linkHref || linkReferences[versionTitle] || `https://github.com/wind-press/windpress/releases/tag/${versionTitle}`,
+          changes: {}
+        }
+      }
+
+      continue
+    }
+
+    if (node.type === 'element' && node.tag === 'h3' && currentVersion) {
+      currentChangeType = ''
+
+      for (const child of node.children ?? []) {
+        if (child.type === 'text') {
+          currentChangeType = (child.value ?? '').trim()
+          break
+        }
+      }
+
+      if (currentChangeType && !currentVersion.changes[currentChangeType]) {
+        currentVersion.changes[currentChangeType] = []
+      }
+
+      continue
+    }
+
+    if (node.type === 'element' && node.tag === 'ul' && currentVersion && currentChangeType) {
+      for (const listItem of node.children ?? []) {
+        if (listItem.type !== 'element' || listItem.tag !== 'li') {
+          continue
+        }
+
+        const htmlString = nodeToHTML(listItem.children).trim()
+        if (htmlString) {
+          currentVersion.changes[currentChangeType].push(htmlString)
+        }
+      }
+    }
+  }
+
+  if (currentVersion) {
+    versions.push(currentVersion)
+  }
+
+  return {
+    versions,
+    lastUpdated: new Date().toISOString(),
+    source: 'github'
+  }
+}
 
 const fetchChangelog = async () => {
+  pending.value = true
+  error.value = null
+
   try {
-    changelog.value = await $fetch('/api/changelog')
+    const rawMarkdown = await $fetch<string>(CHANGELOG_SOURCE_URL, {
+      responseType: 'text'
+    })
+
+    changelog.value = await parseChangelog(rawMarkdown)
   } catch (err) {
     error.value = err
   } finally {
@@ -13,25 +206,19 @@ const fetchChangelog = async () => {
   }
 }
 
-// Client-side fetch
-onMounted(fetchChangelog)
-
-// Cache invalidation function
-const invalidateAndRefresh = async () => {
-  try {
-    pending.value = true
-    error.value = null
-    await fetchChangelog()
-  } catch (err) {
-    console.error('Error invalidating cache:', err)
-    error.value = err
-  } finally {
-    pending.value = false
-  }
+const refreshChangelog = async () => {
+  await fetchChangelog()
 }
 
-// Format date helper
+onMounted(() => {
+  void fetchChangelog()
+})
+
 const formatDate = (dateString: string) => {
+  if (!dateString) {
+    return 'Unknown'
+  }
+
   return new Date(dateString).toLocaleDateString('en-US', {
     year: 'numeric',
     month: 'long',
@@ -84,9 +271,9 @@ defineOgImageComponent('Docs', {
           <template #title>Unable to load changelog</template>
           <template #description>
             <div class="mt-2">
-              <p class="mb-3">We're having trouble fetching the latest changelog. You can:</p>
+              <p class="mb-3">We're having trouble fetching the latest changelog from GitHub. You can:</p>
               <div class="flex flex-wrap gap-2">
-                <UButton variant="outline" size="xs" @click="invalidateAndRefresh()" :loading="pending" icon="i-lucide-refresh-cw">
+                <UButton variant="outline" size="xs" @click="refreshChangelog()" :loading="pending" icon="i-lucide-refresh-cw">
                   Try Again
                 </UButton>
                 <UButton variant="link" size="xs" to="https://github.com/wind-press/windpress/blob/main/CHANGELOG.md" external icon="i-lucide-external-link">
@@ -107,7 +294,7 @@ defineOgImageComponent('Docs', {
             </div>
 
             <div class="flex items-center gap-2 mt-4 sm:mt-0">
-              <UButton variant="ghost" size="sm" icon="i-lucide-refresh-cw" @click="invalidateAndRefresh()" :loading="pending">
+              <UButton variant="ghost" size="sm" icon="i-lucide-refresh-cw" @click="refreshChangelog()" :loading="pending">
                 Refresh
               </UButton>
 
