@@ -4,16 +4,14 @@ const { footerLinks } = useFooterLinks()
 
 <template>
   <!-- <USeparator icon="i-simple-icons-nuxtdotjs" class="h-px" /> -->
-  <USeparator icon="i-custom-windpress" class="h-px" />
+  <USeparator class="h-px">
+    <NuxtLogo class="w-6 h-6" />
+  </USeparator>
 
   <UFooter :ui="{ top: 'border-b border-(--ui-border)' }">
     <template #top>
       <UContainer>
-        <UFooterColumns :columns="footerLinks">
-          <template #right>
-            <NewsletterForm />
-          </template>
-        </UFooterColumns>
+        <UFooterColumns :columns="footerLinks" />
       </UContainer>
     </template>
 
@@ -28,17 +26,11 @@ const { footerLinks } = useFooterLinks()
     </template>
 
     <template #right>
-      <!-- <UButton color="neutral" variant="ghost" to="https://go.nuxt.com/x" target="_blank" icon="i-simple-icons-x">
-        <span class="sr-only">WindPress on X</span>
-      </UButton> -->
       <UButton color="neutral" variant="ghost" to="/go/facebook" target="_blank" icon="i-simple-icons-facebook">
-        <span class="sr-only">WindPress on Facebook</span>
-      </UButton>
-      <UButton color="neutral" variant="ghost" to="/go/discord" target="_blank" icon="i-simple-icons-discord">
-        <span class="sr-only">WindPress on Discord</span>
+        <span class="sr-only">Yabe Webfont on Facebook</span>
       </UButton>
       <UButton color="neutral" variant="ghost" to="/go/github" target="_blank" icon="i-simple-icons-github">
-        <span class="sr-only">WindPress on GitHub</span>
+        <span class="sr-only">Yabe Webfont on GitHub</span>
       </UButton>
     </template>
   </UFooter>

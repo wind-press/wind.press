@@ -11,173 +11,123 @@
       "permanent": false
     },
     {
-      "source": "/docs/guide/concepts",
-      "destination": "/docs/guide/concepts/auto-imports",
+      "source": "/docs/fonts",
+      "destination": "/docs/fonts/custom-font",
       "permanent": false
     },
     {
-      "source": "/docs/api/composables",
-      "destination": "/docs/api/composables/use-app-config",
+      "source": "/docs/integrations",
+      "destination": "/docs/integrations/elementor",
       "permanent": false
     },
     {
-      "source": "/docs/api/components",
-      "destination": "/docs/api/components/client-only",
+      "source": "/docs/misc",
+      "destination": "/docs/misc/convert-ttf-woff2",
       "permanent": false
     },
     {
-      "source": "/docs/examples",
-      "destination": "/docs/examples/hello-world",
-      "permanent": false
+      "source": "/en",
+      "destination": "/docs/getting-started/introduction",
+      "permanent": true
     },
     {
-      "source": "/docs/examples/essentials",
-      "destination": "/docs/examples/essentials/hello-world",
-      "permanent": false
+      "source": "/en/introduction",
+      "destination": "/docs/getting-started/introduction",
+      "permanent": true
     },
     {
-      "source": "/docs/community",
-      "destination": "/docs/community/getting-help",
-      "permanent": false
+      "source": "/en/install",
+      "destination": "/docs/getting-started/installation",
+      "permanent": true
     },
     {
-      "source": "/enterprise",
-      "destination": "/enterprise/support",
-      "permanent": false
+      "source": "/en/font/custom-font",
+      "destination": "/docs/fonts/custom-font",
+      "permanent": true
     },
     {
-      "source": "/docs/guide/directory-structure/app.config",
-      "destination": "/docs/guide/directory-structure/app-config",
-      "permanent": false
+      "source": "/en/font/google-fonts",
+      "destination": "/docs/fonts/google-fonts",
+      "permanent": true
     },
     {
-      "source": "/docs/api/configuration/nuxt.config",
-      "destination": "/docs/api/configuration/nuxt-config",
-      "permanent": false
+      "source": "/en/font/adobe-fonts",
+      "destination": "/docs/fonts/adobe-fonts",
+      "permanent": true
     },
     {
-      "source": "/docs/guide/going-further/edge-channel",
-      "destination": "/docs/guide/going-further/nightly-release-channel",
-      "permanent": false
+      "source": "/en/misc/convert-ttf-woff2",
+      "destination": "/docs/misc/convert-ttf-woff2",
+      "permanent": true
     },
     {
-      "source": "/docs/modules",
-      "destination": "/modules",
-      "permanent": false
+      "source": "/en/misc/no-plugin",
+      "destination": "/docs/misc/no-plugin",
+      "permanent": true
     },
     {
-      "source": "/modules/:slug/changelog",
-      "destination": "/modules/:slug",
-      "permanent": false
+      "source": "/en/misc/proxy",
+      "destination": "/docs/misc/proxy",
+      "permanent": true
     },
     {
-      "source": "/docs/concepts/typescript",
-      "destination": "/docs/guide/concepts/typescript",
-      "permanent": false
+      "source": "/en/integration/elementor",
+      "destination": "/docs/integrations/elementor",
+      "permanent": true
     },
     {
-      "source": "/enterprise/workshop",
-      "destination": "/enterprise/courses",
-      "permanent": false
+      "source": "/en/integration/oxygen",
+      "destination": "/docs/integrations/oxygen",
+      "permanent": true
     },
     {
-      "source": "/shop/beanie",
-      "destination": "https://nuxt.gumroad.com/l/beanie",
-      "permanent": false
+      "source": "/en/integration/bricks",
+      "destination": "/docs/integrations/bricks",
+      "permanent": true
     },
     {
-      "source": "/shop",
-      "destination": "https://nuxt.gumroad.com/l/ams-beanie",
-      "permanent": false
+      "source": "/en/integration/gutenberg",
+      "destination": "/docs/integrations/gutenberg",
+      "permanent": true
     },
     {
-      "source": "/v3",
-      "destination": "/blog/v3",
-      "permanent": false
+      "source": "/en/integration/breakdance",
+      "destination": "/docs/integrations/breakdance",
+      "permanent": true
     },
     {
-      "source": "/vision-2023",
-      "destination": "/blog/vision-2023",
-      "permanent": false
+      "source": "/en/integration/beaver-builder",
+      "destination": "/docs/integrations/beaver-builder",
+      "permanent": true
     },
     {
-      "source": "/docs/examples/essentials/hello-world",
-      "destination": "/docs/examples/hello-world",
-      "permanent": false
+      "source": "/en/integration/builderius",
+      "destination": "/docs/integrations/builderius",
+      "permanent": true
     },
     {
-      "source": "/docs/examples/auto-imports/components",
-      "destination": "/docs/examples/features/auto-imports",
-      "permanent": false
+      "source": "/en/integration/cwicly",
+      "destination": "/docs/integrations/cwicly",
+      "permanent": true
     },
     {
-      "source": "/docs/examples/auto-imports/composables",
-      "destination": "/docs/examples/features/auto-imports",
-      "permanent": false
+      "source": "/en/integration/classic-editor",
+      "destination": "/docs/integrations/classic-editor",
+      "permanent": true
     },
     {
-      "source": "/docs/examples/composables/use-async-data",
-      "destination": "/docs/examples/features/data-fetching",
-      "permanent": false
+      "source": "/en/integration/developer",
+      "destination": "/docs/integrations/developer",
+      "permanent": true
     },
     {
-      "source": "/docs/examples/composables/use-fetch",
-      "destination": "/docs/examples/features/data-fetching",
-      "permanent": false
+      "source": "/en/integration/generatepress",
+      "destination": "/docs/integrations/generatepress",
+      "permanent": true
     },
     {
-      "source": "/docs/examples/composables/use-state",
-      "destination": "/docs/examples/features/state-management",
-      "permanent": false
-    },
-    {
-      "source": "/docs/examples/app/app-config",
-      "destination": "/docs/examples/hello-world",
-      "permanent": false
-    },
-    {
-      "source": "/docs/examples/app/plugins",
-      "destination": "/docs/examples/hello-world",
-      "permanent": false
-    },
-    {
-      "source": "/docs/examples/routing/nuxt-link",
-      "destination": "/docs/examples/hello-world",
-      "permanent": false
-    },
-    {
-      "source": "/docs/examples/routing/layouts",
-      "destination": "/docs/examples/features/layouts",
-      "permanent": false
-    },
-    {
-      "source": "/docs/examples/server/routes",
-      "destination": "/docs/examples/hello-world",
-      "permanent": false
-    },
-    {
-      "source": "/support",
-      "destination": "/enterprise/support",
-      "permanent": false
-    },
-    {
-      "source": "/support/us",
-      "destination": "/enterprise/sponsors",
-      "permanent": false
-    },
-    {
-      "source": "/support/:path*",
-      "destination": "/enterprise/:path*",
-      "permanent": false
-    },
-    {
-      "source": "/docs/guide/going-further/custom-routing",
-      "destination": "/docs/guide/recipes/custom-routing",
-      "permanent": false
-    },
-    {
-      "source": "/docs/api/composables/use-id",
-      "destination": "https://vuejs.org/api/composition-api-helpers.html#useid",
+      "source": "/en/integration/zion-builder",
+      "destination": "/docs/integrations/zion-builder",
       "permanent": true
     }
   ]

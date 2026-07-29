@@ -20,8 +20,6 @@ type ChangelogData = {
   source: 'github'
 }
 
-const CHANGELOG_SOURCE_URL = 'https://raw.githubusercontent.com/wind-press/windpress/main/CHANGELOG.md'
-
 const changelog = ref<ChangelogData | null>(null)
 const pending = ref(true)
 const error = ref<unknown>(null)
@@ -128,7 +126,7 @@ const parseChangelog = async (rawMarkdown: string): Promise<ChangelogData> => {
         currentVersion = {
           title: versionTitle,
           date: '',
-          link: linkHref || linkReferences[linkKey] || linkReferences[versionTitle] || 'https://github.com/wind-press/windpress/compare/HEAD',
+          link: linkHref || linkReferences[linkKey] || linkReferences[versionTitle] || 'https://github.com/orgrosua/yabe-webfont/compare/HEAD',
           changes: {}
         }
       } else {
@@ -139,7 +137,7 @@ const parseChangelog = async (rawMarkdown: string): Promise<ChangelogData> => {
         currentVersion = {
           title: versionTitle,
           date: parsedDate,
-          link: linkHref || linkReferences[versionTitle] || `https://github.com/wind-press/windpress/releases/tag/${versionTitle}`,
+          link: linkHref || linkReferences[versionTitle] || `https://github.com/orgrosua/yabe-webfont/releases/tag/${versionTitle}`,
           changes: {}
         }
       }
@@ -194,7 +192,7 @@ const fetchChangelog = async () => {
   error.value = null
 
   try {
-    const rawMarkdown = await $fetch<string>(CHANGELOG_SOURCE_URL, {
+    const rawMarkdown = await $fetch<string>('https://raw.githubusercontent.com/orgrosua/yabe-webfont/master/CHANGELOG.md', {
       responseType: 'text'
     })
 
@@ -228,12 +226,11 @@ const formatDate = (dateString: string) => {
   })
 }
 
-// SEO meta
 useSeoMeta({
-  title: 'Changelog - WindPress',
-  description: 'Latest updates and changes to WindPress',
-  ogTitle: 'WindPress Changelog',
-  ogDescription: 'Latest updates and changes to WindPress',
+  title: 'Changelog - Yabe Webfont',
+  description: 'Latest updates and changes to Yabe Webfont',
+  ogTitle: 'Yabe Webfont Changelog',
+  ogDescription: 'Latest updates and changes to Yabe Webfont',
   ogType: 'website'
 })
 
@@ -241,17 +238,17 @@ definePageMeta({
   heroBackground: 'opacity-70 -z-10'
 })
 
-defineOgImageComponent('Docs', {
-  title: 'Changelog - WindPress',
-  description: 'Latest updates and changes to WindPress'
+defineOgImage('Docs', {
+  title: 'Changelog - Yabe Webfont',
+  description: 'Latest updates and changes to Yabe Webfont'
 })
 </script>
 
 <template>
   <UContainer>
-    <UPageHero title="Changelog" description="Stay updated with the latest changes and improvements to WindPress." :ui="{ container: '!pb-16', links: 'gap-1.5 max-w-2xl mx-auto' }">
+    <UPageHero title="Changelog" description="Stay updated with the latest changes and improvements to Yabe Webfont." :ui="{ container: '!pb-16', links: 'gap-1.5 max-w-2xl mx-auto' }">
       <template #links>
-        <UButton to="https://github.com/wind-press/windpress/blob/main/CHANGELOG.md" color="neutral" external icon="i-lucide-github" variant="subtle" size="sm" target="_blank">
+        <UButton to="https://github.com/orgrosua/yabe-webfont/blob/master/CHANGELOG.md" color="neutral" external icon="i-lucide-github" variant="subtle" size="sm" target="_blank">
           View on GitHub
         </UButton>
       </template>
@@ -259,14 +256,12 @@ defineOgImageComponent('Docs', {
 
     <UPageBody>
       <UContainer>
-        <!-- Loading State -->
         <div v-if="pending" class="flex flex-col items-center justify-center py-24">
           <UIcon name="i-lucide-loader-2" class="animate-spin h-8 w-8 text-primary-500 mb-4" />
           <p class="text-lg font-medium text-gray-600 dark:text-gray-400">Loading changelog...</p>
           <p class="text-sm text-gray-500 dark:text-gray-500 mt-2">Fetching the latest updates from GitHub</p>
         </div>
 
-        <!-- Error State -->
         <UAlert v-else-if="error" color="error" class="mb-8" variant="soft">
           <template #title>Unable to load changelog</template>
           <template #description>
@@ -276,7 +271,7 @@ defineOgImageComponent('Docs', {
                 <UButton variant="outline" size="xs" @click="refreshChangelog()" :loading="pending" icon="i-lucide-refresh-cw">
                   Try Again
                 </UButton>
-                <UButton variant="link" size="xs" to="https://github.com/wind-press/windpress/blob/main/CHANGELOG.md" external icon="i-lucide-external-link">
+                <UButton variant="link" size="xs" to="https://github.com/orgrosua/yabe-webfont/blob/master/CHANGELOG.md" external icon="i-lucide-external-link">
                   View on GitHub
                 </UButton>
               </div>
@@ -284,13 +279,11 @@ defineOgImageComponent('Docs', {
           </template>
         </UAlert>
 
-        <!-- Content -->
         <div v-else class="max-w-5xl mx-auto">
-          <!-- Info bar at the top -->
           <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-8 p-4 bg-gray-50 dark:bg-gray-900 rounded-lg border border-gray-200 dark:border-gray-800">
             <div class="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400">
               <UIcon name="i-lucide-clock" class="h-4 w-4" />
-              <span>Last updated: {{ formatDate(changelog.lastUpdated) }}</span>
+              <span>Last updated: {{ formatDate(changelog?.lastUpdated ?? '') }}</span>
             </div>
 
             <div class="flex items-center gap-2 mt-4 sm:mt-0">
@@ -298,13 +291,12 @@ defineOgImageComponent('Docs', {
                 Refresh
               </UButton>
 
-              <UButton to="https://github.com/wind-press/windpress/releases" variant="ghost" size="sm" icon="i-lucide-tag" external target="_blank">
+              <UButton to="https://github.com/orgrosua/yabe-webfont/releases" variant="ghost" size="sm" icon="i-lucide-tag" external target="_blank">
                 Releases
               </UButton>
             </div>
           </div>
 
-          <!-- Structured Changelog Versions -->
           <div v-if="changelog?.versions && changelog.versions.length > 0">
             <UChangelogVersions>
               <UChangelogVersion v-for="version in changelog.versions" :key="version.title" :title="version.title" :date="version.date" :ui="{
@@ -342,7 +334,6 @@ defineOgImageComponent('Docs', {
                     </div>
                   </div>
                   <div class="mt-6 flex items-center justify-between">
-
                     <UButton v-if="version.link" :to="version.link" variant="ghost" size="sm" icon="i-lucide-external-link" target="_blank">
                       View on GitHub
                     </UButton>
@@ -352,12 +343,10 @@ defineOgImageComponent('Docs', {
             </UChangelogVersions>
           </div>
 
-          <!-- No versions available fallback -->
           <div v-else-if="changelog && (!changelog.versions || changelog.versions.length === 0)" class="text-gray-600 dark:text-gray-400 text-center py-12">
             No changelog versions available.
           </div>
 
-          <!-- No content available -->
           <div v-else class="text-gray-600 dark:text-gray-400 text-center py-12">
             No changelog content available.
           </div>

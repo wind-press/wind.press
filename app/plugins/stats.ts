@@ -4,18 +4,16 @@ export default defineNuxtPlugin(async () => {
   const stats = useStats()
 
   if (import.meta.server || import.meta.client) {
-    // stats.value = await $fetch<Stats>('https://api.nuxt.com/stats').catch(() => null)
     stats.value = await fetchStats()
   }
   onNuxtReady(async () => {
-    if (!stats.value) {
-      // stats.value = await $fetch<Stats>('https://api.nuxt.com/stats')
+    if (!stats.value || !stats.value.wp_version) {
       stats.value = await fetchStats()
     }
   })
 })
 
-async function fetchStats() {
+async function fetchStats(): Promise<Stats> {
   const stats: Stats = {
     wp_downloaded: 0,
     wp_version: '',
@@ -27,47 +25,34 @@ async function fetchStats() {
     edd_totalDownloads: 0,
   }
 
-  await fetch('https://rosua.org/wp-json/rosua-edd/v1/stats/total_users')
-    .then(res => res.json())
-    .then(res => {
-      stats.edd_happyCustomers = res[0].count_users;
-    })
-    .catch(() => null);
-
-
-  await fetch('https://rosua.org/wp-json/rosua-edd/v1/stats/total_sites')
-    .then(res => res.json())
-    .then(res => {
-      // search array of object with download_id = 2250 (WindPress)
-      const downloadWindPress = res.find(item => item.download_id === 2250);
-      stats.edd_activeSites = downloadWindPress.count_sites;
-      stats.edd_totalDownloads = downloadWindPress.count_sites;
-
-      // search array of object with download_id = 3591 (Yabe Siul)
-      const downloadYabeSiul = res.find(item => item.download_id === 3591);
-      stats.edd_activeSites += downloadYabeSiul.count_sites;
-      stats.edd_totalDownloads += downloadYabeSiul.count_sites;
-    })
-    .catch(() => null);
-
-  await fetch('https://api.wordpress.org/plugins/info/1.2/?action=plugin_information&slug=windpress')
+  await fetch('https://api.wordpress.org/plugins/info/1.2/?action=plugin_information&slug=yabe-webfont')
     .then(response => response.json())
-    .then(data => {
-      stats.edd_activeSites += data.active_installs;
-      stats.wp_version = data.version;
-      stats.wp_donate_link = data.donate_link;
-      stats.wp_download_link = data.download_link;
-      stats.wp_active_installs = data.active_installs;
+    .then((data: any) => {
+      stats.wp_version = data.version
+      stats.wp_donate_link = data.donate_link
+      stats.wp_download_link = data.download_link
+      stats.wp_active_installs = data.active_installs
+      stats.edd_activeSites = data.active_installs
     })
-    .catch(() => null);
+    .catch(() => null)
 
-  await fetch('https://api.wordpress.org/plugins/info/1.0/windpress.json')
+  await fetch('https://api.wordpress.org/plugins/info/1.0/yabe-webfont.json')
     .then(response => response.json())
-    .then(data => {
-      stats.wp_downloaded = data.downloaded;
-      stats.edd_totalDownloads += data.downloaded;
+    .then((data: any) => {
+      stats.wp_downloaded = data.downloaded
+      stats.edd_totalDownloads = data.downloaded
     })
-    .catch(() => null);
+    .catch(() => null)
+
+  await fetch('https://jooo.si/wp-json/jooosi/v1/stats/total_sites')
+    .then(response => response.json())
+    .then((data: any) => {
+      const entry = Array.isArray(data) ? data.find((d: any) => d.download_id === 18) : null
+      if (entry?.count_sites) {
+        stats.edd_activeSites += entry.count_sites
+      }
+    })
+    .catch(() => null)
 
   return stats
 }

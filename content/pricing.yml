@@ -7,35 +7,34 @@ hero:
 plans:
   - title: Free
     description: Get started with the free version and enjoy the full features.
-    orientation: horizontal
+    price: Free
     button:
-      label: Download from WordPress.org
-      variant: 'subtle'
-      color: 'neutral'
+      label: Get for Free
+      variant: "subtle"
+      color: "neutral"
       target: _blank
-      to: https://wordpress.org/plugins/windpress/
+      to: https://wordpress.org/plugins/yabe-webfont/
     features:
-        - icon: fa6-solid:check
-          title: All features
-        - icon: fa6-solid:asterisk
-          icon_class: text-amber-600
-          title: Limited integrations
-          title_class: text-amber-600
-        - icon: iconoir:www
-          title: Unlimited sites
-        - icon: fa6-solid:arrows-rotate
-          title: Free updates
-        - icon: fa6-solid:comments
-          title: Community support
+      - icon: fa6-solid:check
+        title: All features
+      - icon: fa6-solid:asterisk
+        title: Limited integrations
+      - icon: iconoir:www
+        title: Unlimited sites
+      - icon: fa6-solid:arrows-rotate
+        title: Free updates
+      - icon: fa6-solid:comments
+        title: Community support
   - title: Pro
-    description: Everything you need to build faster, launch confidently, and keep every site running smoothly.
-    price: $59
+    description: Unlimited Site. Allows you to use it for your client site.
+    price: $39
     billing_cycle: /year
     badge: Most popular
+    highlight: true
     button:
-      label: Buy now
+      label: Start Now
       target: _blank
-      to: https://rosua.org/checkout/?edd_action=add_to_cart&download_id=2250&edd_options[price_id]=2
+      to: https://jooo.si/checkout
     features:
       - icon: fa6-solid:check
         title: All features

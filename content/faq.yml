@@ -2,22 +2,28 @@ faq:
   title: Frequently asked questions
   description: Here are some of our most frequently asked questions. If you have a question that isn't answered here, please reach out to us.
   items:
-    - label: Which version of Tailwind CSS is supported by WindPress?
-      content: WindPress supports both Tailwind CSS versions 3 and 4 and will receive regular updates to support the latest version.
+    - label: Is Yabe Webfont GDPR / DSGVO compliant?
+      content: Yes. Yabe Webfont lets you import and self-host Google Fonts files from your own server through your WordPress admin page. No font request is made to Google's servers on the front end, so no user IP address or user agent is shared with Google.
       defaultOpen: true
-    - label: Is WindPress support the Tailwind CSS plugins?
-      content: Yes, WindPress supports Tailwind CSS plugins. You can add the plugins in the `tailwind.config.js` file editor. The Tailwind CSS plugins will be loaded from the [esm.sh](https://esm.sh) CDN.
-    - label: Do I need an internet connection to use WindPress?
-      content: No, by default, you do not need an internet connection to use WindPress. However, an internet connection is required to load the Tailwind CSS plugins from the CDN.
-    - label: What themes is WindPress compatible with?
-      content: WindPress is compatible with any WordPress theme. A small adjustment may be needed for the compiler scanner to detect the used classes in the theme. We have a guide on how to make the adjustment, check the documentation.
+    - label: Which font file formats are supported?
+      content: Yabe Webfont supports `WOFF2`, `WOFF`, and `TTF` file formats. `WOFF2` is the recommended format for the web thanks to its superior compression and variable fonts support. You can convert `TTF` to `WOFF2` in your browser using our [TTF to WOFF2 Converter](/docs/misc/convert-ttf-woff2).
+    - label: Can I self-host Google Fonts with Yabe Webfont?
+      content: Yes. Yabe Webfont has a one-click Google Fonts import feature that downloads the font files to your server and serves them locally. See the [Self-hosting Google Fonts](/docs/fonts/google-fonts) guide.
+    - label: Can I use Adobe Fonts with Yabe Webfont?
+      content: Yes. You can embed Adobe Fonts by syncing a Web Project ID. See the [Embedding Adobe Fonts](/docs/fonts/adobe-fonts) guide.
+    - label: Does Yabe Webfont support variable fonts?
+      content: Yes. The variable font format enables a single font file to hold various stylistic variations. You can enable variable fonts when importing Google Fonts or when adding a custom font.
+    - label: Which page builders and themes are supported?
+      content: Yabe Webfont has first-class integration with the most popular visual builders and themes, including Elementor, Bricks, Oxygen, Breakdance, Beaver Builder, Builderius, Cwicly, GeneratePress & GenerateBlocks, Gutenberg, the Classic Editor, and Zion Builder. See the [Integrations](/docs/integrations) docs.
+    - label: Do I need an internet connection to use Yabe Webfont?
+      content: You need an internet connection to import Google Fonts and sync Adobe Fonts. Once the fonts are self-hosted on your server, the front end of your website works without any external font requests.
     - label: Do you offer a discount for students?
       content: Yes, we offer a discount for students. Please send an email to id@rosua.org with subject "Student Discount" from your student email, and attach a photo of your student ID card or certificate.
     - label: Can I upgrade my plan later?
       content: Yes, you can upgrade your plan at any time by paying the difference between the two plans. Please [contact us](/go/ticket) if you need help with upgrading your plan.
-    - label: Can I use WindPress for my website projects?
-      content: Yes, you can use WindPress for your website projects on any plan, including Free and Pro.
+    - label: Can I use Yabe Webfont for my website projects?
+      content: Yes, you can use Yabe Webfont for your website projects on any plan, including Free and Pro.
     - label: Can I cancel my subscription?
       content: Yes, you can cancel your [subscription](https://rosua.org/checkout/subscriptions) at any time. Your subscription will remain active until the end of the billing cycle.
     - label: Do you offer refunds?
-      content: Yes, we offer a 14-day money-back guarantee. If you are not satisfied with WindPress, please [contact us](/go/ticket) within 14 days of purchase for a full refund. We may ask for feedback to improve our product. Renewals are not eligible for refunds, you can cancel your subscription before the renewal date to avoid being charged.
+      content: Yes, we offer a 14-day money-back guarantee. If you are not satisfied with Yabe Webfont, please [contact us](/go/ticket) within 14 days of purchase for a full refund. We may ask for feedback to improve our product. Renewals are not eligible for refunds, you can cancel your subscription before the renewal date to avoid being charged.

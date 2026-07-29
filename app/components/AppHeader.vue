@@ -48,8 +48,8 @@ const logoContextMenuItems = [
     icon: 'lucide:copy',
     onSelect() {
       if (logo.value) {
-        copy(logo.value.$el.outerHTML, {
-          title: 'WindPress logo copied as SVG',
+          copy(logo.value.$el.outerHTML, {
+          title: 'Yabe Webfont logo copied as SVG',
           description: 'You can now paste it into your project',
           icon: 'i-lucide-circle-check',
           color: 'success'
@@ -71,7 +71,7 @@ const logoContextMenuItems = [
       <UContextMenu :items="logoContextMenuItems" size="xs">
         <NuxtLink to="/" class="flex gap-2 items-end" aria-label="Back to home">
           <NuxtLogo ref="logo" class="block w-auto h-6" />
-          <span class="text-2xl leading-5 font-bold">WindPress</span>
+          <span class="text-2xl leading-5 font-bold">Yabe Webfont</span>
 
           <UTooltip v-if="stats?.wp_version" :text="`Latest release: v${stats?.wp_version || 3}`">
             <UBadge variant="subtle" size="sm" class="-mb-[2px] rounded font-semibold text-[12px]/3">
@@ -108,10 +108,10 @@ const logoContextMenuItems = [
         </UButton> -->
       </UTooltip>
 
-      <UTooltip text="WindPress @ wordpress.org" class="hidden sm:flex" >
+      <UTooltip text="Yabe Webfont @ wordpress.org" class="hidden sm:flex" >
         <UButton
           icon="i-simple-icons-wordpress"
-          to="https://wordpress.org/plugins/windpress/"
+          to="https://wordpress.org/plugins/yabe-webfont/"
           target="_blank"
           variant="subtle"
           color="neutral"
@@ -120,7 +120,7 @@ const logoContextMenuItems = [
             label: 'hidden sm:inline-flex'
           }"
         >
-          <span>Get WindPress</span>
+          <span>Get Yabe Webfont</span>
         </UButton>
       </UTooltip>
     </template>

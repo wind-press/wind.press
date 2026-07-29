@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { joinURL } from 'ufo'
-
 // @ts-expect-error yaml is not typed
 import pricing from '../../content/pricing.yml';
 // @ts-expect-error yaml is not typed
@@ -18,47 +16,35 @@ const [
 
 const stats = useStats()
 
-const site = useSiteConfig()
-const title = 'WindPress: The Tailwind CSS integration plugin for WordPress'
+const title = 'Yabe Webfont: The GDPR-friendly font plugin for WordPress'
 useSeoMeta({
   title,
   titleTemplate: '%s'
 })
 
 if (import.meta.server) {
-  const description = 'Use Tailwind CSS within the block editor, page builders, plugins, and themes — no build step is required'
+  const description = 'Self-host Google Fonts, embed Adobe Fonts, and manage custom fonts in WordPress — with first-class visual builder integration.'
   useSeoMeta({
     ogTitle: title,
     description: description,
-    ogDescription: description,
-    ogImage: joinURL(site.url, '/new-social.png'),
-    twitterImage: joinURL(site.url, '/new-social.png')
+    ogDescription: description
+  })
+
+  defineOgImage('Home', {
+    title,
+    description
   })
 }
-
-const isMobile = ref(false)
-onMounted(() => {
-  isMobile.value = window.innerWidth < 768
-})
 </script>
 
 <template>
   <div v-if="page">
-    <UPageHero :title="page.hero.title" :description="page.hero.description" :links="page.hero.links" :ui="{ title: 'text-4xl sm:text-5xl', root: 'mx-auto max-w-7xl', description: 'sm:text-lg', container: 'py-24 sm:py-32 lg:py-40' }">
+    <UPageHero :description="page.hero.description" :links="page.hero.links" :ui="{ title: 'text-4xl sm:text-5xl', root: 'mx-auto max-w-7xl', description: 'sm:text-lg', container: 'py-24 sm:py-32 lg:py-40' }">
+      <template #title>
+        The <span class="gdpr-highlight rounded-md px-1.5">GDPR-friendly</span> font plugin for WordPress
+      </template>
       <div class="absolute inset-0 landing-grid z-[-1] [mask-image:radial-gradient(100%_100%_at_top_right,white,transparent)]"></div>
       <SkyBg />
-
-      <template #headline>
-        <UBadge v-if="page.hero.cta" variant="subtle" size="lg" class="relative rounded-full font-semibold">
-          <NuxtLink :to="page.hero.cta.to" target="_blank" class="focus:outline-none" tabindex="-1">
-            <span class="absolute inset-0" aria-hidden="true"></span>
-          </NuxtLink>
-
-          {{ page.hero.cta.label }}
-
-          <UIcon v-if="page.hero.cta.icon" :name="page.hero.cta.icon" class="ml-1 w-4 h-4 pointer-events-none" />
-        </UBadge>
-      </template>
 
       <template #description>
         {{ page.hero.description }}
@@ -66,52 +52,40 @@ onMounted(() => {
         <div class="mt-12 mb-8">
           <div class="feature__container grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 auto-cols-auto gap-x-4 gap-y-8 sm:gap-11">
             <div class="feature__item">
-              <div class="feature__icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 54 33" class="">
-                  <g clip-path="url(#prefix__clip0)">
-                    <path fill="#38bdf8" fill-rule="evenodd" d="M27 0c-7.2 0-11.7 3.6-13.5 10.8 2.7-3.6 5.85-4.95 9.45-4.05 2.054.513 3.522 2.004 5.147 3.653C30.744 13.09 33.808 16.2 40.5 16.2c7.2 0 11.7-3.6 13.5-10.8-2.7 3.6-5.85 4.95-9.45 4.05-2.054-.513-3.522-2.004-5.147-3.653C36.756 3.11 33.692 0 27 0zM13.5 16.2C6.3 16.2 1.8 19.8 0 27c2.7-3.6 5.85-4.95 9.45-4.05 2.054.514 3.522 2.004 5.147 3.653C17.244 29.29 20.308 32.4 27 32.4c7.2 0 11.7-3.6 13.5-10.8-2.7 3.6-5.85 4.95-9.45 4.05-2.054-.513-3.522-2.004-5.147-3.653C23.256 19.31 20.192 16.2 13.5 16.2z" clip-rule="evenodd"></path>
-                  </g>
-                  <defs>
-                    <clipPath id="prefix__clip0">
-                      <path fill="#fff" d="M0 0h54v32.4H0z"></path>
-                    </clipPath>
-                  </defs>
-                </svg></div>
-              <div class="feature__title"> Tailwind CSS <span class="font-bold font-mono">3.x</span> and <span class="font-bold font-mono">4.x</span> ready </div>
-            </div>
-            <div class="feature__item">
-              <div class="feature__icon fg:gray-40 round">
-                <div class="flex -ml-6 [&>:not([hidden])~:not([hidden])]:mr-0 [&>:not([hidden])~:not([hidden])]:-ml-4 [&>*]:inline-block [&>*]:w-10 [&>*]:h-10">
-                  <img src="https://upload.wikimedia.org/wikipedia/commons/e/e1/Google_Chrome_icon_%28February_2022%29.svg" alt="Google Chromo logo">
-                  <img src="https://upload.wikimedia.org/wikipedia/commons/5/52/Safari_browser_logo.svg" alt="Apple Safari logo">
-                  <img src="https://upload.wikimedia.org/wikipedia/commons/9/98/Microsoft_Edge_logo_%282019%29.svg" alt="Microsoft Edge logo">
-                  <img src="https://upload.wikimedia.org/wikipedia/commons/a/a0/Firefox_logo%2C_2019.svg" alt="Mozilla Firefox logo">
-                </div>
+              <div class="feature__icon">
+                <UIcon name="i-custom-feature-gdpr" />
               </div>
-              <div class="feature__title"> Run in the browser; No server is needed </div>
+              <div class="feature__title"> GDPR / DSGVO friendly </div>
             </div>
             <div class="feature__item">
-              <div class="feature__icon fg:crimson-80 text-rose-600">
+              <div class="feature__icon">
+                <UIcon name="i-custom-feature-google-fonts" />
+              </div>
+              <div class="feature__title"> Google Fonts self-host </div>
+            </div>
+            <div class="feature__item">
+              <div class="feature__icon text-rose-600">
                 <Icon name="fa6-regular:face-smile-wink" />
               </div>
               <div class="feature__title"> Easy to use and intuitive </div>
             </div>
             <div class="feature__item">
-              <div class="feature__icon text-sky-600">
-                <Icon name="fa6-solid:feather-pointed" />
+              <div class="feature__icon text-sky-500">
+                <Icon name="fa6-solid:feather" />
               </div>
-              <div class="feature__title"> Lightweight and blazingly fast </div>
+              <div class="feature__title"> Lightweight and fast </div>
+            </div>
+            <div class="feature__item">
+              <div class="feature__icon text-gray-900">
+                <Icon name="simple-icons:adobefonts" />
+              </div>
+              <div class="feature__title"> Adobe Fonts support </div>
             </div>
             <div class="feature__item">
               <div class="feature__icon text-[#4e6fc3]">
                 <Icon name="fa6-brands:wordpress" />
               </div>
               <div class="feature__title"> Visual builders integration </div>
-            </div>
-            <div class="feature__item">
-              <div class="feature__icon text-lime-600">
-                <Icon name="fa6-solid:play" />
-              </div>
-              <div class="feature__title"> Zero-configuration yet customizable </div>
             </div>
           </div>
         </div>
@@ -142,10 +116,10 @@ onMounted(() => {
 
         <div class="badges__item">
           <div class="text-2xl flex items-center text-rose-600">
-            <Icon name="fa6-solid:face-smile" />
+            <UIcon name="i-ph-smiley-fill" class="text-rose-600" />
           </div>
           <div class="text-xs text-left">
-            <strong>{{ stats.edd_happyCustomers + stats.wp_active_installs }}+ Happy</strong>
+            <strong>{{ stats ? `${(stats.edd_happyCustomers || 0) + (stats.wp_active_installs || 0)}+` : '—' }} Happy</strong>
             Users
           </div>
         </div>
@@ -155,22 +129,29 @@ onMounted(() => {
             <Icon name="fa6-brands:wordpress" />
           </div>
           <div class="text-xs text-left">
-            <strong>{{ stats.edd_totalDownloads }}+ Download</strong>
-            <br> & Counting
+            <strong>{{ stats?.wp_downloaded ? `${stats.wp_downloaded}+` : '—' }} Download</strong>
+            & Counting
           </div>
         </div>
       </div>
 
     </UPageHero>
 
-    <UPageSection :ui="{ container: '!py-0' }">
-      <div class="bg-gray-900/5 dark:bg-white/5 ring-1 ring-inset ring-gray-900/10 dark:ring-white/10 rounded-xl lg:-m-4 p-4">
-        <img src="https://ps.w.org/windpress/assets/screenshot-4.png" alt="WindPress screenshot" class="w-full h-auto rounded-lg border border-dashed border-gray-900/10 dark:border-white/10" />
+    <div v-if="page.as_seen_on" class="mb-8">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="rounded-2xl bg-(--ui-bg-muted) border border-(--ui-border) p-8 sm:p-10">
+          <p class="text-center text-lg font-semibold text-(--ui-text) mb-8">As seen on</p>
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-8 items-center justify-items-center">
+            <a v-for="item in page.as_seen_on" :key="item.name" :href="item.url" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center opacity-60 hover:opacity-100 transition-opacity">
+              <img :src="item.logo" :alt="item.name" class="max-h-14 max-w-full" />
+            </a>
+          </div>
+        </div>
       </div>
-    </UPageSection>
+    </div>
 
     <UPageSection>
-      <div id="features" class="block-features flex flex-col items-center">
+      <div id="features" class="flex flex-col items-center">
         <div class="px-2 py-1 mb-2 rounded-lg bg-sky-100 text-sm text-sky-500 dark:bg-sky-600 dark:text-sky-100 text-center uppercase font-bold tracking-widest">
           Fully-featured
         </div>
@@ -179,140 +160,95 @@ onMounted(() => {
         </h2>
         <div class="flex justify-center text-center">
           <p class="max-w-[60%] text-lg leading-relaxed">
-            At WindPress, we created an <strong>easy-to-use and intuitive Tailwind CSS integration</strong> for WordPress to streamline your workflow.
+            At Yabe Webfont, we created an <strong>advanced, easy-to-use, and intuitive font plugin</strong> for WordPress to streamline your workflow.
           </p>
         </div>
 
-        <div class="bento flex flex-col sm:grid sm:grid-cols-12 sm:grid-rows-12 gap-4 w-full mt-16 dark:*:!bg-none dark:*:!bg-gray-800/50 dark:[&_.bento\_\_slot-title]:text-white">
-          <div class="bento__slot relative col-span-12 row-span-3 p-5 rounded-lg overflow-hidden hover:shadow-md bg-gradient-to-br from-gray-700/20 from-5% via-gray-500/10 via-50% to-gray-100/10">
-            <div class="bento__slot-title flex text-gray-900 items-center gap-4">
-              <a>
-                <div class="text-lg font-semibold">
-                  The Wizard
-                </div>
-              </a>
+        <div class="bento flex flex-col sm:grid sm:grid-cols-12 sm:grid-rows-12 gap-4 w-full mt-16">
+          <div class="relative col-span-12 row-span-3 p-5 rounded-lg overflow-hidden hover:shadow-md bg-gradient-to-br from-blue-700/20 from-5% via-blue-500/10 via-50% to-blue-100/10">
+            <div class="flex text-blue-900 dark:text-blue-300 items-center gap-4">
+              <div class="text-lg font-semibold">GDPR / DSGVO friendly</div>
             </div>
-            <div class="bento__slot-description mt-4 leading-relaxed">
-              <div class="sm:w-1/4">
-                A simple and intuitive visual interface to customize your Tailwind CSS configuration without coding.
+            <div class="mt-4 leading-relaxed">
+              <div class="sm:w-1/3">
+                Import and self-host Google Fonts files from your server through your WordPress admin page. Fewer reasons to worry about GDPR / DSGVO compliance.
               </div>
             </div>
-            <img class="absolute hidden sm:block sm:top-[-50px] sm:right-[-220px] rounded-lg scale-75 sm:pt-0 pt-5" src="/assets/landing/feature-bento-wizard-color.webp" alt="feature: wizard colors" />
+            <img class="absolute hidden sm:block sm:top-[-50px] sm:right-[-80px] rounded-lg scale-75" src="/tutorial/feature-gdpr-friendly.png" alt="GDPR friendly" />
           </div>
-          <div class="bento__slot relative col-span-3 row-span-3 p-5 rounded-lg overflow-hidden hover:shadow-md bg-gradient-to-br from-lime-700/20 from-5% via-lime-500/10 via-50% to-lime-100/10">
-            <div class="bento__slot-title flex text-lime-900 items-center gap-4">
-              <a href="/docs/guide/configuration/tailwind-version">
-                <div class="text-lg font-semibold">
-                  Tailwind CSS version 3.x and 4.x ready
-                </div>
-              </a>
+
+          <div class="relative col-span-3 row-span-3 p-5 rounded-lg overflow-hidden hover:shadow-md bg-gradient-to-br from-lime-700/20 from-5% via-lime-500/10 via-50% to-lime-100/10">
+            <div class="flex text-lime-900 dark:text-lime-300 items-center gap-4">
+              <div class="text-lg font-semibold">Multiple file formats</div>
             </div>
-            <div class="bento__slot-description mt-4 leading-relaxed">
-              <div>
-                WindPress supports both Tailwind CSS v3.x and v4.x. The flexibility to choose the Tailwind CSS version that meet your WordPress project requirements.
-              </div>
+            <div class="mt-4 leading-relaxed">
+              Choose between WOFF2, WOFF, and TTF per font to support the browsers you care about.
             </div>
-            <img class="absolute hidden sm:block sm:bottom-[-30px] sm:right-[-30px]" src="/assets/landing/tailwindcss-mark.svg" alt="Tailwind CSS version 3.x and 4.x ready" />
+            <img class="absolute hidden sm:block sm:bottom-[-86px] sm:right-[-120px] rounded-lg scale-[1.8] [clip-path:inset(95px_0px_0px_5px)]" src="/tutorial/feature-fine-tuning.png" alt="Multiple file formats" />
           </div>
-          <div id="integrations" class="bento__slot relative col-span-6 row-span-6 p-5 rounded-lg overflow-hidden hover:shadow-md bg-gradient-to-br from-sky-700/20 from-5% via-sky-500/10 via-50% to-sky-100/10">
-            <div class="bento__slot-title flex text-sky-900 items-center gap-4">
+
+          <div class="relative col-span-6 row-span-6 p-5 rounded-lg overflow-hidden hover:shadow-md bg-gradient-to-br from-sky-700/20 from-5% via-sky-500/10 via-50% to-sky-100/10">
+            <div class="flex text-sky-900 dark:text-sky-300 items-center gap-4">
               <div class="text-lg font-semibold">Visual builder integrations</div>
             </div>
-            <div class="bento__slot-description mt-4 leading-relaxed">
-              <div>
-                WindPress integrates with the most popular visual builders to make using Tailwind CSS in your WordPress website easier. More integrations are coming soon.
-              </div>
+            <div class="mt-4 leading-relaxed">
+              Yabe Webfont integrates with the most popular visual builders and themes. Use your custom fonts natively in the editor.
             </div>
-            <div>
-              <div v-if="page.visual_builders" class="p-2 w-full grid grid-cols-2 sm:grid-cols-4 auto-rows-auto place-items-center">
-                <a v-for="builder in page.visual_builders" :href="builder.url" class="flex w-full rounded-lg aspect-square items-center justify-center hover:bg-blue-200/70 dark:hover:bg-gray-500/30">
-                  <div class="p-5">
-                    <div class="flex flex-col items-center text-center">
-                      <UIcon v-if="builder.icon?.startsWith('i-custom-')" :name="builder.icon" class="size-10" />
-                      <img v-else :src="builder.icon" :alt="builder.name" class="w-10 h-10" />
-                      <div class="pt-2">
-                        {{ builder.name }}
-                        <UBadge v-if="builder.pro" label="Pro" variant="subtle" class="" />
-                      </div>
+            <div v-if="page.visual_builders" class="p-2 w-full grid grid-cols-2 sm:grid-cols-4 auto-rows-auto place-items-center mt-4">
+              <component v-for="builder in page.visual_builders" :key="builder.name" :is="builder.url ? 'a' : 'div'" :href="builder.url || undefined" class="flex w-full rounded-lg aspect-[4/3] items-center justify-center hover:bg-blue-200/70 dark:hover:bg-gray-500/30">
+                <div class="p-5">
+                  <div class="flex flex-col items-center text-center">
+                    <UIcon v-if="builder.icon?.startsWith('i-custom-')" :name="builder.icon" class="size-10" />
+                    <img v-else-if="builder.icon?.startsWith('/')" :src="builder.icon" :alt="builder.name" class="w-10 h-10" />
+                    <Icon v-else :name="builder.icon" class="size-10" />
+                    <div class="pt-2">
+                      {{ builder.name }}
+                      <UBadge v-if="builder.pro" label="Pro" variant="subtle" />
                     </div>
                   </div>
-                </a>
-              </div>
-            </div>
-          </div>
-          <div class="bento__slot relative col-span-3 row-span-3 p-5 rounded-lg overflow-hidden hover:shadow-md bg-gradient-to-br from-indigo-700/20 from-5% via-indigo-500/10 via-50% to-indigo-100/10">
-            <div class="bento__slot-title flex text-indigo-900 items-center gap-4">
-              <a href="/docs/guide/configuration/tw-4/file-main-css">
-                <div class="text-lg font-semibold">
-                  Zero configuration yet fully customizable
                 </div>
-              </a>
+              </component>
             </div>
-            <div class="bento__slot-description mt-4 leading-relaxed">
-              <div>
-                Start using it instantly without any configuration, and customize it as needed.
-              </div>
-            </div>
-            <img class="absolute hidden sm:block sm:right-[-70px] sm:bottom-[-25px] rounded-lg sm:pt-0 pt-5 scale-[1.3]" src="/assets/landing/feature-bento-customizable.webp" alt="feature: customizable" />
           </div>
 
-          <div class="bento__slot relative col-span-3 row-span-6 p-5 rounded-lg overflow-hidden hover:shadow-md bg-gradient-to-br from-teal-700/20 from-5% via-teal-500/10 via-50% to-teal-100/10">
-            <div class="bento__slot-title flex text-teal-900 items-center gap-4">
-              <a href="/docs/guide/concepts/cache#production">
-                <div class="text-lg font-semibold">
-                  Compile in the browser; No server is required
-                </div>
-              </a>
+          <div class="relative col-span-3 row-span-3 p-5 rounded-lg overflow-hidden hover:shadow-md bg-gradient-to-br from-amber-700/20 from-5% via-amber-500/10 via-50% to-amber-100/10">
+            <div class="flex text-amber-900 dark:text-amber-300 items-center gap-4">
+              <div class="text-lg font-semibold">Google Fonts ready</div>
             </div>
-            <div class="bento__slot-description mt-4 leading-relaxed">
-              <div>
-                Build a single static final CSS without a server. Use Tailwind CSS on any WordPress server, even shared hosting. All processing is done on your browser, and no data transfer occurs.
-              </div>
+            <div class="mt-4 leading-relaxed">
+              Import any of the 1,500+ Google Fonts families to your server in one click.
             </div>
-            <img class="absolute hidden sm:block sm:top-[50%] sm:left-[20%] rounded-lg sm:pt-0 pt-5 scale-[1.25]" src="/assets/landing/feature-bento-compile.webp" alt="feature: compile" />
-            <img class="absolute hidden sm:block z-[-1] w-36 h-36 sm:top-[-40px] sm:right-[-40px] opacity-30 dark:opacity-60" src="https://upload.wikimedia.org/wikipedia/commons/5/52/Safari_browser_logo.svg" alt="Apple Safari logo" />
-            <img class="absolute hidden sm:block z-[-1] w-36 h-36 sm:top-[-40px] sm:left-[-40px] opacity-30 dark:opacity-60" src="https://upload.wikimedia.org/wikipedia/commons/9/98/Microsoft_Edge_logo_%282019%29.svg" alt="Microsoft Edge logo" />
-            <img class="absolute hidden sm:block z-[-1] w-36 h-36 sm:bottom-[-40px] sm:right-[-40px] opacity-30 dark:opacity-60" src="https://upload.wikimedia.org/wikipedia/commons/a/a0/Firefox_logo%2C_2019.svg" alt="Mozilla Firefox logo" />
-            <img class="absolute hidden sm:block z-[-1] w-36 h-36 sm:bottom-[-40px] sm:left-[-40px] opacity-30 dark:opacity-60" src="https://upload.wikimedia.org/wikipedia/commons/e/e1/Google_Chrome_icon_%28February_2022%29.svg" alt="Google Chrome logo" />
+            <img class="absolute hidden sm:block sm:bottom-[-30px] sm:right-[-30px] rounded-lg" src="/tutorial/feature-google-fonts-adobe-fonts.png" alt="Google Fonts ready" />
           </div>
-          <div class="bento__slot relative col-span-3 row-span-3 p-5 rounded-lg overflow-hidden hover:shadow-md bg-gradient-to-br from-purple-700/20 from-5% via-purple-500/10 via-50% to-purple-100/10">
-            <div class="bento__slot-title flex text-purple-900 items-center gap-4">
+
+          <div class="relative col-span-3 row-span-6 p-5 rounded-lg overflow-hidden hover:shadow-md bg-gradient-to-br from-purple-700/20 from-5% via-purple-500/10 via-50% to-purple-100/10">
+            <div class="flex text-purple-900 dark:text-purple-300 items-center gap-4">
               <div class="text-lg font-semibold">Lightweight and blazingly fast</div>
             </div>
-            <div class="bento__slot-description mt-4 leading-relaxed">
-              <div>
-                Built with WordPress REST API and a modern JavaScript framework for a responsive user experience. It has a small footprint and won't slow down your site.
-              </div>
+            <div class="mt-4 leading-relaxed">
+              Built on the WordPress REST API with a modern JavaScript UI and front-page cache. Small footprint, instant response.
             </div>
-            <img class="absolute sm:right-[-70px] sm:bottom-[-65px] scale-75 sm:pt-0 pt-5" src="/assets/landing/feature-bento-wp-rest-api.webp" alt="feature: lightweight and blazingly fast" />
+            <img class="absolute hidden sm:block sm:bottom-[80px] sm:right-[-150px] rounded-lg scale-150" src="/tutorial/feature-lightweight-blazingly-fast.png" alt="Lightweight and fast" />
           </div>
 
-          <div class="bento__slot relative col-span-3 row-span-3 p-5 rounded-lg overflow-hidden hover:shadow-md bg-gradient-to-br from-yellow-700/20 from-5% via-yellow-500/10 via-50% to-yellow-100/10">
-            <div class="bento__slot-title flex text-yellow-900 items-center gap-4">
-              <a href="/docs/guide/configuration/tw-3/file-tailwind-config-js#javascript-package">
-                <div class="text-lg font-semibold">JavaScript package support</div>
-              </a>
+          <div class="relative col-span-3 row-span-3 p-5 rounded-lg overflow-hidden hover:shadow-md bg-gradient-to-br from-indigo-700/20 from-5% via-indigo-500/10 via-50% to-indigo-100/10">
+            <div class="flex text-indigo-900 dark:text-indigo-300 items-center gap-4">
+              <div class="text-lg font-semibold">Adobe Fonts support</div>
             </div>
-            <div class="bento__slot-description mt-4 leading-relaxed">
-              <div>
-                Add extra functionality to your Tailwind CSS configuration with JavaScript packages through npm. Enrich Tailwind CSS with external plugins.
-              </div>
+            <div class="mt-4 leading-relaxed">
+              Sync your Adobe Fonts Web Projects and use them across your whole site.
             </div>
-            <img class="absolute sm:right-[0px] sm:bottom-[0px] rounded-lg sm:pt-0 pt-5 scale-[.9]" src="/assets/landing/feature-bento-javascript-package.webp" alt="feature: javascript package" />
+            <Icon name="simple-icons:adobefonts" class="absolute hidden sm:block sm:bottom-[10px] sm:right-[10px] size-48 opacity-10" />
           </div>
 
-          <div class="bento__slot relative col-span-6 row-span-3 p-5 rounded-lg overflow-hidden hover:shadow-md bg-gradient-to-br from-rose-700/20 from-5% via-rose-500/10 via-50% to-rose-100/10">
-            <div class="bento__slot-title flex text-rose-900 items-center gap-4">
-              <a href="/docs/guide/concepts/simple-file-system">
-                <div class="text-lg font-semibold">Simple File System</div>
-              </a>
+          <div class="relative col-span-9 row-span-3 p-5 rounded-lg overflow-hidden hover:shadow-md bg-gradient-to-br from-teal-700/20 from-5% via-teal-500/10 via-50% to-teal-100/10">
+            <div class="flex text-teal-900 dark:text-teal-300 items-center gap-4">
+              <div class="text-lg font-semibold">Variable Fonts</div>
             </div>
-            <div class="bento__slot-description mt-4 leading-relaxed">
-              <div>
-                A virtual file system that helps organize your custom CSS and JavaScript files, functioning like a file manager for your Tailwind CSS project.
-              </div>
+            <div class="mt-4 leading-relaxed">
+              A single font file can hold multiple stylistic variations — Yabe Webfont supports them natively.
             </div>
-            <img class="absolute hidden sm:block sm:left-[30px] sm:bottom-[-90px] scale-[.95] rounded-lg sm:pt-0 pt-5" src="/assets/landing/feature-bento-simple-file-system.webp" alt="feature: autocomplete" />
+            <img class="absolute hidden sm:block sm:bottom-[-620px] sm:right-[-120px] rounded-lg scale-80" src="/tutorial/feature-variable-fonts.png" alt="Variable Fonts" />
           </div>
         </div>
       </div>
@@ -324,7 +260,7 @@ onMounted(() => {
       </UPageGrid>
     </UPageSection>
 
-    <UPageSection id="testimonials" v-bind="page.testimonials" :title="page.testimonials.title" :headline="page.testimonials.headline" :description="page.testimonials.description" :ui="{
+    <UPageSection v-if="page.testimonials" id="testimonials" :headline="page.testimonials.headline" :title="page.testimonials.title" :description="page.testimonials.description" :ui="{
       root: 'bg-gradient-to-b border-t border-(--ui-border) from-(--ui-bg-muted) dark:from-(--ui-bg-muted)/40 to-(--ui-bg)',
       title: 'text-left',
       headline: 'justify-start',
@@ -334,7 +270,7 @@ onMounted(() => {
       <div class="mx-auto mt-8 flow-root max-w-2xl sm:mt-12 lg:mx-0 lg:max-w-none">
         <div class="-mt-8 sm:-mx-4 sm:columns-2 sm:text-[0] lg:columns-3">
           <div v-for="(item, index) in page.testimonials.items" :key="`${item.author?.name || 'review'}-${index}`" class="pt-8 sm:inline-block sm:w-full sm:px-4">
-            <figure class="group rounded-2xl bg-gray-50 p-8 text-sm/6 ring-1 ring-inset ring-gray-200/70 transition-all duration-200 hover:bg-white hover:shadow-lg hover:shadow-gray-900/5 hover:ring-indigo-200 dark:bg-white/5 dark:ring-white/10 dark:hover:bg-white/10 dark:hover:ring-indigo-400/40">
+            <figure class="group rounded-2xl bg-gray-50 p-6 text-sm/6 ring-1 ring-inset ring-gray-200/70 transition-all duration-200 hover:bg-white hover:shadow-lg hover:shadow-gray-900/5 hover:ring-indigo-200 dark:bg-white/5 dark:ring-white/10 dark:hover:bg-white/10 dark:hover:ring-indigo-400/40">
               <blockquote class="text-gray-900 dark:text-gray-100">
                 <div v-if="item.quote_title" class="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-gray-600 transition-colors group-hover:text-indigo-600 dark:text-gray-300 dark:group-hover:text-indigo-300">
                   {{ item.quote_title }}
@@ -342,25 +278,25 @@ onMounted(() => {
                 <p>"{{ item.quote }}"</p>
               </blockquote>
 
-              <a v-if="item.author?.to" :href="item.author.to" :target="item.author.target || '_blank'" rel="noopener noreferrer" class="mt-6 flex items-center gap-x-4">
-                <img :src="item.author.avatar.src" :alt="item.author.name" class="size-10 rounded-full bg-gray-50 dark:bg-gray-800" />
+              <a v-if="item.author?.to" :href="item.author.to" :target="item.author.target || '_blank'" rel="noopener noreferrer" class="mt-6 flex items-center gap-x-3">
+                <img :src="item.author.avatar.src" :alt="item.author.name" class="size-10 rounded-full bg-gray-50 dark:bg-gray-800 object-cover" />
                 <div>
                   <div class="font-semibold text-gray-900 transition-colors group-hover:text-indigo-700 dark:text-white dark:group-hover:text-indigo-300">
                     {{ item.author.name }}
                   </div>
-                  <div class="text-gray-600 dark:text-gray-400">
+                  <div class="text-xs text-gray-600 dark:text-gray-400">
                     {{ item.author.description || 'WordPress reviewer' }}
                   </div>
                 </div>
               </a>
 
-              <div v-else class="mt-6 flex items-center gap-x-4">
-                <img :src="item.author.avatar.src" :alt="item.author.name" class="size-10 rounded-full bg-gray-50 dark:bg-gray-800" />
+              <div v-else class="mt-6 flex items-center gap-x-3">
+                <img :src="item.author.avatar.src" :alt="item.author.name" class="size-10 rounded-full bg-gray-50 dark:bg-gray-800 object-cover" />
                 <div>
                   <div class="font-semibold text-gray-900 transition-colors group-hover:text-indigo-700 dark:text-white dark:group-hover:text-indigo-300">
                     {{ item.author.name }}
                   </div>
-                  <div class="text-gray-600 dark:text-gray-400">
+                  <div class="text-xs text-gray-600 dark:text-gray-400">
                     {{ item.author.description || 'WordPress reviewer' }}
                   </div>
                 </div>
@@ -370,9 +306,9 @@ onMounted(() => {
         </div>
       </div>
 
-      <div class="text-center mt-6 sm:mt-0">
-        <a href="https://wordpress.org/support/plugin/windpress/reviews/?filter=5/#new-post" target="_blank" class="underline text-(--ui-text-muted)">
-          Tell us what you think about WindPress
+      <div class="text-center mt-8">
+        <a href="https://wordpress.org/support/plugin/yabe-webfont/reviews/?filter=5/#new-post" target="_blank" class="underline text-(--ui-text-muted) text-sm">
+          Tell us what you think about Yabe Webfont
         </a>
       </div>
     </UPageSection>
@@ -400,20 +336,7 @@ onMounted(() => {
         </UPricingPlans>
       </div>
 
-
-
-
       <div class="badges__list grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 *:ring-1 *:ring-gray-200 dark:*:ring-gray-800 *:bg-gray-100/50 dark:*:bg-gray-800/50">
-        <!-- <div class="badges__item text-center">
-          <div class="text-2xl flex items-center">
-            <Icon name="fa6-solid:hand-holding-dollar" class="text-[#29b077]" />
-          </div>
-          <div class="text-xs text-left">
-            <strong>Free</strong>
-            Forever
-          </div>
-        </div> -->
-
         <div class="badges__item text-center">
           <div class="text-2xl flex items-center">
             <Icon name="ri:exchange-dollar-fill" class="text-[#29b077]" />
@@ -438,10 +361,10 @@ onMounted(() => {
 
         <div class="badges__item">
           <div class="text-2xl flex items-center text-rose-600">
-            <Icon name="fa6-solid:face-smile" />
+            <UIcon name="i-ph-smiley-fill" class="text-rose-600" />
           </div>
           <div class="text-xs text-left">
-            <strong>{{ stats.edd_happyCustomers + stats.wp_active_installs }}+ Happy</strong>
+            <strong>{{ stats ? `${(stats.edd_happyCustomers || 0) + (stats.wp_active_installs || 0)}+` : '—' }} Happy</strong>
             Users
           </div>
         </div>
@@ -451,7 +374,8 @@ onMounted(() => {
             <Icon name="fa6-brands:wordpress" />
           </div>
           <div class="text-xs text-left">
-            <strong>{{ stats.edd_activeSites }}+ Active</strong> Sites
+            <strong>{{ stats?.edd_activeSites ? `${stats.edd_activeSites}+` : '—' }} Active</strong>
+            Sites
           </div>
         </div>
       </div>
@@ -459,11 +383,6 @@ onMounted(() => {
 
     <UPageSection id="faq" v-bind="faq.faq" class="scroll-mt-(--ui-header-height)" :ui="{ container: 'relative' }">
       <div aria-hidden="true" class="hidden lg:block absolute z-[-1] border-x border-(--ui-border) inset-0 mx-4 sm:mx-6 lg:mx-8" />
-      <!-- <UPageAccordion multiple :items="(faq.faq.items as any[])" class="max-w-4xl mx-auto">
-        <template #body="{ item, index }">
-          <MDC :value="item.content" unwrap="p" :cache-key="`pro-pricing-faq-${index}-content`" />
-        </template>
-      </UPageAccordion> -->
 
       <UPageAccordion trailing-icon="lucide:plus" :items="(faq.faq.items as any[])" :ui="{
         item: 'border-none',
@@ -536,7 +455,6 @@ onMounted(() => {
   padding-right: 16px;
   padding-top: 6px;
   padding-bottom: 6px;
-  /* border: 1px solid rgba(0, 0, 0, 0.2); */
   max-width: 180px;
   border-radius: 1e9em;
   width: 100%;
@@ -546,7 +464,25 @@ onMounted(() => {
   aspect-ratio: 1 / 1.25;
 }
 
-.aspect-square {
-  aspect-ratio: 1 / 1;
+.gdpr-highlight {
+  animation: gdpr-color-cycle 8s ease-in-out infinite;
+}
+
+@keyframes gdpr-color-cycle {
+  0%, 100% { background-color: rgb(220 252 231); }
+  25% { background-color: rgb(219 234 254); }
+  50% { background-color: rgb(237 233 254); }
+  75% { background-color: rgb(254 243 199); }
+}
+
+.dark .gdpr-highlight {
+  animation: gdpr-color-cycle-dark 8s ease-in-out infinite;
+}
+
+@keyframes gdpr-color-cycle-dark {
+  0%, 100% { background-color: rgb(22 101 52); }
+  25% { background-color: rgb(30 58 138); }
+  50% { background-color: rgb(55 48 107); }
+  75% { background-color: rgb(120 53 15); }
 }
 </style>

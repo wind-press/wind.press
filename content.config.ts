@@ -8,14 +8,6 @@ const Image = z.object({
   height: z.number().optional()
 })
 
-const DualModeImage = z.object({
-  light: z.string().editor({ input: 'media' }),
-  dark: z.string().editor({ input: 'media' }),
-  width: z.number().optional(),
-  height: z.number().optional(),
-  alt: z.string().optional()
-})
-
 const Link = z.object({
   label: z.string(),
   to: z.string(),
@@ -48,11 +40,6 @@ const Author = z.object({
   avatar: Image.optional()
 })
 
-const Testimonial = z.object({
-  quote: z.string(),
-  author: Author
-})
-
 const PageFeature = z.object({
   title: z.string(),
   description: z.string(),
@@ -64,18 +51,10 @@ const PageFeature = z.object({
 
 const PageSection = BaseSection.extend({
   links: z.array(Button),
-  features: z.array(PageFeature),
-  image: DualModeImage,
-  cta: z.object({
-    title: z.string(),
-    label: z.string(),
-    to: z.string(),
-    icon: z.string()
-  }).optional()
+  features: z.array(PageFeature)
 })
 
 const PageHero = BaseSection.extend({
-  image: DualModeImage.optional(),
   head: z.object({
     title: z.string().optional(),
     description: z.string().optional()
@@ -89,32 +68,6 @@ const PageHero = BaseSection.extend({
   cta: Link.optional()
 })
 
-const Template = z.object({
-  name: z.string(),
-  slug: z.string(),
-  // img: z.string(),
-  description: z.string(),
-  repo: z.string().optional(),
-  demo: z.string().url(),
-  site: z.string().url(),
-  purchase: z.string().url().optional(),
-  featured: z.boolean().optional(),
-  priority: z.number().optional().default(100),
-  badge: z.enum(['Premium', 'Freemium', 'Free']).optional(),
-  screenshotUrl: z.string().url().optional(),
-  screenshotOptions: z.object({
-    delay: z.number()
-  }).optional()
-})
-
-const Showcase = z.object({
-  url: z.string().url(),
-  slug: z.string(),
-  screenshotUrl: z.string().url().optional(),
-  name: z.string().optional(),
-  author: z.string().optional()
-})
-
 export default defineContentConfig({
   collections: {
     index: defineCollection({
@@ -126,30 +79,10 @@ export default defineContentConfig({
           description: z.string(),
           cta: Link.extend({
             icon: z.string()
-          }),
-          tabs: z.array(z.object({
-            title: z.string(),
-            icon: z.string(),
-            content: z.string()
-          }))
-        }),
-        logos: z.object({
-          title: z.string(),
-          companies: z.array(DualModeImage)
+          }).optional(),
+          links: z.array(Button).optional()
         }),
         features: PageSection,
-        foundation: PageSection.extend({
-          items: z.array(z.object({
-            id: z.string(),
-            title: z.string(),
-            description: z.string(),
-            logo: z.string(),
-            color: z.string(),
-            gradient: z.string(),
-            link: Link
-          }))
-        }),
-        modules: PageSection,
         testimonials: BaseSection.extend({
           headline: z.object({
             label: z.string(),
@@ -158,48 +91,32 @@ export default defineContentConfig({
           }).optional(),
           items: z.array(
             z.object({
-              quote_title: z.string(),
+              quote_title: z.string().optional(),
               quote: z.string(),
               author: z.object({
                 name: z.string(),
-                description: z.string(),
+                description: z.string().optional(),
                 avatar: Image.optional(),
                 to: z.string().optional(),
                 target: z.enum(['_blank', '_self']).optional()
-              }),
-              achievements: z.array(
-                z.object({
-                  label: z.string(),
-                  color: z.enum(['success', 'warning', 'error', 'info', 'neutral', 'important'])
-                }).optional()
-              ),
+              })
             })
           )
-        }),
-        deploy: PageSection,
-        contributors: PageSection,
-        stats: PageSection.extend({
-          community: BaseSection,
-          x: z.number(),
-          discord: z.string(),
-          cta: Button
-        }),
-        support: PageSection.extend({
-          companies: z.array(Image.pick({ src: true, alt: true }))
-        }),
-        sponsors: PageSection.extend({
-          cta: Button
-        }),
-        visual_builders: z.object({
+        }).optional(),
+        visual_builders: z.array(z.object({
           name: z.string(),
           url: z.string().url().optional(),
           icon: z.string().optional(),
-          pro: z.boolean().optional(),
-        }),
+          pro: z.boolean().optional()
+        })),
+        as_seen_on: z.array(z.object({
+          name: z.string(),
+          url: z.string().url(),
+          logo: z.string()
+        })).optional()
       })
     }),
     docs: defineCollection(
-      // adds the robots frontmatter key to the collection
       asSitemapCollection({
         type: 'page',
         source: 'docs/**',
@@ -210,7 +127,6 @@ export default defineContentConfig({
       })
     ),
     blog: defineCollection(
-      // adds the robots frontmatter key to the collection
       asSitemapCollection({
         type: 'page',
         source: 'blog/*',
@@ -220,189 +136,16 @@ export default defineContentConfig({
           date: z.string().date(),
           draft: z.boolean().optional(),
           category: z.enum(['Release', 'Tutorial', 'Announcement', 'Article']),
-          tags: z.array(z.string())
+          tags: z.array(z.string()).optional()
         })
       })
     ),
     landing: defineCollection({
       type: 'page',
       source: [
-        { include: 'index.md' },
-        { include: 'blog.yml' },
-        { include: 'modules.yml' },
-        { include: 'deploy.yml' },
-        { include: 'templates.yml' },
-        { include: 'showcase.yml' },
-        { include: 'video-courses.yml' },
-        { include: 'enterprise/sponsors.yml' },
-        { include: 'enterprise/agencies.yml' },
-        { include: 'newsletter.yml' },
-        { include: 'enterprise/jobs.yml' }
+        { include: 'blog.yml' }
       ],
       schema: PageHero
-    }),
-    // deploy: defineCollection({
-    //   type: 'page',
-    //   source: 'deploy/*',
-    //   schema: z.object({
-    //     title: z.string(),
-    //     description: z.string(),
-    //     componentImg: z.string(),
-    //     logoSrc: z.string(),
-    //     featured: z.boolean(),
-    //     logoIcon: z.string(),
-    //     category: z.string(),
-    //     nitroPreset: z.string(),
-    //     website: z.string().url()
-    //   })
-    // }),
-    // support: defineCollection({
-    //   type: 'data',
-    //   source: 'enterprise/support.yml',
-    //   schema: z.object({
-    //     title: z.string(),
-    //     description: z.string(),
-    //     hero: z.object({
-    //       links: z.array(Button)
-    //     }),
-    //     logos: z.array(
-    //       DualModeImage.extend({
-    //         alt: z.string()
-    //       }).omit({ width: true, height: true }).extend({
-    //         width: z.string(),
-    //         height: z.string()
-    //       })
-    //     ),
-    //     service: BaseSection.extend({
-    //       services: z.array(
-    //         BaseSection.extend({
-    //           icon: z.string()
-    //         })
-    //       )
-    //     }),
-    //     expertise: BaseSection.extend({
-    //       logos: z.array(
-    //         Image.extend({
-    //           color: z.string()
-    //         })
-    //       )
-    //     }),
-    //     testimonials: BaseSection.extend({
-    //       items: z.array(
-    //         z.object({
-    //           quote: z.string(),
-    //           author: z.string(),
-    //           job: z.string(),
-    //           logo: DualModeImage,
-    //           achievements: z.array(
-    //             z.object({
-    //               label: z.string(),
-    //               color: z.enum(['success', 'warning', 'error', 'info', 'neutral', 'important'])
-    //             })
-    //           ),
-    //           width: z.number(),
-    //           height: z.number()
-    //         })
-    //       )
-    //     }),
-    //     project: BaseSection.extend({
-    //       steps: z.array(
-    //         BaseSection.extend({
-    //           number: z.number()
-    //         })
-    //       )
-    //     }),
-    //     form: BaseSection.extend({
-    //       name: z.object({
-    //         label: z.string(),
-    //         placeholder: z.string()
-    //       }),
-    //       email: z.object({
-    //         label: z.string(),
-    //         placeholder: z.string()
-    //       }),
-    //       company: z.object({
-    //         label: z.string(),
-    //         placeholder: z.string()
-    //       }),
-    //       link: z.object({
-    //         label: z.string(),
-    //         placeholder: z.string()
-    //       }),
-    //       body: z.object({
-    //         label: z.string(),
-    //         placeholder: z.string()
-    //       }),
-    //       info: z.string(),
-    //       button: Button
-    //     })
-    //   })
-    // }),
-    // agencies: defineCollection({
-    //   type: 'page',
-    //   source: 'enterprise/agencies/*.md',
-    //   schema: z.object({
-    //     title: z.string(),
-    //     description: z.string(),
-    //     logo: DualModeImage,
-    //     logoFull: z.string().optional(),
-    //     link: z.string().url(),
-    //     services: z.array(z.string()),
-    //     resources: z.array(Link).optional(),
-    //     emailAddress: z.string().email().optional(),
-    //     phoneNumber: z.string().nullable().optional(),
-    //     x: z.string().optional(),
-    //     github: z.string().optional(),
-    //     linkedin: z.string().optional(),
-    //     instagram: z.string().optional(),
-    //     color: z.array(z.string()).optional(),
-    //     regions: z.array(z.string()),
-    //     location: z.string()
-    //   })
-    // }),
-    templates: defineCollection({
-      type: 'data',
-      source: 'templates/*',
-      schema: Template
-    }),
-    showcase: defineCollection({
-      type: 'data',
-      source: 'showcase/*',
-      schema: Showcase
-    }),
-    // videoCourses: defineCollection({
-    //   type: 'data',
-    //   source: 'video-courses/*',
-    //   schema: z.object({
-    //     name: z.string(),
-    //     slug: z.string(),
-    //     description: z.string(),
-    //     url: z.string().url(),
-    //     badge: z.enum(['Premium', 'Free']).optional(),
-    //     screenshotOptions: z.object({
-    //       delay: z.number(),
-    //       removeElements: z.array(z.string()).optional()
-    //     }).optional(),
-    //     sponsor: z.boolean().optional()
-    //   })
-    // }),
-    // designKit: defineCollection({
-    //   type: 'page',
-    //   source: 'design-kit.md',
-    //   schema: PageHero
-    // }),
-    // team: defineCollection({
-    //   type: 'page',
-    //   source: 'team.yml',
-    //   schema: PageHero.extend({
-    //     users: z.array(z.object({
-    //       name: z.string(),
-    //       location: z.string(),
-    //       sponsor: z.string().url(),
-    //       avatar: Image,
-    //       links: z.array(Link)
-    //     }))
-    //   })
-    // })
+    })
   }
 })

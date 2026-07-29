@@ -1,9 +1,9 @@
 <template>
   <UPageCard
     icon="i-lucide-heart"
-    title="WindPress needs you!"
-    description="Support WindPress to sustain its development through donations or by contributing to the codebase."
-    to="https://github.com/wind-press/windpress#sponsors"
+    title="Yabe Webfont needs you!"
+    description="Support Yabe Webfont to sustain its development through donations or by contributing to the codebase."
+    to="/go/sponsor"
     target="_blank"
     :ui="{
       leadingIcon: 'text-pink-500 dark:text-pink-400',

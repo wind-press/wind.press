@@ -1,10 +1,6 @@
 hero:
-  title: 'The Tailwind CSS integration plugin for WordPress'
-  description: Use Tailwind CSS within the block editor, page builders, plugins, and themes — no build step is required.
-  # cta:
-  #   label: WindPress v3 is out
-  #   to: /blog/windpress-v3
-  #   icon: i-lucide-arrow-right
+  title: 'The GDPR-friendly font plugin for WordPress'
+  description: Self-host Google Fonts, embed Adobe Fonts, and manage custom fonts in WordPress — with first-class integration for the most popular visual builders and themes.
   links:
     - label: Get started
       size: xl
@@ -14,666 +10,406 @@ hero:
     - label: Download now
       icon: line-md:downloading
       size: xl
-      to: https://downloads.wordpress.org/plugin/windpress.zip
+      to: https://wordpress.org/plugins/yabe-webfont/
       target: _blank
       color: neutral
       variant: subtle
 
 visual_builders:
+  - name: Builderius
+    url: '/docs/integrations/builderius'
+    icon: i-custom-builder-builderius
+  - name: Classic Editor
+    url: '/docs/integrations/classic-editor'
+    icon: /tutorial/builder-classic-editor.png
   - name: Elementor
-    # url: '#'
+    url: '/docs/integrations/elementor'
     icon: i-custom-builder-elementor
-  - name: GeneratePress
-    # url: '#'
-    icon: i-custom-builder-generatepress
-  - name: GreenShift
-    # url: '#'
-    icon: assets/landing/builder-greenshift.png
   - name: Gutenberg
-    url: '/docs/guide/integrations/gutenberg'
+    url: '/docs/integrations/gutenberg'
     icon: i-custom-builder-gutenberg
+  - name: GeneratePress
+    url: '/docs/integrations/generatepress'
+    icon: i-custom-builder-generatepress
   - name: Kadence WP
-    # url: '#'
     icon: i-custom-builder-kadencewp
-  - name: LiveCanvas
-    url: '/docs/guide/integrations/livecanvas'
-    icon: i-custom-builder-livecanvas
-  - name: Timber
-    # url: '#'
-    icon: i-custom-builder-timber
-  - name: Plugins & Themes Dev
-    url: '/docs/examples/custom-integrations/custom-theme'
-    icon: i-custom-builder-wordpress
-  - name: Blockstudio
-    # url: '/docs/guide/integrations/blockstudio'
-    icon: i-custom-builder-blockstudio
+  - name: Pinegrow
+    icon: i-custom-builder-pinegrow
+  - name: Beaver Builder
+    url: '/docs/integrations/beaver-builder'
+    icon: i-custom-builder-beaver
+    pro: true
+  - name: Blocksy
+    icon: i-custom-builder-blocksy
     pro: true
   - name: Breakdance
-    url: '/docs/guide/integrations/breakdance'
+    url: '/docs/integrations/breakdance'
     icon: i-custom-builder-breakdance
     pro: true
   - name: Bricks
-    url: '/docs/guide/integrations/bricks'
+    url: '/docs/integrations/bricks'
     icon: i-custom-builder-bricks
     pro: true
-  - name: Builderius
-    url: '/docs/guide/integrations/builderius'
-    icon: i-custom-builder-builderius
+  - name: Cwicly
+    url: '/docs/integrations/cwicly'
+    icon: /tutorial/builder-cwicly.png
     pro: true
-  - name: Etch
-    # url: '#'
-    icon: i-custom-builder-etch
+  - name: Divi
+    icon: /tutorial/builder-divi.png
     pro: true
-  - name: Meta Box Views
-    # url: '#'
-    icon: i-custom-builder-meta-box-views
+  - name: Greenshift
+    icon: /tutorial/builder-greenshift.png
     pro: true
   - name: Oxygen
-    url: '/docs/guide/integrations/oxygen'
+    url: '/docs/integrations/oxygen'
     icon: i-custom-builder-oxygen
     pro: true
-  - name: WPCodeBox
-    # url: '#'
-    icon: i-custom-builder-wpcodebox
+  - name: Spectra
+    icon: i-custom-builder-spectra
     pro: true
+  - name: Zion Builder
+    url: '/docs/integrations/zion-builder'
+    icon: i-custom-builder-zion
+    pro: true
+  - name: Plugins & Themes Dev
+    url: '/docs/integrations/developer'
+    icon: i-custom-builder-wordpress
 
-
+as_seen_on:
+  - name: breakdance4fun
+    url: https://breakdance4fun.supadezign.com/how-to-host-google-fonts-locally/#plugin
+    logo: /tutorial/as-seen-on-breakdance4fun.png
+  - name: Design with Cracka
+    url: https://youtu.be/uMj0x0ucnOw
+    logo: /tutorial/as-seen-on-design-with-cracka.svg
+  - name: Peak Performance Digital
+    url: https://youtu.be/A0JZzEVIUzQ
+    logo: /tutorial/as-seen-on-design-with-peak-performance-digital.svg
+  - name: Jornes.net
+    url: https://jornes.net/blog/wordpress-plugins/yabe-webfont-self-host-google-fonts-locally
+    logo: /tutorial/as-seen-on-jornes.png
+  - name: Gold Penguin
+    url: https://goldpenguin.org/blog/yabe-webfont-review/
+    logo: /tutorial/as-seen-on-gold-penguin.png
+  - name: Wildcard Group
+    url: https://wildcard.fi/google-fonts-ja-gdpr/
+    logo: /tutorial/as-seen-on-wildcard.png
+  - name: Toolonomy
+    url: https://toolonomy.com/yabe-webfont-review/
+    logo: /tutorial/as-seen-on-toolonomy.png
+  - name: mangwp
+    url: https://youtu.be/M_69nks3fuU
+    logo: /tutorial/as-seen-on-mangwp.png
 
 features:
-  title: Exclusive features
-  description: Some specific integrations provide a range of valuable features that enhance functionality
+  title: Beyond the basics
+  description: Advanced features that give you complete control over your fonts and typography.
   items:
-    - title: Autocompletion
-      description: As you type, Tailwind CSS class names will be suggested automatically
-      icon: fa6-solid:list
-    - title: Variable Picker
-      description: Easily select colors, fonts, and other variables of the Tailwind CSS configuration from a panel
-      icon: fa6-solid:paint-roller
-    - title: HTML to native elements
-      description: Convert Tailwind CSS HTML to native elements in the editor
-      icon: fa6-brands:html5
-    - title: Sort the classes
-      description: Sort the Tailwind CSS classes on the input field based on the Tailwind CSS official recommendation
-      icon: fa6-solid:arrow-down-a-z
-    - title: Hover Preview the classes
-      description: Hover over the classes to see the complete outputted CSS and the preview of the design canvas
-      icon: fa6-solid:arrow-pointer
-    - title: Ubiquitous Panel
-      description: A floating panel that allows you to quickly access the WindPress settings from anywhere on the page
-      icon: fa6-solid:street-view
-
-
-
-
+    - title: Custom fonts upload
+      description: Upload your own font files via the WordPress media uploader. No FTP or coding required.
+      icon: fa6-solid:cloud-arrow-up
+    - title: CSS custom properties
+      description: "Every font gets a CSS variable automatically: --ywf--family-{slug}. Use in themes and custom CSS."
+      icon: fa6-solid:code
+    - title: Font preloading
+      description: Critical fonts are preloaded in the HTML head for faster rendering and reduced layout shift.
+      icon: fa6-solid:bolt
+    - title: Subset selection
+      description: Choose specific glyph subsets (latin, cyrillic, etc.) when importing Google Fonts to reduce file size.
+      icon: fa6-solid:text-slash
+    - title: No-plugin mode
+      description: Fonts keep working even after disabling the plugin. Load cached fonts via a PHP snippet.
+      icon: fa6-solid:power-off
+    - title: Browser font converter
+      description: Convert TTF to WOFF2 and back, entirely in your browser via WebAssembly. No uploads, fully private.
+      icon: fa6-solid:wand-magic-sparkles
 
 testimonials:
   headline: Testimonials
   title: Wall of Loves
-  description: Hear from our happiest users about how WindPress has enhanced their experience and brought them joy.
+  description: We made not only a plugin that works but also a plugin that will make you smile.
   items:
-    - quote_title: Easy Tailwind integration for your favorite builder
-      quote: Highly recommend to test this Plugin out, if you are working with Tailwind or looking for an easy integration with wordpress and your favorite builder.
+    - quote_title: Best fonts plugin ever!
+      quote: "This is the most powerful font plugin ever! Forget all the rest! It just works perfectly flawlessly. It prevents FOUC issues, it can import Google fonts, upload your font files, and load the font weights only when needed. It's also perfectly compatible with Oxygen Builder. Look no more, this is the only font plugin that you will ever need!"
       author:
-        name: Sascha Hauser
+        name: developer
+        description: WordPress reviewer
         avatar:
-          src: https://s.gravatar.com/avatar/1d100878daaa060f17844f3d1f7a0d38?s=100
-        to: https://wordpress.org/support/topic/easy-tailwind-integration-for-your-favorite-builder/
-        target: _blank
-    - quote_title: Best Tailwind plugin on the market!
-      quote: So impressed with this plugin. I can vouch for the Bricks Builder version working perfectly when it comes to auto-complete and front-end rendering. But, that is not why I give this a 5/5. Josh, the author has been amazing with taking feedback and implementing changes. The support along with the plugin is amazing! I couldn't ask for a better tool to implement Tailwind into WordPress.
+          src: https://secure.gravatar.com/avatar/c4ad9bf68149998f830ea9d32b6c768900ad301ff6dadc85f98b04aa6f47ff80?s=100&d=retro&r=g
+        to: https://wordpress.org/support/topic/best-fonts-plugin-ever/
+    - quote_title: Transforming Typography in WordPress
+      quote: "Yabe Webfont has revolutionized the way I work with fonts in WordPress. The seamless self-hosting of Google Fonts ensures GDPR compliance without the usual headache. Its integration with visual builders is a major time-saver, allowing me to implement beautiful typography with ease. The plugin's speed and intuitive design make it invaluable for anyone looking to enhance their website's performance and aesthetic. Yabe Webfont isn't just a tool; it's a complete font management solution that has earned its place in my design toolkit. A stellar product that I can't recommend enough!"
       author:
-        name: Chris Seifert
-        description: Founder at Portseif.io
+        name: afurrylittlerabbit
+        description: WordPress reviewer
         avatar:
-          src: https://s.gravatar.com/avatar/96edae3ebd1659914dffab9dfe29d81a?s=100
-        to: https://wordpress.org/support/topic/best-tailwind-plugin-on-the-market/
-        target: _blank
-      achievements:
-        - label: Integrations
-          color: important
-    - quote_title: Lightweight plugin easy to use
-      quote: The arrival of Windpress has simplified my work with Tailwind CSS in WordPress. Lightweight plugin, with extensive customization, easy to use and with features that I love such as compilation in the browser.
-      author:
-        name: Martin Ardanaz
-        avatar:
-          src: https://s.gravatar.com/avatar/5971592298d939bec0e9498bb998db50?s=100
-        to: https://wordpress.org/support/topic/lightweight-plugin-easy-to-use/
-        target: _blank
-      achievements:
-        - label: Performance
-          color: success
-    - quote_title: Tailwind for wordpress!
-      quote: WindPress has pleasantly surprised me. Being able to tweak Tailwind CSS and compile in the same browser has streamlined my workflow in ways I didn't think possible. I don't know how I ever worked without this before!
-      author:
-        name: Daniel Maurel
-        avatar:
-          src: https://s.gravatar.com/avatar/d6832b181ad8c7e14a775ab149fa2a1d?s=100
-        to: https://wordpress.org/support/topic/tailwind-for-wordpress/
-        target: _blank
-      achievements:
-        - label: Workflow
-          color: info
-    - quote_title: A W E S O M E
-      quote: A great (and reliable!) way to use Tailwind inside various builders. I personally love the Bricks integration it's paid but totally worth it.
-      author:
-        name: Laurent Gaulhiac
-        description: Designer Web & Print at LauGau.com
-        avatar:
-          src: https://s.gravatar.com/avatar/90bac89bc1ef6badc596f90a02df25a7?s=100
-        to: https://wordpress.org/support/topic/a-w-e-s-o-m-e-14/
-        target: _blank
-      achievements:
-        - label: Integrations
-          color: important
-    - quote_title: Excelente integración de Tailwind con WordPress
-      quote: Estoy muy contento de que Joshua haya creado WindPress. Tal como menciona, es la primera integración de Tailwind 4 con WordPress, y debo decir que funciona de maravilla. Estoy comenzando a usarlo y, hasta ahora, la experiencia ha sido excelente. Además, el soporte que brindan es de primera clase.  Lo mejor de todo es que, con esta versión gratuita, espero que más personas se animen a adoptar Tailwind en sus proyectos de WordPress. ¡Totalmente recomendado!
-      author:
-        name: Angel Julian Mena
-        description: Owner at Solucionesabiertas.es
-        avatar:
-          src: https://s.gravatar.com/avatar/862747ad39a43ba17370e55e9532986b?s=100
-        to: https://wordpress.org/support/topic/excelente-integracion-de-tailwind-con-wordpress/
-        target: _blank
-    - quote_title: Perfecto
-      quote: Va muy bien la versión Yabe Siul. Supongo que esta nueva versión irá aún mejor.
-      author:
-        name: Luis Muñoz
-        description: Director at Empacke.com
-        avatar:
-          src: https://s.gravatar.com/avatar/069181941142b29542d1e4532b139b05?s=100
-        to: https://wordpress.org/support/topic/perfecto-433/
-        target: _blank
-    - quote_title: Best Tailwind WP plugin
-      quote: I'm really happy to find this plugin because my development is so much easier with that. I highly recommend!
-      author:
-        name: gyurci
-        avatar:
-          src: https://s.gravatar.com/avatar/9c325f8217af225e60a423f03f6e7f71?s=100
-        to: https://wordpress.org/support/topic/best-tailwind-wp-plugin/
-        target: _blank
-      achievements:
-        - label: Workflow
-          color: info
-    - quote_title: WordPress themes with Tailwind
-      quote: You can create custom WordPress sites using Tailwind's utility classes. Even though it's powerful, it got a learning curve for those who aren't familiar with it. I hope the documentation arrives soon.
-      author:
-        name: Berhan Turk
-        avatar:
-          src: https://s.gravatar.com/avatar/c52fe0fbfdb812f66d89f49973a63a0f?s=100
-        to: https://wordpress.org/support/topic/wordpress-themes-with-tailwind/
-        target: _blank
-    - quote_title: Awesome Plugin For Tailwind in WordPress
-      quote: Just install it & you will never regret it. Happy Making
-      author:
-        name: Rishi Mehra
-        avatar:
-          src: https://s.gravatar.com/avatar/1ddfb158b46e7fdd9c71230265024b54?s=100
-        to: https://wordpress.org/support/topic/awesome-plugin-for-tailwind-in-wordpress/
-        target: _blank
-    - quote_title: ''
-      quote: WindPress, crafted by Joshua, has simplified my Tailwind CSS work with its browser-based compilation, blending ease with flexibility. Joshua's responsive support enriches this seamless experience, making development feel personal and efficient.
-      author:
-        name: Daniel Snell
-        description: Founder at broke.dev
-        avatar:
-          src: https://s.gravatar.com/avatar/c62179cf3cb331ccd7504e321ed8b0e0?s=100
-      achievements:
-        - label: Workflow
-          color: info
-        - label: Experience
-          color: warning
-    - quote_title: Easy and quick setup of Tailwind CSS
-      quote: Just installed it and seeing it is available for a lot of builders, constantly upgraded with new features. Looks very good!
-      author:
-        name: kingsizebeatz
-        avatar:
-          src: https://s.gravatar.com/avatar/136cb690b23a90244a4f62fbfdac637b?s=100
-        to: https://wordpress.org/support/topic/easy-and-quick-setup-of-tailwind-css/
-        target: _blank
-      achievements:
-        - label: Integrations
-          color: important
-    - quote_title: the best out there!
-      quote: It help you add tailwind to wordpress without hussle, easy and simple! I recommend to everyone!
-      author:
-        name: Luciana Hanan
-        avatar:
-          src: https://s.gravatar.com/avatar/45a2bfc89efde7b3c4505b69e097492f?s=100
-        to: https://wordpress.org/support/topic/the-best-out-there-50/
-        target: _blank
-      achievements:
-        - label: Experience
-          color: warning
-    - quote_title: Great plugin
-      quote: If you're looking to integrate Tailwind CSS with WordPress, Windpress is the solution you need.
-      author:
-        name: John Diaz
-        description: Founder at Fancy Bricks & Fancy Animations
-        avatar:
-          src: https://s.gravatar.com/avatar/054277acf9d9af7e4a8a4ee25e8f41b7?s=100
-        to: https://wordpress.org/support/topic/great-plugin-39591/
-        target: _blank
-    - quote_title: Greet plugins
-      quote: good plugin for tailwind. thanks for joshua for this awesome plugins
-      author:
-        name: zoanphuong
-        avatar:
-          src: https://s.gravatar.com/avatar/de2110ed5f7c15ce1604c139f01ba671?s=100
-        to: https://wordpress.org/support/topic/greet-plugins/
-        target: _blank
-    - quote_title: A Tailwind Plugin That Shines with Bricks Builder
-      quote: WindPress has been a fantastic tool in my design process with Bricks Builder. The plugin integrates smoothly, making it effortless to apply Tailwind CSS within Bricks, allowing for rapid customization without sacrificing design quality or responsiveness. Even though I primarily use Bricks, it's worth mentioning that WindPress works equally well with many other site builders. Its flexibility across platforms makes it a solid choice for anyone looking to streamline their Tailwind workflow. If you're using Bricks or any other builder and want a reliable way to implement Tailwind, WindPress is definitely worth it!
+          src: https://secure.gravatar.com/avatar/89fbc5fc9060e40d7ce9efed477e42054130dc38121036e9729a94de947e8b81?s=100&d=retro&r=g
+        to: https://wordpress.org/support/topic/transforming-typography-in-wordpress/
+    - quote_title: Best Font Manager Ever
+      quote: "Yabe Webfont is truly the best font manager that I have ever found. I can easily host my fonts locally with just a few clicks. No downloading or uploading is required. I've been recommending this plugin on my site since the day I used it. Keep up the good work!"
       author:
         name: Jornes
+        description: WordPress reviewer
         avatar:
-          src: https://s.gravatar.com/avatar/c50019fc8f94c5bbe0d1c70a55c19e8e?s=100
-        to: https://wordpress.org/support/topic/windpress-review-a-tailwind-plugin-that-shines-with-bricks-builder/
-        target: _blank
-      achievements:
-        - label: Integrations
-          color: important
-        - label: Workflow
-          color: info
-    - quote_title: Great works
-      quote: Easy to use Integrate with many page builders
+          src: https://secure.gravatar.com/avatar/a5e56e5a2221aa6e6c3967938cce31ae315f22fb40b39e9f122be8fcf5dac695?s=100&d=retro&r=g
+        to: https://wordpress.org/support/topic/best-font-manager-ever/
+    - quote_title: Kudos to Yabe Webfonts
+      quote: "A wonderful plug-in that helps you properly manage type in your web projects. And Joshua is super responsive to feedbacks. I really like the way it manages variable fonts too. I'm currently using the free version but I'll buy a licence because I think projects like this deserve support. Kudos."
       author:
-        name: imjlk
+        name: ilpiac
+        description: WordPress reviewer
         avatar:
-          src: https://s.gravatar.com/avatar/a90024cfba5d2cc4b13e252379350164?s=100
-        to: https://wordpress.org/support/topic/great-works-26/
-        target: _blank
-    - quote_title: Melhor plugin para Tailwind no WP
-      quote: Torna fácil a integração do Tailwind no WP e isso já o torna sensacional
+          src: https://secure.gravatar.com/avatar/87cb70ec7b0d635f81f1d02f6aeca911c8640872480e8c5d1ca99ab2eb79a8d3?s=100&d=retro&r=g
+        to: https://wordpress.org/support/topic/kudos-to-yabe-webfonts/
+    - quote_title: Works like a charm with Breakdance
+      quote: "I use it mainly with Breakdance Builder, and it makes the process of importing Google fonts much faster and easier. Great job"
       author:
-        name: liiverodrigues
+        name: supamike
+        description: WordPress reviewer
         avatar:
-          src: https://s.gravatar.com/avatar/3a683a50a402ea16b2a6d875e4b94d23?s=100
-        to: https://wordpress.org/support/topic/melhor-plugin-para-tailwind-no-wp/
-        target: _blank
-    - quote_title: Good plugin for tailwindcss with wordpress
-      quote: Bro, you are a genius, for making tailwind available for wordpress
+          src: https://secure.gravatar.com/avatar/fbfe854218abcbc74763d2223b09ed97f3d95d24229360939351dd5fc396f367?s=100&d=retro&r=g
+        to: https://wordpress.org/support/topic/works-like-a-charm-with-breakdance/
+    - quote_title: Works well so far
+      quote: "Works well with Elementor so far + nice UI and docs. Thanks for the plugin."
       author:
-        name: luxingchao
+        name: lukasivanovic
+        description: WordPress reviewer
         avatar:
-          src: https://s.gravatar.com/avatar/a9f443f20450283ca5b7fe96698d0fd82863d6d5f317e96cbbd29391e005e47f?s=100
-        to: https://wordpress.org/support/topic/good-plugin-for-tailwindcss-with-wordpress/
-        target: _blank
-    - quote_title: Tailwind + Bricks Builder is the dream!
-      quote: I use ReactJS and InertiaJS 2.0 to build plugins and Tailwind is the standard simply because you have to be a certified psycho nut case crazy person to use vanilla CSS. Bricks Builder and WindPress work very well together.
+          src: https://secure.gravatar.com/avatar/364e1fe3eef886b48376e9161bb5d945346aa9f7813b9fba4619cefa2f83bd67?s=100&d=retro&r=g
+        to: https://wordpress.org/support/topic/works-well-so-far-31/
+    - quote_title: Efficient and powerful tool
+      quote: "I was looking for a way to manage my fonts across builders and a way to optimize them as well. Yabe Webfonts let me do that easily."
       author:
-        name: forestcall
+        name: RynuX
+        description: WordPress reviewer
         avatar:
-          src: https://s.gravatar.com/avatar/c346a54f734e093acd6bf888e3e1d589e58d80ea1d397fdcd3c58abf3869aaee?s=100
-        to: https://wordpress.org/support/topic/tailwind-bricks-builder-is-the-dream/
-        target: _blank
-    - quote_title: Easy to integrate
-      quote: super easy to integrate with tailwind
+          src: https://secure.gravatar.com/avatar/a56a54db4103c894145b4e453dc192af54cfb60003a85f4c74e1c1f330339950?s=100&d=retro&r=g
+        to: https://wordpress.org/support/topic/efficient-and-powerful-tool/
+    - quote_title: Just what I needed
+      quote: "I was looking for a plugin like this for a long long time. It is the greatest fonts plugin"
       author:
-        name: pradeep.ghildiyal
+        name: donrich
+        description: WordPress reviewer
         avatar:
-          src: https://s.gravatar.com/avatar/04ecfca4eab8946bccd068109bcfd2ff4d8a8e3745ead2d4b97b0d2699978f5e?s=100
-        to: https://wordpress.org/support/topic/easy-to-integrate-31/
-        target: _blank
-    - quote_title: The best Tailwind plugin for WordPress
-      quote: If you're looking for a way to integrate the Tailwind CSS framework into WordPress, WindPress is the perfect solution. It's easy to set up and works seamlessly with the Block Editor. Trust me, no other WordPress plugin does it quite like WindPress. If possible, I recommend upgrading to WindPress Pro.
+          src: https://secure.gravatar.com/avatar/7ee1f9fcc83c7cdcc49839b432ec4f46307b2e31520a7896d10db157d5f98361?s=100&d=retro&r=g
+        to: https://wordpress.org/support/topic/just-what-i-needed-1313/
+    - quote_title: Very good and useful. Highly recommended.
+      quote: "Highly recommended. I tested the free version and no doubt, the plugins work perfectly, easy to use. Thanks to the team for the excellent work."
       author:
-        name: Cuong Thach
+        name: NemoTH
+        description: WordPress reviewer
         avatar:
-          src: https://s.gravatar.com/avatar/c955bc6850c8d00b12fa6082f74039416a49d60d074f8962d789fde77b2c0c95?s=100
-        to: https://wordpress.org/support/topic/the-best-tailwind-plugin-for-wordpress/
-        target: _blank
-    - quote_title: Amazing Plugin!
-      quote: It was everything I needed to create my own themes using Tailwind CSS.
+          src: https://secure.gravatar.com/avatar/27af72cc88f57eb6e04612a5ded3c0fdae526a80f7e8709daec8a72a2fde36ad?s=100&d=retro&r=g
+        to: https://wordpress.org/support/topic/very-good-and-useful-highly-recommended/
+    - quote_title: Great plugin, easy to use
+      quote: "This plugin did exactly what I needed without trouble and is updated regularly."
       author:
-        name: Giovanni de Luca
+        name: scoalegil
+        description: WordPress reviewer
         avatar:
-          src: https://secure.gravatar.com/avatar/f791c3ffec0132d3147535d474bf29b123b5b98881484a185610622ff614bcc4?s=100
-        to: https://wordpress.org/support/topic/amazing-plugin-2709/
-        target: _blank
-    - quote_title: Easy and Fast
-      quote: A plugin that meets expectations. Easy to use. Designer and developer friendly. Maybe you could add other cool features.
+          src: https://secure.gravatar.com/avatar/49c57589f56e11e64f89e78b8495cdd2bee74dccc4a75de9c4cb3f8f75a92a36?s=100&d=retro&r=g
+        to: https://wordpress.org/support/topic/great-plugin-easy-to-use-336/
+    - quote_title: Recommended
+      quote: "Just does what needed with fonts. 1 year, and no regrets."
       author:
-        name: Perdana Hary
+        name: markoze
+        description: WordPress reviewer
         avatar:
-          src: https://secure.gravatar.com/avatar/c179bdcb83344e2c3d795c04d7607382dde1fd88a530f229aca1fb4b96c0cfc9?s=100
-        to: https://wordpress.org/support/topic/easy-and-fast-167/
-        target: _blank
-    - quote_title: Excellent !
-      quote: An excellent tool for WordPress developers and designers! Windpress is extremely useful when you want to quickly prototype responsive layouts directly within the editor. Perfect for testing mobile and tablet versions without constantly switching to the front end. Lightweight, practical, and well-designed. Kudos to the developers!
+          src: https://secure.gravatar.com/avatar/1fa719105e99b7fe29506a0c9f43ae0d98d18520cc7019fdba293ad907937467?s=100&d=retro&r=g
+        to: https://wordpress.org/support/topic/recommended-450/
+    - quote_title: Excellent!!
+      quote: "Very efficient and easy plugin, that solves something that is usually complicated to do by code."
       author:
-        name: lafabrique
+        name: reitrece13
+        description: WordPress reviewer
         avatar:
-          src: https://secure.gravatar.com/avatar/3d23a0ad79f3db673da145e8a37a6320dddc978e9a040b6073fb1eb9bc6a9139?s=100
-        to: https://wordpress.org/support/topic/excellent-13955/
-        target: _blank
-    - quote_title: "Exceptional Tailwind CSS Integration for WordPress: Fully Deserving of 5 Stars"
-      quote: A plugin that integrates Tailwind CSS in WordPress with continuous updates, Tailwind v4 support, and incredible technical support truly deserves all 5 stars. It's clear the team behind this tool is doing an exceptional job.
+          src: https://secure.gravatar.com/avatar/bac345f6c323b727824e1b23ffdc5082264a06fe625f1814868208ac83527e62?s=100&d=retro&r=g
+        to: https://wordpress.org/support/topic/excellent-13491/
+    - quote_title: Me encanta Yabe Webfont
+      quote: "Gran aplicacion para la gestion de fuentes en proyectos de WordPress, compatible con la mayoria de editores, solo me gustaria que contara con una opcion para importar todas las fuentes de Google libres de manera automatizada y no de forma manual, por lo demas creo que han realizado un gran trabajo."
       author:
-        name: marcobrambilla
+        name: Raul L Garcia
+        description: WordPress reviewer
         avatar:
-          src: https://secure.gravatar.com/avatar/8055c388b3c5367efe71a068c99a48aae96b511e40302578a7f2a3548a9d73b3?s=100
-        to: https://wordpress.org/support/topic/exceptional-tailwind-css-integration-for-wordpress-fully-deserving-of-5-stars/
-        target: _blank
-    - quote_title: Good!
-      quote: Very good plugin, updated regularly, hope it continues like this!
+          src: https://secure.gravatar.com/avatar/89ef2504bcba4feefa5d5b9249b0240cb247f6205adad79c99ed712fdd65c43e?s=100&d=retro&r=g
+        to: https://wordpress.org/support/topic/me-encanta-yabe-webfont/
+    - quote_title: Awesome google font
+      quote: "Awesome google font. Kompatibel with WordPress new release"
       author:
-        name: toufic
+        name: buys007212
+        description: WordPress reviewer
         avatar:
-          src: https://secure.gravatar.com/avatar/551acefddfc9debd1c37b445bff4f5defad24f41ccda7029ed97af9435c886b6?s=100
-        to: https://wordpress.org/support/topic/good-8900/
-        target: _blank
-    - quote_title: good but greenshift plugin is not compatible with it
-      quote: easy to use, just need to fix the issue with the greenshift plugin
+          src: https://secure.gravatar.com/avatar/a596d39843814f9fcdf01c5bd17a4b2dcb6ae7857d9c93bf0584106f3572c35d?s=100&d=retro&r=g
+        to: https://wordpress.org/support/topic/awesome-google-font/
+    - quote_title: I tried them all and than ..
+      quote: "I tried them all and than I found this, great!"
       author:
-        name: huuphong91
+        name: Willem 2
+        description: WordPress reviewer
         avatar:
-          src: https://secure.gravatar.com/avatar/ea2649cd44ebf273775fefd99c1973a341bca10a59ff5d0b2dd3e97547eeed9b?s=100
-        to: https://wordpress.org/support/topic/good-but-greenshift-plugin-is-not-compatible-with-it/
-        target: _blank
-    - quote_title: Great
-      quote: great work
+          src: https://secure.gravatar.com/avatar/9939778bac6990c93a93fa5403d78d4fd6581867b6e7f384b0ad4f0a4c730f3e?s=100&d=retro&r=g
+        to: https://wordpress.org/support/topic/i-tried-them-all-and-than/
+    - quote_title: "Great!"
+      quote: "You guys just did a great job! Your woff2 variable converter is exactly what I have been needing so hard over the recent years"
       author:
-        name: mohammadsobhy83
+        name: rotwerbegrafik
+        description: WordPress reviewer
         avatar:
-          src: https://secure.gravatar.com/avatar/cecc3fb6f4f1e79bc8bd2e5503f1fc8e8018c2c94829e58c8c0a0900598fe40d?s=100
-        to: https://wordpress.org/support/topic/great-16662/
-        target: _blank
-    - quote_title: Great plugin to start with tailwind in wp
-      quote: Actively developed and easy to use
+          src: https://secure.gravatar.com/avatar/ae4ad25e0b141a8e965c1d2c03dd08e52c89ee29d15872f288eed1f99e072ac2?s=100&d=retro&r=g
+        to: https://wordpress.org/support/topic/great-16579/
+    - quote_title: Works perfectly.
+      quote: "Real timesaver. And affordable."
       author:
-        name: piggom
+        name: lotharkoch
+        description: WordPress reviewer
         avatar:
-          src: https://secure.gravatar.com/avatar/97871c8794ec867dc1646688d50c7bf5793376383b8bde7976daff2bd7997a81?s=100
-        to: https://wordpress.org/support/topic/great-plugin-to-start-with-tailwind-in-wp/
-        target: _blank
-    - quote_title: Greate tool!
-      quote: >-
-        As a developer, this tool has helped me a lot by eliminating the need to manually integrate Tailwind CSS into every theme or plugin I build. I just install the plugin and start using utility classes as usual - it's super convenient. However, there are two main issues: IDE autocompletion doesn't always recognize Tailwind classes provided by the plugin, which slows down workflow. CSS load timing - the WindPress-generated styles are injected late, causing a brief flash before styles apply (a few milliseconds delay). Overall, it's a great tool that improves development speed, and I appreciate the effort behind it. Anyway, thanks to the developer for making this tool available on the WordPress marketplace - it really fills a useful gap.
+          src: https://secure.gravatar.com/avatar/9cf9a0aef5158bf0d040b78f6338061ba3a330e41c02bfe2aa8673b1405d3fba?s=100&d=retro&r=g
+        to: https://wordpress.org/support/topic/works-perfectly-2798/
+    - quote_title: really good plugin
+      quote: "really good plugin"
       author:
-        name: Ahmad Kouider
+        name: sakis11111
+        description: WordPress reviewer
         avatar:
-          src: https://secure.gravatar.com/avatar/489c4ff808162a4669006273a5eaef2a8b7523a5cbcc05676c27cbdb4b732c2c?s=100
-        to: https://wordpress.org/support/topic/greate-tool-4/
-        target: _blank
-    - quote_title: Perfect
-      quote: Development is so much faster and the support is fantastic.
+          src: https://secure.gravatar.com/avatar/b70a9fc10fcccf42975e7e355451ea406d0e4339e7c98a41cde2769c35b10591?s=100&d=retro&r=g
+        to: https://wordpress.org/support/topic/really-good-plugin-272/
+    - quote_title: Great plugin
+      quote: "Great plugin simple effective just fab A****"
       author:
-        name: renewrmk
+        name: nikbaumann
+        description: WordPress reviewer
         avatar:
-          src: https://secure.gravatar.com/avatar/2876c6545dc83f1ef36ba677482760ad90b8569d4dcf4f1aec40c70c880bea1c?s=100
-        to: https://wordpress.org/support/topic/perfect-10807/
-        target: _blank
-    - quote_title: Tailwind Developer tool no brainer!
-      quote: Great UI update with Version 3.2.1! Well made plugin and does exactly what it needs to for tailwind integration. Frequent updates and great support a great addition to the WordPress ecosystem.
+          src: https://secure.gravatar.com/avatar/09fd2d8d8d3354b7766c4ee10fce09a9d516b15221dcac762473692160c315b1?s=100&d=retro&r=g
+        to: https://wordpress.org/support/topic/great-plugin-40780/
+    - quote_title: super
+      quote: "Very useful to upload Google font"
       author:
-        name: adjk
+        name: Christian
+        description: WordPress reviewer
         avatar:
-          src: https://secure.gravatar.com/avatar/cc46e5598a19be7ade58aa674d1285e0724286613d5e6638011e63f4bafecc02?s=100
-        to: https://wordpress.org/support/topic/tailwind-developer-tool-no-brainer/
-        target: _blank
-    - quote_title: Weldone
-      quote: Good job out there
+          src: https://secure.gravatar.com/avatar/f87ce012789f633866332914a560aeb11b39ac712ba2cab2ae0833c4623be219?s=100&d=retro&r=g
+        to: https://wordpress.org/support/topic/super-2918/
+    - quote_title: Great Plugin
+      quote: "Awesome"
       author:
-        name: resocole
+        name: Derin Tolu
+        description: WordPress reviewer
         avatar:
-          src: https://secure.gravatar.com/avatar/d879e1f8c7c973e0d7355ec09642686301b7982345de8889796a258c32c76a0c?s=100
-        to: https://wordpress.org/support/topic/weldone-2/
-        target: _blank
-    # - quote_title: 
-    #   quote: 
-    #   author:
-    #     name: 
-    #     description: 
-    #     avatar:
-    #       src: 
-    #     to: 
-    #     target: _blank
-
-
-# features:
-#   title: Enable features as you grow
-#   description: Nuxt grows and adapts with your needs while providing an exceptional developer experience. Build anything from simple landing pages to complex web applications that scale for teams of hundreds of developers. We've designed Nuxt to be approachable for developers of all skill levels.
-#   features:
-#     - icon: i-lucide-sparkles
-#       title: Zero Configuration
-#       description: Start coding with Vue or Typescript immediately — Nuxt handles all the setup for you.
-#     - icon: i-lucide-file-code-2
-#       title: Rendering Modes
-#       description: Server-side rendering, client-side rendering, static-site generation, you decide, up to the page level.
-#     - icon: i-lucide-milestone
-#       title: Routing & Layouts
-#       description: Use our file-based routing system to build complex url-based views while reusing components for performance.
-#     - icon: i-lucide-unplug
-#       title: Data Fetching
-#       description: Make your Vue component async and await your data. Nuxt provides powerful composables for universal data fetching.
-#     - icon: i-lucide-bug
-#       title: Error Handling
-#       description: Catch errors in your application with our built-in handlers and custom error pages.
-#     - icon: i-lucide-flip-horizontal
-#       title: Transitions
-#       description: Implement smooth transitions between layouts, pages, and components.
-#     - icon: i-lucide-image
-#       title: Assets & Style
-#       description: Benefit from automatic image, font, and script optimizations with built-in support.
-#     - icon: i-lucide-file-search
-#       title: SEO & Meta Tags
-#       description: Create production-ready applications that are fully indexable by search engines.
-#     - icon: i-lucide-puzzle
-#       title: Modular
-#       description: Extend Nuxt features with 200+ modules to ship your application faster.
-#     - icon: i-lucide-shield-check
-#       title: Middleware
-#       description: Protect or add custom logic (localization, A/B testing) before rendering pages.
-#     - icon: i-simple-icons-typescript
-#       title: Type-safe with TypeScript
-#       description: Write type-safe code with automatically generated types and tsconfig.json.
-#   cta:
-#     title: 'Deep dive into Nuxt now'
-#     label: Start reading docs
-#     to: /docs
-#     icon: i-lucide-arrow-right
-
-
-
-logos:
-  title: Chosen by leading companies worldwide
-  companies:
-    - light: /assets/brands/light/fielmann.svg
-      dark: /assets/brands/dark/fielmann.svg
-      alt: Fielmann
-      height: 28
-      width: 89
-    - light: /assets/brands/light/dassault-systemes.svg
-      dark: /assets/brands/dark/dassault-systemes.svg
-      alt: Dassault Systemes
-      height: 28
-      width: 93
-    - light: /assets/brands/light/louis-vuitton.svg
-      dark: /assets/brands/dark/louis-vuitton.svg
-      alt: Louis Vuitton
-      height: 16
-      width: 152
-    - light: /assets/brands/light/backmarket.svg
-      dark: /assets/brands/dark/backmarket.svg
-      alt: Back Market
-      height: 18
-      width: 161
-    - light: /assets/brands/light/paul-smith.svg
-      dark: /assets/brands/dark/paul-smith.svg
-      alt: Paul Smith
-      height: 26
-      width: 144
-    - light: /assets/brands/light/caudalie.svg
-      dark: /assets/brands/dark/caudalie.svg
-      alt: Caudalie
-      height: 28
-      width: 136
-    - light: /assets/brands/light/blizzard.svg
-      dark: /assets/brands/dark/blizzard.svg
-      alt: Blizzard
-      height: 28
-      width: 55
-    - light: /assets/brands/light/too-good-to-go.svg
-      dark: /assets/brands/dark/too-good-to-go.svg
-      alt: To Good to Go
-      height: 40
-      width: 51
-foundation:
-  title: Built on a solid foundation
-  description: Nuxt is built on top of bulletproof open source technologies, with versatility to choose between different build tools.
-  items:
-    - id: vue
-      title: Frontend with Vue.js
-      description: Nuxt is built on top of Vue.js, leveraging its reactive, component-based architecture to create powerful, scalable, and seamless web applications.
-      logo: i-custom-vue
-      color: '#42B883'
-      gradient: 'bg-gradient-to-br from-[#42B883]/10 from-5% via-transparent via-50% to-transparent'
-      link:
-        label: vuejs.org
-        to: https://vuejs.org
-    - id: bundler
-      title: Bundler with Vite
-      description: Nuxt leverages Vite's frontend build capabilities, powering rapid development of web applications with instant HMR for the best developer experience.
-      logo: i-custom-vite
-      color: '#A156FE'
-      gradient: 'bg-gradient-to-br from-[#A156FE]/10 from-5% via-transparent via-50% to-transparent'
-      link:
-        label: vite.dev
-        to: https://vite.dev
-    - id: bundler
-      title: Bundler with Webpack
-      description: Nuxt harnesses Webpack's robust bundling and optimization capabilities, ensuring a stable and scalable development experience.
-      logo: i-custom-webpack
-      color: '#8ED6FB'
-      gradient: 'bg-gradient-to-br from-[#8ED6FB]/10 from-5% via-transparent via-50% to-transparent'
-      link:
-        label: webpack.js.org
-        to: https://webpack.js.org
-    - id: bundler
-      title: Bundler with Rspack
-      description: Nuxt integrates Rspack's high-performance bundling, accelerating builds and HMR for a seamless developer experience at scale.
-      logo: i-custom-rspack
-      color: '#F93920'
-      gradient: 'bg-gradient-to-br from-[#F93920]/10 from-5% via-transparent via-50% to-transparent'
-      link:
-        label: rspack.dev
-        to: https://rspack.dev
-    - id: nitro
-      title: Server with Nitro
-      description: Nuxt uses Nitro as server engine to build versatile full-stack web applications, ready for deployment on any platform.
-      logo: i-custom-nitro
-      color: '#FB848E'
-      gradient: 'bg-gradient-to-br from-[#FB848E]/10 from-5% via-transparent via-50% to-transparent'
-      link:
-        label: nitro.build
-        to: https://nitro.build
-modules:
-  title: Extend Nuxt with plug & play modules
-  description: Nuxt has a rich module ecosystem, with both official and community-driven modules. This accelerates development by providing ready-to-use solutions for common needs.
-  links:
-    - label: Explore all modules
-      to: /modules
-      icon: i-lucide-arrow-right
-      color: neutral
-      trailing: true
-deploy:
-  title: Deploy your app anywhere
-  description: One-command deployments and zero-configuration options make it easy to get your Nuxt app live. Choose your platform, and let Nuxt handle the rest, allowing you to focus on building great applications rather than managing complex deployments.
-  links:
-    - label: Learn how to deploy now
-      to: /deploy
-      icon: i-lucide-arrow-right
-      color: neutral
-      trailing: true
-stats:
-  title: The developer's choice for simple and powerful web apps
-  description: |
-    Nuxt was born from developers' need to boost productivity and platform performance.
-    What began as a Vue-based solution for automating tasks and server-side rendering is now trusted by startups and enterprises all around the world.
-  community:
-    title: Open source
-    description: Nuxt is 100% powered by our passionate open source community. Every line of Nuxt is written by passionate developers like you.
-  x: 98.7k
-  discord: 28k
-  cta:
-    label: Start contributing
-    to: 'https://github.com/nuxt/nuxt'
-    color: neutral
-    variant: outline
-    icon: i-simple-icons-github
-    trailing: true
-contributors:
-  title: 'Built by developers around the world.'
-  description: 'The development of Nuxt and its ecosystem is led by an international team. From contributors to developer advocates, the community is made up of members with different horizons and skills. We are happy to see new members every day and encourage anyone to join us and help in many ways: answering questions, giving a talk, creating modules and contributing to the core.'
-  links:
-    - label: Nuxters
-      to: https://nuxters.nuxt.com
-      target: _blank
-      icon: i-simple-icons-nuxtdotjs
-      color: neutral
-      title: See your own profile on Nuxters
-    - icon: i-simple-icons-discord
-      to: https://go.nuxt.com/discord
-      target: _blank
-      color: neutral
-      variant: ghost
-      size: xl
-      title: Join Nuxt on Discord
-    - icon: i-simple-icons-x
-      to: https://go.nuxt.com/x
-      target: _blank
-      color: neutral
-      variant: ghost
-      size: lg
-      title: Nuxt on X
-    - icon: i-simple-icons-bluesky
-      to: https://go.nuxt.com/bluesky
-      target: _blank
-      color: neutral
-      variant: ghost
-      size: lg
-      title: Nuxt on Bluesky
-support:
-  title: Nuxt Enterprise Support
-  description: |
-    To ensure your Nuxt projects reach their full potential, our Nuxt Experts team, featuring :icon{name=i-custom-vue .align-middle} Vue, :icon{name=i-custom-nuxt .align-middle} Nuxt and :icon{name=i-custom-vite .align-middle} Vite, core contributors — offers a complete suite of services.
-  features:
-    - title: Performance optimization
-      description: Boost Nuxt performance and reliability with our expert optimizations.
-      icon: i-lucide-rocket
-    - title: Migration to Nuxt
-      description: Ensure successful, painless migrations from start to deployment.
-      icon: i-lucide-circle-arrow-up
-    - title: Nuxt Workshop
-      description: Develop expert teams through training and support.
-      icon: i-lucide-school
-  companies:
-    - src: /assets/enterprise/support/malt.svg
-      alt: Malt
-    - src: /assets/enterprise/support/zadig-and-voltaire.svg
-      alt: Zadig & Voltaire
-    - src: /assets/enterprise/support/adyen.svg
-      alt: Adyen
-    - src: /assets/enterprise/support/world-wide-technology.svg
-      alt: World Wide Technology
-    - src: /assets/enterprise/support/cora.svg
-      alt: Cora
-  links:
-    - label: Talk to a Nuxt Expert
-      to: /enterprise/support
-      icon: i-lucide-arrow-right
-      color: neutral
-      trailing: true
-sponsors:
-  title: Sponsors
-  description: Nuxt is and will always remain free and open source under the MIT License, thanks to our contributors and sponsors.
-  links:
-    - label: Become a sponsor
-      to: 'https://github.com/sponsors/nuxt'
-      color: neutral
-      trailingIcon: i-lucide-heart
-      trailing: true
-    - label: View all sponsors
-      to: /enterprise/sponsors
-      color: neutral
-      variant: outline
+          src: https://secure.gravatar.com/avatar/0b57c1204e68661a32963358e502e04a456098d94d50500d005c5402360eb4a8?s=100&d=retro&r=g
+        to: https://wordpress.org/support/topic/grat-plugin-19/
+    - quote_title: Love it with bricks!
+      quote: "great support!"
+      author:
+        name: pewitlabs
+        description: WordPress reviewer
+        avatar:
+          src: https://secure.gravatar.com/avatar/7cab64c7568d978bb0aa3a4f1498c0ad674413a45ec0cfd9b1c9fc262b0d11e0?s=100&d=retro&r=g
+        to: https://wordpress.org/support/topic/love-it-with-bricks/
+    - quote_title: Great plug-in!
+      quote: "Whilst it is quite early for me with the plug-in, I can tell you it is fantastic with minimal setup."
+      author:
+        name: farhanmunim
+        description: WordPress reviewer
+        avatar:
+          src: https://secure.gravatar.com/avatar/2af9ab965bb66e651d2ca75c52e0b65fdd7673004fbc8a9f6c69478a59d352e3?s=100&d=retro&r=g
+        to: https://wordpress.org/support/topic/great-plug-in-1332/
+    - quote_title: Great plugins, quality of life WordPress
+      quote: "I really like the Yabe plugins, the premium and free plugins are great and offer some amazing quality of life features to my WP builds. Keep up the good work."
+      author:
+        name: designwebuk
+        description: WordPress reviewer
+        avatar:
+          src: https://secure.gravatar.com/avatar/b2819ebf1a0b70a49170bde57f340f15735eb73d18aa265b123a73c643bb68cf?s=100&d=retro&r=g
+        to: https://wordpress.org/support/topic/great-plugins-quality-of-life-wordpress/
+    - quote_title: Great plugin
+      quote: "So simple to use, efficient and precise for importing Google fonts to local, it also supports variable fonts and allows a granular setting of the char set. Great job!"
+      author:
+        name: Emmanuel SOYER
+        description: WordPress reviewer
+        avatar:
+          src: https://secure.gravatar.com/avatar/a2a942c10fc0c9451981c4431f993f40b4f88a73549ded23351f0c7caeca9cbf?s=100&d=retro&r=g
+    - quote_title: Perfect Product
+      quote: "This plugin is exactly what I needed. Install, easily and quickly import the fonts I need directly from Google and then forget the plugin is even there. It's so easy to use, I use it on every site I build."
+      author:
+        name: Andy Topley
+        description: WordPress reviewer
+        avatar:
+          src: https://secure.gravatar.com/avatar/3ff5e4e154c23bca5fe425e155a91143bbaffe27036c88f45c3c08327248fc19?s=100&d=retro&r=g
+    - quote_title: Great Company and product
+      quote: "I've used quite a few other font plugins, WordPress and on different platforms and by far I enjoy this one the most. Thanks for your support and producing such a great product."
+      author:
+        name: Jason GREENLEES
+        description: WordPress reviewer
+        avatar:
+          src: https://secure.gravatar.com/avatar/303cd3cbc39c791274b53899509edf97e678db0fe9396c8586f8a8154b498b38?s=100&d=retro&r=g
+    - quote_title: Wonderful Plugin
+      quote: "The implementation is probably the best or easiest recognized feature of this plugin. To use VUE in the WP UI makes it feel fluid in experience. The actual plugin options are great. And the support is top notch."
+      author:
+        name: Faith Grace
+        description: WordPress reviewer
+        avatar:
+          src: https://secure.gravatar.com/avatar/4c94bc7cbd72ebe43290d9a3db518188911e5809d81e09bf7057ddc9d0f1206f?s=100&d=retro&r=g
+    - quote_title: Excellent job !!
+      quote: "Nice plugin, it does what is describes and the developer is very supportive !!"
+      author:
+        name: Nikos Merianos
+        description: WordPress reviewer
+        avatar:
+          src: https://secure.gravatar.com/avatar/393077df012e3c4808650feb59bf72302ada5df680e968522754295e56c74226?s=100&d=retro&r=g
+        to: https://wordpress.org/support/topic/excellent-job-102/
+    - quote_title: The hidden gem
+      quote: "I have always hosted Google Fonts locally and to do so was always a manual task. It would be a case of adding a snippet, downloading the fonts I want to use, then upload to a folder on the server. This plugin changes that and makes all of it seamless. It is the hidden gem that I have been looking for!"
+      author:
+        name: Luke Allen
+        description: OxyNinja & Motion.page Community Support Manager
+        avatar:
+          src: /tutorial/testimonial-luke-alen.jpg
+    - quote_title: Solves the major problem
+      quote: "I'm working as a freelancer WordPress Expert, has been working with an German Web Agency. Because of GPDR rules I'm local hosting google fonts and custm fonts from years manually, but sometimes it is a mess to do so when you have multiple fonts. This Plugin solves the major problem of my work, with much less steps and it is done automatically. I love this easy process."
+      author:
+        name: Mohammad Arshad
+        description: Arsh Computing
+        avatar:
+          src: /tutorial/testimonial-mohammad-arshad.jpg
+    - quote_title: Most painless way to host fonts locally
+      quote: "Hosting fonts locally is a must-have for sites that operate within the EU. And this is the most painless way to host them locally. You can configure everything you need from the plugin interface with ease."
+      author:
+        name: Renato Corluka
+        description: Recoda.me
+        avatar:
+          src: /tutorial/testimonial-renato-corluka.jpg
+    - quote_title: Makes adding Google Fonts insanely easy
+      quote: "I got this and I love it. Makes adding Google Fonts insanely easy and it's also a much easier font system than the native Bricks one. Thanks for making it and saving me a load of time!"
+      author:
+        name: Michael Culham
+        description: Bunnyduck.design
+        avatar:
+          src: https://s.gravatar.com/avatar/aa5cc47e1c0cf4f1fa94290472bb13b3861abf992fb9b1be418ee7b16c2eb186?s=100
+    - quote_title: The dream fonts manager
+      quote: "I make WordPress sites since the beginning, and adding custom fonts or even google fonts to the site was always a struggle. But no more! Yabe Fonts is the dream fonts manager that I always wanted, a beautiful interface is simple and accurate! It's easy to have local google fonts and install my custom fonts, and Yabe Fonts deals with FOUT flawlessly! I strongly recommend it to everyone!"
+      author:
+        name: Luciana Hanan
+        description: Webmaster Luciana
+        avatar:
+          src: /tutorial/testimonial-luciana-hanan.jpg
+    - quote_title: Awesome tool and life saver
+      quote: "I'm a wordpress web dev and also create websites for my small business. Yabe Font is an awesome tool and life saver. Just right on your wordPress dashboard one clicks away, and easily like that u can have Google font host locally without wasting your time. No more downloading from GoogleFont and self-uploading it by yourself. The support is always there to help! I truly appreciate it. I will use it for every site I build. Highly recommended."
+      author:
+        name: Akram ahmed
+        description: Somfuture wuhan IT co.ltd
+        avatar:
+          src: /tutorial/testimonial-akram-ahmed.jpg
+    - quote_title: Plugin tan comodo y sencillo
+      quote: "Normalmente no me gusta usar este tipo de plugins, ya que prefiero cargar las fuentes de forma manual, pero aqui quise hacer una excepcion y probarlo, sobre todo para ver como funcionaba la carga de fuentes variables. No tengo mas que quitarme el sombrero y felicitar al desarrollador por hacer un plugin tan comodo y sencillo."
+      author:
+        name: Angel Julian Mena
+        description: Desarrollo de soluciones abiertas SL
+        avatar:
+          src: https://s.gravatar.com/avatar/862747ad39a43ba17370e55e9532986b?s=100
+    - quote_title: Not a glorified font manager
+      quote: "Yabe font is not a glorified google font manager. At least that is what I thought it was. With google fonts, when it comes to performance, one would assume that since most fonts are hosted by google everything is optimized and cached. But Google Fonts delivers optimized fonts based on device/browser. Fonts are always downloaded after your css file has been loaded to the client. This creates unnecessary requests to google. And since you are using google it means you have to abide by their privacy policy and we all know that those are horrible. Google fonts are only cached for 1 day. meaning your clients needs to download fonts over and over. But with the help of Yabe fonts I do not have to worry about that because it takes care of that and I do not even need to know how it is done. And to top it all. I can configure the font visually without even knowing all the css tricks."
+      author:
+        name: John Stewart
+        description: Developer
+        avatar:
+          src: https://s.gravatar.com/avatar/530df329bffdb78e680059c84d21a1d3?s=100

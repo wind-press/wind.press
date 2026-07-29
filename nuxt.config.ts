@@ -1,34 +1,33 @@
-import { createResolver } from 'nuxt/kit'
-import { parseMdc } from './helpers/mdc-parser.mjs'
-import yaml from '@rollup/plugin-yaml'
+import { createResolver } from "nuxt/kit";
+import { parseMdc } from "./helpers/mdc-parser.mjs";
+import yaml from "@rollup/plugin-yaml";
 
-const { resolve } = createResolver(import.meta.url)
+const { resolve } = createResolver(import.meta.url);
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   modules: [
-    '@nuxt/ui-pro',
-    'nuxt-content-twoslash',
-    '@nuxtjs/sitemap',
-    '@nuxt/content',
-    '@nuxt/image',
-    '@nuxt/eslint',
-    '@nuxt/scripts',
-    '@vueuse/nuxt',
-    'nuxt-og-image',
-    'motion-v/nuxt',
-    'nuxt-llms',
-    'nuxt-umami',
+    "@nuxt/ui-pro",
+    "nuxt-content-twoslash",
+    "@nuxtjs/sitemap",
+    "@nuxt/content",
+    "@nuxt/image",
+    "@nuxt/eslint",
+    "@nuxt/scripts",
+    "@vueuse/nuxt",
+    "nuxt-og-image",
+    "nuxt-llms",
+    "nuxt-umami",
   ],
   $development: {
     site: {
-      url: 'http://localhost:3000'
-    }
+      url: "http://localhost:3000",
+    },
   },
   $production: {
     site: {
-      url: 'https://wind.press'
-    }
+      url: "https://yabe-webfont.jooo.si",
+    },
   },
   // $development: {
   //   runtimeConfig: {
@@ -40,121 +39,199 @@ export default defineNuxtConfig({
   //   }
   // },
   devtools: {
-    enabled: true
+    enabled: true,
   },
   app: {
     pageTransition: false,
-    layoutTransition: false
+    layoutTransition: false,
+    head: {
+      link: [{ rel: "icon", type: "image/svg+xml", href: "/icon.svg" }],
+    },
   },
-  css: ['~/assets/css/main.css'],
+  css: ["~/assets/css/main.css"],
   colorMode: {
-    preference: 'system', // default value of $colorMode.preference
-    fallback: 'light', // fallback value if not system preference found
+    preference: "system", // default value of $colorMode.preference
+    fallback: "light", // fallback value if not system preference found
   },
   content: {
     build: {
       markdown: {
         highlight: {
           theme: {
-            default: 'material-theme-lighter',
-            dark: 'material-theme-palenight'
+            default: "material-theme-lighter",
+            dark: "material-theme-palenight",
           },
-          langs: [
-            'sql',
-            'diff',
-            'ini',
-            'html',
-            'css',
-            'postcss',
-            'js',
-            'php',
-          ],
-        }
+          langs: ["sql", "diff", "ini", "html", "css", "postcss", "js", "php"],
+        },
       },
     },
     preview: {
-      api: 'https://api.nuxt.studio'
-    }
+      api: "https://api.nuxt.studio",
+    },
   },
   mdc: {
     highlight: {
-      noApiRoute: false
+      noApiRoute: false,
     },
   },
   ui: {
     theme: {
-      colors: ['primary', 'secondary', 'info', 'success', 'warning', 'error', 'important']
-    }
+      colors: [
+        "primary",
+        "secondary",
+        "info",
+        "success",
+        "warning",
+        "error",
+        "important",
+      ],
+    },
   },
   routeRules: {
-    // Pre-render
-    '/': { prerender: true },
-    '/blog/rss.xml': { prerender: true },
-    '/404.html': { prerender: true },
+    // Pre-Render
+    "/": { prerender: true },
+    "/404.html": { prerender: true },
     // Redirects
-    '/docs': { redirect: '/docs/getting-started/introduction', prerender: false },
-    '/docs/getting-started': { redirect: '/docs/getting-started/introduction', prerender: false },
-    '/docs/getting-started/migration': { redirect: '/docs/getting-started/migration/yabe-siul', prerender: false },
-    '/docs/guide/concepts': { redirect: '/docs/guide/concepts/simple-file-system', prerender: false },
-    '/docs/guide/configuration': { redirect: '/docs/guide/configuration/tailwind-version', prerender: false },
-    '/docs/guide/configuration/tw-3': { redirect: '/docs/guide/configuration/tw-3/file-main-css', prerender: false },
-    '/docs/guide/configuration/tw-4': { redirect: '/docs/guide/configuration/tw-4/file-main-css', prerender: false },
-    '/docs/examples/templates-blocks': { redirect: '/docs/examples/templates-blocks/tailwindplus', prerender: false },
-    '/docs/examples/custom-integrations': { redirect: '/docs/examples/custom-integrations/custom-theme', prerender: false },
-    '/pricing': { redirect: '/#pricing', prerender: false },
+    "/docs": {
+      redirect: "/docs/getting-started/introduction",
+      prerender: false,
+    },
+    "/docs/getting-started": {
+      redirect: "/docs/getting-started/introduction",
+      prerender: false,
+    },
+    "/docs/fonts": { redirect: "/docs/fonts/custom-font", prerender: false },
+    "/docs/integrations": {
+      redirect: "/docs/integrations/elementor",
+      prerender: false,
+    },
+    "/docs/misc": {
+      redirect: "/docs/misc/convert-ttf-woff2",
+      prerender: false,
+    },
+    "/pricing": { redirect: "/#pricing", prerender: false },
+    // Legacy /en/* routes from the old Astro site -> new docs structure
+    "/en": { redirect: "/docs/getting-started/introduction", prerender: false },
+    "/en/introduction": {
+      redirect: "/docs/getting-started/introduction",
+      prerender: false,
+    },
+    "/en/install": {
+      redirect: "/docs/getting-started/installation",
+      prerender: false,
+    },
+    "/en/font/custom-font": {
+      redirect: "/docs/fonts/custom-font",
+      prerender: false,
+    },
+    "/en/font/google-fonts": {
+      redirect: "/docs/fonts/google-fonts",
+      prerender: false,
+    },
+    "/en/font/adobe-fonts": {
+      redirect: "/docs/fonts/adobe-fonts",
+      prerender: false,
+    },
+    "/en/misc/convert-ttf-woff2": {
+      redirect: "/docs/misc/convert-ttf-woff2",
+      prerender: false,
+    },
+    "/en/misc/no-plugin": {
+      redirect: "/docs/misc/no-plugin",
+      prerender: false,
+    },
+    "/en/misc/proxy": { redirect: "/docs/misc", prerender: false },
+    "/docs/misc/proxy": { redirect: "/docs/misc", prerender: false },
+    "/en/integration/elementor": {
+      redirect: "/docs/integrations/elementor",
+      prerender: false,
+    },
+    "/en/integration/oxygen": {
+      redirect: "/docs/integrations/oxygen",
+      prerender: false,
+    },
+    "/en/integration/bricks": {
+      redirect: "/docs/integrations/bricks",
+      prerender: false,
+    },
+    "/en/integration/gutenberg": {
+      redirect: "/docs/integrations/gutenberg",
+      prerender: false,
+    },
+    "/en/integration/breakdance": {
+      redirect: "/docs/integrations/breakdance",
+      prerender: false,
+    },
+    "/en/integration/beaver-builder": {
+      redirect: "/docs/integrations/beaver-builder",
+      prerender: false,
+    },
+    "/en/integration/builderius": {
+      redirect: "/docs/integrations/builderius",
+      prerender: false,
+    },
+    "/en/integration/cwicly": {
+      redirect: "/docs/integrations/cwicly",
+      prerender: false,
+    },
+    "/en/integration/classic-editor": {
+      redirect: "/docs/integrations/classic-editor",
+      prerender: false,
+    },
+    "/en/integration/developer": {
+      redirect: "/docs/integrations/developer",
+      prerender: false,
+    },
+    "/en/integration/generatepress": {
+      redirect: "/docs/integrations/generatepress",
+      prerender: false,
+    },
+    "/en/integration/zion-builder": {
+      redirect: "/docs/integrations/zion-builder",
+      prerender: false,
+    },
 
-    // Redirects 
-    '/go': { redirect: '/', prerender: false },
-    '/go/github': { redirect: 'https://github.com/wind-press/windpress', prerender: false },
-    '/go/discord': { redirect: 'https://discord.gg/fjsB83XdFw', prerender: false },
-    '/go/facebook': { redirect: 'https://www.facebook.com/groups/1142662969627943', prerender: false },
-    '/go/bricks': { redirect: 'https://bricksbuilder.io/', prerender: false },
-    '/go/breakdance': { redirect: 'https://breakdance.com/ref/165/', prerender: false },
-    '/go/builderius': { redirect: 'https://builderius.io/?referral=afdfca82c8', prerender: false },
-    '/go/livecanvas': { redirect: 'https://livecanvas.com/?ref=4008', prerender: false },
-    '/go/ads': { redirect: 'https://ko-fi.com/post/WindPress-Bronze-Sponsor-U7U8143WIP', prerender: false },
-    '/go/sponsor': { redirect: 'https://ko-fi.com/Q5Q75XSF7?utm_source=windpress_website', prerender: false },
-    '/go/ticket': { redirect: 'https://rosua.org/support-portal', prerender: false },
-    '/go/_wt': { redirect: 'https://github.com/wind-press/_wt', prerender: false },
+    // Outbound go/ short links
+    "/go": { redirect: "/", prerender: false },
+    "/go/github": {
+      redirect: "https://github.com/orgrosua/yabe-webfont-docs",
+      prerender: false,
+    },
+    "/go/facebook": {
+      redirect: "https://www.facebook.com/groups/1142662969627943",
+      prerender: false,
+    },
+    "/go/sponsor": {
+      redirect: "https://ko-fi.com/Q5Q75XSF7",
+      prerender: false,
+    },
+    "/go/ticket": {
+      redirect: "https://jooo.si/account?view=support-tickets",
+      prerender: false,
+    },
+    "/go/account": {
+      redirect: "https://jooo.si/account",
+      prerender: false,
+    },
   },
   // sourcemap: true,
   future: {
-    compatibilityVersion: 4
+    compatibilityVersion: 4,
   },
-  compatibilityDate: '2024-07-18',
+  compatibilityDate: "2024-07-18",
   nitro: {
-    preset: 'static',
+    preset: "static",
     prerender: {
       crawlLinks: true,
       ignore: [
-        route => route.startsWith('/modules'),
-        route => route.startsWith('/enterprise'),
-        route => route.startsWith('/deploy'),
-        route => route.startsWith('/video-courses'),
-        route => route.startsWith('/design-kit'),
-        route => route.startsWith('/team'),
-        // route => route.startsWith('/docs'),
+        // route => route.startsWith('/modules'),
       ],
       autoSubfolderIndex: false,
-      routes: [
-        '/',
-        '/docs',
-        '/api/teams',
-        // ...globSync('./content/**/*.md*')
-        //   .map(path => path
-        //     .slice(7, -3)
-        //     .replace(/\d+\./g, '')
-        //     .replace(/index/g, '/')
-        //     .replace(/\\/g, '/')
-        //     .replace(/\/+/g, '/')
-        //     .replace(/\/$/, '')
-        //   ),
-        // '/go',
-      ]
-    }
+      routes: ["/", "/docs"],
+    },
   },
   typescript: {
-    strict: false
+    strict: false,
   },
   hooks: {
     // 'content:file:afterParse': async ({ file, content }) => {
@@ -171,72 +248,69 @@ export default defineNuxtConfig({
   eslint: {
     config: {
       stylistic: {
-        commaDangle: 'never'
-      }
-    }
+        commaDangle: "never",
+      },
+    },
   },
   icon: {
-    customCollections: [{
-      prefix: 'custom',
-      dir: resolve('./app/assets/icons')
-    }],
+    customCollections: [
+      {
+        prefix: "custom",
+        dir: resolve("./app/assets/icons"),
+      },
+    ],
     clientBundle: {
       scan: true,
-      includeCustomCollections: true
+      includeCustomCollections: true,
     },
-    provider: 'iconify'
+    provider: "iconify",
   },
   image: {
-    format: ['webp', 'png', 'jpeg', 'jpg', 'svg'],
+    format: ["webp", "png", "jpeg", "jpg", "svg"],
     // provider: 'cloudflare',
     // cloudflare: {
-    //   baseURL: 'https://wind.press'
+    //   baseURL: 'https://yabe-webfont.jooo.si'
     // },
     // ipx: {
     //   baseURL: 'https://ipx.nuxt.com'
     // }
   },
+  ogImage: { zeroRuntime: true },
   llms: {
-    domain: 'https://wind.press',
-    title: 'WindPress Docs',
-    description: 'WindPress is a plugin that integrates Tailwind CSS with WordPress. It can be used with page builders, themes, and plugins in any WordPress environment, including shared hosting.',
+    domain: "https://yabe-webfont.jooo.si",
+    title: "Yabe Webfont Docs",
+    description:
+      "Yabe Webfont is a GDPR-friendly font plugin for WordPress. Import and self-host Google Fonts, Adobe Fonts, and custom fonts, and use them across your favorite visual builders and themes.",
     full: {
-      title: 'WindPress Docs',
-      description: 'The complete WindPress documentation and blog posts written in Markdown (MDC syntax).'
-    }
+      title: "Yabe Webfont Docs",
+      description:
+        "The complete Yabe Webfont documentation written in Markdown (MDC syntax).",
+    },
   },
   sitemap: {
     zeroRuntime: true,
-    exclude: [
-      '/modules',
-      '/enterprise',
-      '/enterprise/*',
-      '/deploy',
-      '/video-courses',
-      '/design-kit',
-      '/team',
-    ],
+    exclude: [],
     defaults: {
       lastmod: new Date().toISOString(),
       priority: 0.5,
-      changefreq: 'weekly'
-    }
+      changefreq: "weekly",
+    },
   },
   // turnstile: {
   //   siteKey: '0x4AAAAAAAP2vNBsTBT3ucZi'
   // },
   twoslash: {
     floatingVueOptions: {
-      classMarkdown: 'prose prose-primary dark:prose-invert'
+      classMarkdown: "prose prose-primary dark:prose-invert",
     },
     // Skip Twoslash in dev to improve performance. Turn this on when you want to explicitly test twoslash in dev.
     enableInDev: false,
     // Do not throw when twoslash fails, the typecheck should be down in github.com/nuxt/nuxt's CI
-    throws: false
+    throws: false,
   },
   umami: {
-    id: 'de57ce9c-c391-4dbb-bb1a-ba6ba26b36a4',
-    host: 'https://umami.siagian.dev',
+    id: "39c25348-6c00-404d-8d46-bc83f76ef3a5",
+    host: "https://umami.siagian.dev",
     autoTrack: true,
     ignoreLocalhost: true,
     useDirective: true,
@@ -246,8 +320,6 @@ export default defineNuxtConfig({
     experimental: {
       // enableNativePlugin: true
     },
-    plugins: [
-      yaml()
-    ],
-  }
-})
+    plugins: [yaml()],
+  },
+});

@@ -1,8 +1,6 @@
 <script setup lang="ts">
 import { kebabCase } from 'scule'
 
-const colorMode = useColorMode()
-
 definePageMeta({
   heroBackground: 'opacity-30 -z-10'
 })
@@ -27,59 +25,40 @@ const title = article.value.seo?.title || article.value.title
 const description = article.value.seo?.description || article.value.description
 
 useSeoMeta({
-  titleTemplate: '%s · WindPress Blog',
+  titleTemplate: '%s · Yabe Webfont Blog',
   title,
   description,
   ogDescription: description,
-  ogTitle: `${title} · WindPress Blog`
+  ogTitle: `${title} · Yabe Webfont Blog`
 })
 
 if (article.value.image) {
-  defineOgImage({ url: article.value.image })
-} else {
   defineOgImageComponent('Docs', {
+    title,
+    description
+  })
+} else {
+  defineOgImage('Docs', {
     headline: 'Blog',
     title,
     description
   })
 }
 
-const authorTwitter = article.value.authors?.[0]?.twitter
-
-const socialLinks = computed(() => !article.value
-  ? []
-  : [
-    // {
-    //   label: 'LinkedIn',
-    //   icon: 'i-simple-icons-linkedin',
-    //   to: `https://www.linkedin.com/sharing/share-offsite/?url=https://nuxt.com${article.value.path}`
-    // },
-    {
-      label: 'X',
-      icon: 'i-simple-icons-x',
-      to: `https://x.com/intent/tweet?text=${encodeURIComponent(`${article.value.title}${authorTwitter ? ` by @${article.value.authors[0]!.twitter}` : ''}\n\n`)}https://wind.press${article.value.path}`
-    }
-  ])
-
 function copyLink() {
-  copy(`https://wind.press${article.value?.path || '/'}`, { title: 'Link copied to clipboard', icon: 'i-lucide-copy-check' })
+  copy(`https://yabe-webfont.jooo.si${article.value?.path || '/'}`, { title: 'Link copied to clipboard', icon: 'i-lucide-copy-check' })
 }
 
 const links = [
   {
     icon: 'i-ph-pencil-simple',
     label: 'Edit this article',
-    to: `https://github.com/wind-press/wind.press/edit/main/content/${article.value.stem}.${article.value.extension}`,
+    to: `https://github.com/orgrosua/yabe-webfont-docs/edit/main/content/${article.value.stem}.${article.value.extension}`,
     target: '_blank'
   }, {
     icon: 'i-ph-star',
-    label: 'Star on GitHub',
-    to: '/go/github',
-    target: '_blank'
-  }, {
-    icon: 'i-ph-hand-heart',
-    label: 'Become a Sponsor',
-    to: '/go/sponsor',
+    label: 'Rate on WordPress',
+    to: 'https://wordpress.org/support/plugin/yabe-webfont/reviews/?filter=5/#new-post',
     target: '_blank'
   }
 ]
@@ -110,15 +89,12 @@ const links = [
 
           <div class="flex items-center justify-between mt-12 not-prose">
             <ULink to="/blog" class="text-(--ui-primary)">
-              ← Back to blog
+              &larr; Back to blog
             </ULink>
             <div class="flex justify-end items-center gap-1.5">
               <UButton icon="i-lucide-link" variant="ghost" color="neutral" @click="copyLink">
                 <span class="sr-only">Copy URL</span>
                 Copy URL
-              </UButton>
-              <UButton v-for="(link, index) in socialLinks" :key="index" v-bind="link" variant="ghost" color="neutral" target="_blank">
-                <span class="sr-only">Nuxt on {{ link.label }}</span>
               </UButton>
             </div>
           </div>
@@ -126,16 +102,6 @@ const links = [
           <USeparator v-if="surround?.length" />
 
           <UContentSurround :surround="surround" />
-
-          <Giscus 
-            repo="wind-press/wind.press" 
-            repo-id="R_kgDONAM7Qg" 
-            category="Website" 
-            category-id="DIC_kwDONAM7Qs4CtCLS" 
-            strict="1"
-            :theme="colorMode.value === 'dark' ? 'dark' : 'light'"
-          />
-
         </UPageBody>
 
         <template #right>
@@ -143,9 +109,6 @@ const links = [
             <template #bottom>
               <div class="hidden lg:block space-y-6">
                 <UPageLinks title="Links" :links="links" />
-                <USeparator type="dashed" />
-                <SocialLinks />
-                <Ads />
               </div>
             </template>
           </UContentToc>

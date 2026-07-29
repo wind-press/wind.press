@@ -12,141 +12,102 @@ function _useHeaderLinks() {
         active: route.path.startsWith('/docs'),
         children: [
           {
-            label: 'Get Started',
-            description: 'Learn how to get started with WindPress.',
+            label: 'Getting Started',
+            description: 'Introduction and installation guide.',
             icon: 'i-lucide-rocket',
             to: '/docs/getting-started',
             active: route.path.startsWith('/docs/getting-started')
           },
           {
-            label: 'Guide',
-            description: 'Get the key concepts, and best practice.',
-            icon: 'i-lucide-book-open',
-            to: '/docs/guide',
-            active: route.path.startsWith('/docs/guide')
+            label: 'Fonts',
+            description: 'Add custom fonts, self-host Google Fonts, and embed Adobe Fonts.',
+            icon: 'i-lucide-type',
+            to: '/docs/fonts',
+            active: route.path.startsWith('/docs/fonts')
           },
           {
-            label: 'API',
-            description: 'Explore how to extend WindPress with the API.',
-            icon: 'i-lucide-code-xml',
-            to: '/docs/api',
-            active: route.path.startsWith('/docs/api')
+            label: 'Integrations',
+            description: 'Use your fonts in page builders, themes, and editors.',
+            icon: 'i-lucide-puzzle',
+            to: '/docs/integrations',
+            active: route.path.startsWith('/docs/integrations')
           },
           {
-            label: 'Examples',
-            description: 'Explore and learn the examples.',
-            icon: 'i-lucide-app-window-mac',
-            to: '/docs/examples',
-            active: route.path.startsWith('/docs/examples')
+            label: 'Misc',
+            description: 'Tools and extras for managing custom fonts.',
+            icon: 'i-lucide-wrench',
+            to: '/docs/misc',
+            active: route.path.startsWith('/docs/misc')
           },
-          // {
-          //   label: 'Community',
-          //   description: 'Find answers and support from the community.',
-          //   icon: 'i-lucide-messages-square',
-          //   to: '/docs/community',
-          //   active: route.path.startsWith('/docs/community')
-          // },
         ]
       },
       {
-        label: 'Integrations',
-        // to: '/modules',
-        icon: 'i-lucide-unplug',
+        label: 'Tools',
+        icon: 'i-lucide-wand-sparkles',
         search: false,
-        active: route.path.startsWith('/modules') || route.path.startsWith('/deploy'),
+        active: route.path.startsWith('/docs/misc/convert-ttf-woff2') || route.path.startsWith('/docs/misc/static-fonts-to-variable'),
         children: [
           {
-            label: 'Page Builders',
-            description: 'First-class support for page builders.',
-            icon: 'i-lucide-puzzle',
-            to: '/docs/guide/integrations',
-            active: route.path.toString() === '/docs/guide/integrations'
+            label: 'Font Converter',
+            description: 'Convert TTF to WOFF2 in your browser.',
+            icon: 'i-lucide-file-down',
+            to: '/docs/misc/convert-ttf-woff2',
+            active: route.path === '/docs/misc/convert-ttf-woff2'
           },
           {
-            label: 'Custom Theme',
-            description: 'Make your theme Tailwind CSS compatible.',
-            icon: 'i-lucide-paint-roller',
-            to: '/docs/examples/custom-integrations/custom-theme',
+            label: 'Static to Variable',
+            description: 'Build a variable TTF from static font masters.',
+            icon: 'i-lucide-sliders-horizontal',
+            to: '/docs/misc/static-fonts-to-variable',
+            active: route.path === '/docs/misc/static-fonts-to-variable'
           }
         ]
       },
       {
         label: 'Resources',
         icon: 'i-lucide-library',
-        // to: '/templates',
         search: false,
-        active: route.path.startsWith('/templates') || route.path.startsWith('/video-courses') || route.path.startsWith('/showcase'),
+        active: false,
         children: [
           {
-            label: 'Templates',
-            icon: 'i-lucide-app-window',
-            description: 'Explore and use ready-to-use templates.',
-            to: '/templates'
+            label: 'Blog',
+            description: 'Releases, updates, and announcements.',
+            icon: 'i-lucide-newspaper',
+            to: '/blog'
           },
-          // {
-          //   label: 'Video Courses',
-          //   description: 'Learn Nuxt by watching video courses.',
-          //   icon: 'i-lucide-graduation-cap',
-          //   to: '/video-courses'
-          // },
-          {
-            label: 'Showcase',
-            description: 'Explore the showcase of WindPress websites.',
-            icon: 'i-lucide-presentation',
-            to: '/showcase'
-          },
-          // {
-          //   label: 'Nuxt Certification',
-          //   description: 'Obtain your Certification of Competence.',
-          //   icon: 'i-lucide-medal',
-          //   to: 'https://certification.nuxt.com',
-          //   target: '_blank'
-          // }
           {
             label: 'Changelog',
             description: 'Stay up-to-date with the latest changes.',
             icon: 'i-lucide-list-check',
             to: '/changelog'
-          },
-          {
-            label: 'Blog',
-            description: 'Read articles about WindPress.',
-            icon: 'i-lucide-newspaper',
-            to: '/blog'
           }
         ]
       },
       {
-        label: 'Enterprise',
-        icon: 'i-lucide-building-2',
-        // to: '/enterprise',
+        label: 'Support',
+        icon: 'i-lucide-life-buoy',
         search: false,
         children: [
           {
-            label: 'Support',
+            label: 'Customer Support',
             to: '/go/ticket',
-            description: 'Priority Support for Pro users.',
+            description: 'Send us a support ticket.',
             icon: 'i-lucide-life-buoy'
           },
-          // {
-          //   label: 'Agencies',
-          //   to: '/enterprise/agencies',
-          //   description: 'Agencies specialized in Nuxt development.',
-          //   icon: 'i-lucide-handshake'
-          // },
+          {
+            label: 'Community',
+            to: '/go/facebook',
+            description: 'Join our Facebook group.',
+            icon: 'i-simple-icons-facebook'
+          },
           {
             label: 'Sponsors',
             to: '/go/sponsor',
-            description: 'Help us sustain WindPress development.',
+            description: 'Help us sustain Yabe Webfont development.',
             icon: 'i-ph-hand-heart'
           }
         ]
       },
-      // {
-      //   label: 'Blog',
-      //   icon: 'i-lucide-newspaper',
-      //   to: '/blog'
-      // }
     ]
   })
   return { headerLinks }
@@ -176,12 +137,12 @@ const footerLinks = [
         to: '/docs'
       },
       {
-        label: 'Blog',
-        to: '/blog'
+        label: 'Getting Started',
+        to: '/docs/getting-started'
       },
       {
-        label: 'Examples',
-        to: '/docs/examples'
+        label: 'Integrations',
+        to: '/docs/integrations'
       },
     ]
   },
@@ -200,7 +161,7 @@ const footerLinks = [
       },
       {
         label: 'Account',
-        to: 'https://rosua.org/checkout/order-history',
+        to: '/go/account',
         target: '_blank'
       },
     ]
@@ -233,21 +194,7 @@ const _useNavigation = () => {
         }
       }
       return link
-    }).filter((link): link is NonNullable<typeof link> => Boolean(link)), {
-      label: 'Team',
-      icon: 'i-lucide-users',
-      to: '/team'
-    },
-    {
-      label: 'Design Kit',
-      icon: 'i-lucide-palette',
-      to: '/design-kit'
-    },
-    {
-      label: 'Newsletter',
-      icon: 'i-lucide-mail',
-      to: '/newsletter'
-    }
+    }).filter((link): link is NonNullable<typeof link> => Boolean(link))
   ])
 
   type SearchGroup = {

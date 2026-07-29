@@ -1,0 +1,28 @@
+name: Build WASM
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 0 1 * *'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container:
+      image: emscripten/emsdk:latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Build woff2 WASM
+        run: bash wasm-src/build.sh
+        env:
+          SRC_DIR: ${{ github.workspace }}/wasm-src
+          OUTPUT_DIR: ${{ github.workspace }}/public/wasm
+
+      - name: Upload WASM artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: woff2-wasm
+          path: public/wasm/woff2.*
+          if-no-files-found: error

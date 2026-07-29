@@ -1,0 +1,24 @@
+[package]
+name = "yabe-static-to-variable"
+version = "0.1.0"
+edition = "2024"
+license = "MIT"
+description = "Native Rust engine for building OpenType variable fonts from static TrueType masters"
+publish = false
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[dependencies]
+font-types = "0.12.2"
+js-sys = "0.3.91"
+kurbo = "0.13.1"
+linesweeper = "0.4.0"
+read-fonts = "0.42.1"
+serde = { version = "1", features = ["derive"] }
+serde-wasm-bindgen = "0.6"
+skrifa = { version = "0.43.2", default-features = false, features = ["std"] }
+thiserror = "2"
+unicode-general-category = "0.6.0"
+wasm-bindgen = "0.2.114"
+write-fonts = { version = "0.51.0", features = ["read"] }

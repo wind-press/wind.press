@@ -79,7 +79,7 @@ const breadcrumb = computed(() => {
 
 const titleTemplate = computed(() => findTitleTemplate(page, navigation))
 
-const editLink = computed(() => `https://github.com/wind-press/wind.press/edit/main/content/docs/${page?.value?.stem?.split('/').slice(1).join('/')}.${page?.value?.extension}`)
+const editLink = computed(() => `https://github.com/orgrosua/yabe-webfont-docs/edit/master/src/content/docs/en/${page?.value?.stem?.split('/').slice(2).join('/')}.${page?.value?.extension}`)
 
 const communityLinks = [
   {
@@ -90,8 +90,8 @@ const communityLinks = [
   },
   {
     icon: 'i-ph-chat-centered-text',
-    label: 'Discussions',
-    to: 'https://github.com/wind-press/windpress/discussions',
+    label: 'Community',
+    to: '/go/facebook',
     target: '_blank'
   },
 ]
@@ -111,7 +111,7 @@ if (import.meta.server) {
     ogTitle: titleTemplate.value?.includes('%s') ? titleTemplate.value.replace('%s', title) : title
   })
 
-  defineOgImageComponent('Docs', {
+  defineOgImage('Docs', {
     headline: breadcrumb.value.length ? breadcrumb.value.map(link => link.label).join(' > ') : '',
     title,
     description
@@ -157,7 +157,7 @@ onMounted(() => {
           <div>
             <USeparator class="my-10">
               <div class="flex items-center gap-2 text-sm dark:text-gray-400">
-                <UButton size="sm" variant="link" color="neutral" to="https://github.com/wind-press/wind.press/issues/new/choose" target="_blank">
+                <UButton size="sm" variant="link" color="neutral" to="https://github.com/orgrosua/yabe-webfont-docs/issues/new/choose" target="_blank">
                   Report an issue
                 </UButton>
                 or

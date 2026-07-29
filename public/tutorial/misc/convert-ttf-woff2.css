@@ -1,0 +1,18 @@
+.dropzone-wrap:hover {
+    --stripe: #f7f5f6;
+    mix-blend-mode: multiply;
+    background-image:
+        repeating-linear-gradient(-45deg,
+            transparent,
+            transparent 1rem,
+            var(--stripe) 1rem,
+            var(--stripe) 2rem);
+    background-size: 200% 200%;
+    animation: barberpole 10s linear infinite;
+}
+
+@keyframes barberpole {
+    100% {
+        background-position: 100% 100%;
+    }
+}

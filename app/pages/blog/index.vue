@@ -3,21 +3,13 @@ const { data: page } = await useAsyncData('blog-landing', () => queryCollection(
 if (!page.value) {
   throw createError({ statusCode: 404, statusMessage: 'Page not found', fatal: true })
 }
+
 definePageMeta({
   heroBackground: 'opacity-70 -z-10'
 })
+
 const { fetchList, articles } = useBlog()
 
-useHead({
-  link: [
-    {
-      rel: 'alternate',
-      type: 'application/atom+xml',
-      title: 'WindPress Blog RSS',
-      href: 'https://wind.press/blog/rss.xml'
-    }
-  ]
-})
 useSeoMeta({
   titleTemplate: '%s',
   title: page.value.title,
@@ -25,7 +17,8 @@ useSeoMeta({
   ogDescription: page.value.description,
   ogTitle: page.value.title
 })
-defineOgImageComponent('Docs', {
+
+defineOgImage('Docs', {
   headline: 'Blog',
   title: page.value.title,
   description: page.value.description
@@ -40,27 +33,7 @@ await fetchList()
       :title="page.title"
       :description="page.description"
       orientation="horizontal"
-    >
-      <template #links>
-        <NewsletterForm class="flex-1 max-w-xs" :description="undefined" />
-      </template>
-
-      <template #description>
-        {{ page.description }}
-
-        <UButton
-          to="/blog/rss.xml"
-          color="neutral"
-          external
-          icon="i-lucide-rss"
-          variant="subtle"
-          size="xs"
-          target="_blank"
-        >
-          RSS
-        </UButton>
-      </template>
-    </UPageHero>
+    />
 
     <UPageBody>
       <UContainer>
@@ -78,8 +51,8 @@ await fetchList()
               alt: `${article.title} image`
             }"
             :date="formatDateByLocale('en', article.date)"
-            :authors="article.authors.map(author => ({ ...author, avatar: { ...author.avatar, alt: `${author.name} avatar` } }))"
-            :badge="{ label: article.category, color: 'primary', variant: 'subtle' }"
+            :authors="article.authors?.map(author => ({ ...author, avatar: { ...author.avatar, alt: `${author.name} avatar` } }))"
+            :badge="article.category ? { label: article.category, color: 'primary', variant: 'subtle' } : undefined"
             :variant="index === 0 ? 'outline' : 'subtle'"
             :orientation="index === 0 ? 'horizontal' : 'vertical'"
             :class="[index === 0 && 'col-span-full']"

@@ -8,16 +8,14 @@ const color = computed(() => colorMode.value === 'dark' ? '#020420' : 'white')
 const [{ data: navigation }, { data: files }] = await Promise.all([
   useAsyncData('navigation', () => {
     return Promise.all([
-      queryCollectionNavigation('docs', ['titleTemplate']),
-      queryCollectionNavigation('blog')
+      queryCollectionNavigation('docs', ['titleTemplate'])
     ])
   }, {
     transform: data => data.flat()
   }),
   useLazyAsyncData('search', () => {
     return Promise.all([
-      queryCollectionSearchSections('docs'),
-      queryCollectionSearchSections('blog')
+      queryCollectionSearchSections('docs')
     ])
   }, {
     server: false,
@@ -28,7 +26,7 @@ const [{ data: navigation }, { data: files }] = await Promise.all([
 // onNuxtReady(() => fetchList())
 
 useHead({
-  titleTemplate: title => title ? `${title} · WindPress` : 'WindPress: The Tailwind CSS integration plugin for WordPress',
+  titleTemplate: title => title ? `${title} · Yabe Webfont` : 'Yabe Webfont: The GDPR-friendly font plugin for WordPress',
   meta: [
     { key: 'theme-color', name: 'theme-color', content: color }
   ]
@@ -48,10 +46,9 @@ if (import.meta.server) {
     }
   })
   useSeoMeta({
-    ogSiteName: 'WindPress',
+    ogSiteName: 'Yabe Webfont',
     ogType: 'website',
-    twitterCard: 'summary_large_image',
-    twitterSite: 'windpress'
+    twitterCard: 'summary_large_image'
   })
 }
 
